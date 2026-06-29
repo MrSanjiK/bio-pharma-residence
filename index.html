@@ -2140,54 +2140,91 @@ main::-webkit-scrollbar { width: 0; }
     .s-philosophy h2 { font-size: clamp(22px, 6vw, 36px); margin-bottom: 22px; line-height: 1.15; }
 
     /* SLIDE 3 — STATS */
-    .s-stats { padding: 0; }
-    .s-stats .head { flex-direction: column; gap: 14px; padding: 8px 4px 18px; margin-bottom: 18px; }
-    .s-stats .head h2 { font-size: clamp(22px, 6vw, 32px); }
-    .s-stats .head .right { font-size: 12px; max-width: 100%; }
+    .s-stats { padding: 56px 22px 28px !important; }
+    .s-stats .head { flex-direction: column; gap: 12px; padding: 0 0 16px; margin-bottom: 14px; }
+    .s-stats .head h2 { font-size: clamp(22px, 6vw, 32px); line-height: 1.1; }
+    .s-stats .head .right { font-size: 12px; max-width: 100%; text-align: left; line-height: 1.5; }
     .stats-grid {
+        flex: none !important;
         grid-template-columns: repeat(2, 1fr) !important;
         grid-template-rows: none !important;
+        grid-auto-rows: auto !important;
+        gap: 1px !important;
+        background: rgba(255,255,255,0.06) !important;
+    }
+    .stat-cell {
+        padding: 14px 12px !important;
+        min-height: 96px !important;
+        background: var(--ink) !important;
+        justify-content: flex-start !important;
         gap: 8px !important;
     }
-    .stat-cell { padding: 14px 12px !important; }
-    .stat-cell .num { font-size: clamp(22px, 7vw, 32px) !important; }
-    .stat-cell .label { font-size: 9.5px !important; }
-    .stat-cell .desc { font-size: 10px !important; }
+    .stat-cell .num { font-size: clamp(22px, 6.6vw, 32px) !important; line-height: 1.0; white-space: nowrap; }
+    .stat-cell .label { font-size: 9px !important; letter-spacing: 0.18em !important; margin-bottom: 4px !important; }
+    .stat-cell .desc { font-size: 10px !important; margin-top: 6px !important; line-height: 1.4 !important; }
     .stat-cell.span2, .stat-cell.span3 { grid-column: span 1 !important; }
 
-    /* SLIDE 4 — ARCHITECTURE */
-    .s-architecture { padding: 0; }
-    .s-architecture .head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 18px; padding-bottom: 14px; }
-    .s-architecture h2 { font-size: clamp(22px, 6vw, 32px); }
-    .arch-grid { grid-template-columns: 1fr 1fr !important; grid-auto-rows: 110px !important; gap: 6px !important; }
+    /* SLIDE 5 — ARCHITECTURE */
+    .s-architecture { padding: 56px 22px 28px !important; }
+    .s-architecture .head { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 14px; padding-bottom: 12px; }
+    .s-architecture h2 { font-size: clamp(22px, 6vw, 32px); line-height: 1.1; }
+    .s-architecture .head .right { font-size: 12px !important; max-width: 100% !important; text-align: left !important; line-height: 1.5 !important; }
+    .arch-grid { flex: none !important; grid-template-columns: 1fr 1fr !important; grid-auto-rows: 110px !important; gap: 6px !important; }
     .arch-grid .a1 { grid-row: span 1 !important; }
     .arch-grid > div { border-radius: 14px; }
     .arch-grid .label { font-size: 10px; padding: 10px 12px; }
 
-    /* SLIDE 5 — MASTERPLAN */
-    .s-masterplan { padding: 0; }
-    .s-masterplan .content { padding: 22px 22px 0; }
-    .s-masterplan h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 14px; }
-    .s-masterplan .sub { font-size: 12.5px; max-width: 100%; }
+    /* SLIDE 4 — MASTER PLAN */
+    .s-masterplan { padding: 0 !important; }
+    .s-masterplan .bg { opacity: 0.22 !important; }
+    .s-masterplan .veil {
+        background: linear-gradient(180deg, rgba(10,15,10,0.7) 0%, rgba(10,15,10,0.92) 100%) !important;
+    }
+    .s-masterplan .content {
+        padding: 56px 22px 28px !important;
+        max-width: 100% !important;
+        justify-content: flex-start !important;
+    }
+    .s-masterplan h2 { font-size: clamp(22px, 6vw, 34px) !important; margin-bottom: 14px !important; line-height: 1.1 !important; }
+    .s-masterplan .description { font-size: 12.5px !important; line-height: 1.6 !important; margin-bottom: 22px !important; max-width: 100% !important; }
+    .s-masterplan .key-points { gap: 10px !important; }
+    .s-masterplan .key-points li { font-size: 11.5px !important; line-height: 1.5 !important; padding-left: 22px !important; }
+    .s-masterplan .key-points strong { font-size: 13px !important; }
 
     /* SLIDE 6 — COURTYARD */
-    .s-courtyard { padding: 0; }
-    .s-courtyard .bg { opacity: 0.55; }
+    .s-courtyard { padding: 0 !important; }
+    .s-courtyard .bg { opacity: 0.22 !important; }
+    .s-courtyard .veil {
+        background: linear-gradient(180deg, rgba(10,15,10,0.72) 0%, rgba(10,15,10,0.92) 100%) !important;
+    }
     .s-courtyard .content {
         position: relative;
         width: 100% !important;
-        padding: 22px !important;
+        padding: 56px 22px 28px !important;
     }
-    .s-courtyard h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 14px; }
+    .s-courtyard h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 14px; line-height: 1.1; }
+    .s-courtyard .desc { font-size: 12.5px !important; line-height: 1.6 !important; margin-bottom: 20px !important; max-width: 100% !important; }
     .feat-list { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+    .feat-list .item { padding: 12px !important; background: rgba(255,255,255,0.04) !important; border-radius: 12px !important; }
     .feat-list .item .n { font-size: 22px !important; }
     .feat-list .item .t { font-size: 11px !important; }
 
     /* SLIDE 7 — BOULEVARD */
-    .s-boulevard { padding: 0; }
-    .s-boulevard .content { padding: 22px !important; gap: 18px !important; }
-    .s-boulevard h2 { font-size: clamp(22px, 6vw, 36px) !important; }
-    .s-boulevard .info-block { font-size: 12px; }
+    .s-boulevard { padding: 0 !important; }
+    .s-boulevard .bg { opacity: 0.22 !important; }
+    .s-boulevard .veil {
+        background: linear-gradient(180deg, rgba(10,15,10,0.72) 0%, rgba(10,15,10,0.92) 100%) !important;
+    }
+    .s-boulevard .content {
+        padding: 56px 22px 28px !important;
+        gap: 18px !important;
+        grid-template-columns: 1fr !important;
+        margin-top: 0 !important;
+        align-items: start !important;
+    }
+    .s-boulevard h2 { font-size: clamp(22px, 6vw, 36px) !important; line-height: 1.05 !important; }
+    .s-boulevard .desc { font-size: 12px !important; line-height: 1.55 !important; padding-top: 0 !important; }
+    .s-boulevard .desc strong { font-size: 9.5px !important; margin-bottom: 6px !important; }
 
     /* SLIDE 8 — ECO */
     .s-eco { flex-direction: column !important; padding: 0 !important; }
@@ -2213,48 +2250,64 @@ main::-webkit-scrollbar { width: 0; }
     }
 
     /* SLIDE 9 — PHARMA */
-    .s-pharma { padding: 0; align-items: stretch; }
+    .s-pharma { padding: 0 !important; align-items: stretch; }
+    .s-pharma .bg { opacity: 0.25 !important; }
     .s-pharma .content {
         grid-template-columns: 1fr !important;
         gap: 16px !important;
         padding: 56px 22px 28px !important;
         margin-top: 0 !important;
+        justify-content: flex-start !important;
     }
-    .s-pharma h2 { font-size: clamp(22px, 6vw, 34px); }
+    .s-pharma h2 { font-size: clamp(22px, 6vw, 34px); line-height: 1.1; }
     .s-pharma .desc { font-size: 12px; line-height: 1.6; }
+    .s-pharma .quote { font-size: 14px !important; padding: 14px 16px !important; }
+    .s-pharma .quote .author { font-size: 10px !important; }
+    .s-pharma .info { font-size: 11.5px !important; }
     .s-pharma .veil {
-        background: linear-gradient(180deg, rgba(10,15,10,0.25) 0%, rgba(10,15,10,0.7) 50%, rgba(10,15,10,0.95) 100%);
+        background: linear-gradient(180deg, rgba(10,15,10,0.78) 0%, rgba(10,15,10,0.92) 100%) !important;
     }
 
     /* SLIDE 10 — INFRASTRUCTURE */
-    .s-infrastructure { padding: 0; }
-    .s-infrastructure .head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 18px; padding-bottom: 14px; }
-    .s-infrastructure h2 { font-size: clamp(22px, 6vw, 32px); }
-    .infra-categories { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
-    .cat-col { padding: 14px 12px 10px !important; }
+    .s-infrastructure { padding: 56px 22px 28px !important; }
+    .s-infrastructure .head { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 14px; padding-bottom: 12px; }
+    .s-infrastructure h2 { font-size: clamp(22px, 6vw, 32px); line-height: 1.1; }
+    .s-infrastructure .head .right { font-size: 12px !important; max-width: 100% !important; text-align: left !important; }
+    .infra-categories {
+        flex: none !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        min-height: 0 !important;
+    }
+    .cat-col { padding: 14px 12px 10px !important; border-radius: 14px !important; }
+    .cat-items { flex: none !important; gap: 4px !important; }
     .cat-pill { font-size: 9px; padding: 4px 9px; margin-bottom: 10px; }
-    .cat-item { padding: 8px 0 8px; }
+    .cat-item { padding: 8px 0 8px !important; column-gap: 8px !important; }
     .cat-item .cat-num { font-size: clamp(22px, 6vw, 30px) !important; }
     .cat-item .cat-lbl { font-size: 9px !important; letter-spacing: 0.12em; }
+    .cat-item .cat-icon { width: 14px !important; height: 14px !important; }
 
     /* SLIDE 11 — RADIUS */
-    .s-radius { padding: 0; }
-    .s-radius .head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 18px; padding-bottom: 14px; }
-    .s-radius h2 { font-size: clamp(22px, 6vw, 32px); }
-    .radius-cols { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+    .s-radius { padding: 56px 22px 28px !important; }
+    .s-radius .head { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 14px; padding-bottom: 12px; }
+    .s-radius h2 { font-size: clamp(22px, 6vw, 32px); line-height: 1.1; }
+    .s-radius .head .right { font-size: 12px !important; max-width: 100% !important; text-align: left !important; line-height: 1.5 !important; }
+    .radius-cols { flex: none !important; grid-template-columns: 1fr 1fr !important; gap: 14px !important; }
 
     /* SLIDE 12 — MIX */
-    .s-mix { flex-direction: column !important; padding: 0 !important; }
+    .s-mix { flex-direction: column !important; padding: 56px 22px 28px !important; }
     .s-mix .left, .s-mix .right { width: 100% !important; }
-    .s-mix .left { padding: 0 !important; }
-    .s-mix h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 14px; }
-    .s-mix .desc { font-size: 12px; margin-bottom: 16px; line-height: 1.6; }
+    .s-mix .left { padding: 0 0 18px 0 !important; }
+    .s-mix h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 12px; line-height: 1.1; }
+    .s-mix .desc { font-size: 12px; margin-bottom: 18px; line-height: 1.6; max-width: 100%; }
     .s-mix .right {
-        margin-top: 18px;
-        min-height: 220px;
+        margin-top: 14px;
+        min-height: 180px;
         border-radius: 16px;
         overflow: hidden;
-        padding: 28px 22px !important;
+        padding: 24px 20px !important;
+        display: flex !important;
+        align-items: flex-end !important;
     }
     .s-mix .right .float-stat {
         position: relative !important;
@@ -2262,10 +2315,10 @@ main::-webkit-scrollbar { width: 0; }
         left: auto !important;
         max-width: 100% !important;
     }
-    .s-mix .right .float-stat .num { font-size: 44px; }
-    .s-mix .right .float-stat .lbl { font-size: 9.5px; }
-    .s-mix .right .float-stat .des { font-size: 11.5px; }
-    .mix-bars { gap: 12px; }
+    .s-mix .right .float-stat .num { font-size: 40px !important; line-height: 1.0 !important; white-space: nowrap; }
+    .s-mix .right .float-stat .lbl { font-size: 9.5px !important; }
+    .s-mix .right .float-stat .des { font-size: 11.5px !important; line-height: 1.4 !important; }
+    .mix-bars { gap: 14px; }
     .mix-bar .top { font-size: 12px; }
     .mix-bar .top .pct { font-size: 22px; }
 
@@ -2279,22 +2332,44 @@ main::-webkit-scrollbar { width: 0; }
     .plan-card .plan-info .area { font-size: 12px; }
 
     /* SLIDE 16 — PHASING */
-    .s-phasing { padding: 0; }
-    .s-phasing h2 { font-size: clamp(22px, 6vw, 32px); }
+    .s-phasing { padding: 56px 22px 28px !important; }
+    .s-phasing .head { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 14px; padding-bottom: 12px; }
+    .s-phasing h2 { font-size: clamp(22px, 6vw, 32px); line-height: 1.1; }
+    .s-phasing .desc { font-size: 12px !important; line-height: 1.55 !important; max-width: 100% !important; }
     .phases-timeline {
         grid-template-columns: repeat(7, 1fr) !important;
         gap: 4px !important;
         margin-bottom: 16px !important;
     }
-    .phase-pill { font-size: 9px !important; padding: 6px 4px !important; }
+    .ph { padding: 8px 4px !important; border-radius: 6px !important; }
+    .ph .lab { font-size: 10px !important; }
     .phase1-card {
         grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
-        padding: 14px 16px !important;
+        gap: 14px !important;
+        padding: 16px 18px !important;
         margin-top: 14px;
+        border-radius: 14px !important;
     }
-    .phase1-card > div { font-size: 11px; }
-    .next-phases { padding-top: 12px; margin-top: 14px; flex-direction: column; gap: 10px; }
+    .phase1-card .title-cell { grid-column: 1 / -1 !important; }
+    .phase1-card .title-cell h3 { font-size: clamp(20px, 5.4vw, 28px) !important; }
+    .phase1-card .title-cell p { font-size: 11.5px !important; line-height: 1.55 !important; }
+    .phase1-card .ph-stat .n { font-size: clamp(24px, 6.4vw, 36px) !important; }
+    .phase1-card .ph-stat .t { font-size: 9.5px !important; letter-spacing: 0.14em !important; }
+    .next-phases {
+        grid-template-columns: 1fr !important;
+        padding-top: 14px !important;
+        margin-top: 16px !important;
+        gap: 14px !important;
+    }
+    .next-phases .col {
+        padding: 0 0 14px 0 !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--line);
+    }
+    .next-phases .col:last-child { border-bottom: none !important; padding-bottom: 0 !important; }
+    .next-phases .col .lab { font-size: 9.5px !important; margin-bottom: 8px !important; }
+    .next-phases .col .blocks { font-size: 18px !important; }
+    .next-phases .col .note { font-size: 11.5px !important; line-height: 1.5 !important; }
 
     /* SLIDE 17 — SUSTAIN */
     .s-sustain { flex-direction: column !important; padding: 0 !important; }
@@ -2303,9 +2378,16 @@ main::-webkit-scrollbar { width: 0; }
         height: auto !important;
         padding: 0 !important;
     }
-    .s-sustain .left { min-height: 160px; }
+    .s-sustain .left {
+        min-height: 160px;
+        background-blend-mode: multiply;
+    }
+    .s-sustain .left::after {
+        background: linear-gradient(180deg, rgba(20,40,20,0.4), rgba(20,40,20,0.95)) !important;
+    }
     .s-sustain .right { padding: 22px !important; }
-    .s-sustain h2 { font-size: clamp(22px, 6vw, 32px); margin-bottom: 16px; }
+    .s-sustain h2 { font-size: clamp(22px, 6vw, 32px); margin-bottom: 14px; line-height: 1.1; }
+    .s-sustain .desc { font-size: 12px !important; line-height: 1.6 !important; margin-bottom: 16px !important; max-width: 100% !important; }
     .commit-list { gap: 10px; margin-bottom: 16px; }
     .commit-row { padding-top: 8px; gap: 10px; }
     .commit-row .text { font-size: 11.5px; }
