@@ -1,0 +1,9 @@
+# Build artifacts
+*.pptx
+*.pdf
+slides_qa/
+node_modules/
+assets/rounded/
+optimize_images.py
+build_pptx.js
+round_corners.js

@@ -1,0 +1,2372 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio Pharma Residence — Imarat Development</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --ink: #0A0F0A;
+    --forest: #1F3A1F;
+    --forest-deep: #142814;
+    --sage: #4A6E4A;
+    --sage-soft: #8FAB8C;
+    --cream: #F5F1E8;
+    --ivory: #FFFEF9;
+    --gold: #C9A961;
+    --gold-soft: #E0C589;
+    --line: rgba(255,255,255,0.16);
+    --line-dark: rgba(15,25,15,0.14);
+    --serif: "Playfair Display", "Libre Baskerville", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "DM Sans", "Inter", system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--sans);
+    background: var(--ink);
+    color: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.slide {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    width: 100vw;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+
+/* ============ NAV ============ */
+.nav-dots {
+    position: fixed;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.45);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+.nav-dot.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: scale(1.4);
+}
+.nav-dot:hover { background: var(--gold-soft); }
+
+.brand-mark {
+    position: fixed;
+    top: 28px;
+    left: 36px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity .45s ease, transform .45s ease;
+    pointer-events: none;
+}
+body.brand-visible .brand-mark {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.brand-mark img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.45));
+}
+
+.slide-num {
+    position: absolute;
+    bottom: 28px;
+    left: 36px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: rgba(255,255,255,0.5);
+    z-index: 5;
+}
+.slide-num strong { color: var(--gold); font-weight: 500; }
+
+.eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+}
+.eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+}
+
+h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    text-rendering: geometricPrecision;
+}
+
+.huge {
+    font-size: clamp(56px, 7.2vw, 132px);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+}
+.big {
+    font-size: clamp(40px, 4.6vw, 84px);
+    font-weight: 400;
+    line-height: 1.04;
+}
+.mid {
+    font-size: clamp(28px, 2.8vw, 52px);
+    line-height: 1.1;
+}
+.italic { font-style: italic; color: var(--gold-soft); }
+
+p.lead {
+    font-family: var(--sans);
+    font-size: clamp(15px, 1.05vw, 18px);
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(245,241,232,0.85);
+    max-width: 540px;
+}
+p.lead.dark { color: rgba(20,40,20,0.78); }
+
+.gold { color: var(--gold); }
+.cream { color: var(--cream); }
+.forest { color: var(--forest); }
+
+/* ============ SLIDE 1 — COVER ============ */
+.s-cover { background: var(--ink); }
+.s-cover .bg {
+    position: absolute; inset: 0;
+    background: url('assets/hero-sunset.jpg') center/cover no-repeat;
+    transform: scale(1.05);
+}
+.s-cover .veil {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(180deg, rgba(10,15,10,0.55) 0%, rgba(10,15,10,0.15) 35%, rgba(10,15,10,0.85) 100%),
+        linear-gradient(90deg, rgba(10,15,10,0.55) 0%, transparent 50%);
+}
+.s-cover .content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 80px 90px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--ivory);
+}
+.s-cover .top-tag {
+    position: absolute;
+    top: 90px;
+    left: 80px;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+}
+.s-cover .top-tag span { color: var(--gold); }
+.s-cover h1 {
+    font-size: clamp(64px, 8.4vw, 168px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 0.94;
+    color: var(--ivory);
+    margin-bottom: 28px;
+}
+.s-cover h1 em {
+    font-style: italic;
+    color: var(--gold-soft);
+    font-weight: 500;
+}
+.s-cover .sub {
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.25vw, 22px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.01em;
+    max-width: 620px;
+    margin-bottom: 36px;
+}
+.s-cover .meta-row {
+    display: flex;
+    gap: 56px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    max-width: 820px;
+}
+.s-cover .meta-row > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.s-cover .meta-row .k {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+}
+.s-cover .meta-row .v {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ivory);
+}
+
+/* ============ SLIDE 2 — PHILOSOPHY ============ */
+.s-philosophy {
+    background: var(--ink);
+    align-items: center;
+    justify-content: center;
+}
+.s-philosophy::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(74,110,74,0.18) 0%, transparent 50%),
+        url('assets/render-extra-1.jpg') center/cover no-repeat;
+    opacity: 0.18;
+    filter: blur(2px);
+}
+.s-philosophy .content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    padding: 0 80px;
+    text-align: center;
+}
+.s-philosophy .eyebrow {
+    justify-content: center;
+}
+.s-philosophy .eyebrow::after {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+}
+.s-philosophy h2 {
+    font-size: clamp(40px, 5vw, 84px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    margin-bottom: 48px;
+}
+.s-philosophy h2 em { font-style: italic; color: var(--gold-soft); }
+.s-philosophy .signature {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(245,241,232,0.6);
+    letter-spacing: 0.02em;
+}
+.s-philosophy .signature::before {
+    content: "— ";
+    color: var(--gold);
+}
+
+/* ============ SLIDE 3 — AT A GLANCE ============ */
+.s-stats {
+    background: var(--ink);
+    flex-direction: column;
+    padding: 90px 80px 80px;
+}
+.s-stats .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+.s-stats .head h2 {
+    font-size: clamp(36px, 4.2vw, 68px);
+    font-weight: 500;
+    color: var(--cream);
+}
+.s-stats .head h2 em { font-style: italic; color: var(--gold-soft); }
+.s-stats .head .right {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: rgba(245,241,232,0.6);
+    text-align: right;
+    max-width: 360px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+.stats-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+}
+.stat-cell {
+    background: var(--ink);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: background 0.4s;
+}
+.stat-cell:hover { background: var(--forest-deep); }
+.stat-cell .label {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(245,241,232,0.55);
+    margin-bottom: 8px;
+}
+.stat-cell .num {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4.2vw, 64px);
+    font-weight: 600;
+    line-height: 1.0;
+    color: var(--cream);
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+}
+.stat-cell .num .unit {
+    font-size: 0.42em;
+    color: var(--gold);
+    margin-left: 4px;
+    letter-spacing: 0;
+    font-style: italic;
+}
+.stat-cell .desc {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: rgba(245,241,232,0.65);
+    line-height: 1.5;
+    margin-top: 12px;
+    font-weight: 300;
+}
+.stat-cell.span2 { grid-column: span 2; }
+.stat-cell.span3 { grid-column: span 3; }
+
+/* ============ SLIDE 4 — MASTER PLAN ============ */
+.s-masterplan {
+    background: var(--ink);
+    align-items: stretch;
+}
+.s-masterplan .bg {
+    position: absolute; inset: 0;
+    background: url('assets/aerial-masterplan.jpg') center/cover no-repeat;
+}
+.s-masterplan .veil {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(90deg, rgba(10,15,10,0.85) 0%, rgba(10,15,10,0.5) 40%, transparent 65%),
+        linear-gradient(180deg, transparent 60%, rgba(10,15,10,0.65) 100%);
+}
+.s-masterplan .content {
+    position: relative;
+    z-index: 2;
+    padding: 110px 80px 80px;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.s-masterplan h2 {
+    font-size: clamp(44px, 5vw, 84px);
+    font-weight: 500;
+    color: var(--ivory);
+    margin-bottom: 28px;
+    line-height: 1.02;
+}
+.s-masterplan h2 em { font-style: italic; color: var(--gold-soft); }
+.s-masterplan .description {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+    margin-bottom: 36px;
+    max-width: 460px;
+}
+.s-masterplan .key-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.s-masterplan .key-points li {
+    display: grid;
+    grid-template-columns: 14px 96px 1fr;
+    gap: 18px;
+    align-items: baseline;
+    color: rgba(255,255,255,0.9);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+.s-masterplan .key-points li::before {
+    content: "";
+    width: 14px;
+    height: 1px;
+    background: var(--gold);
+    transform: translateY(-4px);
+}
+.s-masterplan .key-points strong {
+    color: var(--gold-soft);
+    font-weight: 500;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* ============ SLIDE 5 — ARCHITECTURE ============ */
+.s-architecture {
+    background: var(--cream);
+    padding: 80px;
+    flex-direction: column;
+    color: var(--forest);
+}
+.s-architecture .head {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.s-architecture .head h2 {
+    font-size: clamp(36px, 4.2vw, 64px);
+    color: var(--forest-deep);
+    font-weight: 500;
+}
+.s-architecture .head h2 em { font-style: italic; color: var(--sage); }
+.s-architecture .head .eyebrow { color: var(--sage); }
+.s-architecture .head .eyebrow::before { background: var(--sage); }
+.s-architecture .head .right {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(20,40,20,0.65);
+    max-width: 380px;
+    font-weight: 300;
+}
+.arch-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+}
+.arch-grid > div {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+}
+.arch-grid > div::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 70%, rgba(20,40,20,0.45) 100%);
+}
+.arch-grid > div .label {
+    position: absolute;
+    bottom: 18px;
+    left: 20px;
+    color: var(--ivory);
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    z-index: 2;
+}
+.arch-grid .a1 { grid-row: span 2; background-image: url('assets/courtyard-spring.jpg'); }
+.arch-grid .a2 { background-image: url('assets/boulevard-cars.jpg'); }
+.arch-grid .a3 { background-image: url('assets/courtyard-sport.jpg'); }
+.arch-grid .a4 { background-image: url('assets/render-extra-4.jpg'); }
+.arch-grid .a5 { background-image: url('assets/render-extra-7.jpg'); }
+
+/* ============ SLIDE 6 — COURTYARD ============ */
+.s-courtyard {
+    background: var(--ink);
+}
+.s-courtyard .bg {
+    position: absolute; inset: 0;
+    background: url('assets/courtyard-spring.jpg') center/cover no-repeat;
+}
+.s-courtyard .veil {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(90deg, transparent 35%, rgba(10,15,10,0.55) 50%, rgba(10,15,10,0.92) 75%, rgba(10,15,10,0.96) 100%),
+        linear-gradient(180deg, rgba(10,15,10,0.45) 0%, transparent 25%);
+}
+.s-courtyard .content {
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    width: 50%;
+    padding: 110px 80px 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.s-courtyard h2 {
+    font-size: clamp(40px, 4.4vw, 72px);
+    color: var(--ivory);
+    font-weight: 500;
+    margin-bottom: 32px;
+    line-height: 1.02;
+}
+.s-courtyard h2 em { font-style: italic; color: var(--gold-soft); }
+.s-courtyard .desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+    margin-bottom: 36px;
+    max-width: 440px;
+}
+.feat-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 28px;
+}
+.feat-list .item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.feat-list .item .n {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+.feat-list .item .t {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: rgba(255,255,255,0.78);
+    letter-spacing: 0.04em;
+}
+
+/* ============ SLIDE 7 — BOULEVARD ============ */
+.s-boulevard {
+    background: var(--ink);
+}
+.s-boulevard .bg {
+    position: absolute; inset: 0;
+    background: url('assets/boulevard-cars.jpg') center/cover no-repeat;
+}
+.s-boulevard .veil {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(0deg, rgba(10,15,10,0.96) 0%, rgba(10,15,10,0.78) 28%, rgba(10,15,10,0.35) 55%, transparent 78%),
+        linear-gradient(180deg, rgba(10,15,10,0.55) 0%, transparent 30%),
+        radial-gradient(ellipse at 30% 78%, rgba(31,58,31,0.35) 0%, transparent 55%);
+}
+.s-boulevard .content {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    width: 100%;
+    padding: 0 80px 80px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+}
+.s-boulevard .title-wrap {
+    position: relative;
+    isolation: isolate;
+}
+.s-boulevard .title-wrap::before {
+    display: none;
+}
+.s-boulevard h2 {
+    font-size: clamp(40px, 4.4vw, 72px);
+    color: var(--ivory);
+    font-weight: 500;
+    line-height: 1.02;
+    text-shadow:
+        0 2px 24px rgba(0,0,0,0.65),
+        0 1px 2px rgba(0,0,0,0.85),
+        0 0 60px rgba(201,169,97,0.12);
+    letter-spacing: -0.018em;
+}
+.s-boulevard h2 em {
+    font-style: italic;
+    color: var(--gold-soft);
+    text-shadow:
+        0 2px 28px rgba(0,0,0,0.7),
+        0 0 32px rgba(224,197,137,0.32),
+        0 0 80px rgba(201,169,97,0.18);
+}
+.s-boulevard .desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.82);
+    font-weight: 300;
+    padding-top: 10px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+.s-boulevard .desc strong {
+    display: block;
+    font-family: var(--sans);
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ============ SLIDE 8 — ECO GREYWATER ============ */
+.s-eco {
+    background: linear-gradient(135deg, #142814 0%, #1F3A1F 60%, #2C4A2C 100%);
+    padding: 80px;
+}
+.s-eco .left {
+    width: 38%;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+.s-eco h2 {
+    font-size: clamp(38px, 4vw, 64px);
+    color: var(--ivory);
+    font-weight: 500;
+    line-height: 1.04;
+    margin-bottom: 22px;
+}
+.s-eco h2 em { font-style: italic; color: var(--gold-soft); }
+.s-eco .signature-tag {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.s-eco .signature-tag::after {
+    content: "™";
+    font-size: 9px;
+    color: var(--gold);
+    transform: translateY(-6px);
+}
+.s-eco .stat-big {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(201,169,97,0.32);
+}
+.s-eco .stat-big .num {
+    font-family: var(--serif);
+    font-size: clamp(80px, 9vw, 144px);
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+}
+.s-eco .stat-big .lbl {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--cream);
+    line-height: 1.5;
+    font-weight: 300;
+    max-width: 200px;
+}
+.s-eco .desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(245,241,232,0.82);
+    font-weight: 300;
+    margin-bottom: 28px;
+}
+.s-eco .stages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.s-eco .stages .stage {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: rgba(245,241,232,0.82);
+    line-height: 1.55;
+    font-weight: 300;
+}
+.s-eco .stages .stage .n {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 18px;
+    line-height: 1;
+    min-width: 22px;
+}
+
+.s-eco .right {
+    width: 62%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+.s-eco .right img {
+    width: 100%;
+    height: auto;
+    max-height: 88%;
+    object-fit: contain;
+    filter: drop-shadow(0 24px 64px rgba(0,0,0,0.45));
+    border-radius: 20px;
+}
+
+/* ============ SLIDE 9 — PHARMA SCHOOL ============ */
+.s-pharma {
+    background: var(--ink);
+}
+.s-pharma .bg {
+    position: absolute; inset: 0;
+    background: url('assets/pharma-school.jpg') center/cover no-repeat;
+}
+.s-pharma .veil {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(180deg, transparent 35%, rgba(10,15,10,0.92) 100%);
+}
+.s-pharma .content {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    width: 100%;
+    padding: 0 80px 80px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 56px;
+    align-items: end;
+}
+.s-pharma h2 {
+    font-size: clamp(44px, 4.6vw, 80px);
+    color: var(--ivory);
+    font-weight: 500;
+    line-height: 1.0;
+    margin-bottom: 16px;
+}
+.s-pharma h2 em { font-style: italic; color: var(--gold-soft); }
+.s-pharma .quote {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold-soft);
+    font-size: 16px;
+    line-height: 1.5;
+    padding-top: 14px;
+    border-top: 1px solid rgba(201,169,97,0.4);
+    max-width: 360px;
+}
+.s-pharma .quote .author {
+    display: block;
+    margin-top: 8px;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245,241,232,0.55);
+}
+.s-pharma .info {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+}
+.s-pharma .info strong {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* ============ SLIDE 10 — INFRASTRUCTURE INSIDE ============ */
+.s-infrastructure {
+    background:
+        radial-gradient(ellipse at 15% 0%, rgba(74,110,74,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 100%, rgba(201,169,97,0.06) 0%, transparent 55%),
+        var(--cream);
+    color: var(--forest);
+    padding: 78px 80px 60px;
+    flex-direction: column;
+}
+.s-infrastructure .head {
+    margin-bottom: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 60px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid rgba(20,40,20,0.12);
+}
+.s-infrastructure .head .left { max-width: 720px; }
+.s-infrastructure .head .eyebrow { color: var(--sage); margin-bottom: 22px; }
+.s-infrastructure .head .eyebrow::before { background: var(--sage); }
+.s-infrastructure h2 {
+    font-size: clamp(40px, 4.4vw, 68px);
+    color: var(--forest-deep);
+    font-weight: 500;
+}
+.s-infrastructure h2 em { font-style: italic; color: var(--sage); }
+.s-infrastructure .head .right {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(20,40,20,0.65);
+    max-width: 320px;
+    font-weight: 300;
+    text-align: right;
+}
+.s-infrastructure .head .right .total {
+    display: block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--sage);
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+}
+
+.infra-categories {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    min-height: 0;
+}
+.cat-col {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,254,249,0.62);
+    border: 1px solid rgba(20,40,20,0.09);
+    border-radius: 22px;
+    padding: 28px 26px 24px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow:
+        0 1px 1px rgba(255,255,255,0.6) inset,
+        0 16px 36px -24px rgba(20,40,20,0.18);
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+.cat-col:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 1px 1px rgba(255,255,255,0.7) inset,
+        0 28px 56px -28px rgba(20,40,20,0.28);
+}
+.cat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sage);
+    padding: 7px 14px;
+    background: rgba(74,110,74,0.08);
+    border: 1px solid rgba(74,110,74,0.18);
+    border-radius: 100px;
+    margin-bottom: 18px;
+}
+.cat-pill::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(201,169,97,0.18);
+}
+.cat-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+}
+.cat-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 4px;
+    align-items: end;
+    padding: 14px 0 18px;
+    border-bottom: 1px solid rgba(20,40,20,0.08);
+}
+.cat-item:last-child { border-bottom: none; padding-bottom: 4px; }
+.cat-item .cat-num {
+    font-family: var(--serif);
+    font-size: clamp(40px, 3vw, 56px);
+    font-weight: 700;
+    color: var(--forest-deep);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    grid-row: 1;
+    grid-column: 2;
+    text-align: right;
+    transition: color 0.4s ease;
+}
+.cat-col:hover .cat-item .cat-num { color: var(--sage); }
+.cat-item .cat-num .plus,
+.cat-item .cat-num .unit {
+    color: var(--gold);
+    font-style: italic;
+    font-size: 0.7em;
+    margin-left: 1px;
+}
+.cat-item .cat-lbl {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(20,40,20,0.62);
+    line-height: 1.4;
+    grid-row: 2;
+    grid-column: 1 / -1;
+    font-weight: 500;
+}
+.cat-item .cat-icon {
+    grid-row: 1;
+    grid-column: 1;
+    color: var(--sage);
+    width: 22px;
+    height: 22px;
+    align-self: end;
+    margin-bottom: 4px;
+    opacity: 0.72;
+}
+.cat-item .cat-icon svg {
+    width: 100%; height: 100%;
+    stroke: currentColor; fill: none; stroke-width: 1.4;
+    stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ============ SLIDE 11 — 5KM RADIUS ============ */
+.s-radius {
+    background: var(--ink);
+    padding: 80px;
+    flex-direction: column;
+}
+.s-radius .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+}
+.s-radius h2 {
+    font-size: clamp(36px, 4.2vw, 64px);
+    color: var(--cream);
+    font-weight: 500;
+}
+.s-radius h2 em { font-style: italic; color: var(--gold-soft); }
+.s-radius .head .right {
+    text-align: right;
+    font-family: var(--sans);
+    font-size: 12px;
+    color: rgba(245,241,232,0.65);
+    line-height: 1.6;
+    font-weight: 300;
+}
+.s-radius .head .right .big-r {
+    font-family: var(--serif);
+    font-size: 56px;
+    color: var(--gold);
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.radius-cols {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 60px;
+    align-content: start;
+}
+.r-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--sans);
+    font-weight: 300;
+}
+.r-row .name {
+    font-size: 14px;
+    color: rgba(245,241,232,0.88);
+}
+.r-row .count {
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* ============ SLIDE 12 — APARTMENT MIX ============ */
+.s-mix {
+    background: var(--ink);
+    padding: 0;
+}
+.s-mix .left {
+    width: 50%;
+    padding: 90px 60px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.s-mix h2 {
+    font-size: clamp(40px, 4.6vw, 72px);
+    color: var(--cream);
+    font-weight: 500;
+    margin-bottom: 24px;
+    line-height: 1.04;
+}
+.s-mix h2 em { font-style: italic; color: var(--gold-soft); }
+.s-mix .desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245,241,232,0.7);
+    font-weight: 300;
+    margin-bottom: 38px;
+    max-width: 460px;
+}
+.mix-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.mix-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.mix-bar .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--cream);
+    font-weight: 300;
+}
+.mix-bar .top .pct {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--gold);
+    font-weight: 600;
+    font-style: italic;
+}
+.mix-bar .bar {
+    width: 100%;
+    height: 3px;
+    background: rgba(201,169,97,0.12);
+    overflow: hidden;
+    position: relative;
+}
+.mix-bar .bar .fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 100%);
+}
+.s-mix .right {
+    width: 50%;
+    background-image:
+        linear-gradient(180deg, transparent 60%, rgba(10,15,10,0.6) 100%),
+        url('assets/render-extra-6.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0 0 0 0;
+}
+.s-mix .right .float-stat {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    color: var(--ivory);
+    max-width: 320px;
+}
+.s-mix .right .float-stat .lbl {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+}
+.s-mix .right .float-stat .num {
+    font-family: var(--serif);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 0.95;
+}
+.s-mix .right .float-stat .des {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 8px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* ============ SLIDE 13-15 — FLOOR PLANS ============ */
+.s-plan {
+    background: var(--cream);
+    color: var(--forest);
+    padding: 80px;
+    flex-direction: column;
+}
+.s-plan .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(20,40,20,0.15);
+}
+.s-plan .head .eyebrow { color: var(--sage); }
+.s-plan .head .eyebrow::before { background: var(--sage); }
+.s-plan h2 {
+    font-size: clamp(36px, 4.2vw, 64px);
+    color: var(--forest-deep);
+    font-weight: 500;
+    line-height: 1.0;
+}
+.s-plan h2 em { font-style: italic; color: var(--sage); }
+.s-plan .head .right {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--sage);
+    font-size: 22px;
+}
+.s-plan .body {
+    flex: 1;
+    display: grid;
+    gap: 32px;
+    min-height: 0;
+}
+.s-plan .body.two-up { grid-template-columns: 1.1fr 1fr; }
+.s-plan .body.three-up { grid-template-columns: 1fr 1fr 1fr; }
+.plan-card {
+    background: var(--ivory);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(20,40,20,0.1);
+    overflow: hidden;
+    min-height: 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px -12px rgba(20,40,20,0.14);
+}
+.plan-card .plan-image {
+    flex: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--ivory);
+    min-height: 0;
+}
+.plan-card .plan-info {
+    padding: 22px 26px;
+    border-top: 1px solid rgba(20,40,20,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.plan-card .plan-info .name {
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--forest-deep);
+    font-weight: 600;
+}
+.plan-card .plan-info .name em { font-style: italic; color: var(--sage); }
+.plan-card .plan-info .area {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--sage);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+
+/* ============ SLIDE 16 — PHASING ============ */
+.s-phasing {
+    background: var(--ink);
+    padding: 80px;
+    flex-direction: column;
+}
+.s-phasing .head {
+    margin-bottom: 28px;
+}
+.s-phasing h2 {
+    font-size: clamp(40px, 4.6vw, 72px);
+    color: var(--cream);
+    font-weight: 500;
+    line-height: 1.04;
+}
+.s-phasing h2 em { font-style: italic; color: var(--gold-soft); }
+.s-phasing .desc {
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(245,241,232,0.72);
+    line-height: 1.7;
+    max-width: 720px;
+    font-weight: 300;
+}
+.phases-timeline {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    gap: 8px;
+    margin-bottom: 36px;
+}
+.ph {
+    height: 6px;
+    background: rgba(201,169,97,0.18);
+    position: relative;
+}
+.ph.active { background: var(--gold); }
+.ph .lab {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: rgba(245,241,232,0.5);
+    text-transform: uppercase;
+}
+.ph.active .lab { color: var(--gold); }
+
+.phase1-card {
+    margin-top: 28px;
+    border: 1px solid var(--line);
+    padding: 28px 36px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    gap: 28px;
+    align-items: end;
+    border-radius: 18px;
+}
+.phase1-card .title-cell {
+    border-right: 1px solid var(--line);
+    padding-right: 24px;
+}
+.phase1-card .title-cell .eyebrow {
+    margin-bottom: 12px;
+}
+.phase1-card .title-cell h3 {
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--cream);
+    font-weight: 600;
+    line-height: 1.1;
+}
+.phase1-card .title-cell h3 em { font-style: italic; color: var(--gold-soft); }
+.phase1-card .title-cell p {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: rgba(245,241,232,0.65);
+    margin-top: 10px;
+    line-height: 1.55;
+    font-weight: 300;
+}
+.phase1-card .ph-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.phase1-card .ph-stat .n {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+}
+.phase1-card .ph-stat .t {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(245,241,232,0.65);
+}
+.next-phases {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+}
+.next-phases .col {
+    padding: 0 28px;
+    border-right: 1px solid var(--line);
+}
+.next-phases .col:last-child { border-right: none; }
+.next-phases .col:first-child { padding-left: 0; }
+.next-phases .col .lab {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+.next-phases .col .blocks {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--cream);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+.next-phases .col .blocks em { font-style: italic; color: var(--gold-soft); }
+.next-phases .col .note {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: rgba(245,241,232,0.6);
+    line-height: 1.55;
+    font-weight: 300;
+}
+
+/* ============ SLIDE 17 — SUSTAINABILITY ============ */
+.s-sustain {
+    background: linear-gradient(140deg, var(--forest-deep) 0%, var(--forest) 60%, #2a4a2a 100%);
+    padding: 0;
+}
+.s-sustain .left {
+    width: 50%;
+    background: url('assets/render-extra-3.jpg') center/cover no-repeat;
+    position: relative;
+}
+.s-sustain .left::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 0%, rgba(20,40,20,0.45) 100%);
+}
+.s-sustain .right {
+    width: 50%;
+    padding: 90px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.s-sustain h2 {
+    font-size: clamp(40px, 4.6vw, 72px);
+    color: var(--ivory);
+    font-weight: 500;
+    line-height: 1.04;
+    margin-bottom: 32px;
+}
+.s-sustain h2 em { font-style: italic; color: var(--gold-soft); }
+.s-sustain .desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(245,241,232,0.8);
+    font-weight: 300;
+    margin-bottom: 36px;
+    max-width: 540px;
+}
+.commit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 36px;
+}
+.commit-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-top: 18px;
+    border-top: 1px solid rgba(201,169,97,0.22);
+}
+.commit-row .num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 22px;
+    line-height: 1;
+    min-width: 36px;
+}
+.commit-row .text {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: rgba(245,241,232,0.88);
+    line-height: 1.65;
+    font-weight: 300;
+}
+.commit-row .text strong {
+    display: block;
+    color: var(--cream);
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-family: var(--serif);
+    font-style: normal;
+    font-size: 18px;
+}
+.patent-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    align-self: flex-start;
+    border-radius: 2px;
+}
+.patent-badge::before {
+    content: "◆";
+    font-size: 8px;
+}
+
+/* ============ SLIDE 18 — CLOSING ============ */
+.s-close {
+    background: var(--ink);
+    align-items: center;
+    justify-content: center;
+}
+.s-close .bg {
+    position: absolute; inset: 0;
+    background: url('assets/render-extra-12.jpg') center/cover no-repeat;
+    opacity: 0.25;
+    filter: blur(1px);
+}
+.s-close::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, var(--ink) 75%);
+}
+.s-close .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 60px;
+    max-width: 900px;
+}
+.s-close .logo-mark {
+    width: clamp(280px, 30vw, 480px);
+    height: auto;
+    margin-bottom: 52px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.s-close .logo-mark img {
+    width: 100%;
+    height: auto;
+    filter:
+        drop-shadow(0 4px 24px rgba(0,0,0,0.55))
+        drop-shadow(0 0 60px rgba(201,169,97,0.18));
+}
+.s-close .eyebrow {
+    display: none;
+}
+.s-close h2 {
+    font-size: clamp(44px, 5.2vw, 88px);
+    color: var(--ivory);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+}
+.s-close h2 em { font-style: italic; color: var(--gold-soft); }
+.s-close .tag {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: rgba(245,241,232,0.7);
+    font-weight: 300;
+    margin-bottom: 48px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+.s-close .footer {
+    padding-top: 32px;
+    border-top: 1px solid rgba(201,169,97,0.3);
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(245,241,232,0.55);
+}
+.s-close .footer span { color: var(--gold); }
+
+/* ============ ANIMATIONS ============ */
+.slide .content > *,
+.slide .head > *,
+.slide .key-points li,
+.slide .stages .stage,
+.slide .commit-row,
+.slide .stat-cell,
+.slide .infra-cell,
+.slide .cat-col,
+.slide .arch-grid > div,
+.slide .r-row,
+.slide .mix-bar,
+.slide .plan-card,
+.slide .phase1-card .ph-stat {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.85s cubic-bezier(.16,.84,.44,1), transform 0.85s cubic-bezier(.16,.84,.44,1);
+}
+.slide.in-view .content > *,
+.slide.in-view .head > *,
+.slide.in-view .key-points li,
+.slide.in-view .stages .stage,
+.slide.in-view .commit-row,
+.slide.in-view .stat-cell,
+.slide.in-view .infra-cell,
+.slide.in-view .cat-col,
+.slide.in-view .arch-grid > div,
+.slide.in-view .r-row,
+.slide.in-view .mix-bar,
+.slide.in-view .plan-card,
+.slide.in-view .phase1-card .ph-stat {
+    opacity: 1;
+    transform: translateY(0);
+}
+.slide.in-view .bg { animation: kenburns 16s ease-out forwards; }
+@keyframes kenburns {
+    from { transform: scale(1.06); }
+    to   { transform: scale(1.0); }
+}
+.mix-bar .bar .fill {
+    width: 0;
+    transition: width 1.4s 0.3s cubic-bezier(.16,.84,.44,1);
+}
+.slide.in-view .mix-bar .bar .fill { width: var(--w); }
+
+/* Stagger */
+.slide.in-view .stat-cell:nth-child(1) { transition-delay: 0.05s; }
+.slide.in-view .stat-cell:nth-child(2) { transition-delay: 0.15s; }
+.slide.in-view .stat-cell:nth-child(3) { transition-delay: 0.25s; }
+.slide.in-view .stat-cell:nth-child(4) { transition-delay: 0.35s; }
+.slide.in-view .stat-cell:nth-child(5) { transition-delay: 0.45s; }
+.slide.in-view .stat-cell:nth-child(6) { transition-delay: 0.55s; }
+.slide.in-view .stat-cell:nth-child(7) { transition-delay: 0.65s; }
+.slide.in-view .stat-cell:nth-child(8) { transition-delay: 0.75s; }
+.slide.in-view .key-points li:nth-child(1),
+.slide.in-view .stages .stage:nth-child(1),
+.slide.in-view .commit-row:nth-child(1) { transition-delay: 0.1s; }
+.slide.in-view .key-points li:nth-child(2),
+.slide.in-view .stages .stage:nth-child(2),
+.slide.in-view .commit-row:nth-child(2) { transition-delay: 0.2s; }
+.slide.in-view .key-points li:nth-child(3),
+.slide.in-view .stages .stage:nth-child(3),
+.slide.in-view .commit-row:nth-child(3) { transition-delay: 0.3s; }
+.slide.in-view .key-points li:nth-child(4),
+.slide.in-view .stages .stage:nth-child(4),
+.slide.in-view .commit-row:nth-child(4) { transition-delay: 0.4s; }
+.slide.in-view .key-points li:nth-child(5),
+.slide.in-view .stages .stage:nth-child(5) { transition-delay: 0.5s; }
+.slide.in-view .infra-cell { transition-delay: calc(var(--i, 0) * 60ms); }
+.slide.in-view .cat-col:nth-child(1) { transition-delay: 0.08s; }
+.slide.in-view .cat-col:nth-child(2) { transition-delay: 0.18s; }
+.slide.in-view .cat-col:nth-child(3) { transition-delay: 0.28s; }
+.slide.in-view .cat-col:nth-child(4) { transition-delay: 0.38s; }
+.slide.in-view .arch-grid > div { transition-delay: calc(var(--i, 0) * 80ms); }
+.slide.in-view .r-row { transition-delay: calc(var(--i, 0) * 30ms); }
+
+/* Scrollbar */
+main::-webkit-scrollbar { width: 0; }
+
+/* Hint */
+.scroll-hint {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: opacity 0.5s;
+}
+.scroll-hint::after {
+    content: "";
+    width: 22px;
+    height: 1px;
+    background: var(--gold);
+    animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(4px); }
+}
+.scroll-hint.hide { opacity: 0; pointer-events: none; }
+
+@media (max-width: 1100px) {
+    .stats-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); }
+    .stat-cell.span2, .stat-cell.span3 { grid-column: span 1; }
+    .infra-categories { grid-template-columns: repeat(2, 1fr); }
+    .arch-grid { grid-template-columns: 1fr 1fr; }
+    .arch-grid .a1 { grid-row: span 1; }
+    .radius-cols { grid-template-columns: 1fr 1fr; }
+    .phases-timeline { grid-template-columns: repeat(7, 1fr); }
+    .phase1-card { grid-template-columns: 1fr 1fr; }
+    .s-eco { flex-direction: column; padding: 60px; }
+    .s-eco .left, .s-eco .right { width: 100%; padding: 0; }
+    .s-sustain { flex-direction: column; }
+    .s-sustain .left, .s-sustain .right { width: 100%; }
+    .s-sustain .left { height: 30vh; }
+}
+</style>
+</head>
+<body>
+
+<a href="#cover" class="brand-mark">
+    <img src="logo_white.png" alt="Bio Pharma Residence">
+</a>
+
+<nav class="nav-dots" id="navDots"></nav>
+<div class="scroll-hint" id="scrollHint">Scroll yoki ↓ tugmasi</div>
+
+<main id="deck">
+
+<!-- ===== SLIDE 1 — COVER ===== -->
+<section class="slide s-cover" id="cover" data-title="Bosh sahifa">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="top-tag">By <span>Imarat Development</span> · Toshkent, O'zbekiston</div>
+    <div class="content">
+        <h1>Bio Pharma<br><em>Residence.</em></h1>
+        <div class="sub">12&nbsp;gektar maydonda barpo etilayotgan zamonaviy ekomahalla — 6&nbsp;500 dan ortiq oila uchun yaratilgan butun bir shahar.</div>
+        <div class="meta-row">
+            <div><span class="k">Hudud</span><span class="v">12 gektar</span></div>
+            <div><span class="k">Qurilish maydoni</span><span class="v">469 000 m²</span></div>
+            <div><span class="k">Bloklar</span><span class="v">14 ta · 14 bosqich</span></div>
+            <div><span class="k">Aholi sig'imi</span><span class="v">22 372 kishi</span></div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>01</strong> / 18  ·  Bio Pharma Residence</div>
+</section>
+
+<!-- ===== SLIDE 2 — PHILOSOPHY ===== -->
+<section class="slide s-philosophy" data-title="Falsafa">
+    <div class="content">
+        <div class="eyebrow">Falsafa</div>
+        <h2>Uy — bu shunchaki devorlar emas. <em>Bu — havo, suv, daraxt, qo'shni va kelajak.</em> Biz tabiat va texnologiyani bir hovuchda jamladik.</h2>
+        <div class="signature">Imarat Development</div>
+    </div>
+    <div class="slide-num"><strong>02</strong> / 18  ·  Falsafa</div>
+</section>
+
+<!-- ===== SLIDE 3 — AT A GLANCE ===== -->
+<section class="slide s-stats" data-title="Loyiha hajmi">
+    <div class="head">
+        <h2>Bir qarashda — <em>raqamlarda.</em></h2>
+        <div class="right">Bio Pharma Residence — bu O'zbekistondagi eng yirik integratsiyalashgan turar joy majmualaridan biri. Aholi soni, infratuzilma va texnologik yechimlar bo'yicha katta miqyosli loyiha.</div>
+    </div>
+    <div class="stats-grid">
+        <div class="stat-cell">
+            <div><div class="label">Yer maydoni</div><div class="num">12<span class="unit">ga</span></div></div>
+            <div class="desc">Yagona master-rejada</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Qurilish maydoni</div><div class="num">469k<span class="unit">m²</span></div></div>
+            <div class="desc">Umumiy qurilish maydoni</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Yashash maydoni</div><div class="num">440k<span class="unit">m²</span></div></div>
+            <div class="desc">Sof turar joy maydoni</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Bloklar</div><div class="num">14</div></div>
+            <div class="desc">A–N · 16 qavatli minoralar</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Podobloklar</div><div class="num">63</div></div>
+            <div class="desc">Yagona arxitektura uslubida</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Xonadonlar</div><div class="num">6 500<span class="unit">+</span></div></div>
+            <div class="desc">Studio'dan 4-xonalilargacha</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Aholi soni</div><div class="num">22 372</div></div>
+            <div class="desc">Loyiha to'liq yakunlangach</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Yotoqxona o'rni</div><div class="num">1 550<span class="unit">+</span></div></div>
+            <div class="desc">Talabalar uchun</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Pharma School</div><div class="num">640</div></div>
+            <div class="desc">O'rinli · 4 qavatli</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Kafe va restoran</div><div class="num">33</div></div>
+            <div class="desc">Markaziy bulvar bo'ylab</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Korzinka supermarket</div><div class="num">2</div></div>
+            <div class="desc">Integratsiyalashgan</div>
+        </div>
+        <div class="stat-cell">
+            <div><div class="label">Eco Greywater tejovi</div><div class="num">35<span class="unit">%</span></div></div>
+            <div class="desc">Suvni tejovchi aqlli tizim</div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>03</strong> / 18  ·  Bir qarashda</div>
+</section>
+
+<!-- ===== SLIDE 4 — MASTER PLAN ===== -->
+<section class="slide s-masterplan" data-title="Bosh reja">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="content">
+        <div class="eyebrow">Bosh reja</div>
+        <h2>O'n ikki gektarda <em>yangi shahar.</em></h2>
+        <div class="description">Ko'p funksiyali, piyodalarga qulay master-reja: yashil hovlilar, suv kanali, savdo bulvarlari va xususiy infratuzilma — barchasi bir butun ekotizimda birlashtirilgan.</div>
+        <ul class="key-points">
+            <li><strong>A–N</strong> 14 ta blok — 16 qavatli zamonaviy turar joy minoralari</li>
+            <li><strong>63</strong> ta podobloklar — yagona arxitektura uslubida</li>
+            <li><strong>13 628 m²</strong> savdo va xizmat ko'rsatish maydoni</li>
+            <li><strong>2</strong> ta integratsiyalashgan "Korzinka" supermarketi</li>
+            <li><strong>33</strong> ta kafe, restoran va ovqatlanish nuqtasi</li>
+        </ul>
+    </div>
+    <div class="slide-num"><strong>04</strong> / 18  ·  Bosh reja</div>
+</section>
+
+<!-- ===== SLIDE 5 — ARCHITECTURE ===== -->
+<section class="slide s-architecture" data-title="Arxitektura">
+    <div class="head">
+        <div>
+            <div class="eyebrow">Arxitektura</div>
+            <h2>Yashil fasadlar, <em>insoniy miqyos.</em></h2>
+        </div>
+        <div class="right">Loyihaning vizual tili — yashil va oq tonlardagi sof fasadlar, panoramli balkonlar va yorug'likka ochilgan hovlilar. Har bir blok katta ko'ngilochar maydonni o'rab oladi.</div>
+    </div>
+    <div class="arch-grid">
+        <div class="a1" style="--i:0"><div class="label">Bahor · Bosh hovli</div></div>
+        <div class="a2" style="--i:1"><div class="label">Markaziy bulvar</div></div>
+        <div class="a3" style="--i:2"><div class="label">Sport hovli</div></div>
+        <div class="a4" style="--i:3"><div class="label">Yaqin ko'rinish</div></div>
+        <div class="a5" style="--i:4"><div class="label">Quyosh botishi</div></div>
+    </div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">05</strong> / 18  ·  Arxitektura</div>
+</section>
+
+<!-- ===== SLIDE 6 — COURTYARD ===== -->
+<section class="slide s-courtyard" data-title="Hovlilar">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="content">
+        <div class="eyebrow">Hovlilar</div>
+        <h2>Hovlilar — <em>yashash uchun,</em><br>mashinalar uchun emas.</h2>
+        <div class="desc">Avtomobillar yer ostiga olinadi; tepada faqat daraxtlar, suv havzalari, bolalar maydonchalari va piyodalar uchun yo'lkalar qoladi. Bu O'rta Osiyo bog'lari falsafasiga zamonaviy nigoh.</div>
+        <div class="feat-list">
+            <div class="item"><span class="n">100%</span><span class="t">Piyodaga yo'naltirilgan hovlilar</span></div>
+            <div class="item"><span class="n">2</span><span class="t">Yer osti · yer usti avtoturargohi</span></div>
+            <div class="item"><span class="n">∞</span><span class="t">Ko'kalamzor — har blokda</span></div>
+            <div class="item"><span class="n">24/7</span><span class="t">Xavfsizlik va monitoring</span></div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>06</strong> / 18  ·  Hovlilar</div>
+</section>
+
+<!-- ===== SLIDE 7 — BOULEVARD ===== -->
+<section class="slide s-boulevard" data-title="Bulvar">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="content">
+        <div class="title-wrap">
+            <h2>Markaziy bulvar — <em>shahar ichidagi shahar.</em></h2>
+        </div>
+        <div class="desc"><strong>Korzinka</strong>2 ta supermarket — kunlik ehtiyojlar uchun</div>
+        <div class="desc"><strong>33 nuqta</strong>Kafe, restoran, fastfud va shirinliklar</div>
+        <div class="desc"><strong>8 dorixona</strong>5 km radius ichida tibbiy taminot</div>
+    </div>
+    <div class="slide-num"><strong>07</strong> / 18  ·  Bulvar</div>
+</section>
+
+<!-- ===== SLIDE 8 — ECO GREYWATER ===== -->
+<section class="slide s-eco" data-title="Eco Greywater System">
+    <div class="left">
+        <div class="signature-tag">Imarat Eco Greywater System</div>
+        <h2>Suvni <em>35%</em> tejaydigan aqlli drenaj.</h2>
+        <div class="stat-big">
+            <div class="num">35<span style="font-size:0.45em;color:var(--gold-soft);">%</span></div>
+            <div class="lbl">Yiliga har xonadon iste'mol qiladigan toza suvdan tejov</div>
+        </div>
+        <div class="desc">Imarat Development tomonidan ishlab chiqilgan zamonaviy yopiq sikl: maishiy suv qayta tozalanib, faqat sanitariya texnik ehtiyojlari uchun qaytariladi. Patentlash bosqichida.</div>
+        <div class="stages">
+            <div class="stage"><span class="n">01</span><span><strong style="color:var(--gold-soft); font-weight:500;">Yig'ish.</strong> Har bino atrofida drenaj va sug'orish qudug'i</span></div>
+            <div class="stage"><span class="n">02</span><span><strong style="color:var(--gold-soft); font-weight:500;">Tozalash.</strong> Lokal oqova suv tozalash inshooti (LOS)</span></div>
+            <div class="stage"><span class="n">03</span><span><strong style="color:var(--gold-soft); font-weight:500;">Filtrlash.</strong> Geotekstil va perforatsiya qatlamlari</span></div>
+            <div class="stage"><span class="n">04</span><span><strong style="color:var(--gold-soft); font-weight:500;">Saqlash.</strong> 2 000 m³ yer osti rezervuari</span></div>
+            <div class="stage"><span class="n">05</span><span><strong style="color:var(--gold-soft); font-weight:500;">Qaytarish.</strong> Faqat sanitariya tarmog'iga texnik suv</span></div>
+        </div>
+    </div>
+    <div class="right">
+        <img src="assets/eco-greywater.png" alt="Imarat Eco Greywater System diagrammasi">
+    </div>
+    <div class="slide-num"><strong>08</strong> / 18  ·  Eco Greywater System</div>
+</section>
+
+<!-- ===== SLIDE 9 — PHARMA SCHOOL ===== -->
+<section class="slide s-pharma" data-title="Pharma School">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="content">
+        <div>
+            <div class="eyebrow">Pharma School</div>
+            <h2>Ibn Sino merosi — <em>STEM ta'limida.</em></h2>
+        </div>
+        <div class="info">
+            <strong>Maktab</strong>
+            640 o'rinli, 4 qavatli zamonaviy bino. Kimyo, biologiya, IT va tibbiyot yo'nalishlariga ixtisoslashgan laboratoriyalar bilan jihozlangan.
+        </div>
+        <div class="quote">
+            "Tibbiyot — fanlarning eng asilidir."
+            <span class="author">Abu Ali Ibn Sino · 980–1037</span>
+        </div>
+    </div>
+    <div class="slide-num"><strong>09</strong> / 18  ·  Pharma School</div>
+</section>
+
+<!-- ===== SLIDE 10 — INTERNAL INFRASTRUCTURE ===== -->
+<section class="slide s-infrastructure" data-title="Ichki infratuzilma">
+    <div class="head">
+        <div class="left">
+            <div class="eyebrow">Ichki infratuzilma</div>
+            <h2>Hammasi <em>yagona darvoza ichida.</em></h2>
+        </div>
+        <div class="right">
+            <span class="total">12 ta</span>
+            obyekt — yashash, ta'lim, sport, savdo va ko'ngilochar.
+        </div>
+    </div>
+    <div class="infra-categories">
+        <!-- KUNDALIK -->
+        <div class="cat-col" style="--i:0">
+            <div class="cat-pill">Kundalik</div>
+            <div class="cat-items">
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M8 2v6a4 4 0 0 0 8 0V2M6 14h12v8H6z"/></svg></div>
+                    <div class="cat-num">33</div>
+                    <div class="cat-lbl">Kafe va restoran</div>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14"/><path d="M3 10h18M8 6V3h8v3"/></svg></div>
+                    <div class="cat-num">2</div>
+                    <div class="cat-lbl">Korzinka supermarketi</div>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></div>
+                    <div class="cat-num">∞</div>
+                    <div class="cat-lbl">Yer osti avtoturargoh</div>
+                </div>
+            </div>
+        </div>
+        <!-- TA'LIM -->
+        <div class="cat-col" style="--i:1">
+            <div class="cat-pill">Ta'lim</div>
+            <div class="cat-items">
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v11h14V10M9 21v-6h6v6"/></svg></div>
+                    <div class="cat-num">1<span class="plus">+</span></div>
+                    <div class="cat-lbl">Pharma School · 640 o'rin</div>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+                    <div class="cat-num">1<span class="plus">+</span></div>
+                    <div class="cat-lbl">Bog'cha</div>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V8a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v13M10 21v-6h4v6"/></svg></div>
+                    <div class="cat-num">1 550<span class="plus">+</span></div>
+                    <div class="cat-lbl">Yotoqxona o'rni</div>
+                </div>
+            </div>
+        </div>
+        <!-- SOG'LIK -->
+        <div class="cat-col" style="--i:2">
+            <div class="cat-pill">Sog'lik &amp; Sport</div>
+            <div class="cat-items">
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M4 20V8h16v12M9 20v-6h6v6M6 8V4h12v4"/></svg></div>
+                    <div class="cat-num">2</div>
+                    <div class="cat-lbl">Sport va fitnes zali</div>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21v-3a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3"/></svg></div>
+                    <div class="cat-num">5</div>
+                    <div class="cat-lbl">Go'zallik salonlari</div>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M3 18s2-9 9-9 9 9 9 9M3 18h18M6 12V4h12v8"/></svg></div>
+                    <div class="cat-num">5<span class="plus">+</span></div>
+                    <div class="cat-lbl">Ko'ngilochar maskan</div>
+                </div>
+            </div>
+        </div>
+        <!-- INFRATUZILMA -->
+        <div class="cat-col" style="--i:3">
+            <div class="cat-pill">Infratuzilma</div>
+            <div class="cat-items">
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
+                    <div class="cat-num">14</div>
+                    <div class="cat-lbl">Turar bloklari</div>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M12 2L4 7v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V7l-8-5z"/></svg></div>
+                    <div class="cat-num">24/7</div>
+                    <div class="cat-lbl">Xavfsizlik va monitoring</div>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div>
+                    <div class="cat-num">35<span class="unit">%</span></div>
+                    <div class="cat-lbl">Eco Greywater suv tejovi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">10</strong> / 18  ·  Ichki infratuzilma</div>
+</section>
+
+<!-- ===== SLIDE 11 — 5KM RADIUS ===== -->
+<section class="slide s-radius" data-title="5 km radius">
+    <div class="head">
+        <div>
+            <div class="eyebrow">5 km radius</div>
+            <h2>Atrofingizda <em>butun shahar.</em></h2>
+        </div>
+        <div class="right">
+            <span class="big-r">5 km</span>
+            Loyihadan yarim soatlik piyoda yoki 10 daqiqalik haydash masofasidagi mavjud infratuzilma.
+        </div>
+    </div>
+    <div class="radius-cols">
+        <div>
+            <div class="r-row" style="--i:0"><span class="name">Maktablar</span><span class="count">15+</span></div>
+            <div class="r-row" style="--i:1"><span class="name">Bog'chalar</span><span class="count">13</span></div>
+            <div class="r-row" style="--i:2"><span class="name">Universitet va institutlar</span><span class="count">3</span></div>
+            <div class="r-row" style="--i:3"><span class="name">Kasalxona va klinikalar</span><span class="count">7</span></div>
+            <div class="r-row" style="--i:4"><span class="name">Dorixonalar</span><span class="count">8</span></div>
+            <div class="r-row" style="--i:5"><span class="name">Banklar</span><span class="count">5</span></div>
+        </div>
+        <div>
+            <div class="r-row" style="--i:0"><span class="name">Metro bekatlari</span><span class="count">4</span></div>
+            <div class="r-row" style="--i:1"><span class="name">Avtobus bekatlari</span><span class="count">18</span></div>
+            <div class="r-row" style="--i:2"><span class="name">Temir yo'l bekati</span><span class="count">1</span></div>
+            <div class="r-row" style="--i:3"><span class="name">Korzinka supermarket</span><span class="count">2</span></div>
+            <div class="r-row" style="--i:4"><span class="name">Bozorlar</span><span class="count">2</span></div>
+            <div class="r-row" style="--i:5"><span class="name">Kafe va restoran</span><span class="count">33</span></div>
+        </div>
+        <div>
+            <div class="r-row" style="--i:0"><span class="name">Dam olish va ko'ngilochar maskan</span><span class="count">5</span></div>
+            <div class="r-row" style="--i:1"><span class="name">Sport va fitnes zali</span><span class="count">2</span></div>
+            <div class="r-row" style="--i:2"><span class="name">Park va dam olish maydoni</span><span class="count">4</span></div>
+            <div class="r-row" style="--i:3"><span class="name">Masjidlar</span><span class="count">5</span></div>
+            <div class="r-row" style="--i:4"><span class="name">Militsiya punkti</span><span class="count">2</span></div>
+            <div class="r-row" style="--i:5"><span class="name">Yaqin orada · yana qo'shiluvchi</span><span class="count">∞</span></div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>11</strong> / 18  ·  5 km radius</div>
+</section>
+
+<!-- ===== SLIDE 12 — APARTMENT MIX ===== -->
+<section class="slide s-mix" data-title="Xonadon turlari">
+    <div class="left">
+        <div class="eyebrow">Xonadon turlari</div>
+        <h2>Har bir hayot tarzi uchun — <em>o'lcham bo'yicha.</em></h2>
+        <div class="desc">6 500+ xonadon turli yashash modellariga moslashtirilgan: yakka talabadan tortib katta oilagacha. To'rt asosiy tipologiya bo'yicha taqsimlangan.</div>
+        <div class="mix-bars">
+            <div class="mix-bar">
+                <div class="top"><span>2-xonali</span><span class="pct">35<small style="font-size:0.5em;color:var(--gold-soft);">%</small></span></div>
+                <div class="bar"><div class="fill" style="--w:88%"></div></div>
+            </div>
+            <div class="mix-bar">
+                <div class="top"><span>1-xonali · studio</span><span class="pct">30<small style="font-size:0.5em;color:var(--gold-soft);">%</small></span></div>
+                <div class="bar"><div class="fill" style="--w:75%"></div></div>
+            </div>
+            <div class="mix-bar">
+                <div class="top"><span>3-xonali</span><span class="pct">25<small style="font-size:0.5em;color:var(--gold-soft);">%</small></span></div>
+                <div class="bar"><div class="fill" style="--w:62%"></div></div>
+            </div>
+            <div class="mix-bar">
+                <div class="top"><span>4-xonali · oilaviy</span><span class="pct">10<small style="font-size:0.5em;color:var(--gold-soft);">%</small></span></div>
+                <div class="bar"><div class="fill" style="--w:25%"></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="float-stat">
+            <div class="lbl">1-bosqich</div>
+            <div class="num">1 072</div>
+            <div class="des">xonadon · A1–A5 bloklari · 43 268 m² yashash maydoni</div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>12</strong> / 18  ·  Xonadon turlari</div>
+</section>
+
+<!-- ===== SLIDE 13 — STUDIO PLANS ===== -->
+<section class="slide s-plan" data-title="Studio rejasi">
+    <div class="head">
+        <div>
+            <div class="eyebrow">Studio · Kompakt</div>
+            <h2>Yakka yashash uchun — <em>aql bilan loyihalangan.</em></h2>
+        </div>
+        <div class="right">23 – 28,5 m²</div>
+    </div>
+    <div class="body three-up">
+        <div class="plan-card">
+            <div class="plan-image" style="background-image: url('assets/plan-studio-23.jpg');"></div>
+            <div class="plan-info">
+                <span class="name">Studio <em>A</em></span>
+                <span class="area">23,03 m²</span>
+            </div>
+        </div>
+        <div class="plan-card">
+            <div class="plan-image" style="background-image: url('assets/plan-studio-24.jpg');"></div>
+            <div class="plan-info">
+                <span class="name">Studio <em>B</em></span>
+                <span class="area">24,96 m²</span>
+            </div>
+        </div>
+        <div class="plan-card">
+            <div class="plan-image" style="background-image: url('assets/plan-1room-28.jpg');"></div>
+            <div class="plan-info">
+                <span class="name">1-xonali <em>kompakt</em></span>
+                <span class="area">28,50 m²</span>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">13</strong> / 18  ·  Studio rejalari</div>
+</section>
+
+<!-- ===== SLIDE 14 — 1-2 ROOM PLANS ===== -->
+<section class="slide s-plan" data-title="1-2 xonali">
+    <div class="head">
+        <div>
+            <div class="eyebrow">1-2 xonali</div>
+            <h2>Yosh oilalar uchun — <em>keng va yorug'.</em></h2>
+        </div>
+        <div class="right">38 – 58 m²</div>
+    </div>
+    <div class="body three-up">
+        <div class="plan-card">
+            <div class="plan-image" style="background-image: url('assets/plan-1room-38.jpg');"></div>
+            <div class="plan-info">
+                <span class="name">1-xonali</span>
+                <span class="area">38,80 m²</span>
+            </div>
+        </div>
+        <div class="plan-card">
+            <div class="plan-image" style="background-image: url('assets/plan-2room-52.jpg');"></div>
+            <div class="plan-info">
+                <span class="name">2-xonali <em>A</em></span>
+                <span class="area">52,70 m²</span>
+            </div>
+        </div>
+        <div class="plan-card">
+            <div class="plan-image" style="background-image: url('assets/plan-2room-58.jpg');"></div>
+            <div class="plan-info">
+                <span class="name">2-xonali <em>B</em></span>
+                <span class="area">58,30 m²</span>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">14</strong> / 18  ·  1-2 xonali</div>
+</section>
+
+<!-- ===== SLIDE 15 — 3-ROOM PLAN ===== -->
+<section class="slide s-plan" data-title="3 xonali">
+    <div class="head">
+        <div>
+            <div class="eyebrow">3-xonali · Oilaviy</div>
+            <h2>Katta oilalar uchun — <em>keng makon, ko'p yorug'lik.</em></h2>
+        </div>
+        <div class="right">68,63 m² + balkon</div>
+    </div>
+    <div class="body two-up">
+        <div class="plan-card">
+            <div class="plan-image" style="background-image: url('assets/plan-3room-68.jpg');"></div>
+            <div class="plan-info">
+                <span class="name">3-xonali <em>oilaviy</em></span>
+                <span class="area">68,63 m²</span>
+            </div>
+        </div>
+        <div class="plan-card">
+            <div class="plan-image" style="background-image: url('assets/interior-3room.jpg');"></div>
+            <div class="plan-info">
+                <span class="name">3D interyer</span>
+                <span class="area">Tepadan ko'rinish</span>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">15</strong> / 18  ·  3-xonali</div>
+</section>
+
+<!-- ===== SLIDE 16 — PHASING ===== -->
+<section class="slide s-phasing" data-title="Qurilish bosqichlari">
+    <div class="head">
+        <div class="eyebrow">Qurilish bosqichlari</div>
+        <h2>14 bosqich. <em>Bugundan boshlangan.</em></h2>
+        <div class="desc">Bio Pharma Residence o'n to'rt ketma-ket bosqichda qurib bitkaziladi. Birinchi bosqich allaqachon faol — A1–A5 bloklari 1 072 xonadon va 43 268 m² yashash maydonini taklif qiladi.</div>
+    </div>
+    <div class="phases-timeline">
+        <div class="ph active"><span class="lab">1</span></div>
+        <div class="ph"><span class="lab">2</span></div>
+        <div class="ph"><span class="lab">3</span></div>
+        <div class="ph"><span class="lab">4</span></div>
+        <div class="ph"><span class="lab">5</span></div>
+        <div class="ph"><span class="lab">6</span></div>
+        <div class="ph"><span class="lab">7</span></div>
+        <div class="ph"><span class="lab">8</span></div>
+        <div class="ph"><span class="lab">9</span></div>
+        <div class="ph"><span class="lab">10</span></div>
+        <div class="ph"><span class="lab">11</span></div>
+        <div class="ph"><span class="lab">12</span></div>
+        <div class="ph"><span class="lab">13</span></div>
+        <div class="ph"><span class="lab">14</span></div>
+    </div>
+    <div class="phase1-card">
+        <div class="title-cell">
+            <div class="eyebrow">1-bosqich · faol</div>
+            <h3>Bloklar <em>A1–A5</em></h3>
+            <p>Loyihaning birinchi katta bosqichi. Boshlangan qurilish — yaqin yillarda topshiriladi.</p>
+        </div>
+        <div class="ph-stat"><span class="n">1 072</span><span class="t">Xonadonlar</span></div>
+        <div class="ph-stat"><span class="n">528</span><span class="t">Studio</span></div>
+        <div class="ph-stat"><span class="n">304</span><span class="t">2-xonali</span></div>
+        <div class="ph-stat"><span class="n">43 268<span style="font-size:0.5em;color:var(--gold-soft); font-style:italic;"> m²</span></span><span class="t">Yashash maydoni</span></div>
+    </div>
+    <div class="next-phases">
+        <div class="col">
+            <div class="lab">Yaqin bosqichlar</div>
+            <div class="blocks">B · C · D · <em>E</em></div>
+            <div class="note">2-5 bosqichlar — markaziy bulvar va Pharma School zonasi.</div>
+        </div>
+        <div class="col">
+            <div class="lab">O'rta bosqichlar</div>
+            <div class="blocks">F · G · H · I · <em>J</em></div>
+            <div class="note">6-10 bosqichlar — yashil hovlilar, sport infratuzilmasi va sog'lomlashtirish.</div>
+        </div>
+        <div class="col">
+            <div class="lab">Yakuniy bosqichlar</div>
+            <div class="blocks">K · L · M · <em>N</em></div>
+            <div class="note">11-14 bosqichlar — 6 500+ xonadon va yagona master-rejaning yakuni.</div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>16</strong> / 18  ·  Bosqichlar</div>
+</section>
+
+<!-- ===== SLIDE 17 — SUSTAINABILITY ===== -->
+<section class="slide s-sustain" data-title="Davomiylik">
+    <div class="left"></div>
+    <div class="right">
+        <div class="eyebrow">Davomiylik · Innovatsiya</div>
+        <h2>Bugundan <em>kelajak avlod uchun.</em></h2>
+        <div class="desc">Bio Pharma Residence — bu nafaqat turar joy, balki davomli yashashning eksperimental maydoni. Resurs tejovi, sog'liq, jamoaviy makonlar va texnologiya bir-biriga to'qilgan.</div>
+        <div class="commit-list">
+            <div class="commit-row">
+                <span class="num">01</span>
+                <div class="text"><strong>Yopiq sikl suv tizimi</strong>Imarat Eco Greywater System — 35% gacha toza suv tejovi. Patentlash bosqichida.</div>
+            </div>
+            <div class="commit-row">
+                <span class="num">02</span>
+                <div class="text"><strong>Insoniy miqyos hovlilar</strong>Avtomobilsiz yashash maydoni. Daraxtlar, suv havzalari, piyoda yo'lakchalar.</div>
+            </div>
+            <div class="commit-row">
+                <span class="num">03</span>
+                <div class="text"><strong>Yagona darvozada hayot</strong>Maktab, bog'cha, sport, savdo va sog'lomlashtirish — barchasi 1 km doirasida.</div>
+            </div>
+            <div class="commit-row">
+                <span class="num">04</span>
+                <div class="text"><strong>Energiya samaradorligi</strong>Fasad qatlamlari, izolyatsiya, akilli yoritish — kommunal sarflarni kamaytirish.</div>
+            </div>
+        </div>
+        <div class="patent-badge">Patentlash tavsiya etilgan tizim</div>
+    </div>
+    <div class="slide-num"><strong>17</strong> / 18  ·  Davomiylik</div>
+</section>
+
+<!-- ===== SLIDE 18 — CLOSING ===== -->
+<section class="slide s-close" data-title="Yakuniy">
+    <div class="bg"></div>
+    <div class="content">
+        <div class="logo-mark"><img src="logo_white.png" alt="Bio Pharma Residence"></div>
+        <div class="eyebrow">Bio Pharma Residence</div>
+        <h2>Yashashning <em>yangi tilini</em> birga yozamiz.</h2>
+        <div class="tag">Bu prezentatsiya — boshlanish. Sayt, navbat va shartnoma bo'yicha biz bilan bog'laning.</div>
+        <div class="footer">
+            <span>by · <span>Imarat Development</span></span>
+            <span>Toshkent · O'zbekiston</span>
+            <span>Bio Pharma Residence · <span>2026</span></span>
+        </div>
+    </div>
+    <div class="slide-num" style="left: 50%; transform: translateX(-50%); bottom: 12px;"><strong>18</strong> / 18</div>
+</section>
+
+</main>
+
+<script>
+const deck = document.getElementById('deck');
+const slides = document.querySelectorAll('.slide');
+const navDots = document.getElementById('navDots');
+const scrollHint = document.getElementById('scrollHint');
+
+// Build nav dots
+slides.forEach((slide, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot';
+    dot.title = slide.dataset.title || `Slayd ${i + 1}`;
+    dot.addEventListener('click', () => {
+        slide.scrollIntoView({ behavior: 'smooth' });
+    });
+    navDots.appendChild(dot);
+});
+const dots = navDots.querySelectorAll('.nav-dot');
+
+// Intersection observer for active state + in-view animations
+function setBrandVisibility(idx) {
+    document.body.classList.toggle('brand-visible', idx === 0);
+}
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.intersectionRatio >= 0.5) {
+            const idx = Array.from(slides).indexOf(e.target);
+            dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+            slides.forEach((s, i) => s.classList.toggle('in-view', i === idx));
+            setBrandVisibility(idx);
+        }
+    });
+}, { root: deck, threshold: [0.0, 0.5, 1.0] });
+slides.forEach(s => io.observe(s));
+
+// First slide initial state
+slides[0].classList.add('in-view');
+dots[0].classList.add('active');
+setBrandVisibility(0);
+
+// Hide scroll hint after first scroll
+let scrolled = false;
+deck.addEventListener('scroll', () => {
+    if (!scrolled && deck.scrollTop > 30) {
+        scrollHint.classList.add('hide');
+        scrolled = true;
+    }
+});
+
+// Keyboard nav
+let cur = 0;
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+        e.preventDefault();
+        cur = Math.min(slides.length - 1, cur + 1);
+        slides[cur].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        cur = Math.max(0, cur - 1);
+        slides[cur].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'Home') {
+        cur = 0; slides[0].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'End') {
+        cur = slides.length - 1; slides[cur].scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+// Track current by scroll for keyboard sync
+deck.addEventListener('scroll', () => {
+    const top = deck.scrollTop;
+    cur = Math.round(top / window.innerHeight);
+});
+</script>
+
+</body>
+</html>
