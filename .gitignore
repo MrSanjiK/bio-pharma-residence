@@ -7,3 +7,5 @@ assets/rounded/
 optimize_images.py
 build_pptx.js
 round_corners.js
+
+.vercel
