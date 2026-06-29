@@ -784,6 +784,7 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     object-fit: contain;
     filter: drop-shadow(0 24px 64px rgba(0,0,0,0.45));
     border-radius: 20px;
+    clip-path: inset(0 round 20px);
 }
 
 /* ============ SLIDE 9 — PHARMA SCHOOL ============ */
@@ -1743,20 +1744,135 @@ main::-webkit-scrollbar { width: 0; }
 }
 .scroll-hint.hide { opacity: 0; pointer-events: none; }
 
+/* ===== RESPONSIVE: TABLET & SMALL DESKTOP (≤1200px) ===== */
+@media (max-width: 1200px) {
+    .slide { padding: 0; }
+    .s-cover .content,
+    .s-masterplan .content { padding: 0 60px 70px; }
+    .s-stats { padding: 70px 60px 60px; }
+    .s-architecture, .s-infrastructure, .s-radius,
+    .s-mix .left, .s-sustain .right,
+    .s-phasing { padding: 60px; }
+    .s-boulevard .content { padding: 0 60px 60px; }
+    .s-pharma .content { padding: 0 60px 60px; }
+    .s-courtyard .content { padding: 80px 60px 60px 48px; }
+    .s-plan { padding: 60px; }
+}
+
+/* ===== RESPONSIVE: TABLET (≤1100px) ===== */
 @media (max-width: 1100px) {
-    .stats-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); }
     .stat-cell.span2, .stat-cell.span3 { grid-column: span 1; }
     .infra-categories { grid-template-columns: repeat(2, 1fr); }
     .arch-grid { grid-template-columns: 1fr 1fr; }
     .arch-grid .a1 { grid-row: span 1; }
     .radius-cols { grid-template-columns: 1fr 1fr; }
     .phases-timeline { grid-template-columns: repeat(7, 1fr); }
-    .phase1-card { grid-template-columns: 1fr 1fr; }
-    .s-eco { flex-direction: column; padding: 60px; }
-    .s-eco .left, .s-eco .right { width: 100%; padding: 0; }
+    .phase1-card { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .s-eco { flex-direction: column; padding: 50px 60px; }
+    .s-eco .left { width: 100%; padding-right: 0; padding-bottom: 24px; }
+    .s-eco .right { width: 100%; padding-left: 0; max-height: 45vh; }
+    .s-eco .right img { max-height: 100%; }
     .s-sustain { flex-direction: column; }
     .s-sustain .left, .s-sustain .right { width: 100%; }
-    .s-sustain .left { height: 30vh; }
+    .s-sustain .left { height: 28vh; min-height: 180px; }
+    .s-sustain .right { padding: 40px 60px; }
+    .s-mix .left, .s-mix .right { width: 50%; }
+}
+
+/* ===== RESPONSIVE: MOBILE LANDSCAPE (≤900px landscape) ===== */
+@media (max-width: 900px) and (orientation: landscape) {
+    /* Base layout */
+    .s-cover .content,
+    .s-masterplan .content { padding: 0 40px 48px; }
+    .s-cover h1 { font-size: clamp(42px, 7vw, 80px); margin-bottom: 16px; }
+    .s-cover .sub { font-size: clamp(13px, 1.8vw, 16px); margin-bottom: 20px; }
+    .s-cover .meta-row { gap: 28px; padding-top: 18px; flex-wrap: wrap; }
+    .s-cover .meta-row .v { font-size: 18px; }
+
+    .s-stats { padding: 48px 40px 36px; }
+    .s-stats .head { margin-bottom: 28px; padding-bottom: 16px; }
+    .stats-grid { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); }
+
+    .s-philosophy .content { padding: 0 40px; }
+    .s-philosophy h2 { font-size: clamp(28px, 4.5vw, 54px); margin-bottom: 28px; }
+
+    .s-architecture { padding: 40px; }
+    .s-architecture .head { margin-bottom: 24px; }
+    .arch-grid { gap: 8px; }
+    .arch-grid > div { border-radius: 12px; }
+
+    .s-boulevard .content { padding: 0 40px 40px; gap: 24px; }
+    .s-boulevard h2 { font-size: clamp(28px, 4.5vw, 52px); }
+
+    .s-courtyard .content { padding: 60px 40px 40px 32px; width: 55%; }
+    .s-courtyard h2 { font-size: clamp(26px, 4vw, 48px); margin-bottom: 18px; }
+    .feat-list { grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+    .feat-list .item .n { font-size: 26px; }
+
+    .s-eco { flex-direction: row; padding: 40px; }
+    .s-eco .left { width: 42%; }
+    .s-eco .right { width: 58%; }
+    .s-eco h2 { font-size: clamp(24px, 3.5vw, 42px); margin-bottom: 12px; }
+    .s-eco .stat-big { margin-bottom: 14px; }
+    .s-eco .stat-big .num { font-size: clamp(48px, 7vw, 80px); }
+    .s-eco .stages { gap: 8px; }
+    .s-eco .stages .stage { font-size: 11px; }
+
+    .s-pharma .content { padding: 0 40px 40px; gap: 32px; }
+    .s-pharma h2 { font-size: clamp(26px, 4vw, 48px); }
+
+    .s-infrastructure { padding: 40px 40px 32px; }
+    .s-infrastructure .head { margin-bottom: 24px; padding-bottom: 16px; }
+    .s-infrastructure h2 { font-size: clamp(24px, 3.8vw, 44px); }
+    .infra-categories { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .cat-col { padding: 18px 16px 14px; border-radius: 14px; }
+    .cat-pill { font-size: 9px; padding: 5px 10px; margin-bottom: 10px; }
+    .cat-item { padding: 8px 0 10px; }
+    .cat-item .cat-num { font-size: clamp(26px, 3.5vw, 40px); }
+    .cat-item .cat-lbl { font-size: 9.5px; letter-spacing: 0.14em; }
+
+    .s-radius { padding: 40px; }
+    .s-radius .head { margin-bottom: 24px; padding-bottom: 14px; }
+    .s-radius h2 { font-size: clamp(24px, 3.8vw, 44px); }
+    .radius-cols { grid-template-columns: repeat(3, 1fr); gap: 0 24px; }
+
+    .s-mix .left { padding: 48px 32px 40px 40px; }
+    .s-mix h2 { font-size: clamp(26px, 4vw, 48px); margin-bottom: 16px; }
+    .s-mix .desc { font-size: 12px; margin-bottom: 20px; }
+
+    .s-plan { padding: 40px; }
+    .s-plan .head { margin-bottom: 20px; padding-bottom: 14px; }
+    .s-plan h2 { font-size: clamp(24px, 3.8vw, 44px); }
+    .s-plan .body { gap: 16px; }
+    .plan-card { border-radius: 14px; }
+    .plan-card .plan-info { padding: 14px 18px; }
+    .plan-card .plan-info .name { font-size: 18px; }
+
+    .s-phasing { padding: 40px; }
+    .s-phasing h2 { font-size: clamp(24px, 3.8vw, 44px); }
+    .phases-timeline { grid-template-columns: repeat(14, 1fr); margin-bottom: 20px; }
+    .phase1-card { margin-top: 14px; padding: 18px 22px; grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr; gap: 14px; border-radius: 12px; }
+    .next-phases { padding-top: 14px; margin-top: 16px; }
+
+    .s-sustain { flex-direction: row; }
+    .s-sustain .left { width: 40%; height: auto; }
+    .s-sustain .right { width: 60%; padding: 40px; }
+    .s-sustain h2 { font-size: clamp(24px, 3.8vw, 44px); margin-bottom: 18px; }
+    .commit-list { gap: 12px; margin-bottom: 18px; }
+    .commit-row { padding-top: 10px; gap: 12px; }
+    .commit-row .text { font-size: 11.5px; }
+    .commit-row .text strong { font-size: 15px; }
+
+    .s-close .logo-mark { width: clamp(200px, 28vw, 340px); margin-bottom: 28px; }
+    .s-close h2 { font-size: clamp(30px, 5vw, 60px); margin-bottom: 22px; }
+    .s-close .tag { font-size: 13px; margin-bottom: 28px; }
+    .s-close .footer { gap: 32px; }
+
+    .nav-dots { right: 18px; gap: 10px; }
+    .nav-dot { width: 7px; height: 7px; }
+    .slide-num { font-size: 10px; bottom: 14px; left: 24px; }
+    .scroll-hint { display: none; }
 }
 </style>
 </head>
