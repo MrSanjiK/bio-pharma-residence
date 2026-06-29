@@ -44,6 +44,7 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100vh;
+    height: 100dvh;
 }
 
 .slide {
@@ -51,7 +52,7 @@ main {
     scroll-snap-stop: always;
     width: 100vw;
     height: 100vh;
-    min-height: 600px;
+    height: 100dvh;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -777,14 +778,30 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     justify-content: center;
     padding-left: 20px;
 }
-.s-eco .right img {
+.s-eco .right .eco-frame {
     width: 100%;
-    height: auto;
     max-height: 88%;
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 60%),
+        linear-gradient(150deg, rgba(255,255,255,0.05) 0%, rgba(20,40,20,0.35) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.s-eco .right .eco-frame img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 24px 64px rgba(0,0,0,0.45));
-    border-radius: 20px;
-    clip-path: inset(0 round 20px);
+    filter: drop-shadow(0 12px 28px rgba(0,0,0,0.55));
+    display: block;
 }
 
 /* ============ SLIDE 9 — PHARMA SCHOOL ============ */
@@ -1874,6 +1891,248 @@ main::-webkit-scrollbar { width: 0; }
     .slide-num { font-size: 10px; bottom: 14px; left: 24px; }
     .scroll-hint { display: none; }
 }
+
+/* ===== RESPONSIVE: COMPACT (≤760px width OR ≤620px height) — content-flow mode ===== */
+@media (max-width: 760px), (max-height: 620px) {
+    main {
+        scroll-snap-type: none;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100vh;
+        height: 100dvh;
+        -webkit-overflow-scrolling: touch;
+    }
+    .slide {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        padding: 56px 22px 28px;
+    }
+    /* slide-num goes inline at the bottom — no more overlap with content */
+    .slide-num {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-top: 28px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255,255,255,0.10);
+        font-size: 9.5px;
+        letter-spacing: 0.22em;
+        order: 999;
+        align-self: stretch;
+    }
+    .nav-dots { display: none; }
+    .scroll-hint { display: none; }
+    .brand-mark { top: 16px; left: 18px; }
+    .brand-mark img { height: 28px; }
+
+    /* SLIDE 1 — COVER */
+    .s-cover { padding: 0; justify-content: center; }
+    .s-cover .top-tag { top: 18px; left: 22px; font-size: 9.5px; letter-spacing: 0.28em; }
+    .s-cover .content {
+        position: relative;
+        padding: 56px 22px 0;
+        justify-content: flex-start;
+    }
+    .s-cover h1 { font-size: clamp(38px, 11vw, 72px); margin-bottom: 14px; }
+    .s-cover .sub { font-size: 13px; margin-bottom: 22px; max-width: 100%; }
+    .s-cover .meta-row { gap: 18px 24px; flex-wrap: wrap; padding-top: 16px; }
+    .s-cover .meta-row .v { font-size: 16px; }
+    .s-cover .meta-row .k { font-size: 9.5px; }
+
+    /* SLIDE 2 — PHILOSOPHY */
+    .s-philosophy { padding: 0; }
+    .s-philosophy .content { padding: 22px; justify-content: center; }
+    .s-philosophy h2 { font-size: clamp(22px, 6vw, 36px); margin-bottom: 22px; line-height: 1.15; }
+
+    /* SLIDE 3 — STATS */
+    .s-stats { padding: 0; }
+    .s-stats .head { flex-direction: column; gap: 14px; padding: 8px 4px 18px; margin-bottom: 18px; }
+    .s-stats .head h2 { font-size: clamp(22px, 6vw, 32px); }
+    .s-stats .head .right { font-size: 12px; max-width: 100%; }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: none !important;
+        gap: 8px !important;
+    }
+    .stat-cell { padding: 14px 12px !important; }
+    .stat-cell .num { font-size: clamp(22px, 7vw, 32px) !important; }
+    .stat-cell .label { font-size: 9.5px !important; }
+    .stat-cell .desc { font-size: 10px !important; }
+    .stat-cell.span2, .stat-cell.span3 { grid-column: span 1 !important; }
+
+    /* SLIDE 4 — ARCHITECTURE */
+    .s-architecture { padding: 0; }
+    .s-architecture .head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 18px; padding-bottom: 14px; }
+    .s-architecture h2 { font-size: clamp(22px, 6vw, 32px); }
+    .arch-grid { grid-template-columns: 1fr 1fr !important; grid-auto-rows: 110px !important; gap: 6px !important; }
+    .arch-grid .a1 { grid-row: span 1 !important; }
+    .arch-grid > div { border-radius: 14px; }
+    .arch-grid .label { font-size: 10px; padding: 10px 12px; }
+
+    /* SLIDE 5 — MASTERPLAN */
+    .s-masterplan { padding: 0; }
+    .s-masterplan .content { padding: 22px 22px 0; }
+    .s-masterplan h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 14px; }
+    .s-masterplan .sub { font-size: 12.5px; max-width: 100%; }
+
+    /* SLIDE 6 — COURTYARD */
+    .s-courtyard { padding: 0; }
+    .s-courtyard .bg { opacity: 0.55; }
+    .s-courtyard .content {
+        position: relative;
+        width: 100% !important;
+        padding: 22px !important;
+    }
+    .s-courtyard h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 14px; }
+    .feat-list { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+    .feat-list .item .n { font-size: 22px !important; }
+    .feat-list .item .t { font-size: 11px !important; }
+
+    /* SLIDE 7 — BOULEVARD */
+    .s-boulevard { padding: 0; }
+    .s-boulevard .content { padding: 22px !important; gap: 18px !important; }
+    .s-boulevard h2 { font-size: clamp(22px, 6vw, 36px) !important; }
+    .s-boulevard .info-block { font-size: 12px; }
+
+    /* SLIDE 8 — ECO */
+    .s-eco { flex-direction: column !important; padding: 0 !important; }
+    .s-eco .left, .s-eco .right {
+        width: 100% !important;
+        padding: 0 !important;
+        max-height: none !important;
+    }
+    .s-eco .left { margin-bottom: 18px; }
+    .s-eco h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 14px; }
+    .s-eco .stat-big { margin-bottom: 14px; padding-bottom: 14px; gap: 10px; }
+    .s-eco .stat-big .num { font-size: clamp(48px, 14vw, 80px); }
+    .s-eco .stat-big .lbl { font-size: 11.5px; max-width: 180px; }
+    .s-eco .desc { font-size: 12.5px; margin-bottom: 16px; }
+    .s-eco .stages { gap: 8px; }
+    .s-eco .stages .stage { font-size: 11.5px; }
+    .s-eco .right .eco-frame {
+        width: 100%;
+        max-height: none;
+        aspect-ratio: 4/3;
+        padding: 14px;
+    }
+
+    /* SLIDE 9 — PHARMA */
+    .s-pharma { padding: 0; }
+    .s-pharma .content {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        padding: 22px !important;
+        margin-top: auto;
+    }
+    .s-pharma h2 { font-size: clamp(22px, 6vw, 34px); }
+    .s-pharma .desc { font-size: 12px; }
+
+    /* SLIDE 10 — INFRASTRUCTURE */
+    .s-infrastructure { padding: 0; }
+    .s-infrastructure .head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 18px; padding-bottom: 14px; }
+    .s-infrastructure h2 { font-size: clamp(22px, 6vw, 32px); }
+    .infra-categories { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+    .cat-col { padding: 14px 12px 10px !important; }
+    .cat-pill { font-size: 9px; padding: 4px 9px; margin-bottom: 10px; }
+    .cat-item { padding: 8px 0 8px; }
+    .cat-item .cat-num { font-size: clamp(22px, 6vw, 30px) !important; }
+    .cat-item .cat-lbl { font-size: 9px !important; letter-spacing: 0.12em; }
+
+    /* SLIDE 11 — RADIUS */
+    .s-radius { padding: 0; }
+    .s-radius .head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 18px; padding-bottom: 14px; }
+    .s-radius h2 { font-size: clamp(22px, 6vw, 32px); }
+    .radius-cols { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+
+    /* SLIDE 12 — MIX */
+    .s-mix { flex-direction: column !important; padding: 0 !important; }
+    .s-mix .left, .s-mix .right { width: 100% !important; padding: 0 !important; min-height: 200px; }
+    .s-mix .left { padding: 0 !important; }
+    .s-mix h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 14px; }
+    .s-mix .desc { font-size: 12px; margin-bottom: 16px; }
+    .s-mix .right { margin-top: 18px; }
+    .s-mix .right .float-stat { font-size: 12px; }
+
+    /* SLIDE 13/14/15 — APARTMENT TYPES */
+    .s-plan { padding: 0; }
+    .s-plan .head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 16px; padding-bottom: 12px; }
+    .s-plan h2 { font-size: clamp(22px, 6vw, 32px); }
+    .s-plan .body { grid-template-columns: 1fr !important; gap: 14px !important; }
+    .plan-card .plan-info { padding: 12px 16px; }
+    .plan-card .plan-info .name { font-size: 16px; }
+    .plan-card .plan-info .area { font-size: 12px; }
+
+    /* SLIDE 16 — PHASING */
+    .s-phasing { padding: 0; }
+    .s-phasing h2 { font-size: clamp(22px, 6vw, 32px); }
+    .phases-timeline {
+        grid-template-columns: repeat(7, 1fr) !important;
+        gap: 4px !important;
+        margin-bottom: 16px !important;
+    }
+    .phase-pill { font-size: 9px !important; padding: 6px 4px !important; }
+    .phase1-card {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+        padding: 14px 16px !important;
+        margin-top: 14px;
+    }
+    .phase1-card > div { font-size: 11px; }
+    .next-phases { padding-top: 12px; margin-top: 14px; flex-direction: column; gap: 10px; }
+
+    /* SLIDE 17 — SUSTAIN */
+    .s-sustain { flex-direction: column !important; padding: 0 !important; }
+    .s-sustain .left, .s-sustain .right {
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+    }
+    .s-sustain .left { min-height: 160px; }
+    .s-sustain .right { padding: 22px !important; }
+    .s-sustain h2 { font-size: clamp(22px, 6vw, 32px); margin-bottom: 16px; }
+    .commit-list { gap: 10px; margin-bottom: 16px; }
+    .commit-row { padding-top: 8px; gap: 10px; }
+    .commit-row .text { font-size: 11.5px; }
+    .commit-row .text strong { font-size: 14px; }
+
+    /* SLIDE 18 — CLOSE */
+    .s-close { padding: 0; align-items: center; justify-content: center; }
+    .s-close .content { padding: 22px; text-align: center; }
+    .s-close .logo-mark { width: clamp(180px, 56vw, 320px); margin: 0 auto 22px; }
+    .s-close .logo-mark img { width: 100%; height: auto; }
+    .s-close h2 { font-size: clamp(22px, 6vw, 38px); margin-bottom: 16px; }
+    .s-close .tag { font-size: 12px; margin-bottom: 22px; }
+    .s-close .footer { flex-direction: column; gap: 16px; align-items: center; font-size: 11px; }
+    .s-close .eyebrow { display: none; }
+
+    /* Reset boulevard glow size */
+    .s-boulevard .title-wrap { padding: 0 !important; }
+}
+
+/* ===== ULTRA NARROW (≤420px) — iPhone portrait fallback ===== */
+@media (max-width: 420px) {
+    .slide { padding: 48px 18px 24px; }
+    .s-cover h1 { font-size: clamp(34px, 12vw, 56px); }
+    .s-cover .sub { font-size: 12.5px; }
+    .s-philosophy h2 { font-size: clamp(20px, 6.5vw, 30px); }
+    .stats-grid { gap: 6px !important; }
+    .stat-cell { padding: 12px 10px !important; }
+    .stat-cell .num { font-size: clamp(20px, 7vw, 28px) !important; }
+    .s-eco .stat-big .num { font-size: clamp(44px, 16vw, 72px); }
+    .infra-categories { grid-template-columns: 1fr !important; }
+    .radius-cols { grid-template-columns: 1fr !important; }
+    .arch-grid { grid-template-columns: 1fr !important; grid-auto-rows: 100px !important; }
+    .feat-list { grid-template-columns: 1fr !important; }
+    .phases-timeline { grid-template-columns: repeat(4, 1fr) !important; }
+    .phase1-card { grid-template-columns: 1fr !important; }
+}
 </style>
 </head>
 <body>
@@ -2075,7 +2334,9 @@ main::-webkit-scrollbar { width: 0; }
         </div>
     </div>
     <div class="right">
-        <img src="assets/eco-greywater.png" alt="Imarat Eco Greywater System diagrammasi">
+        <div class="eco-frame">
+            <img src="assets/eco-greywater.png" alt="Imarat Eco Greywater System diagrammasi">
+        </div>
     </div>
     <div class="slide-num"><strong>08</strong> / 18  ·  Eco Greywater System</div>
 </section>
