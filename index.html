@@ -6218,6 +6218,37 @@ deck.addEventListener('scroll', () => {
     }
     injectBadgesAll();
 
+    // When a .lb contains an <img> that letterboxes inside its wrap (object-fit style),
+    // the badge should hug the actual image bounds — not the empty space around it.
+    function syncBadgeToImage(lb) {
+        const badge = lb.querySelector(':scope > .lb-badge');
+        const img = lb.querySelector(':scope > img');
+        if (!badge || !img || !img.complete || img.naturalWidth === 0) return;
+        const wrapRect = lb.getBoundingClientRect();
+        const imgRect = img.getBoundingClientRect();
+        if (wrapRect.width === 0 || imgRect.width === 0) return;
+        const topOffset  = Math.max(0, imgRect.top  - wrapRect.top);
+        const rightOff   = Math.max(0, wrapRect.right - imgRect.right);
+        badge.style.top   = (topOffset + 12) + 'px';
+        badge.style.right = (rightOff  + 12) + 'px';
+    }
+    function syncAllBadges() {
+        document.querySelectorAll('.lb').forEach(lb => {
+            if (lb.querySelector(':scope > img')) syncBadgeToImage(lb);
+        });
+    }
+    // Sync after each image loads, and again on resize
+    document.querySelectorAll('.lb > img').forEach(img => {
+        if (img.complete) syncBadgeToImage(img.parentElement);
+        else img.addEventListener('load', () => syncBadgeToImage(img.parentElement), { once: true });
+    });
+    window.addEventListener('resize', () => {
+        clearTimeout(window.__lbBadgeSyncTO);
+        window.__lbBadgeSyncTO = setTimeout(syncAllBadges, 80);
+    });
+    // First run after layout settles
+    requestAnimationFrame(() => requestAnimationFrame(syncAllBadges));
+
     // Gallery is per-slide: only images inside the same section.slide as the trigger
     let gallery = [];
     let currentIndex = -1;
@@ -6230,7 +6261,7 @@ deck.addEventListener('scroll', () => {
         }).filter(item => !!item.src);
     }
     // Observe DOM changes so dynamically inserted .lb elements still get badges
-    const mo = new MutationObserver(() => injectBadgesAll());
+    const mo = new MutationObserver(() => { injectBadgesAll(); syncAllBadges(); });
     mo.observe(document.body, { childList: true, subtree: true });
 
     let animating = false;
