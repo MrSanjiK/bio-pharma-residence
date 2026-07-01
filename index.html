@@ -300,20 +300,33 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     background: var(--gold);
 }
 .s-philosophy h2 {
-    font-size: clamp(40px, 5vw, 84px);
+    font-size: clamp(56px, 7.2vw, 128px);
     font-weight: 500;
-    line-height: 1.15;
+    line-height: 1.08;
     color: var(--cream);
-    letter-spacing: -0.02em;
-    margin-bottom: 48px;
+    letter-spacing: -0.025em;
+    margin-bottom: 64px;
 }
 .s-philosophy h2 em { font-style: italic; color: var(--gold-soft); }
+.s-philosophy .philosophy-logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 220px;
+}
+.s-philosophy .philosophy-logo img {
+    width: 100%;
+    height: auto;
+    opacity: 0.85;
+    filter: drop-shadow(0 4px 24px rgba(255,255,255,0.1));
+}
 .s-philosophy .signature {
     font-family: var(--serif);
     font-size: 20px;
     font-style: italic;
     color: rgba(245,241,232,0.6);
     letter-spacing: 0.02em;
+    display: none;
 }
 .s-philosophy .signature::before {
     content: "— ";
@@ -606,6 +619,243 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     letter-spacing: 0.04em;
 }
 
+/* ============ SLIDE 6a/b/c — SECURITY ============ */
+.s-security {
+    background: var(--ink);
+}
+.s-security .bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+.s-security .veil {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(90deg, rgba(10,15,10,0.92) 0%, rgba(10,15,10,0.7) 40%, rgba(10,15,10,0.35) 100%),
+        linear-gradient(180deg, rgba(10,15,10,0.5) 0%, transparent 30%, rgba(10,15,10,0.6) 100%);
+}
+.s-security .content {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    padding: 110px 60px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.s-security.right-image .content {
+    margin-right: auto;
+}
+.s-security h2 {
+    font-size: clamp(40px, 4.4vw, 72px);
+    color: var(--ivory);
+    font-weight: 500;
+    margin-bottom: 32px;
+    line-height: 1.02;
+}
+.s-security h2 em { font-style: italic; color: var(--gold-soft); }
+.s-security .desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.82);
+    font-weight: 300;
+    margin-bottom: 36px;
+    max-width: 440px;
+}
+.s-security .sec-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 28px;
+    margin-top: 8px;
+}
+.s-security .sec-stats .item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(201,169,97,0.28);
+}
+.s-security .sec-stats .item .n {
+    font-family: var(--serif);
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+.s-security .sec-stats .item .n .u {
+    font-size: 0.42em;
+    color: var(--gold-soft);
+    font-style: italic;
+    margin-left: 4px;
+}
+.s-security .sec-stats .item .t {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: rgba(255,255,255,0.82);
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* Security command-center layout (image split) */
+.s-security-split {
+    background: var(--ink);
+    padding: 0;
+}
+.s-security-split .left {
+    width: 46%;
+    padding: 90px 50px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--ink) 0%, #0f180f 100%);
+}
+.s-security-split h2 {
+    font-size: clamp(38px, 4.2vw, 68px);
+    color: var(--ivory);
+    font-weight: 500;
+    line-height: 1.02;
+    margin-bottom: 26px;
+}
+.s-security-split h2 em { font-style: italic; color: var(--gold-soft); }
+.s-security-split .desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+    margin-bottom: 32px;
+    max-width: 460px;
+}
+.s-security-split .features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.s-security-split .features .row {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 18px;
+    align-items: flex-start;
+    padding-top: 16px;
+    border-top: 1px solid rgba(201,169,97,0.2);
+}
+.s-security-split .features .row:first-child { border-top: none; padding-top: 0; }
+.s-security-split .features .row .num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 20px;
+    line-height: 1.2;
+}
+.s-security-split .features .row .txt {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: rgba(245,241,232,0.88);
+    line-height: 1.6;
+    font-weight: 300;
+}
+.s-security-split .features .row .txt strong {
+    display: block;
+    color: var(--cream);
+    font-family: var(--serif);
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.s-security-split .right {
+    width: 54%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 60px 60px 20px;
+    background: #0a0f0a;
+}
+.s-security-split .right img {
+    width: 100%;
+    max-height: 85%;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,169,97,0.14);
+    display: block;
+}
+
+/* Security grid layout */
+.s-security-grid {
+    background: var(--ink);
+    padding: 80px;
+    flex-direction: column;
+}
+.s-security-grid .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+}
+.s-security-grid .head h2 {
+    font-size: clamp(36px, 4.2vw, 64px);
+    color: var(--cream);
+    font-weight: 500;
+}
+.s-security-grid .head h2 em { font-style: italic; color: var(--gold-soft); }
+.s-security-grid .head .right {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: rgba(245,241,232,0.7);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 380px;
+    text-align: right;
+}
+.sec-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    min-height: 0;
+}
+.sec-cell {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
+}
+.sec-cell::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 45%, rgba(10,15,10,0.85) 100%);
+}
+.sec-cell .label {
+    position: absolute;
+    bottom: 18px;
+    left: 22px;
+    right: 22px;
+    z-index: 2;
+    color: var(--ivory);
+}
+.sec-cell .label .kicker {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+.sec-cell .label .name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ivory);
+    line-height: 1.2;
+}
+.sec-cell.big { grid-row: span 2; }
+
 /* ============ SLIDE 7 — BOULEVARD ============ */
 .s-boulevard {
     background: var(--ink);
@@ -857,6 +1107,922 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     font-weight: 500;
 }
 
+/* ============ SCHOOL INTERIOR ============ */
+.s-school-inside {
+    background: var(--cream);
+    color: var(--forest);
+    padding: clamp(28px, 4.2vh, 54px) clamp(32px, 5vw, 72px) clamp(56px, 7vh, 78px);
+    flex-direction: column;
+    overflow: hidden;
+}
+.s-school-inside .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    margin-bottom: clamp(12px, 2.2vh, 24px);
+    padding-bottom: clamp(10px, 1.8vh, 18px);
+    border-bottom: 1px solid rgba(20,40,20,0.15);
+    flex-shrink: 0;
+}
+.s-school-inside .head .eyebrow { color: var(--sage); }
+.s-school-inside .head .eyebrow::before { background: var(--sage); }
+.s-school-inside .head h2 {
+    font-size: clamp(26px, 3.4vw, 52px);
+    color: var(--forest-deep);
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 0;
+}
+.s-school-inside .head h2 em { font-style: italic; color: var(--sage); }
+.s-school-inside .head .left { min-width: 0; }
+.s-school-inside .head .right {
+    font-family: var(--sans);
+    font-size: clamp(11px, 0.85vw, 13px);
+    line-height: 1.55;
+    color: rgba(20,40,20,0.7);
+    max-width: 340px;
+    font-weight: 300;
+    text-align: right;
+    flex-shrink: 0;
+}
+.school-body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: clamp(14px, 1.5vw, 24px);
+    min-height: 0;
+    overflow: hidden;
+}
+.school-hero {
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--ivory);
+    box-shadow: 0 20px 50px -20px rgba(20,40,20,0.28);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+    min-height: 0;
+    transition: transform 0.5s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.5s ease;
+}
+.school-hero:hover { transform: translateY(-3px); box-shadow: 0 28px 60px -20px rgba(20,40,20,0.4); }
+.school-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
+}
+.school-hero:hover img { transform: scale(1.04); }
+.school-side {
+    display: grid;
+    grid-template-rows: minmax(0, 1.35fr) auto;
+    gap: clamp(12px, 1.4vw, 20px);
+    min-height: 0;
+}
+.school-mini {
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--ivory);
+    box-shadow: 0 16px 36px -20px rgba(20,40,20,0.22);
+    position: relative;
+    min-height: 0;
+    transition: transform 0.5s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.5s ease;
+}
+.school-mini:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -20px rgba(20,40,20,0.4); }
+.school-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
+}
+.school-mini:hover img { transform: scale(1.05); }
+.school-features {
+    background: rgba(255,254,249,0.55);
+    border: 1px solid rgba(20,40,20,0.1);
+    padding: clamp(12px, 1.6vh, 18px) clamp(14px, 1.5vw, 22px);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(8px, 1.3vh, 14px) clamp(10px, 1.5vw, 18px);
+    backdrop-filter: blur(6px);
+}
+.school-features .item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+.school-features .item .n {
+    font-family: var(--serif);
+    font-size: clamp(18px, 1.6vw, 24px);
+    color: var(--forest-deep);
+    font-weight: 700;
+    line-height: 1.05;
+}
+.school-features .item .n em {
+    font-style: italic;
+    color: var(--sage);
+}
+.school-features .item .t {
+    font-family: var(--sans);
+    font-size: clamp(9.5px, 0.72vw, 11px);
+    color: rgba(20,40,20,0.65);
+    letter-spacing: 0.06em;
+    line-height: 1.45;
+    font-weight: 500;
+}
+@media (max-width: 1100px) {
+    .school-body { grid-template-columns: 1fr; grid-template-rows: 1.4fr 1fr; }
+    .school-side { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+    .school-features { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+    .s-school-inside .head { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .s-school-inside .head .right { text-align: left; max-width: 100%; }
+    .school-body { grid-template-rows: 1.2fr auto; gap: 12px; }
+    .school-side { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+    .school-features { padding: 12px 14px; gap: 10px; }
+}
+
+/* ============ KINDERGARDEN ============ */
+.s-kindergarden {
+    background: var(--ink);
+}
+.s-kindergarden .bg {
+    position: absolute; inset: 0;
+    background: url('assets/kindgarden.png') center/cover no-repeat;
+}
+.s-kindergarden .veil {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(0deg, rgba(10,15,10,0.94) 0%, rgba(10,15,10,0.65) 45%, rgba(10,15,10,0.2) 100%),
+        linear-gradient(90deg, rgba(10,15,10,0.5) 0%, transparent 60%);
+}
+.s-kindergarden .content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 80px 80px;
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+}
+.s-kindergarden h2 {
+    font-size: clamp(40px, 4.6vw, 76px);
+    color: var(--ivory);
+    font-weight: 500;
+    line-height: 1.0;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+.s-kindergarden h2 em { font-style: italic; color: var(--gold-soft); }
+.s-kindergarden .desc {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.82);
+    font-weight: 300;
+    padding-top: 10px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+.s-kindergarden .desc strong {
+    display: block;
+    font-family: var(--sans);
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.s-kindergarden .top-eyebrow {
+    position: absolute;
+    top: 110px;
+    left: 80px;
+    z-index: 3;
+    color: var(--gold);
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+}
+.s-kindergarden .top-eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+}
+
+/* ============ DORMITORY ============ */
+.s-dorm-hero {
+    background: var(--ink);
+}
+.s-dorm-hero .bg {
+    position: absolute; inset: 0;
+    background: url('assets/dorm-reception.png') center/cover no-repeat;
+}
+.s-dorm-hero .veil {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(90deg, rgba(10,15,10,0.94) 0%, rgba(10,15,10,0.7) 40%, transparent 75%),
+        linear-gradient(180deg, transparent 55%, rgba(10,15,10,0.75) 100%);
+}
+.s-dorm-hero .content {
+    position: relative;
+    z-index: 2;
+    width: 55%;
+    padding: 110px 60px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.s-dorm-hero h2 {
+    font-size: clamp(40px, 4.4vw, 72px);
+    color: var(--ivory);
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1.02;
+}
+.s-dorm-hero h2 em { font-style: italic; color: var(--gold-soft); }
+.s-dorm-hero .desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.82);
+    font-weight: 300;
+    margin-bottom: 36px;
+    max-width: 480px;
+}
+.s-dorm-hero .dorm-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 22px 28px;
+}
+.s-dorm-hero .dorm-stats .item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(201,169,97,0.28);
+}
+.s-dorm-hero .dorm-stats .item .n {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+.s-dorm-hero .dorm-stats .item .n .u {
+    font-size: 0.42em;
+    color: var(--gold-soft);
+    font-style: italic;
+    margin-left: 4px;
+}
+.s-dorm-hero .dorm-stats .item .t {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.78);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.s-dorm-rooms {
+    background: var(--cream);
+    color: var(--forest);
+    padding: 60px 80px;
+    flex-direction: column;
+}
+.s-dorm-rooms .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(20,40,20,0.15);
+}
+.s-dorm-rooms .head .eyebrow { color: var(--sage); }
+.s-dorm-rooms .head .eyebrow::before { background: var(--sage); }
+.s-dorm-rooms .head h2 {
+    font-size: clamp(34px, 4vw, 60px);
+    color: var(--forest-deep);
+    font-weight: 500;
+    line-height: 1.04;
+}
+.s-dorm-rooms .head h2 em { font-style: italic; color: var(--sage); }
+.s-dorm-rooms .head .right {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(20,40,20,0.7);
+    max-width: 360px;
+    font-weight: 300;
+    text-align: right;
+}
+.dorm-rooms-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 22px;
+    min-height: 0;
+}
+/* v2 — hero + occupancy tiers */
+.dorm-rooms-v2 {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 22px;
+    min-height: 0;
+}
+.dorm-hero-card {
+    grid-row: 1 / span 2;
+    background: var(--ivory);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 22px 48px -22px rgba(20,40,20,0.28);
+    border: 1px solid rgba(20,40,20,0.08);
+    position: relative;
+    min-height: 0;
+}
+.dorm-hero-card .dorm-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+.dorm-hero-card::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(10,15,10,0.85) 100%);
+    pointer-events: none;
+}
+.dorm-hero-card .badge-strip {
+    position: absolute;
+    z-index: 2;
+    top: 22px;
+    left: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 7px 14px;
+    background: rgba(10,15,10,0.55);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201,169,97,0.35);
+    border-radius: 100px;
+    font-weight: 500;
+}
+.dorm-hero-card .badge-strip::before {
+    content: "";
+    width: 5px; height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(201,169,97,0.28);
+}
+.dorm-hero-card .caption {
+    position: absolute;
+    z-index: 2;
+    bottom: 26px;
+    left: 28px;
+    right: 28px;
+    color: var(--ivory);
+}
+.dorm-hero-card .caption .name {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--ivory);
+    font-weight: 500;
+    line-height: 1.15;
+}
+.dorm-hero-card .caption .name em { font-style: italic; color: var(--gold-soft); }
+.dorm-hero-card .caption .sub {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.06em;
+    margin-top: 6px;
+    font-weight: 300;
+}
+.dorm-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 0;
+}
+.dorm-tier {
+    background: var(--ivory);
+    border: 1px solid rgba(20,40,20,0.08);
+    border-radius: 18px;
+    padding: 20px 22px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 18px;
+    align-items: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.dorm-tier:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -20px rgba(20,40,20,0.24);
+}
+.dorm-tier .cap {
+    font-family: var(--serif);
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--sage);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-style: italic;
+    min-width: 64px;
+}
+.dorm-tier .cap span {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(20,40,20,0.55);
+    font-weight: 500;
+    margin-top: 6px;
+}
+.dorm-tier .info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.dorm-tier .info .t {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--forest-deep);
+    font-weight: 600;
+}
+.dorm-tier .info .d {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: rgba(20,40,20,0.62);
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    font-weight: 400;
+}
+.dorm-tier .area {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--gold);
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: right;
+}
+.dorm-tier .area small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 9.5px;
+    color: rgba(20,40,20,0.55);
+    font-style: normal;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 500;
+}
+.dorm-block-note {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(31,58,31,0.06) 0%, rgba(201,169,97,0.09) 100%);
+    border: 1px solid rgba(20,40,20,0.09);
+    border-radius: 18px;
+    padding: 18px 26px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 26px;
+}
+.dorm-block-note .num {
+    font-family: var(--serif);
+    font-size: 44px;
+    color: var(--forest-deep);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+.dorm-block-note .num small {
+    font-size: 0.5em;
+    color: var(--gold);
+    font-style: italic;
+    margin-left: 3px;
+    letter-spacing: 0;
+}
+.dorm-block-note .txt {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: rgba(20,40,20,0.72);
+    line-height: 1.55;
+    font-weight: 400;
+}
+.dorm-block-note .txt strong {
+    display: block;
+    color: var(--forest-deep);
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+.dorm-block-note .pill {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sage);
+    padding: 6px 14px;
+    background: rgba(74,110,74,0.08);
+    border: 1px solid rgba(74,110,74,0.22);
+    border-radius: 100px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Dorm kitchens slide */
+.s-dorm-kitchens {
+    background: var(--cream);
+    color: var(--forest);
+    padding: 60px 80px;
+    flex-direction: column;
+}
+.s-dorm-kitchens .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(20,40,20,0.15);
+}
+.s-dorm-kitchens .head .eyebrow { color: var(--sage); }
+.s-dorm-kitchens .head .eyebrow::before { background: var(--sage); }
+.s-dorm-kitchens .head h2 {
+    font-size: clamp(34px, 4vw, 60px);
+    color: var(--forest-deep);
+    font-weight: 500;
+    line-height: 1.04;
+}
+.s-dorm-kitchens .head h2 em { font-style: italic; color: var(--sage); }
+.s-dorm-kitchens .head .right {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(20,40,20,0.7);
+    max-width: 400px;
+    font-weight: 300;
+    text-align: right;
+}
+.kitchens-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 22px;
+    min-height: 0;
+}
+.kitchen-card {
+    background: var(--ivory);
+    border-radius: 22px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1.5fr auto;
+    box-shadow: 0 22px 48px -22px rgba(20,40,20,0.28);
+    border: 1px solid rgba(20,40,20,0.08);
+    min-height: 0;
+}
+.kitchen-card .kimg {
+    background-size: cover;
+    background-position: center;
+    min-height: 0;
+}
+.kitchen-card .kinfo {
+    padding: 24px 28px;
+    border-top: 1px solid rgba(20,40,20,0.1);
+}
+.kitchen-card .kinfo .pill {
+    display: inline-flex;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 5px 12px;
+    background: rgba(201,169,97,0.09);
+    border: 1px solid rgba(201,169,97,0.28);
+    border-radius: 100px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+.kitchen-card .kinfo h3 {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--forest-deep);
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+.kitchen-card .kinfo h3 em { font-style: italic; color: var(--sage); }
+.kitchen-card .kinfo p {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: rgba(20,40,20,0.7);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 14px;
+}
+.kitchen-card .kinfo .facts {
+    display: flex;
+    gap: 22px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(20,40,20,0.08);
+}
+.kitchen-card .kinfo .facts .f {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.kitchen-card .kinfo .facts .f .n {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--forest-deep);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1;
+}
+.kitchen-card .kinfo .facts .f .t {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(20,40,20,0.55);
+    font-weight: 500;
+}
+.dorm-card {
+    background: var(--ivory);
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 22px 48px -22px rgba(20,40,20,0.28);
+    min-height: 0;
+    border: 1px solid rgba(20,40,20,0.08);
+}
+.dorm-card .dorm-img {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    min-height: 0;
+}
+.dorm-card .dorm-info {
+    padding: 22px 26px;
+    border-top: 1px solid rgba(20,40,20,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.dorm-card .dorm-info .name {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--forest-deep);
+    font-weight: 600;
+    line-height: 1.2;
+}
+.dorm-card .dorm-info .name em { font-style: italic; color: var(--sage); }
+.dorm-card .dorm-info .name .sub {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 11px;
+    color: rgba(20,40,20,0.55);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+.dorm-card .dorm-info .area {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--sage);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.s-dorm-common {
+    background: var(--ink);
+    padding: 60px 80px;
+    flex-direction: column;
+}
+.s-dorm-common .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+}
+.s-dorm-common .head h2 {
+    font-size: clamp(34px, 4vw, 60px);
+    color: var(--cream);
+    font-weight: 500;
+}
+.s-dorm-common .head h2 em { font-style: italic; color: var(--gold-soft); }
+.s-dorm-common .head .right {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: rgba(245,241,232,0.7);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 360px;
+    text-align: right;
+}
+.dorm-common-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    min-height: 0;
+}
+.dorm-common-cell {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
+}
+.dorm-common-cell::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 45%, rgba(10,15,10,0.85) 100%);
+}
+.dorm-common-cell .label {
+    position: absolute;
+    bottom: 18px;
+    left: 22px;
+    right: 22px;
+    z-index: 2;
+    color: var(--ivory);
+}
+.dorm-common-cell .label .kicker {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+.dorm-common-cell .label .name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ivory);
+    line-height: 1.2;
+}
+.dorm-common-cell.big { grid-row: span 2; }
+
+/* ============ MASTERPLAN BLOCKS SLIDE ============ */
+.s-masterplan-blocks {
+    background: var(--ink);
+    padding: 60px 80px;
+    flex-direction: column;
+}
+.s-masterplan-blocks .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 26px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+}
+.s-masterplan-blocks .head h2 {
+    font-size: clamp(34px, 4vw, 60px);
+    color: var(--cream);
+    font-weight: 500;
+    line-height: 1.04;
+}
+.s-masterplan-blocks .head h2 em { font-style: italic; color: var(--gold-soft); }
+.s-masterplan-blocks .head .right {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: rgba(245,241,232,0.7);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 380px;
+    text-align: right;
+}
+.mp-body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 40px;
+    min-height: 0;
+    align-items: center;
+}
+.mp-image-wrap {
+    background: var(--cream);
+    border-radius: 22px;
+    overflow: hidden;
+    padding: 32px 40px;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-height: 68vh;
+}
+.mp-image-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+.mp-side {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.mp-side .kicker {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+}
+.mp-blocks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.mp-block {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+}
+.mp-block:last-child { border-bottom: none; }
+.mp-block .blk {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--gold-soft);
+    font-weight: 600;
+    font-style: italic;
+    min-width: 88px;
+}
+.mp-block .info {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: rgba(245,241,232,0.85);
+    font-weight: 300;
+    line-height: 1.5;
+}
+.mp-block .info strong {
+    display: block;
+    color: var(--cream);
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 2px;
+}
+.mp-block .qty {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--gold);
+    font-weight: 700;
+    font-style: italic;
+    text-align: right;
+    white-space: nowrap;
+}
+.mp-block .qty small {
+    font-size: 0.55em;
+    color: var(--gold-soft);
+    margin-left: 3px;
+}
+
 /* ============ SLIDE 10 — INFRASTRUCTURE INSIDE ============ */
 .s-infrastructure {
     background:
@@ -905,20 +2071,61 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     letter-spacing: -0.01em;
 }
 
+.infra-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+    padding: 22px 28px;
+    background: linear-gradient(135deg, rgba(31,58,31,0.06) 0%, rgba(201,169,97,0.07) 100%);
+    border: 1px solid rgba(20,40,20,0.09);
+    border-radius: 22px;
+}
+.infra-summary .s-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-left: 1px solid rgba(20,40,20,0.1);
+    padding-left: 20px;
+}
+.infra-summary .s-item:first-child { border-left: none; padding-left: 0; }
+.infra-summary .s-item .n {
+    font-family: var(--serif);
+    font-size: clamp(28px, 2.4vw, 44px);
+    font-weight: 700;
+    color: var(--forest-deep);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+.infra-summary .s-item .n em {
+    font-style: italic;
+    color: var(--gold);
+    font-size: 0.7em;
+    margin-left: 3px;
+}
+.infra-summary .s-item .t {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(20,40,20,0.62);
+    font-weight: 500;
+    margin-top: 6px;
+}
 .infra-categories {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 20px;
     min-height: 0;
 }
 .cat-col {
     display: flex;
     flex-direction: column;
-    background: rgba(255,254,249,0.62);
+    background: rgba(255,254,249,0.72);
     border: 1px solid rgba(20,40,20,0.09);
     border-radius: 22px;
-    padding: 28px 26px 24px;
+    padding: 24px 22px 20px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     box-shadow:
@@ -960,23 +2167,23 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
 .cat-items {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
     flex: 1;
 }
 .cat-item {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
-    column-gap: 16px;
-    row-gap: 4px;
+    column-gap: 14px;
+    row-gap: 3px;
     align-items: end;
-    padding: 14px 0 18px;
+    padding: 12px 0 14px;
     border-bottom: 1px solid rgba(20,40,20,0.08);
 }
-.cat-item:last-child { border-bottom: none; padding-bottom: 4px; }
+.cat-item:last-child { border-bottom: none; padding-bottom: 2px; }
 .cat-item .cat-num {
     font-family: var(--serif);
-    font-size: clamp(40px, 3vw, 56px);
+    font-size: clamp(28px, 2.2vw, 40px);
     font-weight: 700;
     color: var(--forest-deep);
     line-height: 0.95;
@@ -996,8 +2203,8 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
 }
 .cat-item .cat-lbl {
     font-family: var(--sans);
-    font-size: 11px;
-    letter-spacing: 0.18em;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgba(20,40,20,0.62);
     line-height: 1.4;
@@ -1114,42 +2321,166 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     margin-bottom: 38px;
     max-width: 460px;
 }
-.mix-bars {
+.mix-legend {
     display: flex;
     flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+}
+.mix-legend .row {
+    display: grid;
+    grid-template-columns: 22px 1fr auto;
+    align-items: center;
     gap: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(201,169,97,0.15);
 }
-.mix-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.mix-legend .row:last-child { border-bottom: none; padding-bottom: 0; }
+.mix-legend .row .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
 }
-.mix-bar .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+.mix-legend .row .name {
     font-family: var(--sans);
-    font-size: 13px;
+    font-size: 13.5px;
     color: var(--cream);
     font-weight: 300;
+    letter-spacing: 0.02em;
 }
-.mix-bar .top .pct {
+.mix-legend .row .name em {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 11px;
+    color: rgba(245,241,232,0.5);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 3px;
+    font-weight: 400;
+}
+.mix-legend .row .pct {
     font-family: var(--serif);
-    font-size: 28px;
+    font-size: 26px;
+    color: var(--gold);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+.mix-legend .row .pct small {
+    font-size: 0.5em;
+    color: var(--gold-soft);
+    font-style: normal;
+    margin-left: 1px;
+    letter-spacing: 0;
+}
+/* Donut chart on right side */
+.s-mix.donut-layout { display: flex; align-items: stretch; }
+.s-mix.donut-layout .right {
+    background:
+        radial-gradient(ellipse at 30% 30%, rgba(201,169,97,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(74,110,74,0.1) 0%, transparent 60%),
+        #0F1A0F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 60px;
+    border-left: 1px solid rgba(201,169,97,0.1);
+}
+.mix-donut-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mix-donut-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 20px 40px rgba(201,169,97,0.15));
+}
+.mix-donut-svg circle {
+    fill: none;
+    stroke-width: 18;
+    transition: stroke-width 0.4s ease, opacity 0.4s ease;
+}
+.mix-donut-svg .track {
+    stroke: rgba(255,255,255,0.05);
+}
+.mix-donut-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+.mix-donut-center .kicker {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.mix-donut-center .num {
+    font-family: var(--serif);
+    font-size: clamp(48px, 5vw, 84px);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+.mix-donut-center .num em {
+    font-style: italic;
+    color: var(--gold-soft);
+    font-size: 0.5em;
+    margin-left: 4px;
+}
+.mix-donut-center .lbl {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: rgba(245,241,232,0.7);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    margin-top: 10px;
+    font-weight: 300;
+    max-width: 220px;
+}
+.mix-donut-badges {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-end;
+}
+.mix-donut-badges .badge {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    color: rgba(245,241,232,0.65);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid rgba(201,169,97,0.28);
+    border-radius: 100px;
+    background: rgba(201,169,97,0.05);
+    font-weight: 500;
+}
+.mix-donut-badges .badge strong {
     color: var(--gold);
     font-weight: 600;
-    font-style: italic;
-}
-.mix-bar .bar {
-    width: 100%;
-    height: 3px;
-    background: rgba(201,169,97,0.12);
-    overflow: hidden;
-    position: relative;
-}
-.mix-bar .bar .fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 100%);
+    letter-spacing: 0.14em;
+    margin-left: 6px;
 }
 .s-mix .right {
     width: 50%;
@@ -1865,10 +3196,12 @@ main::-webkit-scrollbar { width: 0; }
     .s-mix .left { padding: 60px 50px 56px 60px; }
     .s-mix h2 { font-size: clamp(32px, 3.8vw, 60px); margin-bottom: 18px; }
     .s-mix .desc { margin-bottom: 26px; font-size: 13px; }
-    .mix-bars { gap: 14px; }
-    .mix-bar .top .pct { font-size: 24px; }
-    .s-mix .right .float-stat { bottom: 60px; left: 50px; }
-    .s-mix .right .float-stat .num { font-size: 52px; }
+    .mix-legend { gap: 14px; }
+    .mix-legend .row .pct { font-size: 24px; }
+    .s-mix.donut-layout .right { padding: 50px; }
+    .mix-donut-wrap { max-width: 420px; }
+    .mix-donut-center .num { font-size: clamp(44px, 4.6vw, 74px); }
+    .mix-donut-badges { right: 32px; top: 32px; }
 
     /* SLIDE 13-15 — Floor plans */
     .s-plan { padding: 50px 60px 56px; }
@@ -1957,12 +3290,14 @@ main::-webkit-scrollbar { width: 0; }
     .s-mix .left { padding: 44px 44px 44px 56px; }
     .s-mix h2 { font-size: clamp(28px, 3.2vw, 50px); margin-bottom: 14px; }
     .s-mix .desc { margin-bottom: 22px; font-size: 12.5px; }
-    .mix-bars { gap: 12px; }
-    .mix-bar .top { font-size: 12px; }
-    .mix-bar .top .pct { font-size: 22px; }
-    .s-mix .right .float-stat { bottom: 44px; left: 44px; }
-    .s-mix .right .float-stat .num { font-size: 44px; }
-    .s-mix .right .float-stat .des { font-size: 11.5px; }
+    .mix-legend { gap: 12px; }
+    .mix-legend .row .name { font-size: 12px; }
+    .mix-legend .row .pct { font-size: 22px; }
+    .s-mix.donut-layout .right { padding: 40px; }
+    .mix-donut-wrap { max-width: 340px; }
+    .mix-donut-center .num { font-size: 44px; }
+    .mix-donut-center .lbl { font-size: 11px; }
+    .mix-donut-badges { right: 24px; top: 24px; }
 
     .s-plan { padding: 40px 56px 44px; }
     .s-plan .head { margin-bottom: 20px; padding-bottom: 14px; }
@@ -2294,33 +3629,30 @@ main::-webkit-scrollbar { width: 0; }
     .s-radius .head .right { font-size: 12px !important; max-width: 100% !important; text-align: left !important; line-height: 1.5 !important; }
     .radius-cols { flex: none !important; grid-template-columns: 1fr 1fr !important; gap: 14px !important; }
 
-    /* SLIDE 12 — MIX */
+    /* SLIDE 19 — MIX (donut) */
     .s-mix { flex-direction: column !important; padding: 56px 22px 28px !important; }
     .s-mix .left, .s-mix .right { width: 100% !important; }
     .s-mix .left { padding: 0 0 18px 0 !important; }
     .s-mix h2 { font-size: clamp(22px, 6vw, 34px); margin-bottom: 12px; line-height: 1.1; }
     .s-mix .desc { font-size: 12px; margin-bottom: 18px; line-height: 1.6; max-width: 100%; }
-    .s-mix .right {
+    .s-mix.donut-layout .right {
         margin-top: 14px;
-        min-height: 180px;
-        border-radius: 16px;
-        overflow: hidden;
+        border-radius: 18px;
         padding: 24px 20px !important;
-        display: flex !important;
-        align-items: flex-end !important;
+        min-height: auto !important;
     }
-    .s-mix .right .float-stat {
-        position: relative !important;
-        bottom: auto !important;
-        left: auto !important;
-        max-width: 100% !important;
-    }
-    .s-mix .right .float-stat .num { font-size: 40px !important; line-height: 1.0 !important; white-space: nowrap; }
-    .s-mix .right .float-stat .lbl { font-size: 9.5px !important; }
-    .s-mix .right .float-stat .des { font-size: 11.5px !important; line-height: 1.4 !important; }
-    .mix-bars { gap: 14px; }
-    .mix-bar .top { font-size: 12px; }
-    .mix-bar .top .pct { font-size: 22px; }
+    .mix-donut-wrap { max-width: 260px; }
+    .mix-donut-center .num { font-size: 40px !important; line-height: 1.0 !important; }
+    .mix-donut-center .kicker { font-size: 9.5px !important; letter-spacing: 0.28em; }
+    .mix-donut-center .lbl { font-size: 10.5px !important; margin-top: 6px; }
+    .mix-donut-badges { position: relative !important; right: auto !important; top: auto !important; flex-direction: row !important; margin-bottom: 14px; }
+    .mix-donut-badges .badge { font-size: 9px !important; padding: 5px 10px; }
+    .mix-legend { gap: 10px; margin-top: 4px; }
+    .mix-legend .row { grid-template-columns: 14px 1fr auto; gap: 10px; padding-bottom: 8px; }
+    .mix-legend .row .dot { width: 8px; height: 8px; }
+    .mix-legend .row .name { font-size: 12px; }
+    .mix-legend .row .name em { font-size: 9.5px; margin-top: 2px; }
+    .mix-legend .row .pct { font-size: 20px; }
 
     /* SLIDE 13/14/15 — APARTMENT TYPES */
     .s-plan { padding: 0; }
@@ -2424,6 +3756,1070 @@ main::-webkit-scrollbar { width: 0; }
     .phases-timeline { grid-template-columns: repeat(4, 1fr) !important; }
     .phase1-card { grid-template-columns: 1fr !important; }
 }
+
+/* ============================================================
+   APARTMENT MIX  ·  fully-animated interactive diagram (slide 22)
+   ============================================================ */
+.s-mix.apart-v2 {
+    background: linear-gradient(135deg, #0A0F0A 0%, #0F1810 55%, #142014 100%);
+    display: flex;
+    padding: 0;
+    align-items: stretch;
+}
+.s-mix.apart-v2 .left {
+    width: 55%;
+    padding: 70px 60px 70px 78px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+    position: relative;
+    z-index: 2;
+}
+.s-mix.apart-v2 .left::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle at 30% 30%, rgba(201,169,97,0.10) 0%, transparent 60%);
+    filter: blur(20px);
+    pointer-events: none;
+}
+.s-mix.apart-v2 .left::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    right: -20%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle at 70% 70%, rgba(74,110,74,0.14) 0%, transparent 60%);
+    filter: blur(20px);
+    pointer-events: none;
+}
+.s-mix.apart-v2 .left > * { position: relative; z-index: 1; }
+.s-mix.apart-v2 h2 { margin-bottom: 8px; }
+.s-mix.apart-v2 .desc { margin-bottom: 12px; max-width: 480px; }
+
+.mix-widget {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 34px;
+    align-items: center;
+    margin-top: 6px;
+}
+
+/* Donut area */
+.mix-donut-area {
+    position: relative;
+    width: 260px;
+    height: 260px;
+}
+.mix-donut-area svg.mix-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    overflow: visible;
+}
+.mix-donut-area svg.mix-svg .track {
+    fill: none;
+    stroke: rgba(255,255,255,0.05);
+    stroke-width: 22;
+}
+.mix-donut-area svg.mix-svg .seg {
+    fill: none;
+    stroke-width: 22;
+    stroke-linecap: butt;
+    cursor: pointer;
+    transform-origin: 100px 100px;
+    transition: stroke-width 0.35s cubic-bezier(0.2,0.8,0.2,1),
+                filter 0.35s ease,
+                opacity 0.35s ease;
+    filter: drop-shadow(0 0 0 transparent);
+    /* animate stroke-dasharray via CSS custom prop; JS sets --pct-len */
+    stroke-dasharray: 0 502.65;
+    stroke-dashoffset: var(--off, 0);
+}
+.mix-donut-area.play svg.mix-svg .seg {
+    animation: segDraw 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    animation-delay: calc(var(--i, 0) * 0.18s);
+}
+@keyframes segDraw {
+    0% { stroke-dasharray: 0 502.65; }
+    100% { stroke-dasharray: var(--len, 0) calc(502.65 - var(--len, 0)); }
+}
+.mix-donut-area.active svg.mix-svg .seg:not(.hot) {
+    opacity: 0.28;
+    stroke-width: 18;
+}
+.mix-donut-area svg.mix-svg .seg.hot {
+    stroke-width: 30;
+    filter: drop-shadow(0 0 14px rgba(255,255,255,0.15));
+}
+.mix-donut-area .mix-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+    padding: 22px;
+}
+.mix-donut-area .mix-center .kicker {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--gold-soft);
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+.mix-donut-area .mix-center .num {
+    font-family: var(--serif);
+    font-size: 44px;
+    font-weight: 500;
+    color: var(--cream);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    transition: color 0.3s ease;
+}
+.mix-donut-area .mix-center .num small {
+    font-size: 20px;
+    color: var(--gold);
+    font-weight: 400;
+    font-style: italic;
+}
+.mix-donut-area .mix-center .lbl {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: rgba(245,241,232,0.55);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    font-weight: 300;
+}
+.mix-donut-area .mix-center.pulse {
+    animation: centerPulse 0.4s ease;
+}
+@keyframes centerPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+/* Legend list — animated bars + counters */
+.mix-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.mix-row {
+    display: grid;
+    grid-template-columns: 14px 1fr 90px 62px;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(201,169,97,0.10);
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.35s cubic-bezier(0.2,0.8,0.2,1);
+    opacity: 0;
+    transform: translateX(-14px);
+}
+.mix-widget.play .mix-row {
+    animation: rowIn 0.6s cubic-bezier(0.2,0.8,0.2,1) forwards;
+    animation-delay: calc(0.6s + var(--i, 0) * 0.12s);
+}
+@keyframes rowIn {
+    to { opacity: 1; transform: translateX(0); }
+}
+.mix-row:hover, .mix-row.hot {
+    background: rgba(201,169,97,0.08);
+    border-color: rgba(201,169,97,0.35);
+    transform: translateX(4px);
+}
+.mix-row .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--c, var(--gold));
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.mix-row:hover .dot, .mix-row.hot .dot {
+    box-shadow: 0 0 0 4px rgba(201,169,97,0.18), 0 0 12px var(--c, var(--gold));
+    transform: scale(1.2);
+}
+.mix-row .info .name {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--cream);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+}
+.mix-row .info .sub {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    color: rgba(245,241,232,0.5);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 3px;
+    font-weight: 300;
+}
+.mix-row .bar-cell {
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+.mix-row .bar-cell i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--c, var(--gold)), rgba(255,255,255,0.4));
+    border-radius: 999px;
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.2,0.8,0.2,1);
+    transition-delay: calc(0.8s + var(--i, 0) * 0.12s);
+}
+.mix-widget.play .mix-row .bar-cell i {
+    width: var(--w, 0%);
+}
+.mix-row .pct {
+    text-align: right;
+    font-family: var(--serif);
+    color: var(--gold);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 1px;
+}
+.mix-row .pct small {
+    font-size: 0.5em;
+    color: var(--gold-soft);
+    font-style: normal;
+}
+
+/* Right image side */
+.s-mix.apart-v2 .right {
+    width: 45%;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+.s-mix.apart-v2 .right .rimg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.06);
+    transition: transform 1.6s cubic-bezier(0.2,0.8,0.2,1);
+}
+.s-mix.apart-v2.in-view .right .rimg { transform: scale(1); }
+.s-mix.apart-v2 .right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(10,15,10,0.85) 0%, rgba(10,15,10,0.15) 30%, transparent 60%),
+        linear-gradient(180deg, transparent 60%, rgba(10,15,10,0.55) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+.s-mix.apart-v2 .right .r-caption {
+    position: absolute;
+    left: 40px;
+    bottom: 44px;
+    right: 40px;
+    z-index: 2;
+    color: var(--cream);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease 0.5s, transform 0.7s cubic-bezier(0.2,0.8,0.2,1) 0.5s;
+}
+.s-mix.apart-v2.in-view .right .r-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+.s-mix.apart-v2 .right .r-caption .k {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.s-mix.apart-v2 .right .r-caption .k::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+}
+.s-mix.apart-v2 .right .r-caption h3 {
+    font-family: var(--serif);
+    font-size: clamp(22px, 2.4vw, 34px);
+    line-height: 1.15;
+    font-weight: 500;
+    max-width: 480px;
+    letter-spacing: -0.01em;
+}
+.s-mix.apart-v2 .right .r-caption h3 em {
+    font-style: italic;
+    color: var(--gold-soft);
+}
+.s-mix.apart-v2 .right .r-badges {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.7s ease 0.4s, transform 0.7s cubic-bezier(0.2,0.8,0.2,1) 0.4s;
+}
+.s-mix.apart-v2.in-view .right .r-badges {
+    opacity: 1;
+    transform: translateY(0);
+}
+.s-mix.apart-v2 .right .r-badges .rb {
+    background: rgba(10,15,10,0.55);
+    border: 1px solid rgba(201,169,97,0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 8px 14px;
+    border-radius: 999px;
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.s-mix.apart-v2 .right .r-badges .rb strong {
+    color: var(--gold);
+    font-weight: 500;
+    font-family: var(--serif);
+    font-style: italic;
+    letter-spacing: 0;
+    margin-left: 6px;
+    font-size: 13px;
+    text-transform: none;
+}
+
+@media (max-width: 1200px) {
+    .s-mix.apart-v2 .left { padding: 56px 44px; }
+    .mix-widget { grid-template-columns: 220px 1fr; gap: 22px; }
+    .mix-donut-area { width: 220px; height: 220px; }
+    .mix-donut-area .mix-center .num { font-size: 38px; }
+    .mix-row { grid-template-columns: 12px 1fr 70px 54px; gap: 10px; padding: 10px 12px; }
+    .mix-row .pct { font-size: 20px; }
+    .mix-row .info .name { font-size: 12.5px; }
+}
+@media (max-width: 900px) {
+    .s-mix.apart-v2 { flex-direction: column; }
+    .s-mix.apart-v2 .left, .s-mix.apart-v2 .right { width: 100%; }
+    .s-mix.apart-v2 .right { min-height: 300px; }
+    .mix-widget { grid-template-columns: 1fr; }
+    .mix-donut-area { margin: 0 auto; }
+}
+@media (max-width: 760px) {
+    .s-mix.apart-v2 .left { padding: 40px 32px; }
+    .mix-donut-area { width: 200px; height: 200px; }
+    .mix-donut-area .mix-center .num { font-size: 32px; }
+    .mix-row { grid-template-columns: 10px 1fr auto; }
+    .mix-row .bar-cell { display: none; }
+    .s-mix.apart-v2 .right .r-caption { left: 24px; bottom: 24px; right: 24px; }
+    .s-mix.apart-v2 .right .r-badges { top: 20px; right: 20px; }
+}
+
+/* ============================================================
+   LIGHTBOX  ·  full-screen image viewer
+   ============================================================ */
+.lb { cursor: zoom-in; position: relative; }
+/* Fullscreen indicator — real span so it never collides with tile ::after overlays */
+.lb-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 15, 10, 0.62);
+    color: var(--gold-soft);
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 999px;
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);
+    backdrop-filter: blur(10px) saturate(1.2);
+    opacity: 0;
+    transform: scale(0.7) translateY(-4px);
+    transition: opacity 0.35s cubic-bezier(0.2,0.8,0.2,1), transform 0.4s cubic-bezier(0.2,0.8,0.2,1), background 0.3s ease, box-shadow 0.3s ease;
+    pointer-events: none;
+    z-index: 12;
+    border: 1px solid rgba(224, 197, 137, 0.42);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.05);
+    letter-spacing: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+}
+.lb-badge svg { width: 16px; height: 16px; display: block; }
+.lb:hover .lb-badge,
+.lb:focus-visible .lb-badge {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    background: rgba(20, 34, 20, 0.78);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.48), 0 0 0 1px rgba(224, 197, 137, 0.55), inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.lb:active .lb-badge { transform: scale(0.94); }
+@media (hover: none) { .lb-badge { opacity: 0.88; } }
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: rgba(6, 10, 6, 0.94);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    opacity: 0;
+    transition: opacity 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+#lightbox.open { display: flex; opacity: 1; }
+#lightbox .lb-inner {
+    position: relative;
+    max-width: 92vw;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    transform: scale(0.94);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+#lightbox.open .lb-inner { transform: scale(1); }
+#lightbox img {
+    max-width: 92vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
+    background: var(--forest-deep);
+}
+#lightbox .lb-cap {
+    color: var(--gold-soft);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    text-align: center;
+    max-width: 720px;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+}
+#lightbox .lb-close {
+    position: fixed;
+    top: 28px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(224, 197, 137, 0.35);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+#lightbox .lb-close:hover { background: rgba(201, 169, 97, 0.18); transform: rotate(90deg); border-color: rgba(224, 197, 137, 0.65); }
+#lightbox .lb-close svg { width: 20px; height: 20px; display: block; }
+
+/* Prev / Next navigation */
+#lightbox .lb-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%) scale(0.9);
+    width: 58px;
+    height: 58px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(224, 197, 137, 0.28);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.2,0.8,0.2,1), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    z-index: 10001;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+}
+#lightbox .lb-nav svg { width: 22px; height: 22px; display: block; }
+#lightbox .lb-prev { left: 32px; }
+#lightbox .lb-next { right: 32px; }
+#lightbox.open .lb-nav { opacity: 1; transform: translateY(-50%) scale(1); }
+#lightbox .lb-nav:hover {
+    background: rgba(201, 169, 97, 0.18);
+    border-color: rgba(224, 197, 137, 0.65);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(224, 197, 137, 0.4);
+}
+#lightbox .lb-prev:hover { transform: translateY(-50%) translateX(-3px) scale(1.06); }
+#lightbox .lb-next:hover { transform: translateY(-50%) translateX(3px) scale(1.06); }
+#lightbox .lb-nav:active { transform: translateY(-50%) scale(0.94); }
+#lightbox .lb-nav[disabled] { opacity: 0.15; pointer-events: none; }
+
+/* Image stage — supports slide transitions */
+#lightbox .lb-stage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 92vw;
+    max-height: 80vh;
+}
+#lightbox .lb-stage img {
+    transition: opacity 0.28s ease, transform 0.42s cubic-bezier(0.2,0.8,0.2,1);
+}
+#lightbox.slide-out-left .lb-stage img { opacity: 0; transform: translateX(-40px) scale(0.97); }
+#lightbox.slide-out-right .lb-stage img { opacity: 0; transform: translateX(40px) scale(0.97); }
+#lightbox.slide-in-left .lb-stage img { opacity: 0; transform: translateX(40px) scale(0.97); }
+#lightbox.slide-in-right .lb-stage img { opacity: 0; transform: translateX(-40px) scale(0.97); }
+
+/* Counter */
+#lightbox .lb-counter {
+    position: fixed;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold-soft);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    background: rgba(10, 15, 10, 0.5);
+    border: 1px solid rgba(224, 197, 137, 0.22);
+    border-radius: 999px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.4s ease 0.15s;
+    z-index: 10001;
+    font-variant-numeric: tabular-nums;
+}
+#lightbox .lb-counter .sep { opacity: 0.5; margin: 0 4px; }
+#lightbox .lb-counter .tot { color: rgba(245, 241, 232, 0.65); }
+#lightbox.open .lb-counter { opacity: 1; }
+
+#lightbox .lb-hint {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(245, 241, 232, 0.45);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 20px;
+}
+@media (max-width: 760px) {
+    #lightbox { padding: 16px; }
+    #lightbox .lb-close { top: 14px; right: 14px; width: 40px; height: 40px; }
+    #lightbox .lb-close svg { width: 16px; height: 16px; }
+    #lightbox .lb-cap { font-size: 14px; }
+    #lightbox .lb-nav { width: 44px; height: 44px; }
+    #lightbox .lb-nav svg { width: 18px; height: 18px; }
+    #lightbox .lb-prev { left: 10px; }
+    #lightbox .lb-next { right: 10px; }
+    #lightbox .lb-counter { top: 16px; font-size: 11px; padding: 6px 12px; letter-spacing: 0.16em; }
+    #lightbox .lb-hint { font-size: 9px; letter-spacing: 0.12em; }
+    .lb-badge { width: 32px; height: 32px; font-size: 14px; }
+    .lb-badge svg { width: 14px; height: 14px; }
+}
+
+/* ============================================================
+   PREMIUM ANIMATIONS  ·  hovers, reveals, micro-interactions
+   ============================================================ */
+
+/* Motion-safe fallback */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --- Global smoothing --- */
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* --- Brand-mark logo micro-hover --- */
+.brand-mark { transition: transform 0.55s cubic-bezier(0.2,0.8,0.2,1), filter 0.4s ease, opacity 0.4s ease; }
+.brand-mark:hover { transform: scale(1.06); filter: drop-shadow(0 6px 22px rgba(224,197,137,0.35)); }
+.brand-mark:active { transform: scale(0.97); }
+
+/* --- Nav-dot elevation --- */
+.nav-dot { transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), background-color 0.3s ease, box-shadow 0.3s ease, width 0.4s ease, height 0.4s ease; position: relative; }
+.nav-dot::after {
+    content: attr(title);
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    background: rgba(10, 15, 10, 0.92);
+    color: var(--gold-soft);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease, transform 0.35s cubic-bezier(0.2,0.8,0.2,1);
+    border: 1px solid rgba(224, 197, 137, 0.25);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: 5;
+}
+.nav-dot:hover { transform: scale(1.5); box-shadow: 0 0 0 4px rgba(224, 197, 137, 0.14); }
+.nav-dot:hover::after { opacity: 1; transform: translateY(-50%) translateX(0); }
+.nav-dot.active { box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.18); }
+@keyframes navDotPulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.18); } 50% { box-shadow: 0 0 0 8px rgba(201, 169, 97, 0.06); } }
+.nav-dot.active { animation: navDotPulse 2.6s ease-in-out infinite; }
+
+/* --- Slide-num underline reveal --- */
+.slide-num { transition: opacity 0.5s ease, letter-spacing 0.6s ease; }
+
+/* --- Universal image reveal on scroll into view --- */
+@keyframes kenBurns {
+    from { transform: scale(1.02); }
+    to { transform: scale(1.06); }
+}
+.slide.in-view .arch-grid > div,
+.slide.in-view .sec-cell,
+.slide.in-view .dorm-common-cell,
+.slide.in-view .dorm-hero-card,
+.slide.in-view .school-hero,
+.slide.in-view .school-mini,
+.slide.in-view .mp-image-wrap {
+    animation-fill-mode: both;
+}
+
+/* --- arch-grid tiles: elegant hover --- */
+.arch-grid > div {
+    transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.5s ease, filter 0.4s ease;
+    will-change: transform;
+}
+.arch-grid > div::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.1), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: inherit;
+}
+.arch-grid > div:hover {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 30px 60px -20px rgba(20,40,20,0.45), 0 0 0 1px rgba(224,197,137,0.35);
+    filter: saturate(1.08) brightness(1.03);
+    z-index: 4;
+}
+.arch-grid > div:hover::before { opacity: 1; }
+.arch-grid > div .label {
+    transition: transform 0.5s cubic-bezier(0.2,0.8,0.2,1), letter-spacing 0.5s ease, color 0.3s ease;
+}
+.arch-grid > div:hover .label {
+    transform: translateY(-2px);
+    letter-spacing: 0.28em;
+    color: var(--gold-soft);
+}
+
+/* --- sec-cell tiles: lift + spotlight --- */
+.sec-cell {
+    transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.5s ease, filter 0.4s ease;
+    will-change: transform;
+}
+.sec-cell:hover {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.65), 0 0 0 1px rgba(224,197,137,0.4);
+    filter: brightness(1.08) saturate(1.1);
+    z-index: 4;
+}
+.sec-cell .label { transition: transform 0.5s cubic-bezier(0.2,0.8,0.2,1), color 0.3s ease; }
+.sec-cell:hover .label { transform: translateY(-3px); }
+.sec-cell:hover .kicker { color: var(--gold-soft); }
+
+/* --- dorm-common-cell hover --- */
+.dorm-common-cell {
+    transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.5s ease, filter 0.4s ease;
+    will-change: transform;
+}
+.dorm-common-cell:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(224,197,137,0.4);
+    filter: brightness(1.06);
+    z-index: 4;
+}
+
+/* --- dorm-hero-card & dorm-img hover --- */
+.dorm-hero-card, .dorm-img, .kimg {
+    transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.5s ease;
+    will-change: transform;
+}
+.dorm-hero-card:hover, .dorm-img:hover, .kimg:hover {
+    transform: translateY(-4px) scale(1.012);
+    box-shadow: 0 24px 50px -20px rgba(20,40,20,0.4);
+}
+
+/* --- Masterplan wrap --- */
+.mp-image-wrap {
+    transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.5s ease;
+    will-change: transform;
+}
+.mp-image-wrap:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 60px -20px rgba(20,40,20,0.4);
+}
+
+/* --- Stat / number pop --- */
+.s-security .sec-stats .item {
+    transition: transform 0.5s cubic-bezier(0.2,0.8,0.2,1), background-color 0.3s ease, border-color 0.3s ease;
+}
+.s-security .sec-stats .item:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(224,197,137,0.35);
+}
+.s-security .sec-stats .item .n { transition: color 0.35s ease, text-shadow 0.4s ease; }
+.s-security .sec-stats .item:hover .n {
+    color: var(--gold-soft);
+    text-shadow: 0 0 22px rgba(224, 197, 137, 0.3);
+}
+
+/* --- Feature rows on split slides --- */
+.s-security-split .features .row {
+    transition: transform 0.45s cubic-bezier(0.2,0.8,0.2,1), padding-left 0.4s ease, background-color 0.3s ease;
+    padding-left: 0;
+    border-radius: 8px;
+}
+.s-security-split .features .row:hover {
+    transform: translateX(4px);
+    padding-left: 8px;
+    background: rgba(224, 197, 137, 0.06);
+}
+.s-security-split .features .row:hover .num { color: var(--gold); }
+.s-security-split .features .row .num { transition: color 0.3s ease; }
+
+/* --- Eco stages: staggered reveal + hover --- */
+.s-eco .stage {
+    transition: transform 0.45s cubic-bezier(0.2,0.8,0.2,1), background-color 0.3s ease;
+    border-radius: 10px;
+}
+.s-eco .stage:hover {
+    transform: translateX(6px);
+    background: rgba(224, 197, 137, 0.08);
+}
+.s-eco .stage:hover .n {
+    color: var(--gold-soft);
+    transform: scale(1.15);
+}
+.s-eco .stage .n { transition: color 0.3s ease, transform 0.4s cubic-bezier(0.2,0.8,0.2,1); display: inline-block; }
+
+/* --- Boulevard desc rows hover --- */
+.s-boulevard .desc {
+    transition: transform 0.45s cubic-bezier(0.2,0.8,0.2,1), color 0.35s ease;
+    cursor: default;
+}
+.s-boulevard .desc:hover { transform: translateX(6px); color: var(--gold-soft); }
+.s-boulevard .desc strong { transition: color 0.35s ease; }
+.s-boulevard .desc:hover strong { color: #fff; }
+
+/* --- H2 em subtle glow on in-view (preserves original color) --- */
+.slide h2 em {
+    transition: text-shadow 0.6s ease;
+}
+.slide.in-view h2 em {
+    text-shadow: 0 0 24px rgba(224, 197, 137, 0.18);
+}
+
+/* --- Eyebrow subtle expansion on in-view --- */
+.slide .eyebrow {
+    transition: letter-spacing 0.7s cubic-bezier(0.2,0.8,0.2,1), color 0.4s ease;
+}
+.slide.in-view .eyebrow { letter-spacing: 0.42em; }
+.slide.in-view .eyebrow::before { transform: scaleX(1.15); }
+.slide .eyebrow::before { transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1); transform-origin: left center; }
+
+/* --- Mix widget row hover polish --- */
+.mix-row {
+    transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1), background-color 0.3s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+.mix-row:hover {
+    box-shadow: 0 12px 32px -12px rgba(20,40,20,0.25), inset 0 0 0 1px rgba(224,197,137,0.35);
+}
+.mix-svg .seg {
+    transition: stroke-width 0.4s cubic-bezier(0.2,0.8,0.2,1), filter 0.4s ease, opacity 0.4s ease;
+    cursor: pointer;
+}
+.mix-svg .seg:hover,
+.mix-svg .seg.hot {
+    stroke-width: 36 !important;
+    filter: drop-shadow(0 0 12px rgba(224, 197, 137, 0.55));
+}
+
+/* --- Timeline / stages hover on phasing slides --- */
+.slide.in-view .signature-tag {
+    transition: letter-spacing 0.6s ease;
+    letter-spacing: 0.36em;
+}
+
+/* --- Global button feel --- */
+button { transition: transform 0.3s cubic-bezier(0.2,0.8,0.2,1); }
+button:active { transform: scale(0.96); }
+
+/* --- Scroll-hint pulse: keep alive but softer --- */
+.scroll-hint { transition: opacity 0.5s ease; }
+
+/* --- Cover slide entrance polish --- */
+@keyframes coverGlow {
+    0%, 100% { text-shadow: 0 0 0 rgba(224, 197, 137, 0); }
+    50% { text-shadow: 0 0 40px rgba(224, 197, 137, 0.35); }
+}
+.slide:first-child.in-view h1 em { animation: coverGlow 5s ease-in-out infinite; }
+
+/* --- Section title subtle wipe-in on in-view --- */
+.slide h2 {
+    transition: transform 0.9s cubic-bezier(0.2,0.8,0.2,1), opacity 0.9s ease;
+}
+
+/* --- Kicker + Sub text hover glow across gold-soft labels --- */
+.kicker { transition: color 0.35s ease, letter-spacing 0.4s ease; }
+
+/* --- School features item hover --- */
+.school-features .item {
+    padding: 4px 6px;
+    margin: -4px -6px;
+    border-radius: 8px;
+    transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1), background-color 0.35s ease;
+    cursor: default;
+}
+.school-features .item:hover {
+    transform: translateY(-2px);
+    background: rgba(74, 110, 74, 0.1);
+}
+.school-features .item:hover .n { color: var(--sage); }
+
+/* --- 5km radius / masterplan block hovers --- */
+.mp-block { transition: transform 0.45s cubic-bezier(0.2,0.8,0.2,1), background-color 0.3s ease, box-shadow 0.4s ease; }
+.mp-block:hover {
+    transform: translateY(-3px);
+    background: rgba(224, 197, 137, 0.12);
+    box-shadow: 0 12px 28px -10px rgba(20,40,20,0.3);
+}
+
+/* --- Nav-dots stagger fade-in on first paint --- */
+@keyframes navDotDrop {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+#navDots .nav-dot {
+    animation: navDotDrop 0.5s cubic-bezier(0.2,0.8,0.2,1) both;
+    animation-delay: calc(var(--i, 0) * 40ms);
+}
+
+/* --- Brand mark subtle floating animation --- */
+@keyframes brandFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+.brand-mark.brand-visible-anim { animation: brandFloat 4.5s ease-in-out infinite; }
+
+/* --- Enhanced h2 em italic underline on hover --- */
+.slide h2 em {
+    position: relative;
+    display: inline-block;
+}
+
+/* --- Signature tag hover --- */
+.signature-tag { transition: letter-spacing 0.5s ease, color 0.4s ease; }
+.signature-tag:hover { letter-spacing: 0.4em; color: var(--gold); }
+
+/* --- R-badges premium hover --- */
+.rb {
+    transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1), background-color 0.3s ease, border-color 0.3s ease;
+}
+.rb:hover {
+    transform: translateY(-2px);
+    background: rgba(20, 34, 20, 0.75);
+    border-color: rgba(224, 197, 137, 0.55);
+}
+
+/* --- Bar-cell shine sweep --- */
+.mix-row .bar-cell {
+    position: relative;
+    overflow: hidden;
+}
+.mix-row .bar-cell::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -60%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: skewX(-20deg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+.mix-widget.play .mix-row:hover .bar-cell::after {
+    opacity: 1;
+    animation: barShine 1.2s cubic-bezier(0.2,0.8,0.2,1);
+}
+@keyframes barShine {
+    0% { left: -60%; opacity: 0; }
+    30% { opacity: 1; }
+    100% { left: 120%; opacity: 0; }
+}
+
+/* --- Numbers count-up highlight --- */
+.mix-center .num,
+.mix-row .pct {
+    transition: text-shadow 0.35s ease, color 0.3s ease;
+}
+.mix-row:hover .pct { text-shadow: 0 0 18px rgba(224, 197, 137, 0.5); }
+
+/* --- Global focus-visible outline (premium look) --- */
+:focus-visible {
+    outline: 2px solid rgba(224, 197, 137, 0.75);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* --- Slide-num accent on active in-view --- */
+.slide.in-view .slide-num { letter-spacing: 0.36em; }
+
+/* --- Fade + rise entrance for any list of stages/stats --- */
+@keyframes riseIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.slide.in-view .s-eco .stage,
+.slide.in-view .s-security-split .features .row,
+.slide.in-view .school-features .item,
+.slide.in-view .sec-stats .item {
+    animation: riseIn 0.7s cubic-bezier(0.2,0.8,0.2,1) both;
+}
+.slide.in-view .s-eco .stage:nth-child(1) { animation-delay: 0.15s; }
+.slide.in-view .s-eco .stage:nth-child(2) { animation-delay: 0.25s; }
+.slide.in-view .s-eco .stage:nth-child(3) { animation-delay: 0.35s; }
+.slide.in-view .s-eco .stage:nth-child(4) { animation-delay: 0.45s; }
+.slide.in-view .s-eco .stage:nth-child(5) { animation-delay: 0.55s; }
+.slide.in-view .s-security-split .features .row:nth-child(1) { animation-delay: 0.1s; }
+.slide.in-view .s-security-split .features .row:nth-child(2) { animation-delay: 0.2s; }
+.slide.in-view .s-security-split .features .row:nth-child(3) { animation-delay: 0.3s; }
+.slide.in-view .s-security-split .features .row:nth-child(4) { animation-delay: 0.4s; }
+.slide.in-view .school-features .item:nth-child(1) { animation-delay: 0.15s; }
+.slide.in-view .school-features .item:nth-child(2) { animation-delay: 0.25s; }
+.slide.in-view .school-features .item:nth-child(3) { animation-delay: 0.35s; }
+.slide.in-view .school-features .item:nth-child(4) { animation-delay: 0.45s; }
+.slide.in-view .sec-stats .item:nth-child(1) { animation-delay: 0.15s; }
+.slide.in-view .sec-stats .item:nth-child(2) { animation-delay: 0.28s; }
+.slide.in-view .sec-stats .item:nth-child(3) { animation-delay: 0.41s; }
+.slide.in-view .sec-stats .item:nth-child(4) { animation-delay: 0.54s; }
+
+/* --- Gold interactive glow on labels --- */
+.arch-grid > div .label,
+.sec-cell .label,
+.dorm-common-cell .label,
+.mp-block {
+    transition: text-shadow 0.35s ease, transform 0.5s cubic-bezier(0.2,0.8,0.2,1), color 0.3s ease;
+}
+
+/* --- Interactive cursor tint on images: subtle vignette lift --- */
+.lb { transition: filter 0.4s ease; }
+.lb:hover { filter: contrast(1.03) saturate(1.05); }
+
+/* --- Cover title parallax on scroll hint --- */
+.slide:first-child h1 { transition: transform 0.8s cubic-bezier(0.2,0.8,0.2,1); }
+
+/* --- Global smooth stack for hover interactions --- */
+.slide > * { transform: translateZ(0); }
+
+/* --- Signature-tag underline sweep --- */
+.signature-tag { position: relative; }
+.signature-tag::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1);
+}
+.slide.in-view .signature-tag::after { transform: scaleX(1); }
+
+/* --- Prevent hover jumpiness on touch --- */
+@media (hover: none) {
+    .arch-grid > div:hover,
+    .sec-cell:hover,
+    .dorm-common-cell:hover,
+    .dorm-hero-card:hover,
+    .dorm-img:hover,
+    .kimg:hover,
+    .school-hero:hover,
+    .school-mini:hover,
+    .mp-image-wrap:hover,
+    .mix-row:hover,
+    .s-boulevard .desc:hover,
+    .s-eco .stage:hover,
+    .s-security-split .features .row:hover {
+        transform: none;
+    }
+}
 </style>
 </head>
 <body>
@@ -2455,25 +4851,26 @@ main::-webkit-scrollbar { width: 0; }
     <div class="top-tag">By <span>Imarat Development</span> · Toshkent, O'zbekiston</div>
     <div class="content">
         <h1>Bio Pharma<br><em>Residence.</em></h1>
-        <div class="sub">12&nbsp;gektar maydonda barpo etilayotgan zamonaviy ekomahalla — 6&nbsp;500 dan ortiq oila uchun yaratilgan butun bir shahar.</div>
+        <div class="sub">14&nbsp;gektar maydonda barpo etilayotgan zamonaviy ekomahalla — 6&nbsp;500 dan ortiq oila uchun yaratilgan butun bir shahar.</div>
         <div class="meta-row">
-            <div><span class="k">Hudud</span><span class="v">12 gektar</span></div>
-            <div><span class="k">Qurilish maydoni</span><span class="v">469 000 m²</span></div>
+            <div><span class="k">Hudud</span><span class="v">14 gektar</span></div>
+            <div><span class="k">Qurilish maydoni</span><span class="v">489 000 m²</span></div>
             <div><span class="k">Bloklar</span><span class="v">14 ta · 14 bosqich</span></div>
             <div><span class="k">Aholi sig'imi</span><span class="v">22 372 kishi</span></div>
         </div>
     </div>
-    <div class="slide-num"><strong>01</strong> / 18  ·  Bio Pharma Residence</div>
+    <div class="slide-num"><strong>01</strong> / 27  ·  Bio Pharma Residence</div>
 </section>
 
 <!-- ===== SLIDE 2 — PHILOSOPHY ===== -->
 <section class="slide s-philosophy" data-title="Falsafa">
     <div class="content">
         <div class="eyebrow">Falsafa</div>
-        <h2>Uy — bu shunchaki devorlar emas. <em>Bu — havo, suv, daraxt, qo'shni va kelajak.</em> Biz tabiat va texnologiyani bir hovuchda jamladik.</h2>
+        <h2>Sifat taklif emas, <em>majburiyatdir.</em></h2>
+        <div class="philosophy-logo"><img src="assets/imarat-logo-white.png" alt="Imarat Development"></div>
         <div class="signature">Imarat Development</div>
     </div>
-    <div class="slide-num"><strong>02</strong> / 18  ·  Falsafa</div>
+    <div class="slide-num"><strong>02</strong> / 27  ·  Falsafa</div>
 </section>
 
 <!-- ===== SLIDE 3 — AT A GLANCE ===== -->
@@ -2484,11 +4881,11 @@ main::-webkit-scrollbar { width: 0; }
     </div>
     <div class="stats-grid">
         <div class="stat-cell">
-            <div><div class="label">Yer maydoni</div><div class="num">12<span class="unit">ga</span></div></div>
+            <div><div class="label">Yer maydoni</div><div class="num">14<span class="unit">ga</span></div></div>
             <div class="desc">Yagona master-rejada</div>
         </div>
         <div class="stat-cell">
-            <div><div class="label">Qurilish maydoni</div><div class="num">469k<span class="unit">m²</span></div></div>
+            <div><div class="label">Qurilish maydoni</div><div class="num">489k<span class="unit">m²</span></div></div>
             <div class="desc">Umumiy qurilish maydoni</div>
         </div>
         <div class="stat-cell">
@@ -2532,7 +4929,7 @@ main::-webkit-scrollbar { width: 0; }
             <div class="desc">Suvni tejovchi aqlli tizim</div>
         </div>
     </div>
-    <div class="slide-num"><strong>03</strong> / 18  ·  Bir qarashda</div>
+    <div class="slide-num"><strong>03</strong> / 27  ·  Bir qarashda</div>
 </section>
 
 <!-- ===== SLIDE 4 — MASTER PLAN ===== -->
@@ -2541,7 +4938,7 @@ main::-webkit-scrollbar { width: 0; }
     <div class="veil"></div>
     <div class="content">
         <div class="eyebrow">Bosh reja</div>
-        <h2>O'n ikki gektarda <em>yangi shahar.</em></h2>
+        <h2>O'n to'rt gektarda <em>yangi shahar.</em></h2>
         <div class="description">Ko'p funksiyali, piyodalarga qulay master-reja: yashil hovlilar, suv kanali, savdo bulvarlari va xususiy infratuzilma — barchasi bir butun ekotizimda birlashtirilgan.</div>
         <ul class="key-points">
             <li><strong>A–N</strong> 14 ta blok — 16 qavatli zamonaviy turar joy minoralari</li>
@@ -2551,7 +4948,7 @@ main::-webkit-scrollbar { width: 0; }
             <li><strong>33</strong> ta kafe, restoran va ovqatlanish nuqtasi</li>
         </ul>
     </div>
-    <div class="slide-num"><strong>04</strong> / 18  ·  Bosh reja</div>
+    <div class="slide-num"><strong>04</strong> / 27  ·  Bosh reja</div>
 </section>
 
 <!-- ===== SLIDE 5 — ARCHITECTURE ===== -->
@@ -2564,34 +4961,105 @@ main::-webkit-scrollbar { width: 0; }
         <div class="right">Loyihaning vizual tili — yashil va oq tonlardagi sof fasadlar, panoramli balkonlar va yorug'likka ochilgan hovlilar. Har bir blok katta ko'ngilochar maydonni o'rab oladi.</div>
     </div>
     <div class="arch-grid">
-        <div class="a1" style="--i:0"><div class="label">Bahor · Bosh hovli</div></div>
-        <div class="a2" style="--i:1"><div class="label">Markaziy bulvar</div></div>
-        <div class="a3" style="--i:2"><div class="label">Sport hovli</div></div>
-        <div class="a4" style="--i:3"><div class="label">Yaqin ko'rinish</div></div>
-        <div class="a5" style="--i:4"><div class="label">Quyosh botishi</div></div>
+        <div class="a1 lb" style="--i:0" data-lb-src="assets/courtyard-spring.jpg" data-lb-cap="Bahor · Bosh hovli"><div class="label">Bahor · Bosh hovli</div></div>
+        <div class="a2 lb" style="--i:1" data-lb-src="assets/boulevard-cars.jpg" data-lb-cap="Markaziy bulvar"><div class="label">Markaziy bulvar</div></div>
+        <div class="a3 lb" style="--i:2" data-lb-src="assets/courtyard-sport.jpg" data-lb-cap="Sport hovli"><div class="label">Sport hovli</div></div>
+        <div class="a4 lb" style="--i:3" data-lb-src="assets/render-extra-4.jpg" data-lb-cap="Yaqin ko'rinish"><div class="label">Yaqin ko'rinish</div></div>
+        <div class="a5 lb" style="--i:4" data-lb-src="assets/render-extra-7.jpg" data-lb-cap="Quyosh botishi"><div class="label">Quyosh botishi</div></div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">05</strong> / 18  ·  Arxitektura</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">05</strong> / 27  ·  Arxitektura</div>
 </section>
 
-<!-- ===== SLIDE 6 — COURTYARD ===== -->
-<section class="slide s-courtyard" data-title="Hovlilar">
-    <div class="bg"></div>
+<!-- ===== SLIDE 6 — SECURITY OVERVIEW ===== -->
+<section class="slide s-security" data-title="24/7 Xavfsizlik">
+    <div class="bg" style="background-image: url('assets/sec-guard.png');"></div>
     <div class="veil"></div>
     <div class="content">
-        <div class="eyebrow">Hovlilar</div>
-        <h2>Hovlilar — <em>yashash uchun,</em><br>mashinalar uchun emas.</h2>
-        <div class="desc">Avtomobillar yer ostiga olinadi; tepada faqat daraxtlar, suv havzalari, bolalar maydonchalari va piyodalar uchun yo'lkalar qoladi. Bu O'rta Osiyo bog'lari falsafasiga zamonaviy nigoh.</div>
-        <div class="feat-list">
-            <div class="item"><span class="n">100%</span><span class="t">Piyodaga yo'naltirilgan hovlilar</span></div>
-            <div class="item"><span class="n">2</span><span class="t">Yer osti · yer usti avtoturargohi</span></div>
-            <div class="item"><span class="n">∞</span><span class="t">Ko'kalamzor — har blokda</span></div>
-            <div class="item"><span class="n">24/7</span><span class="t">Xavfsizlik va monitoring</span></div>
+        <div class="eyebrow">24/7 Xavfsizlik</div>
+        <h2>Uyqusiz posbon — <em>tinch uyquingiz uchun.</em></h2>
+        <div class="desc">Bio Pharma Residence — kirish darvozalaridan tortib yer osti avtoturargohigacha, har bir metr kadr ostida. Professional qo'riqlash xizmati, aqlli video kuzatuv va nazorat markazi bir tizimda ishlaydi.</div>
+        <div class="sec-stats">
+            <div class="item"><span class="n">24/7</span><span class="t">Uzluksiz nazorat va patrul</span></div>
+            <div class="item"><span class="n">500<span class="u">+</span></span><span class="t">HD video kuzatuv kamerasi</span></div>
+            <div class="item"><span class="n">100<span class="u">%</span></span><span class="t">Perimetr va hovlilarni qamrash</span></div>
+            <div class="item"><span class="n">4K</span><span class="t">Kunduz va tunda aniq tasvir</span></div>
         </div>
     </div>
-    <div class="slide-num"><strong>06</strong> / 18  ·  Hovlilar</div>
+    <div class="slide-num"><strong>06</strong> / 27  ·  24/7 Xavfsizlik</div>
 </section>
 
-<!-- ===== SLIDE 7 — BOULEVARD ===== -->
+<!-- ===== SLIDE 7 — SECURITY COMMAND CENTER ===== -->
+<section class="slide s-security-split" data-title="Nazorat markazi">
+    <div class="left">
+        <div class="eyebrow">Video kuzatuv markazi</div>
+        <h2>Butun majmua — <em>bitta ekranda.</em></h2>
+        <div class="desc">Har blokda o'z markazlashgan monitoring xonasi. Yerto'la, kirishlar, hovlilar va bulvarlar — bir vaqtning o'zida jonli translyatsiyada kuzatiladi. Har bir kamera Hikvision Pro turkumida, kunduzu tun aniq tasvir bilan.</div>
+        <div class="features">
+            <div class="row">
+                <span class="num">01</span>
+                <div class="txt"><strong>Real-time monitoring</strong>Har blok uchun alohida operator smenasi va konsolli boshqaruv paneli.</div>
+            </div>
+            <div class="row">
+                <span class="num">02</span>
+                <div class="txt"><strong>30 kunlik arxiv</strong>Barcha yozuvlar xavfsiz serverlarda saqlanadi, kerakli daqiqa oson qidiriladi.</div>
+            </div>
+            <div class="row">
+                <span class="num">03</span>
+                <div class="txt"><strong>AI harakat aniqlash</strong>Shubhali xatti-harakat avtomatik belgilanadi va operatorga bildiriladi.</div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <img src="assets/sec-command-center.png" alt="Bio Pharma nazorat markazi">
+    </div>
+    <div class="slide-num"><strong>07</strong> / 27  ·  Nazorat markazi</div>
+</section>
+
+<!-- ===== SLIDE 8 — COMPLEX-WIDE SURVEILLANCE ===== -->
+<section class="slide s-security-grid" data-title="Majmua nazorati">
+    <div class="head">
+        <div>
+            <div class="eyebrow">Butun majmua nazorati · Fizik + kamera</div>
+            <h2>Har burchak, har qavat — <em>ko'z ostida.</em></h2>
+        </div>
+        <div class="right">Ichki hovlilar, kanal bo'ylab piyoda yo'llari, bosh darvozalar, yer osti avtoturargohi va tungi perimetr — hech bir zona kuzatuvsiz qolmaydi. Barcha oqim yagona xavfsizlik markaziga uzatiladi.</div>
+    </div>
+    <div class="sec-grid">
+        <div class="sec-cell big lb" data-lb-src="assets/sec-complex-yard.png" data-lb-cap="Yashil hovli · perimetr kuzatuvi" style="background-image: url('assets/sec-complex-yard.png');">
+            <div class="label">
+                <div class="kicker">Ichki hovlilar</div>
+                <div class="name">Yashil zona · perimetr kuzatuvi</div>
+            </div>
+        </div>
+        <div class="sec-cell lb" data-lb-src="assets/sec-entrance-modern.png" data-lb-cap="Bosh kirish · KPP · zamonaviy nazorat darvozasi" style="background-image: url('assets/sec-entrance-modern.png');">
+            <div class="label">
+                <div class="kicker">Bosh darvoza · KPP</div>
+                <div class="name">Aqlli shlagbaum tizimi</div>
+            </div>
+        </div>
+        <div class="sec-cell lb" data-lb-src="assets/sec-camera-night.png" data-lb-cap="Tungi infra-red kamera · to'liq aniqlik" style="background-image: url('assets/sec-camera-night.png');">
+            <div class="label">
+                <div class="kicker">Tungi nazorat</div>
+                <div class="name">Infra-red · 4K aniqlik</div>
+            </div>
+        </div>
+        <div class="sec-cell lb" data-lb-src="assets/sec-parking.png" data-lb-cap="Yer osti avtoturargohi · ANPR + kamera" style="background-image: url('assets/sec-parking.png');">
+            <div class="label">
+                <div class="kicker">Yer osti avtoturargohi</div>
+                <div class="name">Har qavat kuzatuv ostida</div>
+            </div>
+        </div>
+        <div class="sec-cell lb" data-lb-src="assets/sec-control-office.png" data-lb-cap="Xavfsizlik boshqaruv markazi · A1" style="background-image: url('assets/sec-control-office.png');">
+            <div class="label">
+                <div class="kicker">Boshqaruv markazi</div>
+                <div class="name">A1 xavfsizlik oqimi</div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>08</strong> / 27  ·  Majmua nazorati</div>
+</section>
+
+<!-- ===== SLIDE 11 — BOULEVARD ===== -->
 <section class="slide s-boulevard" data-title="Bulvar">
     <div class="bg"></div>
     <div class="veil"></div>
@@ -2603,7 +5071,7 @@ main::-webkit-scrollbar { width: 0; }
         <div class="desc"><strong>33 nuqta</strong>Kafe, restoran, fastfud va shirinliklar</div>
         <div class="desc"><strong>8 dorixona</strong>5 km radius ichida tibbiy taminot</div>
     </div>
-    <div class="slide-num"><strong>07</strong> / 18  ·  Bulvar</div>
+    <div class="slide-num"><strong>09</strong> / 27  ·  Bulvar</div>
 </section>
 
 <!-- ===== SLIDE 8 — ECO GREYWATER ===== -->
@@ -2624,10 +5092,10 @@ main::-webkit-scrollbar { width: 0; }
             <div class="stage"><span class="n">05</span><span><strong style="color:var(--gold-soft); font-weight:500;">Qaytarish.</strong> Faqat sanitariya tarmog'iga texnik suv</span></div>
         </div>
     </div>
-    <div class="right">
+    <div class="right lb" data-lb-src="assets/eco-greywater.png" data-lb-cap="Imarat Eco Greywater System — yopiq siklli aqlli drenaj tizimi">
         <img src="assets/eco-greywater.png" alt="Imarat Eco Greywater System diagrammasi">
     </div>
-    <div class="slide-num"><strong>08</strong> / 18  ·  Eco Greywater System</div>
+    <div class="slide-num"><strong>10</strong> / 27  ·  Eco Greywater System</div>
 </section>
 
 <!-- ===== SLIDE 9 — PHARMA SCHOOL ===== -->
@@ -2648,10 +5116,261 @@ main::-webkit-scrollbar { width: 0; }
             <span class="author">Abu Ali Ibn Sino · 980–1037</span>
         </div>
     </div>
-    <div class="slide-num"><strong>09</strong> / 18  ·  Pharma School</div>
+    <div class="slide-num"><strong>11</strong> / 27  ·  Pharma School</div>
 </section>
 
-<!-- ===== SLIDE 10 — INTERNAL INFRASTRUCTURE ===== -->
+<!-- ===== SLIDE 12 — SCHOOL INTERIOR ===== -->
+<section class="slide s-school-inside" data-title="Maktab ichida">
+    <div class="head">
+        <div class="left">
+            <div class="eyebrow">Pharma School · Interior</div>
+            <h2>Kelajak <em>bugundan boshlanadi.</em></h2>
+        </div>
+        <div class="right">
+            <strong style="display:block;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--sage);font-weight:600;margin-bottom:4px;">640 o'quvchi</strong>
+            4 qavatli zamonaviy bino — kimyo, biologiya va IT laboratoriyalari, kutubxona, sport zali va rekreatsiya maydonchalari.
+        </div>
+    </div>
+<div class="school-body">
+        <div class="school-hero lb" data-lb-src="assets/school-lab.png" data-lb-cap="Pharma laboratoriyasi — zamonaviy STEM jihozlari">
+            <img src="assets/school-lab.png" alt="Pharma laboratoriya">
+        </div>
+        <div class="school-side">
+            <div class="school-mini lb" data-lb-src="assets/school-interior.png" data-lb-cap="Maktab interyeri — 4 qavatli zamonaviy bino">
+                <img src="assets/school-interior.png" alt="Maktab interyeri">
+            </div>
+            <div class="school-features">
+                <div class="item">
+                    <div class="n">12<em>+</em></div>
+                    <div class="t">Laboratoriya va amaliyot xonalari</div>
+                </div>
+                <div class="item">
+                    <div class="n">STEM</div>
+                    <div class="t">Ilmiy-ta'lim yo'nalishi</div>
+                </div>
+                <div class="item">
+                    <div class="n">4</div>
+                    <div class="t">Qavat · zamonaviy loyiha</div>
+                </div>
+                <div class="item">
+                    <div class="n">1:20</div>
+                    <div class="t">O'qituvchi–o'quvchi nisbati</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">12</strong> / 27  ·  Maktab ichida</div>
+</section>
+
+<!-- ===== SLIDE 13 — KINDERGARDEN ===== -->
+<section class="slide s-kindergarden" data-title="Bog'cha">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="top-eyebrow">Bog'cha · Erta rivojlanish</div>
+    <div class="content">
+        <div>
+            <h2>Kichkintoylarga <em>alohida dunyo.</em></h2>
+        </div>
+        <div class="desc">
+            <strong>Xavfsizlik</strong>
+            Yopiq va nazorat ostidagi hudud, tabiiy yorug'lik va yashil o'yin maydoni.
+        </div>
+        <div class="desc">
+            <strong>Metodika</strong>
+            Zamonaviy Reggio Emilia yondashuvi, ijodiy va motorik rivojlanish dasturlari.
+        </div>
+        <div class="desc">
+            <strong>Sig'im</strong>
+            220+ bola uchun mo'ljallangan, professional pedagoglar va tibbiyot xodimi bilan.
+        </div>
+    </div>
+    <div class="slide-num"><strong>13</strong> / 27  ·  Bog'cha</div>
+</section>
+
+<!-- ===== SLIDE 14 — DORMITORY HERO ===== -->
+<section class="slide s-dorm-hero" data-title="Yotoqxona">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="content">
+        <div class="eyebrow" style="color: var(--gold); margin-bottom: 26px;">Yotoqxona · Universitet turi</div>
+        <h2>Talabalarga <em>uy sifatida.</em></h2>
+        <div class="desc">
+            1550+ o'rinli zamonaviy yotoqxona kompleksi — resepshn, koworking, kutubxona, oshxona va dam olish maydonlari bilan to'liq jihozlangan.
+        </div>
+        <div class="dorm-stats">
+            <div class="item">
+                <div class="n">1 550<span class="u">+</span></div>
+                <div class="t">O'rin sig'imi</div>
+            </div>
+            <div class="item">
+                <div class="n">24/7</div>
+                <div class="t">Resepshn va xavfsizlik</div>
+            </div>
+            <div class="item">
+                <div class="n">100<span class="u">%</span></div>
+                <div class="t">Wi-Fi va issiq suv</div>
+            </div>
+            <div class="item">
+                <div class="n">8<span class="u">+</span></div>
+                <div class="t">Umumiy foydalanish zonalari</div>
+            </div>
+            <div class="item">
+                <div class="n">2</div>
+                <div class="t">Tur — Standart &amp; Premium</div>
+            </div>
+            <div class="item">
+                <div class="n">A+</div>
+                <div class="t">Energiya samaradorligi</div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>14</strong> / 27  ·  Yotoqxona</div>
+</section>
+
+<!-- ===== SLIDE 15 — DORMITORY ROOMS ===== -->
+<section class="slide s-dorm-rooms" data-title="Yotoqxona xonalari">
+    <div class="head">
+        <div class="left">
+            <div class="eyebrow">Yashash xonalari · 16-qavatli blok</div>
+            <h2>Bitta blok · <em>butun yotoqxonaga.</em></h2>
+        </div>
+        <div class="right">
+            Bir katta 16-qavatli blok maxsus yotoqxona uchun ajratilgan. Har bir xonada shaxsiy hammom, ish stoli va yopiq shkaf mavjud. Formatlar — 1-xonali va studio, 26,9 m²'dan 34,5 m²'gacha.
+        </div>
+    </div>
+    <div class="dorm-rooms-v2">
+        <div class="dorm-hero-card">
+            <div class="dorm-img lb" style="background-image: url('assets/dorm-studio.png');" data-lb-src="assets/dorm-studio.png" data-lb-cap="Studio format · 2 kishilik xona · 26,9 m²"></div>
+            <div class="badge-strip">Yotoqxona · 16-qavatli blok</div>
+            <div class="caption">
+                <div class="name">Studio format — <em>eng ixcham konfiguratsiya.</em></div>
+                <div class="sub">To'liq jihozlangan mebel · shaxsiy hammom · yopiq shkaf · ish joyi</div>
+            </div>
+        </div>
+        <div class="dorm-tiers">
+            <div class="dorm-tier">
+                <div class="cap">2<span>kishilik</span></div>
+                <div class="info">
+                    <div class="t">Studio</div>
+                    <div class="d">Ixcham format, ikki alohida karavot va umumiy ish joyi</div>
+                </div>
+                <div class="area">26,9<small>m²</small></div>
+            </div>
+            <div class="dorm-tier">
+                <div class="cap">4<span>kishilik</span></div>
+                <div class="info">
+                    <div class="t">1-xonali</div>
+                    <div class="d">To'rt karavot, kengaytirilgan ish maydoni va ikki shkaf</div>
+                </div>
+                <div class="area">~28<small>m²</small></div>
+            </div>
+            <div class="dorm-tier">
+                <div class="cap">6<span>kishigacha</span></div>
+                <div class="info">
+                    <div class="t">1-xonali · kengaytirilgan</div>
+                    <div class="d">Katta oyna, keng maydon va guruh yashashiga moslashgan format</div>
+                </div>
+                <div class="area">34,5<small>m²</small></div>
+            </div>
+        </div>
+        <div class="dorm-block-note">
+            <div class="num">16<small>qavat</small></div>
+            <div class="txt"><strong>Bitta katta blok butun yotoqxonaga ajratilgan.</strong> Ichida umumiy zonalar, kutubxona va koworking — tashqariga chiqmasdan barchasi bir tom ostida.</div>
+            <div class="pill">1&thinsp;550+ o'rin</div>
+        </div>
+    </div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">15</strong> / 27  ·  Xonalar</div>
+</section>
+
+<!-- ===== SLIDE 16 — DORMITORY KITCHENS ===== -->
+<section class="slide s-dorm-kitchens" data-title="Yotoqxona · Oshxonalar">
+    <div class="head">
+        <div class="left">
+            <div class="eyebrow">Oshxonalar · Ikki format</div>
+            <h2>Kunlik va <em>tadbir uchun.</em></h2>
+        </div>
+        <div class="right">
+            Yotoqxonada ikki turdagi oshxona bor: 1-qavatdagi katta umumiy oshxona kunlik foydalanish uchun, alohida kichik oshxona esa tadbirlar va mehmonlar uchun mo'ljallangan.
+        </div>
+    </div>
+    <div class="kitchens-grid">
+        <div class="kitchen-card">
+            <div class="kimg lb" style="background-image: url('assets/dorm-kitchen-daily.png');" data-lb-src="assets/dorm-kitchen-daily.png" data-lb-cap="Umumiy oshxona — 1-qavatda joylashgan, katta maydon"></div>
+            <div class="kinfo">
+                <div class="pill">1-qavat · Katta maydon</div>
+                <h3>Umumiy oshxona — <em>kunlik foydalanish uchun.</em></h3>
+                <p>Yotoqxonaning 1-qavatida joylashgan yagona katta umumiy oshxona. Har qavatda emas — bitta keng maydonli oshxona barcha yashovchilar uchun umumiy.</p>
+                <div class="facts">
+                    <div class="f"><div class="n">1</div><div class="t">qavat</div></div>
+                    <div class="f"><div class="n">24/7</div><div class="t">ochiq</div></div>
+                    <div class="f"><div class="n">Keng</div><div class="t">maydon</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="kitchen-card">
+            <div class="kimg lb" style="background-image: url('assets/dorm-kitchen-premium.png');" data-lb-src="assets/dorm-kitchen-premium.png" data-lb-cap="Tadbirlar oshxonasi — kichikroq format, mehmonlar uchun"></div>
+            <div class="kinfo">
+                <div class="pill">Tadbir · Mehmonlar uchun</div>
+                <h3>Kichik oshxona — <em>tadbirlar va mehmonlar uchun.</em></h3>
+                <p>Maxsus kunlarda, tadbirlarda va mehmonlar kelganda foydalaniladigan ixcham, alohida oshxona zonasi.</p>
+                <div class="facts">
+                    <div class="f"><div class="n">Alohida</div><div class="t">zona</div></div>
+                    <div class="f"><div class="n">Ixcham</div><div class="t">format</div></div>
+                    <div class="f"><div class="n">Tadbir</div><div class="t">uchun</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">16</strong> / 27  ·  Oshxonalar</div>
+</section>
+
+<!-- ===== SLIDE 16 — DORMITORY COMMON AREAS ===== -->
+<section class="slide s-dorm-common" data-title="Yotoqxona · Umumiy zonalar">
+    <div class="head">
+        <div>
+            <div class="eyebrow">Umumiy foydalanish</div>
+            <h2>Yashash, o'qish, <em>ilhomlanish.</em></h2>
+        </div>
+        <div class="right">
+            Zamonaviy resepshn, kutubxona, koworking va uchrashuvlar xonalari — barchasi bir tom ostida.
+        </div>
+    </div>
+    <div class="dorm-common-grid">
+        <div class="dorm-common-cell big lb" data-lb-src="assets/dorm-library.png" data-lb-cap="01 · Kutubxona — Sokinlik va bilim zonasi" style="background-image: url('assets/dorm-library.png');">
+            <div class="label">
+                <div class="kicker">01 · Kutubxona</div>
+                <div class="name">Sokinlik va bilim zonasi</div>
+            </div>
+        </div>
+        <div class="dorm-common-cell lb" data-lb-src="assets/dorm-reception.png" data-lb-cap="02 · Resepshn — 24/7 xizmat ko'rsatish" style="background-image: url('assets/dorm-reception.png');">
+            <div class="label">
+                <div class="kicker">02 · Resepshn</div>
+                <div class="name">24/7 xizmat ko'rsatish</div>
+            </div>
+        </div>
+        <div class="dorm-common-cell lb" data-lb-src="assets/dorm-coworking.png" data-lb-cap="03 · Koworking — Ochiq ish stollari" style="background-image: url('assets/dorm-coworking.png');">
+            <div class="label">
+                <div class="kicker">03 · Koworking</div>
+                <div class="name">Ochiq ish stollari</div>
+            </div>
+        </div>
+        <div class="dorm-common-cell lb" data-lb-src="assets/dorm-meeting.png" data-lb-cap="04 · Uchrashuv — Guruh muhokamalari uchun" style="background-image: url('assets/dorm-meeting.png');">
+            <div class="label">
+                <div class="kicker">04 · Uchrashuv</div>
+                <div class="name">Guruh muhokamalari uchun</div>
+            </div>
+        </div>
+        <div class="dorm-common-cell lb" data-lb-src="assets/dorm-kitchen-premium.png" data-lb-cap="05 · Oshxona — Umumiy hordiq maydoni" style="background-image: url('assets/dorm-kitchen-premium.png');">
+            <div class="label">
+                <div class="kicker">05 · Oshxona</div>
+                <div class="name">Umumiy hordiq maydoni</div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>17</strong> / 27  ·  Umumiy zonalar</div>
+</section>
+
+<!-- ===== SLIDE 17 — INTERNAL INFRASTRUCTURE ===== -->
 <section class="slide s-infrastructure" data-title="Ichki infratuzilma">
     <div class="head">
         <div class="left">
@@ -2659,8 +5378,26 @@ main::-webkit-scrollbar { width: 0; }
             <h2>Hammasi <em>yagona darvoza ichida.</em></h2>
         </div>
         <div class="right">
-            <span class="total">12 ta</span>
-            obyekt — yashash, ta'lim, sport, savdo va ko'ngilochar.
+            <span class="total">80+ obyekt</span>
+            yashash, ta'lim, sport, savdo, tibbiyot va ko'ngilochar — o'z hududingizdan chiqmasdan.
+        </div>
+    </div>
+    <div class="infra-summary">
+        <div class="s-item">
+            <div class="n">14<em>ga</em></div>
+            <div class="t">Umumiy hudud</div>
+        </div>
+        <div class="s-item">
+            <div class="n">4</div>
+            <div class="t">Katta yo'nalish</div>
+        </div>
+        <div class="s-item">
+            <div class="n">80<em>+</em></div>
+            <div class="t">Infratuzilma obyektlari</div>
+        </div>
+        <div class="s-item">
+            <div class="n">5<em>min</em></div>
+            <div class="t">Piyoda masofada barchasi</div>
         </div>
     </div>
     <div class="infra-categories">
@@ -2679,6 +5416,11 @@ main::-webkit-scrollbar { width: 0; }
                     <div class="cat-lbl">Korzinka supermarketi</div>
                 </div>
                 <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 4v16M16 4v16"/></svg></div>
+                    <div class="cat-num">6<span class="plus">+</span></div>
+                    <div class="cat-lbl">Do'kon va butik</div>
+                </div>
+                <div class="cat-item">
                     <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></div>
                     <div class="cat-num">∞</div>
                     <div class="cat-lbl">Yer osti avtoturargoh</div>
@@ -2691,18 +5433,23 @@ main::-webkit-scrollbar { width: 0; }
             <div class="cat-items">
                 <div class="cat-item">
                     <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v11h14V10M9 21v-6h6v6"/></svg></div>
-                    <div class="cat-num">1<span class="plus">+</span></div>
-                    <div class="cat-lbl">Pharma School · 640 o'rin</div>
+                    <div class="cat-num">640</div>
+                    <div class="cat-lbl">Pharma School · o'rin</div>
                 </div>
                 <div class="cat-item">
                     <div class="cat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
-                    <div class="cat-num">1<span class="plus">+</span></div>
-                    <div class="cat-lbl">Bog'cha</div>
+                    <div class="cat-num">220<span class="plus">+</span></div>
+                    <div class="cat-lbl">Bog'cha · o'rin</div>
                 </div>
                 <div class="cat-item">
                     <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V8a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v13M10 21v-6h4v6"/></svg></div>
                     <div class="cat-num">1 550<span class="plus">+</span></div>
                     <div class="cat-lbl">Yotoqxona o'rni</div>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v14H4z"/><path d="M4 8h16M8 4v14"/></svg></div>
+                    <div class="cat-num">12<span class="plus">+</span></div>
+                    <div class="cat-lbl">Laboratoriya va amaliyot</div>
                 </div>
             </div>
         </div>
@@ -2716,14 +5463,19 @@ main::-webkit-scrollbar { width: 0; }
                     <div class="cat-lbl">Sport va fitnes zali</div>
                 </div>
                 <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M6 6l12 12M18 6L6 18"/><circle cx="12" cy="12" r="4"/></svg></div>
+                    <div class="cat-num">4<span class="plus">+</span></div>
+                    <div class="cat-lbl">Sport maydonchalari</div>
+                </div>
+                <div class="cat-item">
                     <div class="cat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21v-3a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3"/></svg></div>
                     <div class="cat-num">5</div>
                     <div class="cat-lbl">Go'zallik salonlari</div>
                 </div>
                 <div class="cat-item">
-                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M3 18s2-9 9-9 9 9 9 9M3 18h18M6 12V4h12v8"/></svg></div>
-                    <div class="cat-num">5<span class="plus">+</span></div>
-                    <div class="cat-lbl">Ko'ngilochar maskan</div>
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
+                    <div class="cat-num">1</div>
+                    <div class="cat-lbl">Poliklinika · 24/7</div>
                 </div>
             </div>
         </div>
@@ -2746,10 +5498,15 @@ main::-webkit-scrollbar { width: 0; }
                     <div class="cat-num">35<span class="unit">%</span></div>
                     <div class="cat-lbl">Eco Greywater suv tejovi</div>
                 </div>
+                <div class="cat-item">
+                    <div class="cat-icon"><svg viewBox="0 0 24 24"><path d="M4 12h4l3-8 3 16 3-8h3"/></svg></div>
+                    <div class="cat-num">Fiber</div>
+                    <div class="cat-lbl">Optik tarmoq · 1 Gbps</div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">10</strong> / 18  ·  Ichki infratuzilma</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">18</strong> / 27  ·  Ichki infratuzilma</div>
 </section>
 
 <!-- ===== SLIDE 11 — 5KM RADIUS ===== -->
@@ -2790,42 +5547,90 @@ main::-webkit-scrollbar { width: 0; }
             <div class="r-row" style="--i:5"><span class="name">Yaqin orada · yana qo'shiluvchi</span><span class="count">∞</span></div>
         </div>
     </div>
-    <div class="slide-num"><strong>11</strong> / 18  ·  5 km radius</div>
+    <div class="slide-num"><strong>19</strong> / 27  ·  5 km radius</div>
 </section>
 
-<!-- ===== SLIDE 12 — APARTMENT MIX ===== -->
-<section class="slide s-mix" data-title="Xonadon turlari">
+<!-- ===== SLIDE 19 — APARTMENT MIX ===== -->
+<section class="slide s-mix apart-v2" id="apartMixSlide" data-title="Xonadon turlari">
     <div class="left">
         <div class="eyebrow">Xonadon turlari</div>
         <h2>Har bir hayot tarzi uchun — <em>o'lcham bo'yicha.</em></h2>
-        <div class="desc">6 500+ xonadon turli yashash modellariga moslashtirilgan: yakka talabadan tortib katta oilagacha. To'rt asosiy tipologiya bo'yicha taqsimlangan.</div>
-        <div class="mix-bars">
-            <div class="mix-bar">
-                <div class="top"><span>2-xonali</span><span class="pct">35<small style="font-size:0.5em;color:var(--gold-soft);">%</small></span></div>
-                <div class="bar"><div class="fill" style="--w:88%"></div></div>
+        <div class="desc">6&nbsp;500+ xonadon to'rt asosiy tipologiyaga taqsimlangan: yakka yashashdan katta oilagacha. Diagrammani bosib har bir toifa taqsimotini ko'ring.</div>
+        <div class="mix-widget" id="mixWidget">
+            <div class="mix-donut-area" id="mixDonut">
+                <svg class="mix-svg" viewBox="0 0 200 200" aria-hidden="true">
+                    <circle class="track" cx="100" cy="100" r="80"/>
+                    <circle class="seg" data-key="k1" cx="100" cy="100" r="80"
+                            stroke="#E0C589"
+                            style="--len:150.79; --off:0; --i:0;"/>
+                    <circle class="seg" data-key="k2" cx="100" cy="100" r="80"
+                            stroke="#C9A961"
+                            style="--len:175.93; --off:-150.79; --i:1;"/>
+                    <circle class="seg" data-key="k3" cx="100" cy="100" r="80"
+                            stroke="#8AA88A"
+                            style="--len:125.66; --off:-326.72; --i:2;"/>
+                    <circle class="seg" data-key="k4" cx="100" cy="100" r="80"
+                            stroke="#4A6E4A"
+                            style="--len:50.26; --off:-452.38; --i:3;"/>
+                </svg>
+                <div class="mix-center" id="mixCenter">
+                    <div class="kicker">Jami · 1-bosqich</div>
+                    <div class="num" data-target="1072">0</div>
+                    <div class="lbl">xonadon · A1–A5</div>
+                </div>
             </div>
-            <div class="mix-bar">
-                <div class="top"><span>1-xonali · studio</span><span class="pct">30<small style="font-size:0.5em;color:var(--gold-soft);">%</small></span></div>
-                <div class="bar"><div class="fill" style="--w:75%"></div></div>
-            </div>
-            <div class="mix-bar">
-                <div class="top"><span>3-xonali</span><span class="pct">25<small style="font-size:0.5em;color:var(--gold-soft);">%</small></span></div>
-                <div class="bar"><div class="fill" style="--w:62%"></div></div>
-            </div>
-            <div class="mix-bar">
-                <div class="top"><span>4-xonali · oilaviy</span><span class="pct">10<small style="font-size:0.5em;color:var(--gold-soft);">%</small></span></div>
-                <div class="bar"><div class="fill" style="--w:25%"></div></div>
+            <div class="mix-list">
+                <div class="mix-row" data-key="k1" style="--c:#E0C589; --w:30%; --i:0;" data-count="322" data-name="1-xonali · studio · Yosh oila va yakka yashash" data-sub="Yosh oila va yakka yashash · 30%">
+                    <div class="dot"></div>
+                    <div class="info">
+                        <div class="name">1-xonali · studio</div>
+                        <div class="sub">Yosh oila va yakka yashash</div>
+                    </div>
+                    <div class="bar-cell"><i></i></div>
+                    <div class="pct" data-target="30">0<small>%</small></div>
+                </div>
+                <div class="mix-row" data-key="k2" style="--c:#C9A961; --w:35%; --i:1;" data-count="375" data-name="2-xonali · Standart oila" data-sub="Standart oila · 35%">
+                    <div class="dot"></div>
+                    <div class="info">
+                        <div class="name">2-xonali</div>
+                        <div class="sub">Standart oila</div>
+                    </div>
+                    <div class="bar-cell"><i></i></div>
+                    <div class="pct" data-target="35">0<small>%</small></div>
+                </div>
+                <div class="mix-row" data-key="k3" style="--c:#8AA88A; --w:25%; --i:2;" data-count="268" data-name="3-xonali · Kengaytirilgan oila" data-sub="Kengaytirilgan oila · 25%">
+                    <div class="dot"></div>
+                    <div class="info">
+                        <div class="name">3-xonali</div>
+                        <div class="sub">Kengaytirilgan oila</div>
+                    </div>
+                    <div class="bar-cell"><i></i></div>
+                    <div class="pct" data-target="25">0<small>%</small></div>
+                </div>
+                <div class="mix-row" data-key="k4" style="--c:#4A6E4A; --w:10%; --i:3;" data-count="107" data-name="4-xonali · Premium format" data-sub="Premium format · 10%">
+                    <div class="dot"></div>
+                    <div class="info">
+                        <div class="name">4-xonali · oilaviy</div>
+                        <div class="sub">Premium format</div>
+                    </div>
+                    <div class="bar-cell"><i></i></div>
+                    <div class="pct" data-target="10">0<small>%</small></div>
+                </div>
             </div>
         </div>
     </div>
     <div class="right">
-        <div class="float-stat">
-            <div class="lbl">1-bosqich</div>
-            <div class="num">1 072</div>
-            <div class="des">xonadon · A1–A5 bloklari · 43 268 m² yashash maydoni</div>
+        <div class="rimg lb" style="background-image: url('assets/apartment-mix-view.png');" data-lb-src="assets/apartment-mix-view.png" data-lb-cap="Bio Pharma Residence · Kanal bo'ylab yashash zonasi"></div>
+        <div class="r-badges">
+            <div class="rb">1-bosqich <strong>A1–A5</strong></div>
+            <div class="rb">Yashash <strong>43&thinsp;268 m²</strong></div>
+        </div>
+        <div class="r-caption">
+            <div class="k">Kanal bo'ylab yashash</div>
+            <h3>Har xonadon — <em>kanal, bulvar va yashillikka qaragan.</em></h3>
         </div>
     </div>
-    <div class="slide-num"><strong>12</strong> / 18  ·  Xonadon turlari</div>
+    <div class="slide-num"><strong>20</strong> / 27  ·  Xonadon turlari</div>
 </section>
 
 <!-- ===== SLIDE 13 — STUDIO PLANS ===== -->
@@ -2860,7 +5665,7 @@ main::-webkit-scrollbar { width: 0; }
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">13</strong> / 18  ·  Studio rejalari</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">21</strong> / 27  ·  Studio rejalari</div>
 </section>
 
 <!-- ===== SLIDE 14 — 1-2 ROOM PLANS ===== -->
@@ -2895,7 +5700,7 @@ main::-webkit-scrollbar { width: 0; }
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">14</strong> / 18  ·  1-2 xonali</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">22</strong> / 27  ·  1-2 xonali</div>
 </section>
 
 <!-- ===== SLIDE 15 — 3-ROOM PLAN ===== -->
@@ -2923,15 +5728,73 @@ main::-webkit-scrollbar { width: 0; }
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">15</strong> / 18  ·  3-xonali</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">23</strong> / 27  ·  3-xonali</div>
 </section>
 
-<!-- ===== SLIDE 16 — PHASING ===== -->
+<!-- ===== SLIDE 23 — MASTERPLAN BLOCKS ===== -->
+<section class="slide s-masterplan-blocks" data-title="Master-reja · Bloklar">
+    <div class="head">
+        <div>
+            <div class="eyebrow" style="color: var(--gold);">Master-reja · Bloklar va bosqichlar</div>
+            <h2>Har bir blok — <em>o'z bosqichida.</em></h2>
+        </div>
+        <div class="right">
+            14 bosqich, 14 blok. Rejalashtirish jarayoni ochiq — har bir mijoz qaysi blok qaysi yilda topshirilishini oldindan bilishi mumkin.
+        </div>
+    </div>
+    <div class="mp-body">
+        <div class="mp-image-wrap lb" data-lb-src="assets/masterplan-blocks.png" data-lb-cap="Master-reja bloklari va bosqichlari · 14 blok · 14 bosqich">
+            <img src="assets/masterplan-blocks.png" alt="Master-reja bloklari va bosqichlari">
+        </div>
+        <div class="mp-side">
+            <div>
+                <div class="kicker">Bosqichlar sxemasi</div>
+            </div>
+            <div class="mp-blocks-list">
+                <div class="mp-block">
+                    <div class="blk">1-bosqich</div>
+                    <div class="info">
+                        <strong>A1 – A5 bloklari</strong>
+                        Boshlangan qurilish · yaqin yillarda topshiriladi.
+                    </div>
+                    <div class="qty">1 072<small>xnd</small></div>
+                </div>
+                <div class="mp-block">
+                    <div class="blk">2 – 5</div>
+                    <div class="info">
+                        <strong>B · C · D · E bloklari</strong>
+                        Markaziy bulvar va Pharma School zonasi.
+                    </div>
+                    <div class="qty">~1 800<small>xnd</small></div>
+                </div>
+                <div class="mp-block">
+                    <div class="blk">6 – 10</div>
+                    <div class="info">
+                        <strong>F · G · H · I · J bloklari</strong>
+                        Yashil hovlilar, sport infratuzilmasi.
+                    </div>
+                    <div class="qty">~2 100<small>xnd</small></div>
+                </div>
+                <div class="mp-block">
+                    <div class="blk">11 – 14</div>
+                    <div class="info">
+                        <strong>K · L · M · N bloklari</strong>
+                        Yakuniy bosqichlar — yagona master-reja.
+                    </div>
+                    <div class="qty">~1 500<small>xnd</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>24</strong> / 27  ·  Master-reja bloklari</div>
+</section>
+
+<!-- ===== SLIDE 24 — PHASING ===== -->
 <section class="slide s-phasing" data-title="Qurilish bosqichlari">
     <div class="head">
         <div class="eyebrow">Qurilish bosqichlari</div>
         <h2>14 bosqich. <em>Bugundan boshlangan.</em></h2>
-        <div class="desc">Bio Pharma Residence o'n to'rt ketma-ket bosqichda qurib bitkaziladi. Birinchi bosqich allaqachon faol — A1–A5 bloklari 1 072 xonadon va 43 268 m² yashash maydonini taklif qiladi.</div>
+        <div class="desc">Bio Pharma Residence o'n to'rt ketma-ket bosqichda qurib bitkaziladi. Birinchi bosqich allaqachon boshlangan — A1–A5 bloklari 1 072 xonadon va 43 268 m² yashash maydonini taklif qiladi.</div>
     </div>
     <div class="phases-timeline">
         <div class="ph active"><span class="lab">1</span></div>
@@ -2951,7 +5814,7 @@ main::-webkit-scrollbar { width: 0; }
     </div>
     <div class="phase1-card">
         <div class="title-cell">
-            <div class="eyebrow">1-bosqich · faol</div>
+            <div class="eyebrow">1-bosqich</div>
             <h3>Bloklar <em>A1–A5</em></h3>
             <p>Loyihaning birinchi katta bosqichi. Boshlangan qurilish — yaqin yillarda topshiriladi.</p>
         </div>
@@ -2977,10 +5840,10 @@ main::-webkit-scrollbar { width: 0; }
             <div class="note">11-14 bosqichlar — 6 500+ xonadon va yagona master-rejaning yakuni.</div>
         </div>
     </div>
-    <div class="slide-num"><strong>16</strong> / 18  ·  Bosqichlar</div>
+    <div class="slide-num"><strong>25</strong> / 27  ·  Bosqichlar</div>
 </section>
 
-<!-- ===== SLIDE 17 — SUSTAINABILITY ===== -->
+<!-- ===== SLIDE 25 — SUSTAINABILITY ===== -->
 <section class="slide s-sustain" data-title="Davomiylik">
     <div class="left"></div>
     <div class="right">
@@ -3007,7 +5870,7 @@ main::-webkit-scrollbar { width: 0; }
         </div>
         <div class="patent-badge">Patentlash tavsiya etilgan tizim</div>
     </div>
-    <div class="slide-num"><strong>17</strong> / 18  ·  Davomiylik</div>
+    <div class="slide-num"><strong>26</strong> / 27  ·  Davomiylik</div>
 </section>
 
 <!-- ===== SLIDE 18 — CLOSING ===== -->
@@ -3024,10 +5887,31 @@ main::-webkit-scrollbar { width: 0; }
             <span>Bio Pharma Residence · <span>2026</span></span>
         </div>
     </div>
-    <div class="slide-num" style="left: 50%; transform: translateX(-50%); bottom: 12px;"><strong>18</strong> / 18</div>
+    <div class="slide-num" style="left: 50%; transform: translateX(-50%); bottom: 12px;"><strong>27</strong> / 27</div>
 </section>
 
 </main>
+
+<!-- ===== LIGHTBOX MODAL ===== -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lb-close" type="button" aria-label="Yopish">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Oldingi surat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button class="lb-nav lb-next" type="button" aria-label="Keyingi surat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <div class="lb-inner">
+        <div class="lb-stage">
+            <img alt="" />
+        </div>
+        <div class="lb-cap"></div>
+    </div>
+    <div class="lb-counter" aria-live="polite"><span class="cur">1</span> <span class="sep">/</span> <span class="tot">1</span></div>
+    <div class="lb-hint">ESC · yoping   ·   ← →   ·   navigatsiya   ·   tashqariga bosing</div>
+</div>
 
 <script>
 const deck = document.getElementById('deck');
@@ -3040,6 +5924,7 @@ slides.forEach((slide, i) => {
     const dot = document.createElement('div');
     dot.className = 'nav-dot';
     dot.title = slide.dataset.title || `Slayd ${i + 1}`;
+    dot.style.setProperty('--i', i);
     dot.addEventListener('click', () => {
         slide.scrollIntoView({ behavior: 'smooth' });
     });
@@ -3100,6 +5985,275 @@ deck.addEventListener('scroll', () => {
     const top = deck.scrollTop;
     cur = Math.round(top / window.innerHeight);
 });
+
+// ==========================================================
+// APARTMENT MIX  ·  animated donut + interactive hover/click (slide 22)
+// ==========================================================
+(function () {
+    const slide = document.getElementById('apartMixSlide');
+    if (!slide) return;
+    const widget = slide.querySelector('#mixWidget');
+    const donutArea = slide.querySelector('#mixDonut');
+    const center = slide.querySelector('#mixCenter');
+    const segs = slide.querySelectorAll('.mix-svg .seg');
+    const rows = slide.querySelectorAll('.mix-row');
+    const numEl = center.querySelector('.num');
+    const kicker = center.querySelector('.kicker');
+    const lbl = center.querySelector('.lbl');
+
+    const defaultCenter = {
+        kicker: 'Jami · 1-bosqich',
+        num: '1 072',
+        lbl: 'xonadon · A1–A5'
+    };
+
+    let played = false;
+
+    function animateCounter(el, target, duration = 1400, suffix = '') {
+        const start = performance.now();
+        const startVal = 0;
+        function tick(now) {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const v = Math.round(startVal + (target - startVal) * eased);
+            el.firstChild.nodeValue = v.toLocaleString('ru-RU').replace(/ /g, ' ');
+            if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    function play() {
+        if (played) return;
+        played = true;
+        // Trigger CSS animations
+        donutArea.classList.add('play');
+        widget.classList.add('play');
+        // Animate counters on rows (pct)
+        rows.forEach((r, i) => {
+            const pctEl = r.querySelector('.pct');
+            const target = parseFloat(pctEl.dataset.target) || 0;
+            setTimeout(() => {
+                const start = performance.now();
+                function tick(now) {
+                    const t = Math.min(1, (now - start) / 900);
+                    const eased = 1 - Math.pow(1 - t, 3);
+                    const v = Math.round(target * eased);
+                    pctEl.firstChild.nodeValue = v;
+                    if (t < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            }, 800 + i * 120);
+        });
+        // Animate center number
+        setTimeout(() => {
+            animateCounter(numEl, parseInt(numEl.dataset.target, 10) || 0);
+        }, 300);
+    }
+
+    function setActive(key) {
+        if (!key) {
+            donutArea.classList.remove('active');
+            segs.forEach(s => s.classList.remove('hot'));
+            rows.forEach(r => r.classList.remove('hot'));
+            kicker.textContent = defaultCenter.kicker;
+            numEl.firstChild.nodeValue = defaultCenter.num;
+            lbl.textContent = defaultCenter.lbl;
+            return;
+        }
+        const row = slide.querySelector(`.mix-row[data-key="${key}"]`);
+        const seg = slide.querySelector(`.mix-svg .seg[data-key="${key}"]`);
+        if (!row || !seg) return;
+        donutArea.classList.add('active');
+        segs.forEach(s => s.classList.toggle('hot', s === seg));
+        rows.forEach(r => r.classList.toggle('hot', r === row));
+        const name = row.dataset.name;
+        const pct = row.querySelector('.pct').dataset.target;
+        const count = row.dataset.count;
+        kicker.textContent = name;
+        numEl.firstChild.nodeValue = count;
+        lbl.textContent = pct + '% · xonadondan';
+        center.classList.remove('pulse');
+        // reflow to restart animation
+        void center.offsetWidth;
+        center.classList.add('pulse');
+    }
+
+    // Hover + click interactions
+    rows.forEach(row => {
+        const key = row.dataset.key;
+        row.addEventListener('mouseenter', () => setActive(key));
+        row.addEventListener('mouseleave', () => setActive(null));
+        row.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setActive(key);
+        });
+    });
+    segs.forEach(seg => {
+        const key = seg.dataset.key;
+        seg.addEventListener('mouseenter', () => setActive(key));
+        seg.addEventListener('mouseleave', () => setActive(null));
+        seg.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setActive(key);
+        });
+    });
+
+    // Play animation when slide enters viewport
+    const playObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.intersectionRatio >= 0.4) {
+                play();
+            }
+        });
+    }, { root: deck, threshold: [0, 0.4, 0.8] });
+    playObserver.observe(slide);
+})();
+
+// ==========================================================
+// LIGHTBOX  ·  fullscreen image viewer with prev/next navigation
+// ==========================================================
+(function () {
+    const lb = document.getElementById('lightbox');
+    if (!lb) return;
+    const imgEl = lb.querySelector('img');
+    const capEl = lb.querySelector('.lb-cap');
+    const closeBtn = lb.querySelector('.lb-close');
+    const prevBtn = lb.querySelector('.lb-prev');
+    const nextBtn = lb.querySelector('.lb-next');
+    const counterCur = lb.querySelector('.lb-counter .cur');
+    const counterTot = lb.querySelector('.lb-counter .tot');
+
+    // Inject the corner badge into every .lb element (works even where ::after is taken)
+    const badgeSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10V4h6M20 14v6h-6M20 10V4h-6M4 14v6h6"/></svg>';
+    function ensureBadge(el) {
+        if (el.querySelector(':scope > .lb-badge')) return;
+        const b = document.createElement('span');
+        b.className = 'lb-badge';
+        b.setAttribute('aria-hidden', 'true');
+        b.innerHTML = badgeSVG;
+        el.appendChild(b);
+    }
+    // Collect ordered gallery in DOM order
+    let gallery = [];
+    let currentIndex = -1;
+    function refreshGallery() {
+        gallery = Array.from(document.querySelectorAll('.lb')).map(el => {
+            ensureBadge(el);
+            const src = el.dataset.lbSrc || (el.tagName === 'IMG' ? el.getAttribute('src') : (el.querySelector('img') ? el.querySelector('img').getAttribute('src') : ''));
+            const cap = el.dataset.lbCap || '';
+            return { el, src, cap };
+        }).filter(item => !!item.src);
+    }
+    refreshGallery();
+    // Observe DOM changes so dynamically inserted .lb elements still get badges/nav
+    const mo = new MutationObserver(() => refreshGallery());
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    let animating = false;
+    function updateCounter() {
+        if (!gallery.length) return;
+        counterCur.textContent = String(currentIndex + 1).padStart(2, '0');
+        counterTot.textContent = String(gallery.length).padStart(2, '0');
+    }
+    function showAt(idx, direction) {
+        if (!gallery.length) return;
+        currentIndex = ((idx % gallery.length) + gallery.length) % gallery.length;
+        const item = gallery[currentIndex];
+        // Slide-out animation on current image, then swap and slide-in
+        if (direction && lb.classList.contains('open') && !animating) {
+            animating = true;
+            const outCls = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
+            const inCls = direction === 'next' ? 'slide-in-left' : 'slide-in-right';
+            lb.classList.add(outCls);
+            setTimeout(() => {
+                imgEl.src = item.src;
+                imgEl.alt = item.cap || '';
+                capEl.textContent = item.cap || '';
+                capEl.style.display = item.cap ? 'block' : 'none';
+                lb.classList.remove(outCls);
+                lb.classList.add(inCls);
+                // Force reflow so the transition can play
+                void imgEl.offsetWidth;
+                lb.classList.remove(inCls);
+                animating = false;
+                updateCounter();
+            }, 260);
+        } else {
+            imgEl.src = item.src;
+            imgEl.alt = item.cap || '';
+            capEl.textContent = item.cap || '';
+            capEl.style.display = item.cap ? 'block' : 'none';
+            updateCounter();
+        }
+    }
+    function open(fromEl) {
+        refreshGallery();
+        const idx = gallery.findIndex(g => g.el === fromEl);
+        if (idx < 0) return;
+        currentIndex = idx;
+        const item = gallery[currentIndex];
+        imgEl.src = item.src;
+        imgEl.alt = item.cap || '';
+        capEl.textContent = item.cap || '';
+        capEl.style.display = item.cap ? 'block' : 'none';
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        updateCounter();
+    }
+    function close() {
+        lb.classList.remove('open', 'slide-out-left', 'slide-out-right', 'slide-in-left', 'slide-in-right');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(() => { imgEl.src = ''; }, 380);
+    }
+    function next() { showAt(currentIndex + 1, 'next'); }
+    function prev() { showAt(currentIndex - 1, 'prev'); }
+
+    // Delegate click on any .lb element
+    document.addEventListener('click', (e) => {
+        const t = e.target.closest('.lb');
+        if (!t) return;
+        const src = t.dataset.lbSrc || (t.tagName === 'IMG' ? t.getAttribute('src') : null);
+        if (!src) return;
+        e.preventDefault();
+        open(t);
+    });
+
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+    lb.addEventListener('click', (e) => {
+        // Only close when clicking the backdrop (not inner elements)
+        if (e.target === lb) close();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') { close(); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+        else if (e.key === 'Home') { e.preventDefault(); showAt(0, 'prev'); }
+        else if (e.key === 'End') { e.preventDefault(); showAt(gallery.length - 1, 'next'); }
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0, touchStartY = 0, touchActive = false;
+    lb.addEventListener('touchstart', (e) => {
+        if (!lb.classList.contains('open') || !e.touches[0]) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchActive = true;
+    }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+        if (!touchActive || !e.changedTouches[0]) { touchActive = false; return; }
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        touchActive = false;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+            if (dx < 0) next(); else prev();
+        }
+    }, { passive: true });
+})();
 </script>
 
 </body>

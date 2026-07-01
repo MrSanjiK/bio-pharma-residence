@@ -3,9 +3,13 @@
 *.pdf
 slides_qa/
 node_modules/
+mobile_audit/
 assets/rounded/
 optimize_images.py
 build_pptx.js
 round_corners.js
+audit_mobile.js
+export_pdf.js
+_test-*.png
 
 .vercel
