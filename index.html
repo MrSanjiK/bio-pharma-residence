@@ -1938,11 +1938,10 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     align-items: center;
 }
 .mp-image-wrap {
-    background: var(--cream);
+    background: transparent;
     border-radius: 22px;
     overflow: hidden;
-    padding: 32px 40px;
-    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1955,6 +1954,7 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     width: auto;
     height: auto;
     display: block;
+    border-radius: 22px;
 }
 .mp-side {
     display: flex;
@@ -4299,6 +4299,8 @@ main::-webkit-scrollbar { width: 0; }
 #lightbox .lb-next:hover { transform: translateY(-50%) translateX(3px) scale(1.06); }
 #lightbox .lb-nav:active { transform: translateY(-50%) scale(0.94); }
 #lightbox .lb-nav[disabled] { opacity: 0.15; pointer-events: none; }
+#lightbox.single .lb-nav,
+#lightbox.single .lb-counter { display: none !important; }
 
 /* Image stage — supports slide transitions */
 #lightbox .lb-stage {
@@ -4859,7 +4861,7 @@ button:active { transform: scale(0.96); }
             <div><span class="k">Aholi sig'imi</span><span class="v">22 372 kishi</span></div>
         </div>
     </div>
-    <div class="slide-num"><strong>01</strong> / 27  ·  Bio Pharma Residence</div>
+    <div class="slide-num"><strong>01</strong> / 28  ·  Bio Pharma Residence</div>
 </section>
 
 <!-- ===== SLIDE 2 — PHILOSOPHY ===== -->
@@ -4870,7 +4872,7 @@ button:active { transform: scale(0.96); }
         <div class="philosophy-logo"><img src="assets/imarat-logo-white.png" alt="Imarat Development"></div>
         <div class="signature">Imarat Development</div>
     </div>
-    <div class="slide-num"><strong>02</strong> / 27  ·  Falsafa</div>
+    <div class="slide-num"><strong>02</strong> / 28  ·  Falsafa</div>
 </section>
 
 <!-- ===== SLIDE 3 — AT A GLANCE ===== -->
@@ -4929,7 +4931,7 @@ button:active { transform: scale(0.96); }
             <div class="desc">Suvni tejovchi aqlli tizim</div>
         </div>
     </div>
-    <div class="slide-num"><strong>03</strong> / 27  ·  Bir qarashda</div>
+    <div class="slide-num"><strong>03</strong> / 28  ·  Bir qarashda</div>
 </section>
 
 <!-- ===== SLIDE 4 — MASTER PLAN ===== -->
@@ -4948,7 +4950,7 @@ button:active { transform: scale(0.96); }
             <li><strong>33</strong> ta kafe, restoran va ovqatlanish nuqtasi</li>
         </ul>
     </div>
-    <div class="slide-num"><strong>04</strong> / 27  ·  Bosh reja</div>
+    <div class="slide-num"><strong>04</strong> / 28  ·  Bosh reja</div>
 </section>
 
 <!-- ===== SLIDE 5 — ARCHITECTURE ===== -->
@@ -4967,7 +4969,7 @@ button:active { transform: scale(0.96); }
         <div class="a4 lb" style="--i:3" data-lb-src="assets/render-extra-4.jpg" data-lb-cap="Yaqin ko'rinish"><div class="label">Yaqin ko'rinish</div></div>
         <div class="a5 lb" style="--i:4" data-lb-src="assets/render-extra-7.jpg" data-lb-cap="Quyosh botishi"><div class="label">Quyosh botishi</div></div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">05</strong> / 27  ·  Arxitektura</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">05</strong> / 28  ·  Arxitektura</div>
 </section>
 
 <!-- ===== SLIDE 6 — SECURITY OVERVIEW ===== -->
@@ -4985,7 +4987,7 @@ button:active { transform: scale(0.96); }
             <div class="item"><span class="n">4K</span><span class="t">Kunduz va tunda aniq tasvir</span></div>
         </div>
     </div>
-    <div class="slide-num"><strong>06</strong> / 27  ·  24/7 Xavfsizlik</div>
+    <div class="slide-num"><strong>06</strong> / 28  ·  24/7 Xavfsizlik</div>
 </section>
 
 <!-- ===== SLIDE 7 — SECURITY COMMAND CENTER ===== -->
@@ -5012,7 +5014,7 @@ button:active { transform: scale(0.96); }
     <div class="right">
         <img src="assets/sec-command-center.png" alt="Bio Pharma nazorat markazi">
     </div>
-    <div class="slide-num"><strong>07</strong> / 27  ·  Nazorat markazi</div>
+    <div class="slide-num"><strong>07</strong> / 28  ·  Nazorat markazi</div>
 </section>
 
 <!-- ===== SLIDE 8 — COMPLEX-WIDE SURVEILLANCE ===== -->
@@ -5056,10 +5058,54 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num"><strong>08</strong> / 27  ·  Majmua nazorati</div>
+    <div class="slide-num"><strong>08</strong> / 28  ·  Majmua nazorati</div>
 </section>
 
-<!-- ===== SLIDE 11 — BOULEVARD ===== -->
+<!-- ===== SLIDE 9 — ENTRANCE & PARKING · CLOSE-UP GALLERY ===== -->
+<section class="slide s-security-grid" data-title="Kirish va avtoturargoh">
+    <div class="head">
+        <div>
+            <div class="eyebrow">Yaqin plan · Kirish, kanal va yer osti paking</div>
+            <h2>Brendlangan xavfsizlik — <em>har detalda.</em></h2>
+        </div>
+        <div class="right">Bosh kirish darvozasidan yer osti avtoturargohigacha — har bir zona brand identifikatsiyasi, yorug'lik va kamera nazorati bilan jihozlangan. Kanal bo'ylab piyoda perimetri ham xavfsizlik oqimi ostida.</div>
+    </div>
+    <div class="sec-grid">
+        <div class="sec-cell big lb" data-lb-src="assets/sec-complex-canal.png" data-lb-cap="Kanal bo'ylab yashash · perimetr va suv liniyasi" style="background-image: url('assets/sec-complex-canal.png');">
+            <div class="label">
+                <div class="kicker">Kanal perimetri</div>
+                <div class="name">Suv liniyasi · yashil sohil</div>
+            </div>
+        </div>
+        <div class="sec-cell lb" data-lb-src="assets/sec-entrance.png" data-lb-cap="Bio Pharma Residence · bosh kirish darvozasi" style="background-image: url('assets/sec-entrance.png');">
+            <div class="label">
+                <div class="kicker">Bosh kirish</div>
+                <div class="name">Bio Pharma darvozasi</div>
+            </div>
+        </div>
+        <div class="sec-cell lb" data-lb-src="assets/sec-complex-parking.png" data-lb-cap="Kirish oldidagi mehmon avtoturargohi · yorug' perimetr" style="background-image: url('assets/sec-complex-parking.png');">
+            <div class="label">
+                <div class="kicker">Mehmon paking</div>
+                <div class="name">Kirish oldi zonasi</div>
+            </div>
+        </div>
+        <div class="sec-cell lb" data-lb-src="assets/sec-parking-a1.png" data-lb-cap="Yer osti A1 avtoturargohi · 24/7 nazorat" style="background-image: url('assets/sec-parking-a1.png');">
+            <div class="label">
+                <div class="kicker">Yer osti · A1</div>
+                <div class="name">24/7 kamera oqimi</div>
+            </div>
+        </div>
+        <div class="sec-cell lb" data-lb-src="assets/sec-parking-brand.png" data-lb-cap="Brend identifikatsiyasi · yer osti paking navigatsiyasi" style="background-image: url('assets/sec-parking-brand.png');">
+            <div class="label">
+                <div class="kicker">Brend identifikatsiya</div>
+                <div class="name">Paking navigatsiyasi</div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num"><strong>09</strong> / 28  ·  Kirish va avtoturargoh</div>
+</section>
+
+<!-- ===== SLIDE 10 — BOULEVARD ===== -->
 <section class="slide s-boulevard" data-title="Bulvar">
     <div class="bg"></div>
     <div class="veil"></div>
@@ -5071,7 +5117,7 @@ button:active { transform: scale(0.96); }
         <div class="desc"><strong>33 nuqta</strong>Kafe, restoran, fastfud va shirinliklar</div>
         <div class="desc"><strong>8 dorixona</strong>5 km radius ichida tibbiy taminot</div>
     </div>
-    <div class="slide-num"><strong>09</strong> / 27  ·  Bulvar</div>
+    <div class="slide-num"><strong>10</strong> / 28  ·  Bulvar</div>
 </section>
 
 <!-- ===== SLIDE 8 — ECO GREYWATER ===== -->
@@ -5095,7 +5141,7 @@ button:active { transform: scale(0.96); }
     <div class="right lb" data-lb-src="assets/eco-greywater.png" data-lb-cap="Imarat Eco Greywater System — yopiq siklli aqlli drenaj tizimi">
         <img src="assets/eco-greywater.png" alt="Imarat Eco Greywater System diagrammasi">
     </div>
-    <div class="slide-num"><strong>10</strong> / 27  ·  Eco Greywater System</div>
+    <div class="slide-num"><strong>11</strong> / 28  ·  Eco Greywater System</div>
 </section>
 
 <!-- ===== SLIDE 9 — PHARMA SCHOOL ===== -->
@@ -5116,7 +5162,7 @@ button:active { transform: scale(0.96); }
             <span class="author">Abu Ali Ibn Sino · 980–1037</span>
         </div>
     </div>
-    <div class="slide-num"><strong>11</strong> / 27  ·  Pharma School</div>
+    <div class="slide-num"><strong>12</strong> / 28  ·  Pharma School</div>
 </section>
 
 <!-- ===== SLIDE 12 — SCHOOL INTERIOR ===== -->
@@ -5159,7 +5205,7 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">12</strong> / 27  ·  Maktab ichida</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">13</strong> / 28  ·  Maktab ichida</div>
 </section>
 
 <!-- ===== SLIDE 13 — KINDERGARDEN ===== -->
@@ -5184,7 +5230,7 @@ button:active { transform: scale(0.96); }
             220+ bola uchun mo'ljallangan, professional pedagoglar va tibbiyot xodimi bilan.
         </div>
     </div>
-    <div class="slide-num"><strong>13</strong> / 27  ·  Bog'cha</div>
+    <div class="slide-num"><strong>14</strong> / 28  ·  Bog'cha</div>
 </section>
 
 <!-- ===== SLIDE 14 — DORMITORY HERO ===== -->
@@ -5224,7 +5270,7 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num"><strong>14</strong> / 27  ·  Yotoqxona</div>
+    <div class="slide-num"><strong>15</strong> / 28  ·  Yotoqxona</div>
 </section>
 
 <!-- ===== SLIDE 15 — DORMITORY ROOMS ===== -->
@@ -5279,7 +5325,7 @@ button:active { transform: scale(0.96); }
             <div class="pill">1&thinsp;550+ o'rin</div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">15</strong> / 27  ·  Xonalar</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">16</strong> / 28  ·  Xonalar</div>
 </section>
 
 <!-- ===== SLIDE 16 — DORMITORY KITCHENS ===== -->
@@ -5321,7 +5367,7 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">16</strong> / 27  ·  Oshxonalar</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">17</strong> / 28  ·  Oshxonalar</div>
 </section>
 
 <!-- ===== SLIDE 16 — DORMITORY COMMON AREAS ===== -->
@@ -5367,7 +5413,7 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num"><strong>17</strong> / 27  ·  Umumiy zonalar</div>
+    <div class="slide-num"><strong>18</strong> / 28  ·  Umumiy zonalar</div>
 </section>
 
 <!-- ===== SLIDE 17 — INTERNAL INFRASTRUCTURE ===== -->
@@ -5506,7 +5552,7 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">18</strong> / 27  ·  Ichki infratuzilma</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">19</strong> / 28  ·  Ichki infratuzilma</div>
 </section>
 
 <!-- ===== SLIDE 11 — 5KM RADIUS ===== -->
@@ -5547,7 +5593,7 @@ button:active { transform: scale(0.96); }
             <div class="r-row" style="--i:5"><span class="name">Yaqin orada · yana qo'shiluvchi</span><span class="count">∞</span></div>
         </div>
     </div>
-    <div class="slide-num"><strong>19</strong> / 27  ·  5 km radius</div>
+    <div class="slide-num"><strong>20</strong> / 28  ·  5 km radius</div>
 </section>
 
 <!-- ===== SLIDE 19 — APARTMENT MIX ===== -->
@@ -5630,7 +5676,7 @@ button:active { transform: scale(0.96); }
             <h3>Har xonadon — <em>kanal, bulvar va yashillikka qaragan.</em></h3>
         </div>
     </div>
-    <div class="slide-num"><strong>20</strong> / 27  ·  Xonadon turlari</div>
+    <div class="slide-num"><strong>21</strong> / 28  ·  Xonadon turlari</div>
 </section>
 
 <!-- ===== SLIDE 13 — STUDIO PLANS ===== -->
@@ -5665,7 +5711,7 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">21</strong> / 27  ·  Studio rejalari</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">22</strong> / 28  ·  Studio rejalari</div>
 </section>
 
 <!-- ===== SLIDE 14 — 1-2 ROOM PLANS ===== -->
@@ -5700,7 +5746,7 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">22</strong> / 27  ·  1-2 xonali</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">23</strong> / 28  ·  1-2 xonali</div>
 </section>
 
 <!-- ===== SLIDE 15 — 3-ROOM PLAN ===== -->
@@ -5728,7 +5774,7 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">23</strong> / 27  ·  3-xonali</div>
+    <div class="slide-num" style="color: rgba(20,40,20,0.55)"><strong style="color:#1F3A1F">24</strong> / 28  ·  3-xonali</div>
 </section>
 
 <!-- ===== SLIDE 23 — MASTERPLAN BLOCKS ===== -->
@@ -5786,7 +5832,7 @@ button:active { transform: scale(0.96); }
             </div>
         </div>
     </div>
-    <div class="slide-num"><strong>24</strong> / 27  ·  Master-reja bloklari</div>
+    <div class="slide-num"><strong>25</strong> / 28  ·  Master-reja bloklari</div>
 </section>
 
 <!-- ===== SLIDE 24 — PHASING ===== -->
@@ -5840,7 +5886,7 @@ button:active { transform: scale(0.96); }
             <div class="note">11-14 bosqichlar — 6 500+ xonadon va yagona master-rejaning yakuni.</div>
         </div>
     </div>
-    <div class="slide-num"><strong>25</strong> / 27  ·  Bosqichlar</div>
+    <div class="slide-num"><strong>26</strong> / 28  ·  Bosqichlar</div>
 </section>
 
 <!-- ===== SLIDE 25 — SUSTAINABILITY ===== -->
@@ -5870,7 +5916,7 @@ button:active { transform: scale(0.96); }
         </div>
         <div class="patent-badge">Patentlash tavsiya etilgan tizim</div>
     </div>
-    <div class="slide-num"><strong>26</strong> / 27  ·  Davomiylik</div>
+    <div class="slide-num"><strong>27</strong> / 28  ·  Davomiylik</div>
 </section>
 
 <!-- ===== SLIDE 18 — CLOSING ===== -->
@@ -5887,7 +5933,7 @@ button:active { transform: scale(0.96); }
             <span>Bio Pharma Residence · <span>2026</span></span>
         </div>
     </div>
-    <div class="slide-num" style="left: 50%; transform: translateX(-50%); bottom: 12px;"><strong>27</strong> / 27</div>
+    <div class="slide-num" style="left: 50%; transform: translateX(-50%); bottom: 12px;"><strong>28</strong> / 28</div>
 </section>
 
 </main>
@@ -6133,20 +6179,25 @@ deck.addEventListener('scroll', () => {
         b.innerHTML = badgeSVG;
         el.appendChild(b);
     }
-    // Collect ordered gallery in DOM order
+    // Ensure badges on every .lb element on the page (independent of gallery scope)
+    function injectBadgesAll() {
+        document.querySelectorAll('.lb').forEach(ensureBadge);
+    }
+    injectBadgesAll();
+
+    // Gallery is per-slide: only images inside the same section.slide as the trigger
     let gallery = [];
     let currentIndex = -1;
-    function refreshGallery() {
-        gallery = Array.from(document.querySelectorAll('.lb')).map(el => {
-            ensureBadge(el);
+    function buildGalleryFor(fromEl) {
+        const scope = fromEl.closest('section.slide') || document;
+        gallery = Array.from(scope.querySelectorAll('.lb')).map(el => {
             const src = el.dataset.lbSrc || (el.tagName === 'IMG' ? el.getAttribute('src') : (el.querySelector('img') ? el.querySelector('img').getAttribute('src') : ''));
             const cap = el.dataset.lbCap || '';
             return { el, src, cap };
         }).filter(item => !!item.src);
     }
-    refreshGallery();
-    // Observe DOM changes so dynamically inserted .lb elements still get badges/nav
-    const mo = new MutationObserver(() => refreshGallery());
+    // Observe DOM changes so dynamically inserted .lb elements still get badges
+    const mo = new MutationObserver(() => injectBadgesAll());
     mo.observe(document.body, { childList: true, subtree: true });
 
     let animating = false;
@@ -6187,7 +6238,7 @@ deck.addEventListener('scroll', () => {
         }
     }
     function open(fromEl) {
-        refreshGallery();
+        buildGalleryFor(fromEl);
         const idx = gallery.findIndex(g => g.el === fromEl);
         if (idx < 0) return;
         currentIndex = idx;
@@ -6199,10 +6250,11 @@ deck.addEventListener('scroll', () => {
         lb.classList.add('open');
         lb.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        lb.classList.toggle('single', gallery.length <= 1);
         updateCounter();
     }
     function close() {
-        lb.classList.remove('open', 'slide-out-left', 'slide-out-right', 'slide-in-left', 'slide-in-right');
+        lb.classList.remove('open', 'single', 'slide-out-left', 'slide-out-right', 'slide-in-left', 'slide-in-right');
         lb.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         setTimeout(() => { imgEl.src = ''; }, 380);
