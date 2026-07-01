@@ -285,7 +285,7 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
 .s-philosophy .content {
     position: relative;
     z-index: 2;
-    max-width: 1100px;
+    max-width: 1500px;
     padding: 0 80px;
     text-align: center;
 }
@@ -300,24 +300,25 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     background: var(--gold);
 }
 .s-philosophy h2 {
-    font-size: clamp(56px, 7.2vw, 128px);
+    font-size: clamp(84px, 10.5vw, 180px);
     font-weight: 500;
-    line-height: 1.08;
+    line-height: 1.05;
     color: var(--cream);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.028em;
     margin-bottom: 64px;
+    text-wrap: balance;
 }
 .s-philosophy h2 em { font-style: italic; color: var(--gold-soft); }
 .s-philosophy .philosophy-logo {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    max-width: 220px;
+    max-width: 110px;
 }
 .s-philosophy .philosophy-logo img {
     width: 100%;
     height: auto;
-    opacity: 0.85;
+    opacity: 0.7;
     filter: drop-shadow(0 4px 24px rgba(255,255,255,0.1));
 }
 .s-philosophy .signature {
@@ -377,9 +378,26 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    transition: background 0.4s;
+    overflow: hidden;
+    transition: background 0.4s, transform 0.5s cubic-bezier(.16,.84,.44,1);
 }
-.stat-cell:hover { background: var(--forest-deep); }
+.stat-cell::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(197,157,95,0.0) 0%, rgba(197,157,95,0.08) 50%, rgba(197,157,95,0.0) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+.stat-cell:hover {
+    background: var(--forest-deep);
+    transform: translateY(-4px);
+    z-index: 2;
+}
+.stat-cell:hover::before { opacity: 1; }
+.stat-cell:hover .num { color: var(--gold-soft); }
+.stat-cell .num { transition: color 0.4s ease; }
 .stat-cell .label {
     font-family: var(--sans);
     font-size: 10px;
@@ -2916,7 +2934,6 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
 .slide .key-points li,
 .slide .stages .stage,
 .slide .commit-row,
-.slide .stat-cell,
 .slide .infra-cell,
 .slide .cat-col,
 .slide .arch-grid > div,
@@ -2928,12 +2945,24 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
     transform: translateY(22px);
     transition: opacity 0.85s cubic-bezier(.16,.84,.44,1), transform 0.85s cubic-bezier(.16,.84,.44,1);
 }
+.slide .stat-cell {
+    opacity: 0;
+    transform: translateY(22px) scale(0.96);
+    transition: opacity 0.7s cubic-bezier(.16,.84,.44,1), transform 0.7s cubic-bezier(.16,.84,.44,1), background 0.4s;
+}
+.slide.in-view .stat-cell {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.slide .stat-cell:hover {
+    transform: translateY(-4px) !important;
+    transition: opacity 0.7s cubic-bezier(.16,.84,.44,1), transform 0.35s cubic-bezier(.16,.84,.44,1), background 0.4s;
+}
 .slide.in-view .content > *,
 .slide.in-view .head > *,
 .slide.in-view .key-points li,
 .slide.in-view .stages .stage,
 .slide.in-view .commit-row,
-.slide.in-view .stat-cell,
 .slide.in-view .infra-cell,
 .slide.in-view .cat-col,
 .slide.in-view .arch-grid > div,
@@ -2956,14 +2985,18 @@ p.lead.dark { color: rgba(20,40,20,0.78); }
 .slide.in-view .mix-bar .bar .fill { width: var(--w); }
 
 /* Stagger */
-.slide.in-view .stat-cell:nth-child(1) { transition-delay: 0.05s; }
-.slide.in-view .stat-cell:nth-child(2) { transition-delay: 0.15s; }
-.slide.in-view .stat-cell:nth-child(3) { transition-delay: 0.25s; }
-.slide.in-view .stat-cell:nth-child(4) { transition-delay: 0.35s; }
-.slide.in-view .stat-cell:nth-child(5) { transition-delay: 0.45s; }
-.slide.in-view .stat-cell:nth-child(6) { transition-delay: 0.55s; }
-.slide.in-view .stat-cell:nth-child(7) { transition-delay: 0.65s; }
-.slide.in-view .stat-cell:nth-child(8) { transition-delay: 0.75s; }
+.slide.in-view .stat-cell:nth-child(1)  { transition-delay: 0.05s; }
+.slide.in-view .stat-cell:nth-child(2)  { transition-delay: 0.12s; }
+.slide.in-view .stat-cell:nth-child(3)  { transition-delay: 0.19s; }
+.slide.in-view .stat-cell:nth-child(4)  { transition-delay: 0.26s; }
+.slide.in-view .stat-cell:nth-child(5)  { transition-delay: 0.33s; }
+.slide.in-view .stat-cell:nth-child(6)  { transition-delay: 0.40s; }
+.slide.in-view .stat-cell:nth-child(7)  { transition-delay: 0.47s; }
+.slide.in-view .stat-cell:nth-child(8)  { transition-delay: 0.54s; }
+.slide.in-view .stat-cell:nth-child(9)  { transition-delay: 0.61s; }
+.slide.in-view .stat-cell:nth-child(10) { transition-delay: 0.68s; }
+.slide.in-view .stat-cell:nth-child(11) { transition-delay: 0.75s; }
+.slide.in-view .stat-cell:nth-child(12) { transition-delay: 0.82s; }
 .slide.in-view .key-points li:nth-child(1),
 .slide.in-view .stages .stage:nth-child(1),
 .slide.in-view .commit-row:nth-child(1) { transition-delay: 0.1s; }
@@ -3126,7 +3159,7 @@ main::-webkit-scrollbar { width: 0; }
     .s-cover .meta-row { padding-top: 20px; gap: 40px; }
 
     /* SLIDE 2 — Philosophy */
-    .s-philosophy h2 { font-size: clamp(32px, 4vw, 64px); margin-bottom: 32px; }
+    .s-philosophy h2 { font-size: clamp(58px, 7.4vw, 118px); margin-bottom: 36px; line-height: 1.05; }
 
     /* SLIDE 3 — Stats */
     .s-stats { padding: 60px 60px 56px; }
@@ -3233,7 +3266,7 @@ main::-webkit-scrollbar { width: 0; }
     .s-cover .content { padding: 0 56px 48px; }
     .s-cover .meta-row { padding-top: 16px; gap: 30px; }
 
-    .s-philosophy h2 { font-size: clamp(28px, 3.4vw, 52px); margin-bottom: 22px; }
+    .s-philosophy h2 { font-size: clamp(48px, 6.4vw, 104px); margin-bottom: 26px; line-height: 1.05; }
 
     .s-stats { padding: 44px 56px 44px; }
     .s-stats .head { margin-bottom: 22px; padding-bottom: 14px; }
@@ -4868,7 +4901,7 @@ button:active { transform: scale(0.96); }
 <section class="slide s-philosophy" data-title="Falsafa">
     <div class="content">
         <div class="eyebrow">Falsafa</div>
-        <h2>Sifat taklif emas, <em>majburiyatdir.</em></h2>
+        <h2>Sifat taklif emas,<br><em>majburiyatdir.</em></h2>
         <div class="philosophy-logo"><img src="assets/imarat-logo-white.png" alt="Imarat Development"></div>
         <div class="signature">Imarat Development</div>
     </div>
