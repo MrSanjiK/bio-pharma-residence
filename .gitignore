@@ -1,6 +1,9 @@
 # Build artifacts
 *.pptx
 *.pdf
+!Bio_Pharma_Residence_A4.pdf
+!Bio_Pharma_Residence_16x9.pdf
+!Ijtimoiy_obyektlar_malumotnoma.pdf
 slides_qa/
 node_modules/
 mobile_audit/

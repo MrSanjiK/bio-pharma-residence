@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bog‘cha, maktab va talabalar yotoqxonasi — ma’lumotnoma · Bio Pharma Residence</title>
+<style>
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 300 600; src: url(../assets/fonts/Fraunces-normal-300-600-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215; }
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 300 600; src: url(../assets/fonts/Fraunces-normal-300-600-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02FF, U+1E00-1EFF, U+2020, U+20A0-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 300 600; src: url(../assets/fonts/Fraunces-italic-300-600-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215; }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 300 600; src: url(../assets/fonts/Fraunces-italic-300-600-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02FF, U+1E00-1EFF, U+2020, U+20A0-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 300 800; src: url(../assets/fonts/Manrope-normal-300-800-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215; }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 300 800; src: url(../assets/fonts/Manrope-normal-300-800-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02FF, U+1E00-1EFF, U+2020, U+20A0-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@page { size: A4; margin: 0; }
+
+:root {
+  --surface: #FBF8F2;
+  --surface-2: #F2ECE0;
+  --surface-3: #E7DFCF;
+  --ink: #13201A;
+  --ink-2: #3E4D44;
+  --ink-3: #5F6B63;
+  --line: rgba(19,32,26,.14);
+  --forest: #1B3326;
+  --brass: #84652F;
+  --brass-2: #D7BB87;
+  /* facility identity (validated: all-pairs CVD ΔE ≥ 9.0, normal-vision ΔE ≥ 21.2, ≥ 3:1 on surface) */
+  --sch: #8B4A8F;
+  --kin: #C67712;
+  --dor: #16896A;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Manrope", "Segoe UI", system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { background: #D8D2C6; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: var(--sans); font-size: 9.4pt; line-height: 1.5; color: var(--ink); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+.page {
+  position: relative; width: 210mm; height: 297mm; overflow: hidden;
+  margin: 10mm auto; background: var(--surface);
+  padding: 22mm 15mm 18mm;
+  break-after: page; page-break-after: always;
+  box-shadow: 0 2mm 8mm rgba(0,0,0,.18);
+}
+.page:last-child { break-after: auto; page-break-after: auto; }
+@media print { html { background: none; } .page { margin: 0; box-shadow: none; } }
+
+/* running header & footer */
+.ph { position: absolute; top: 9mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; align-items: center; font: 700 6.6pt/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); padding-bottom: 3mm; border-bottom: .3mm solid var(--line); }
+.ph a { display: inline-flex; align-items: center; gap: 2mm; }
+.ph a:hover { color: var(--ink); }
+.ph .sec { display: inline-flex; align-items: center; gap: 2mm; color: var(--ink-2); }
+.ph .sec i { width: 2.4mm; height: 2.4mm; border-radius: 50%; background: var(--c, var(--brass)); display: inline-block; }
+.pf { position: absolute; bottom: 8mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; font: 600 6.6pt/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.pf b { color: var(--ink); }
+
+/* type */
+.kicker { display: inline-flex; align-items: center; gap: 3mm; font: 700 7pt/1.2 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--brass); margin-bottom: 3mm; }
+.kicker::before { content: ""; width: 9mm; height: .3mm; background: currentColor; }
+h1 { font: 300 40pt/1 var(--serif); letter-spacing: -.02em; }
+h2 { font: 300 24pt/1.08 var(--serif); letter-spacing: -.015em; margin-bottom: 3mm; }
+h3 { font: 600 11pt/1.3 var(--sans); margin-bottom: 2.5mm; }
+h1 em, h2 em { font-style: italic; color: var(--brass); }
+.lead { font-size: 10.2pt; line-height: 1.55; color: var(--ink-2); max-width: 165mm; }
+.muted { color: var(--ink-3); }
+.small { font-size: 8pt; line-height: 1.45; color: var(--ink-2); }
+.src { font: 700 6pt/1 var(--sans); color: var(--brass); vertical-align: super; margin-left: .6mm; letter-spacing: .02em; }
+.label { font: 700 6.6pt/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+
+/* facility identity mark (colour never used for text) */
+.fac { display: inline-flex; align-items: center; gap: 2mm; }
+.fac::before { content: ""; width: 3mm; height: 3mm; border-radius: 1mm; background: var(--c); flex: none; }
+.c-sch { --c: var(--sch); } .c-kin { --c: var(--kin); } .c-dor { --c: var(--dor); }
+
+/* section head with identity rule */
+.shead { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 6mm; padding-bottom: 4mm; margin-bottom: 5mm; border-bottom: .8mm solid var(--c, var(--forest)); }
+.shead .num { font: 300 30pt/1 var(--serif); color: var(--ink-3); }
+
+/* stat tiles */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; }
+.tile { background: #fff; border: .25mm solid var(--line); border-radius: 2mm; padding: 3.2mm 3.6mm 3.4mm; }
+.tile .label { display: block; margin-bottom: 2mm; }
+.tile .v { font: 600 19pt/1 var(--sans); letter-spacing: -.01em; color: var(--ink); white-space: nowrap; }
+.tile .v small { font-size: .5em; font-weight: 600; color: var(--ink-3); margin-left: .6mm; }
+.tile .d { margin-top: 1.6mm; font-size: 7.6pt; line-height: 1.35; color: var(--ink-2); }
+.tile.accent { background: var(--forest); border-color: var(--forest); }
+.tile.accent .label { color: rgba(243,238,228,.7); }
+.tile.accent .v { color: #F3EEE4; }
+.tile.accent .v small, .tile.accent .d { color: rgba(243,238,228,.8); }
+
+/* passport table */
+.pass { width: 100%; border-collapse: collapse; font-size: 8.6pt; }
+.pass th { text-align: left; font-weight: 500; color: var(--ink-2); padding: 1.9mm 3mm 1.9mm 0; border-bottom: .25mm solid var(--line); width: 46%; vertical-align: top; }
+.pass td { padding: 1.9mm 0; border-bottom: .25mm solid var(--line); font-weight: 600; color: var(--ink); vertical-align: top; }
+.pass tr:first-child th, .pass tr:first-child td { border-top: .5mm solid var(--ink); }
+
+/* data table */
+.dt { width: 100%; border-collapse: collapse; font-size: 8.2pt; font-variant-numeric: tabular-nums lining-nums; }
+.dt th { text-align: left; font: 700 6.4pt/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); padding: 0 2mm 2mm 0; border-bottom: .4mm solid var(--ink); }
+.dt td { padding: 1.9mm 2mm 1.9mm 0; border-bottom: .25mm solid var(--line); color: var(--ink); }
+.dt .r { text-align: right; padding-right: 0; }
+.dt.tight td { padding-top: 1.45mm; padding-bottom: 1.45mm; }
+.dt tfoot td { font-weight: 700; border-bottom: 0; border-top: .4mm solid var(--ink); }
+.dt td:first-child { font-weight: 600; }
+
+/* horizontal bar chart (HTML) */
+.chart { background: #fff; border: .25mm solid var(--line); border-radius: 2mm; padding: 4mm 4.5mm 4.2mm; }
+.chart h3 { margin-bottom: .8mm; }
+.chart .sub { font-size: 7.4pt; color: var(--ink-3); margin-bottom: 3.5mm; }
+.hb { display: grid; grid-template-columns: 24mm 1fr; align-items: center; gap: 2.5mm; margin-top: 2.4mm; }
+.hb .n { font-size: 8pt; font-weight: 600; color: var(--ink-2); }
+.hb .tr { display: flex; align-items: center; gap: 2mm; }
+.hb .bar { height: 4.2mm; width: var(--w); background: var(--c); border-radius: 0 1.1mm 1.1mm 0; flex: none; }
+.hb .val { font: 700 8.6pt/1 var(--sans); color: var(--ink); white-space: nowrap; }
+.hb .val small { font-weight: 500; color: var(--ink-3); font-size: 7pt; margin-left: .5mm; }
+
+/* stacked part-to-whole bar */
+.stack { display: flex; gap: .55mm; height: 6mm; border-radius: 1.1mm; overflow: hidden; margin: 1mm 0 3mm; }
+.stack i { display: block; width: var(--w); background: var(--c); }
+.stack.tone i:nth-child(1) { opacity: 1; } .stack.tone i:nth-child(2) { opacity: .62; } .stack.tone i:nth-child(3) { opacity: .34; }
+.sleg { display: flex; flex-wrap: wrap; gap: 1.5mm 6mm; font-size: 7.8pt; color: var(--ink-2); }
+.sleg > span { display: inline-block; white-space: nowrap; }
+.sleg > span > i { width: 3mm; height: 3mm; border-radius: .8mm; background: var(--c); display: inline-block; vertical-align: -.45mm; margin-right: 1.6mm; }
+.sleg b { color: var(--ink); }
+.sleg .t2 > i { opacity: .62; } .sleg .t3 > i { opacity: .34; }
+
+/* note boxes */
+.note { background: var(--surface-2); border-left: 1mm solid var(--brass); border-radius: 0 2mm 2mm 0; padding: 3.2mm 4mm 3.4mm; font-size: 8pt; line-height: 1.5; color: var(--ink-2); }
+.note h3 { font-size: 8.6pt; margin-bottom: 1.6mm; color: var(--ink); }
+.note ul { padding-left: 4mm; } .note li + li { margin-top: 1.2mm; }
+.note.warn { border-left-color: #B4552D; }
+
+/* media */
+.ph-img { border-radius: 2mm; overflow: hidden; position: relative; background: var(--surface-3); }
+.ph-img img { width: 100%; height: 100%; object-fit: cover; }
+.ph-img .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 7mm 3.5mm 2.6mm; background: linear-gradient(180deg, transparent, rgba(10,16,12,.75)); color: #F3EEE4; font-size: 7.4pt; font-weight: 600; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.chips { display: flex; flex-wrap: wrap; gap: 1.6mm; }
+.chips span { padding: 1.3mm 2.8mm; border-radius: 9mm; background: #fff; border: .25mm solid var(--line); font-size: 7.6pt; font-weight: 600; color: var(--ink); }
+.links a { text-decoration: underline; text-decoration-color: rgba(132,101,47,.5); text-underline-offset: .6mm; }
+
+/* ===== cover ===== */
+.cover { padding: 0; background: var(--forest); color: #F3EEE4; }
+.cover .hero { position: absolute; inset: 0 0 auto 0; height: 150mm; }
+.cover .hero img { width: 100%; height: 100%; object-fit: cover; }
+.cover .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,26,20,.62) 0%, rgba(27,51,38,0) 22%, rgba(27,51,38,0) 42%, rgba(27,51,38,1) 100%); }
+.cover .top { position: absolute; top: 12mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; align-items: center; z-index: 2; }
+.cover .top img { height: 11mm; width: auto; }
+.cover .top span { font: 700 6.8pt/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #F3EEE4; background: rgba(15,26,20,.55); padding: 2mm 3mm; border-radius: 9mm; }
+.cover .body { position: absolute; left: 15mm; right: 15mm; top: 128mm; z-index: 2; }
+.cover .kicker { color: var(--brass-2); }
+.cover h1 { color: #F3EEE4; margin-bottom: 4mm; }
+.cover h1 em { color: var(--brass-2); }
+.cover .lead { color: rgba(243,238,228,.86); max-width: 150mm; }
+.cover .facs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 8mm 0 9mm; }
+.cover .facs a { display: block; background: rgba(243,238,228,.07); border: .25mm solid rgba(243,238,228,.18); border-radius: 2mm; padding: 3.6mm 4mm; }
+.cover .facs a .fac { font: 600 8.6pt/1.2 var(--sans); color: #F3EEE4; }
+.cover .facs a .v { font: 600 20pt/1 var(--sans); margin: 2.4mm 0 1mm; color: #F3EEE4; }
+.cover .facs a .v small { font-size: .45em; color: rgba(243,238,228,.75); margin-left: .8mm; }
+.cover .facs a .d { font-size: 7.4pt; color: rgba(243,238,228,.75); }
+.toc { border-top: .3mm solid rgba(243,238,228,.25); }
+.toc a { display: grid; grid-template-columns: 10mm 1fr auto; align-items: baseline; padding: 2.2mm 0; border-bottom: .25mm solid rgba(243,238,228,.14); font-size: 9pt; color: rgba(243,238,228,.92); }
+.toc a span:first-child { font: 300 11pt/1 var(--serif); color: var(--brass-2); }
+.toc a span:last-child { font: 600 8pt/1 var(--sans); color: rgba(243,238,228,.65); }
+.toc a:hover { color: #fff; }
+.cover .meta { position: absolute; left: 15mm; right: 15mm; bottom: 9mm; display: flex; justify-content: space-between; font: 600 6.8pt/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: rgba(243,238,228,.62); z-index: 2; }
+
+/* ===== overview cards ===== */
+.fcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.fcard { background: #fff; border: .25mm solid var(--line); border-radius: 2.4mm; overflow: hidden; display: flex; flex-direction: column; }
+.fcard .im { height: 52mm; border-bottom: 1mm solid var(--c); }
+.fcard .im img { width: 100%; height: 100%; object-fit: cover; }
+.fcard .in { padding: 3.6mm 4mm 4mm; display: flex; flex-direction: column; flex: 1; }
+.fcard h3 { margin-bottom: .6mm; }
+.fcard .ref { font-size: 7.4pt; color: var(--ink-3); margin-bottom: 2.6mm; }
+.fcard dl > div { display: flex; justify-content: space-between; gap: 2mm; padding: 1.5mm 0; border-top: .25mm solid var(--line); font-size: 8.2pt; }
+.fcard dt { color: var(--ink-2); }
+.fcard dd { font-weight: 700; white-space: nowrap; }
+.fcard .more { margin-top: auto; padding-top: 3mm; display: inline-flex; align-items: center; gap: 1.5mm; font: 700 7.2pt/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--brass); }
+.fcard .more svg { width: 3.2mm; height: 3.2mm; }
+
+/* floors silhouettes */
+.floors { display: flex; align-items: flex-end; justify-content: space-around; height: 33mm; padding-top: 2mm; border-bottom: .3mm solid var(--ink); }
+.bld { display: flex; flex-direction: column; align-items: center; gap: 1.2mm; }
+.bld .stk { display: flex; align-items: flex-end; gap: .8mm; }
+.bld .col { display: flex; flex-direction: column-reverse; gap: .35mm; }
+.bld .col i { display: block; width: 7mm; height: 1.45mm; background: var(--c); border-radius: .3mm; }
+.bld .col.w i { width: 4.2mm; opacity: .62; }
+.bld .lb { font-size: 7.6pt; font-weight: 700; color: var(--ink); text-align: center; }
+.bld .lb small { display: block; font-weight: 500; color: var(--ink-3); font-size: 7pt; }
+.floors-x { display: flex; justify-content: space-around; padding-top: 2mm; }
+
+/* plan figure */
+.plan { background: var(--surface-2); border: .25mm solid var(--line); border-radius: 2mm; padding: 9mm 4mm 4mm; position: relative; display: flex; flex-direction: column; gap: 3mm; }
+.plan .label { position: absolute; left: 4mm; top: 3.4mm; }
+.plan svg { width: 100%; flex: 1; min-height: 0; display: block; }
+.plan.auto svg { flex: none; height: auto; }
+.dt.sm { font-size: 7.8pt; }
+.pins { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4mm 3mm; padding-top: 3mm; border-top: .25mm solid var(--line); font-size: 7.6pt; color: var(--ink-2); }
+.pins span { display: flex; align-items: center; gap: 1.8mm; }
+.pins b { display: inline-grid; place-items: center; width: 4.2mm; height: 4.2mm; border-radius: 50%; background: var(--ink); color: #F3EEE4; font-size: 6.6pt; flex: none; }
+.pins b.br { background: var(--brass); }
+
+/* plan key */
+.keyl { list-style: none; border-top: .5mm solid var(--ink); }
+.keyl li { display: grid; grid-template-columns: 5mm 1fr; gap: 2.4mm; align-items: center; padding: 2mm 0; border-bottom: .25mm solid var(--line); }
+.keyl i { width: 5mm; height: 5mm; border-radius: 1mm; display: block; }
+.keyl i.hatch { background: repeating-linear-gradient(45deg, #B08A4E 0 .3mm, #F2ECE0 .3mm 1.1mm); border: .25mm solid #B08A4E; }
+.keyl b { display: block; font-size: 8.4pt; }
+.keyl span { font-size: 7.4pt; color: var(--ink-3); }
+.svg-lbl { font-family: var(--sans); font-weight: 700; }
+.svg-sub { font-family: var(--sans); font-weight: 500; }
+.svg-dim { font-family: var(--sans); font-weight: 600; fill: #6B5A39; }
+
+/* thumbnails */
+.thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; }
+.thumb { background: #fff; border: .25mm solid var(--line); border-radius: 2mm; overflow: hidden; }
+.thumb .im { height: 24mm; }
+.thumb .im img { width: 100%; height: 100%; object-fit: cover; }
+.thumb .t { padding: 2mm 2.6mm 2.4mm; font-size: 7.6pt; line-height: 1.35; color: var(--ink-2); }
+.thumbs.sm .thumb .im { height: 19mm; }
+.thumbs.sm .thumb .t { padding: 1.6mm 2.4mm 2mm; font-size: 7.2pt; }
+.thumb .t b { display: block; color: var(--ink); font-size: 8pt; margin-bottom: .4mm; }
+
+/* territory element tiles */
+.elems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; }
+.elem { background: #fff; border: .25mm solid var(--line); border-radius: 2mm; padding: 3mm 3.2mm; display: grid; grid-template-columns: 9mm 1fr; gap: 2.4mm; align-items: center; }
+.elem svg { width: 9mm; height: 9mm; fill: none; stroke: var(--ink-2); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.elem .v { font: 700 13pt/1 var(--sans); }
+.elem .t { font-size: 7.4pt; color: var(--ink-2); line-height: 1.3; }
+
+/* dorm floor stack */
+.tower { display: grid; grid-template-columns: 1fr auto; gap: 4mm; align-items: end; }
+.tower .fl { display: flex; flex-direction: column-reverse; gap: .6mm; padding: 2mm; background: #fff; border: .25mm solid var(--line); border-radius: 1.6mm; }
+.tower .fl i { display: flex; align-items: center; justify-content: space-between; height: 4.6mm; padding: 0 2mm; background: rgba(22,137,106,.16); border-radius: .5mm; font: 600 6.4pt/1 var(--sans); color: var(--ink-2); font-style: normal; }
+.tower .fl i:first-child { background: var(--dor); color: #fff; }
+.tower .calc { font-size: 8pt; color: var(--ink-2); }
+.tower .calc .big { font: 600 20pt/1 var(--sans); color: var(--ink); display: block; margin: 1.5mm 0 1mm; }
+
+/* room formats */
+.rf { width: 100%; border-collapse: collapse; }
+.rf th { text-align: left; font: 700 6.4pt/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); padding: 0 2mm 2mm 0; border-bottom: .4mm solid var(--ink); }
+.rf td { padding: 2.1mm 2mm 2.1mm 0; border-bottom: .25mm solid var(--line); vertical-align: middle; font-size: 8.2pt; }
+.rf .nm b { display: block; font-size: 8.8pt; }
+.rf .nm span { color: var(--ink-3); font-size: 7.4pt; }
+.ppl { display: flex; gap: .7mm; }
+.ppl svg { width: 4.2mm; height: 4.2mm; fill: none; stroke: var(--dor); stroke-width: 1.8; stroke-linecap: round; }
+.mb { display: flex; align-items: center; gap: 1.8mm; }
+.mb i { display: block; height: 3.4mm; width: var(--w); background: var(--dor); border-radius: 0 1mm 1mm 0; }
+.mb.alt i { background: rgba(22,137,106,.45); }
+.mb b { font-size: 8.2pt; white-space: nowrap; }
+
+.eq { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6mm 4mm; }
+.eq span { display: flex; align-items: center; gap: 1.8mm; font-size: 8pt; color: var(--ink); padding: 1.3mm 0; border-bottom: .25mm solid var(--line); }
+.eq svg { width: 3.4mm; height: 3.4mm; flex: none; fill: none; stroke: var(--dor); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* issues table */
+.iss { width: 100%; border-collapse: collapse; font-size: 8.2pt; }
+.iss th { text-align: left; font: 700 6.4pt/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); padding: 0 3mm 2mm 0; border-bottom: .4mm solid var(--ink); }
+.iss td { padding: 1.6mm 3mm 1.6mm 0; border-bottom: .25mm solid var(--line); vertical-align: top; line-height: 1.45; }
+.iss td:first-child { font: 300 13pt/1 var(--serif); color: var(--brass); width: 9mm; }
+.iss .obj { white-space: nowrap; font-weight: 600; }
+.iss .p { display: inline-block; padding: .8mm 2mm; border-radius: 9mm; font: 700 6.4pt/1.2 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.iss .p.hi { background: #F5DCCF; color: #7A2E12; }
+.iss .p.md { background: #F3E6C7; color: #6B4A0E; }
+.iss .p.lo { background: #E1EADF; color: #2E4F33; }
+.st { display: inline-flex; align-items: center; gap: 1.4mm; padding: .7mm 2.2mm .7mm 1.6mm; border-radius: 9mm; font: 700 6.6pt/1.2 var(--sans); white-space: nowrap; }
+.st::before { content: ""; width: 2.2mm; height: 2.2mm; border-radius: 50%; flex: none; box-sizing: border-box; }
+.st.ok { background: #E1EADF; color: #2E4F33; } .st.ok::before { background: #2E4F33; }
+.st.ms { background: #E3E8EE; color: #2F4358; } .st.ms::before { background: linear-gradient(90deg, #2F4358 50%, transparent 50%); border: .3mm solid #2F4358; }
+.st.cn { background: #EEEAE1; color: #4F5A53; } .st.cn::before { border: .35mm solid #4F5A53; }
+.st.no { background: #F5DCCF; color: #7A2E12; } .st.no::before { border-radius: .4mm; background: #7A2E12; width: 2mm; height: 2mm; transform: rotate(45deg); }
+.mx td { vertical-align: middle; }
+.mx td small { display: block; color: var(--ink-3); font-size: 6.6pt; line-height: 1.25; margin-top: .4mm; }
+.srcs li { list-style: none; display: grid; grid-template-columns: 8mm 1fr; padding: 1.4mm 0; border-bottom: .25mm solid var(--line); font-size: 8pt; line-height: 1.4; }
+.srcs li b { color: var(--brass); }
+</style>
+</head>
+<body>
+
+<!-- =============================== 1 · COVER =============================== -->
+<section class="page cover" id="muqova">
+  <div class="hero"><img src="../assets/opt/edu-quarter-aerial.jpg" alt="Maktab va bog‘cha — havodan ko‘rinish"></div>
+  <div class="top"><img src="../assets/opt/logo_white.png" alt="Bio Pharma Residence"><span>Ma’lumotnoma · 4 oktyabr 2026</span></div>
+  <div class="body">
+    <div class="kicker">Ijtimoiy obyektlar · Bio Pharma Residence</div>
+    <h1>Bog‘cha, maktab va <em>talabalar yotoqxonasi</em></h1>
+    <p class="lead">Uch obyektning sig‘imi, maydonlari, tarkibi va e’tibor talab qiladigan masalalari — bosh reja chizmasi va maydonlar hisobi asosida.</p>
+    <div class="facs">
+      <a href="#maktab"><span class="fac c-sch">Maktab · Pharma School</span><div class="v">640<small>o‘rin</small></div><div class="d">4 / 3 qavat · ~5 240 m²</div></a>
+      <a href="#bogcha"><span class="fac c-kin">Bog‘cha (MTM)</span><div class="v">360<small>o‘rin</small></div><div class="d">2 qavat · ~1 520 m²</div></a>
+      <a href="#yotoqxona"><span class="fac c-dor">Talabalar yotoqxonasi</span><div class="v">1 550+<small>o‘rin</small></div><div class="d">16 qavat · 10 470 m²</div></a>
+    </div>
+    <nav class="toc" id="mundarija" aria-label="Mundarija">
+      <a href="#umumiy"><span>01</span><span>Umumiy ko‘rinish</span><span>2</span></a>
+      <a href="#taqqoslash"><span>02</span><span>Taqqoslash: sig‘im, maydon, qavatlar</span><span>3</span></a>
+      <a href="#maktab"><span>03</span><span>Maktab — Pharma School</span><span>4</span></a>
+      <a href="#bogcha"><span>04</span><span>Bog‘cha (MTM)</span><span>6</span></a>
+      <a href="#yotoqxona"><span>05</span><span>Talabalar yotoqxonasi</span><span>8</span></a>
+      <a href="#masalalar"><span>06</span><span>E’tibor talab qiladigan masalalar va manbalar</span><span>10</span></a>
+    </nav>
+  </div>
+  <div class="meta"><span>Imarat Development</span><span>Toshkent · O‘zbekiston</span></div>
+</section>
+
+<!-- =============================== 2 · OVERVIEW =============================== -->
+<section class="page" id="umumiy">
+  <header class="ph"><a href="#mundarija">Bio Pharma Residence · Ijtimoiy obyektlar</a><span class="sec">Umumiy ko‘rinish</span></header>
+  <div class="shead"><div><div class="kicker">01 · Umumiy ko‘rinish</div><h2>Uchta obyekt — <em>2 550+ o‘rin.</em></h2></div><span class="num">01</span></div>
+  <p class="lead" style="margin-bottom:6mm">Majmuada uchta ijtimoiy obyekt rejalashtirilgan: 640 o‘rinli maktab, 360 o‘rinli bog‘cha va 1 550 dan ortiq o‘rinli talabalar yotoqxonasi. Maktab va bog‘cha majmuaning g‘arbiy qismida yagona ta’lim hududini tashkil qiladi; yotoqxona alohida 16 qavatli blokda joylashadi.</p>
+
+  <div class="tiles" style="margin-bottom:7mm">
+    <div class="tile accent"><span class="label">Obyektlar</span><div class="v">3</div><div class="d">maktab, bog‘cha, yotoqxona</div></div>
+    <div class="tile"><span class="label">Jami o‘rinlar</span><div class="v">2 550<small>+</small></div><div class="d">640 + 360 + 1 550+</div></div>
+    <div class="tile"><span class="label">Umumiy maydon</span><div class="v">~17 230<small>m²</small></div><div class="d">5 240 + 1 520 + 10 470</div></div>
+    <div class="tile"><span class="label">Ta’lim binolari izi</span><div class="v">~2 270<small>m²</small></div><div class="d">maktab ~1 510 + bog‘cha ~760</div></div>
+  </div>
+
+  <div class="fcards">
+    <article class="fcard c-sch">
+      <div class="im"><img src="../assets/opt/pharma-school.jpg" alt="Pharma School"></div>
+      <div class="in">
+        <h3 class="fac">Maktab · Pharma School</h3>
+        <div class="ref">Bosh rejada — 5-obyekt</div>
+        <dl>
+          <div><dt>O‘rinlar</dt><dd>640</dd></div>
+          <div><dt>Qavatlar</dt><dd>4 / 3</dd></div>
+          <div><dt>Korpuslar</dt><dd>3 (U shaklida)</dd></div>
+          <div><dt>Qurilish izi</dt><dd>~1 510 m²</dd></div>
+          <div><dt>Umumiy maydon</dt><dd>~5 240 m²</dd></div>
+          <div><dt>O‘quvchiga</dt><dd>~8,2 m²</dd></div>
+        </dl>
+        <a class="more" href="#maktab">Batafsil — 4-bet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="fcard c-kin">
+      <div class="im"><img src="../assets/opt/kindgarden.jpg" alt="Bog‘cha"></div>
+      <div class="in">
+        <h3 class="fac">Bog‘cha (MTM)</h3>
+        <div class="ref">Bosh rejada — 6-obyekt</div>
+        <dl>
+          <div><dt>O‘rinlar</dt><dd>360</dd></div>
+          <div><dt>Qavatlar</dt><dd>2</dd></div>
+          <div><dt>Binolar</dt><dd>2 + o‘tish joyi</dd></div>
+          <div><dt>Qurilish izi</dt><dd>~761 m²</dd></div>
+          <div><dt>Umumiy maydon</dt><dd>~1 522 m²</dd></div>
+          <div><dt>Bolaga</dt><dd>~4,2 m²</dd></div>
+        </dl>
+        <a class="more" href="#bogcha">Batafsil — 6-bet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="fcard c-dor">
+      <div class="im"><img src="../assets/opt/dorm-reception.jpg" alt="Yotoqxona resepshni"></div>
+      <div class="in">
+        <h3 class="fac">Talabalar yotoqxonasi</h3>
+        <div class="ref">Tip 4 blok · yevro-ikki xonali</div>
+        <dl>
+          <div><dt>O‘rinlar</dt><dd>1 550+</dd></div>
+          <div><dt>Qavatlar</dt><dd>16</dd></div>
+          <div><dt>Qavat maydoni</dt><dd>654,4 m²</dd></div>
+          <div><dt>Umumiy maydon</dt><dd>10 470 m²</dd></div>
+          <div><dt>Xona formatlari</dt><dd>3</dd></div>
+          <div><dt>O‘ringa (yalpi)</dt><dd>~6,8 m²</dd></div>
+        </dl>
+        <a class="more" href="#yotoqxona">Batafsil — 8-bet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+  </div>
+
+  <div class="note" style="margin-top:7mm">
+    <h3>Asosiy xulosalar</h3>
+    <ul>
+      <li>Yotoqxona — eng yirik obyekt: uchta obyektning umumiy maydonidan <b>~61%</b> va o‘rinlardan <b>~61%</b> unga to‘g‘ri keladi.</li>
+      <li>Bog‘chada bir bolaga <b>~4,2 m²</b> umumiy maydon to‘g‘ri keladi — maktabdagidan (~8,2 m²) ikki baravar kam. Batafsil: <a class="links" href="#masalalar"><u>10-bet</u></a>.</li>
+      <li>Maktab va bog‘cha ko‘rsatkichlari bosh reja chizmasidan o‘lchangan (aniqlik ±2%); o‘rinlar soni bosh reja jadvalidan.</li>
+    </ul>
+  </div>
+  <footer class="pf"><span>Ijtimoiy obyektlar · ma’lumotnoma</span><span><b>2</b> / 10</span></footer>
+</section>
+
+<!-- =============================== 3 · COMPARISON =============================== -->
+<section class="page" id="taqqoslash">
+  <header class="ph"><a href="#mundarija">Bio Pharma Residence · Ijtimoiy obyektlar</a><span class="sec">Taqqoslash</span></header>
+  <div class="shead"><div><div class="kicker">02 · Taqqoslash</div><h2>Sig‘im, maydon va <em>qavatlar.</em></h2></div><span class="num">02</span></div>
+
+  <div class="grid2" style="margin-bottom:5mm">
+    <div class="chart">
+      <h3>Sig‘im</h3><div class="sub">O‘rinlar soni</div>
+      <div class="hb c-dor" title="Yotoqxona: 1 550+ o‘rin"><span class="n">Yotoqxona</span><span class="tr"><i class="bar" style="--w:68%"></i><span class="val">1 550+</span></span></div>
+      <div class="hb c-sch" title="Maktab: 640 o‘rin"><span class="n">Maktab</span><span class="tr"><i class="bar" style="--w:28.1%"></i><span class="val">640</span></span></div>
+      <div class="hb c-kin" title="Bog‘cha: 360 o‘rin"><span class="n">Bog‘cha</span><span class="tr"><i class="bar" style="--w:15.8%"></i><span class="val">360</span></span></div>
+    </div>
+    <div class="chart">
+      <h3>Umumiy maydon</h3><div class="sub">Qavatlar maydoni yig‘indisi, m²</div>
+      <div class="hb c-dor" title="Yotoqxona: 10 470 m²"><span class="n">Yotoqxona</span><span class="tr"><i class="bar" style="--w:68%"></i><span class="val">10 470<small>m²</small></span></span></div>
+      <div class="hb c-sch" title="Maktab: ~5 240 m²"><span class="n">Maktab</span><span class="tr"><i class="bar" style="--w:34%"></i><span class="val">~5 240<small>m²</small></span></span></div>
+      <div class="hb c-kin" title="Bog‘cha: ~1 520 m²"><span class="n">Bog‘cha</span><span class="tr"><i class="bar" style="--w:9.9%"></i><span class="val">~1 520<small>m²</small></span></span></div>
+    </div>
+    <div class="chart">
+      <h3>Bir o‘ringa umumiy maydon</h3><div class="sub">Hisoblangan: umumiy maydon ÷ o‘rinlar, m²</div>
+      <div class="hb c-sch" title="Maktab: ~8,2 m² o‘quvchiga"><span class="n">Maktab</span><span class="tr"><i class="bar" style="--w:68%"></i><span class="val">~8,2<small>m²</small></span></span></div>
+      <div class="hb c-dor" title="Yotoqxona: ~6,8 m² o‘ringa"><span class="n">Yotoqxona</span><span class="tr"><i class="bar" style="--w:56%"></i><span class="val">~6,8<small>m²</small></span></span></div>
+      <div class="hb c-kin" title="Bog‘cha: ~4,2 m² bolaga"><span class="n">Bog‘cha</span><span class="tr"><i class="bar" style="--w:35.1%"></i><span class="val">~4,2<small>m²</small></span></span></div>
+    </div>
+    <div class="chart">
+      <h3>Qavatlar</h3><div class="sub">Har bir korpus/bino qavatlari soni (masshtabda)</div>
+      <div class="floors">
+        <div class="bld c-sch"><div class="stk"><div class="col w"><i></i><i></i><i></i></div><div class="col"><i></i><i></i><i></i><i></i></div><div class="col w"><i></i><i></i><i></i></div></div></div>
+        <div class="bld c-kin"><div class="stk"><div class="col"><i></i><i></i></div><div class="col w"><i></i><i></i></div></div></div>
+        <div class="bld c-dor"><div class="stk"><div class="col"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+      </div>
+      <div class="floors-x">
+        <div class="bld"><span class="lb">Maktab<small>4 + 3 + 3 qavat</small></span></div>
+        <div class="bld"><span class="lb">Bog‘cha<small>2 + 2 qavat</small></span></div>
+        <div class="bld"><span class="lb">Yotoqxona<small>16 qavat</small></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart" style="margin-bottom:5mm">
+    <h3>Umumiy maydondagi ulush</h3><div class="sub">Uch obyekt jami ~17 230 m²</div>
+    <div class="stack"><i class="c-dor" style="--w:60.8%" title="Yotoqxona 60,8%"></i><i class="c-sch" style="--w:30.4%" title="Maktab 30,4%"></i><i class="c-kin" style="--w:8.8%" title="Bog‘cha 8,8%"></i></div>
+    <div class="sleg"><span class="c-dor"><i></i>Yotoqxona · <b>60,8%</b> · 10 470 m²</span><span class="c-sch"><i></i>Maktab · <b>30,4%</b> · ~5 240 m²</span><span class="c-kin"><i></i>Bog‘cha · <b>8,8%</b> · ~1 520 m²</span></div>
+  </div>
+
+  <h3>Jamlanma jadval</h3>
+  <table class="dt tight">
+    <thead><tr><th>Ko‘rsatkich</th><th class="r"><span class="fac c-sch">Maktab</span></th><th class="r"><span class="fac c-kin">Bog‘cha</span></th><th class="r"><span class="fac c-dor">Yotoqxona</span></th></tr></thead>
+    <tbody>
+      <tr><td>Bosh rejadagi belgisi</td><td class="r">5-obyekt</td><td class="r">6-obyekt</td><td class="r">Tip 4 blok</td></tr>
+      <tr><td>O‘rinlar</td><td class="r">640</td><td class="r">360</td><td class="r">1 550+</td></tr>
+      <tr><td>Qavatlar</td><td class="r">4 / 3</td><td class="r">2</td><td class="r">16</td></tr>
+      <tr><td>Bino / korpuslar</td><td class="r">3 korpus</td><td class="r">2 bino + o‘tish joyi</td><td class="r">1 blok</td></tr>
+      <tr><td>Qurilish izi / qavat maydoni</td><td class="r">~1 510 m²</td><td class="r">~761 m²</td><td class="r">654,4 m² (qavat)</td></tr>
+      <tr><td>Umumiy maydon</td><td class="r">~5 240 m²</td><td class="r">~1 522 m²</td><td class="r">10 470 m²</td></tr>
+      <tr><td>Bir o‘ringa maydon</td><td class="r">~8,2 m²</td><td class="r">~4,2 m²</td><td class="r">~6,8 m²</td></tr>
+      <tr><td>Manba</td><td class="r">[1] [2]</td><td class="r">[1] [2]</td><td class="r">[3] [4]</td></tr>
+    </tbody>
+  </table>
+  <footer class="pf"><span>Ijtimoiy obyektlar · ma’lumotnoma</span><span><b>3</b> / 10</span></footer>
+</section>
+
+<!-- =============================== 4 · SCHOOL 1/2 =============================== -->
+<section class="page" id="maktab" style="--c: var(--sch)">
+  <header class="ph"><a href="#mundarija">Bio Pharma Residence · Ijtimoiy obyektlar</a><span class="sec"><i></i>Maktab · 1/2</span></header>
+  <div class="shead"><div><div class="kicker">03 · Maktab</div><h2>Pharma School — <em>640 o‘rinli maktab.</em></h2></div><span class="num">03</span></div>
+  <div class="ph-img" style="height:88mm; margin-bottom:5mm"><img src="../assets/opt/pharma-school.jpg" alt="Pharma School binosi"><span class="cap">Pharma School — vizualizatsiya</span></div>
+
+  <div class="tiles" style="margin-bottom:5mm">
+    <div class="tile"><span class="label">O‘rinlar</span><div class="v">640</div><div class="d">o‘quvchi</div></div>
+    <div class="tile"><span class="label">Umumiy maydon</span><div class="v">~5 240<small>m²</small></div><div class="d">3 korpus jami</div></div>
+    <div class="tile"><span class="label">O‘quvchiga</span><div class="v">~8,2<small>m²</small></div><div class="d">umumiy maydon ÷ 640</div></div>
+    <div class="tile"><span class="label">Qurilish izi</span><div class="v">~1 510<small>m²</small></div><div class="d">korpuslar izi yig‘indisi</div></div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <h3>Maktab pasporti</h3>
+      <table class="pass">
+        <tr><th>Bosh rejadagi belgisi</th><td>5-obyekt<span class="src">[1]</span></td></tr>
+        <tr><th>O‘rinlar</th><td>640<span class="src">[1]</span></td></tr>
+        <tr><th>Korpuslar</th><td>3 — U shaklida<span class="src">[2]</span></td></tr>
+        <tr><th>Qavatlar</th><td>asosiy korpus 4, qanotlar 3<span class="src">[2]</span></td></tr>
+        <tr><th>Qurilish izi</th><td>~1 510 m²<span class="src">[2]</span></td></tr>
+        <tr><th>Umumiy qavatlar maydoni</th><td>~5 240 m²<span class="src">[2]</span></td></tr>
+        <tr><th>Maktab hududi eni</th><td>56,8 m<span class="src">[2]</span></td></tr>
+        <tr><th>Ichki hovli</th><td>sport maydoni<span class="src">[1]</span></td></tr>
+        <tr><th>Joylashuv</th><td>majmuaning g‘arbiy qismi, bog‘cha bilan yagona ta’lim hududi<span class="src">[1]</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Bosh rejadagi joylashuvi</h3>
+      <div class="grid2" style="gap:3mm">
+        <div class="ph-img" style="height:62mm; background:#fff"><img src="../assets/opt/genplan-edu.jpg" alt="Bosh rejadan parcha" style="object-fit:contain"><span class="cap">Bosh rejadan: 5 — maktab, 6 — bog‘cha</span></div>
+        <div class="ph-img" style="height:62mm"><img src="../assets/opt/edu-quarter-aerial.jpg" alt="Maktab va bog‘cha havodan"><span class="cap">Havodan ko‘rinish</span></div>
+      </div>
+      <h3 style="margin-top:4mm">Ixtisoslashuv <span class="muted" style="font-weight:500">(konsepsiya)</span><span class="src">[4]</span></h3>
+      <div class="chips"><span>Kimyo</span><span>Biologiya</span><span>Tibbiyot</span><span>IT</span><span>12+ laboratoriya va amaliyot xonasi</span><span>1:20 o‘qituvchi / o‘quvchi</span></div>
+    </div>
+  </div>
+  <footer class="pf"><span>Ijtimoiy obyektlar · ma’lumotnoma</span><span><b>4</b> / 10</span></footer>
+</section>
+
+<!-- =============================== 5 · SCHOOL 2/2 =============================== -->
+<section class="page" style="--c: var(--sch)">
+  <header class="ph"><a href="#mundarija">Bio Pharma Residence · Ijtimoiy obyektlar</a><span class="sec"><i></i>Maktab · 2/2</span></header>
+  <div class="grid2" style="grid-template-columns: 1fr 56mm; margin-bottom:5mm">
+    <div class="plan" style="height:92mm"><span class="label">Maktab sxemasi · masshtabda · metrlarda</span><svg preserveAspectRatio="xMidYMid meet" viewBox="-13.6 -10.2 80.4 66" role="img" aria-label="Maktab sxemasi: asosiy korpus, ikki qanot va sport maydoni">
+          <defs>
+            <pattern id="hatchS" width="1.1" height="1.1" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.1" stroke="#B08A4E" stroke-width=".28"/></pattern>
+          </defs>
+          <rect x="-7" y="-4" width="68" height="50" rx="1.4" fill="#E0D6C2" stroke="#B5A88C" stroke-width=".2" stroke-dasharray=".9 .6"/>
+          <g fill="#A3B99B">
+            <circle cx="-4.5" cy="1" r="1.3"/><circle cx="-4.6" cy="6" r="1.1"/><circle cx="-4.4" cy="11" r="1.3"/><circle cx="-4.6" cy="16" r="1.1"/><circle cx="-4.4" cy="22" r="1.3"/><circle cx="-4.6" cy="28" r="1.1"/><circle cx="-4.4" cy="34" r="1.3"/><circle cx="-4.5" cy="40" r="1.2"/>
+            <circle cx="0" cy="43.5" r="1.1"/><circle cx="4" cy="43.4" r="1.2"/>
+            <circle cx="42" cy="43.6" r="1.2"/><circle cx="46" cy="43.4" r="1.1"/><circle cx="50" cy="43.6" r="1.3"/><circle cx="54" cy="43.4" r="1.1"/><circle cx="58" cy="43.6" r="1.2"/>
+          </g>
+          <g>
+            <rect x="11" y="1.6" width="26.4" height="15" rx=".4" fill="#97B98C"/>
+            <g fill="none" stroke="#F3EEE4" stroke-width=".22">
+              <rect x="12" y="2.6" width="24.4" height="13"/><line x1="24.2" y1="2.6" x2="24.2" y2="15.6"/><circle cx="24.2" cy="9.1" r="2.4"/><rect x="12" y="6.1" width="3" height="6"/><rect x="33.4" y="6.1" width="3" height="6"/>
+            </g>
+          </g>
+          <rect x="0" y="0" width="8.6" height="19.1" fill="#8B4A8F"/>
+          <rect x="40.4" y="0" width="16.4" height="38.5" fill="#8B4A8F"/>
+          <rect x="0" y="20.4" width="39.4" height="18.1" fill="#5C2C60"/>
+          <rect x="9" y="38.5" width="21.5" height="2.9" fill="url(#hatchS)" stroke="#B08A4E" stroke-width=".2"/>
+          <g pointer-events="none">
+            <text x="24.2" y="19.1" text-anchor="middle" class="svg-sub" font-size="1.45" fill="#3E4D44">Sport maydoni</text>
+            <text x="19.7" y="28.4" text-anchor="middle" class="svg-lbl" font-size="2.3" fill="#F3EEE4">Asosiy korpus</text>
+            <text x="19.7" y="31.8" text-anchor="middle" class="svg-sub" font-size="1.55" fill="#D7BB87">4 qavat · ~2 852 m²</text>
+            <text x="48.6" y="17.4" text-anchor="middle" class="svg-lbl" font-size="2.1" fill="#F3EEE4">O‘ng qanot</text>
+            <text x="48.6" y="20.5" text-anchor="middle" class="svg-sub" font-size="1.5" fill="#F3EEE4">3 qavat</text>
+            <text x="48.6" y="22.9" text-anchor="middle" class="svg-sub" font-size="1.5" fill="#F3EEE4">~1 896 m²</text>
+            <text transform="translate(3.7 9.55) rotate(-90)" text-anchor="middle" class="svg-lbl" font-size="1.6" fill="#F3EEE4">Chap qanot</text>
+            <text transform="translate(5.9 9.55) rotate(-90)" text-anchor="middle" class="svg-sub" font-size="1.3" fill="#F3EEE4">3 qavat</text>
+            <path d="M19.75 45 V42.3" stroke="#84652F" stroke-width=".3"/>
+            <path d="M18.9 43.2 L19.75 41.9 L20.6 43.2" fill="none" stroke="#84652F" stroke-width=".3"/>
+            <text x="21.3" y="44.5" class="svg-sub" font-size="1.35" fill="#84652F">Asosiy kirish · soyabon</text>
+          </g>
+          <g pointer-events="none">
+            <g stroke="#8A7A57" stroke-width=".13" fill="none">
+              <line x1="0" y1="50" x2="39.4" y2="50"/><line x1="40.4" y1="50" x2="56.8" y2="50"/><line x1="0" y1="54" x2="56.8" y2="54"/>
+              <line x1="0" y1="46.5" x2="0" y2="54.8"/><line x1="39.4" y1="46.5" x2="39.4" y2="50.8"/><line x1="40.4" y1="46.5" x2="40.4" y2="50.8"/><line x1="56.8" y1="46.5" x2="56.8" y2="54.8"/>
+              <path d="M-.6 50.6 L.6 49.4 M38.8 50.6 L40 49.4 M39.8 50.6 L41 49.4 M56.2 50.6 L57.4 49.4 M-.6 54.6 L.6 53.4 M56.2 54.6 L57.4 53.4"/>
+              <line x1="-11" y1="0" x2="-11" y2="19.1"/><line x1="-11" y1="20.4" x2="-11" y2="38.5"/>
+              <line x1="-11.8" y1="0" x2="-7.5" y2="0"/><line x1="-11.8" y1="19.1" x2="-7.5" y2="19.1"/><line x1="-11.8" y1="20.4" x2="-7.5" y2="20.4"/><line x1="-11.8" y1="38.5" x2="-7.5" y2="38.5"/>
+              <path d="M-11.6 .6 L-10.4 -.6 M-11.6 19.7 L-10.4 18.5 M-11.6 21 L-10.4 19.8 M-11.6 39.1 L-10.4 37.9"/>
+              <line x1="64.5" y1="0" x2="64.5" y2="38.5"/><line x1="61.5" y1="0" x2="65.3" y2="0"/><line x1="61.5" y1="38.5" x2="65.3" y2="38.5"/>
+              <path d="M63.9 .6 L65.1 -.6 M63.9 39.1 L65.1 37.9"/>
+            </g>
+            <g class="svg-dim" font-size="1.5" text-anchor="middle">
+              <text x="19.7" y="49.4">39,4</text><text x="48.6" y="49.4">16,4</text><text x="28.4" y="53.4">56,8 m — maktab hududi eni</text>
+              <text transform="translate(-11.7 9.55) rotate(-90)">19,1</text><text transform="translate(-11.7 29.45) rotate(-90)">18,1</text>
+              <text transform="translate(63.8 19.25) rotate(-90)">38,5</text>
+            </g>
+            <g transform="translate(46.8 -7.5)">
+              <rect x="0" y="0" width="5" height=".7" fill="#13201A"/><rect x="5" y="0" width="5" height=".7" fill="none" stroke="#13201A" stroke-width=".12"/>
+              <text x="0" y="-.8" class="svg-dim" font-size="1.2" text-anchor="middle">0</text><text x="5" y="-.8" class="svg-dim" font-size="1.2" text-anchor="middle">5</text><text x="10" y="-.8" class="svg-dim" font-size="1.2" text-anchor="middle">10 m</text>
+            </g>
+          </g>
+        </svg></div>
+    <div>
+      <h3>Sxema kaliti</h3>
+      <ul class="keyl" style="margin-bottom:4mm">
+        <li><i style="background:#5C2C60"></i><div><b>Asosiy korpus</b><span>4 qavat · ~2 852 m²</span></div></li>
+        <li><i style="background:#8B4A8F"></i><div><b>O‘ng va chap qanot</b><span>3 qavat · ~1 896 + ~492 m²</span></div></li>
+        <li><i style="background:#97B98C"></i><div><b>Sport maydoni</b><span>ichki hovlida</span></div></li>
+        <li><i class="hatch"></i><div><b>Kirish soyaboni</b><span>~21,5 × 2,9 m · ~62 m²</span></div></li>
+      </ul>
+      <h3 style="margin-bottom:1mm">Maydon ulushi</h3>
+      <div class="stack tone"><i style="--w:54.4%; --c: var(--sch)" title="Asosiy korpus 54,4%"></i><i style="--w:36.2%; --c: var(--sch)" title="O‘ng qanot 36,2%"></i><i style="--w:9.4%; --c: var(--sch)" title="Chap qanot 9,4%"></i></div>
+      <div class="sleg" style="gap:1.2mm 4mm"><span style="--c:var(--sch)"><i></i>Asosiy · <b>54%</b></span><span class="t2" style="--c:var(--sch)"><i></i>O‘ng qanot · <b>36%</b></span><span class="t3" style="--c:var(--sch)"><i></i>Chap qanot · <b>9%</b></span></div>
+    </div>
+  </div>
+
+  <h3>Korpuslar</h3>
+  <table class="dt tight" style="margin-bottom:5mm">
+    <thead><tr><th>Korpus</th><th>O‘lcham, m</th><th class="r">Qavat</th><th class="r">Qurilish izi, m²</th><th class="r">Umumiy maydon, m²</th><th class="r">Ulush</th></tr></thead>
+    <tbody>
+      <tr><td><span class="fac" style="--c:#5C2C60">Asosiy korpus</span></td><td>39,4 × 18,1</td><td class="r">4</td><td class="r">~713</td><td class="r">~2 852</td><td class="r">54%</td></tr>
+      <tr><td><span class="fac c-sch">O‘ng qanot</span></td><td>16,4 × 38,5</td><td class="r">3</td><td class="r">~632</td><td class="r">~1 896</td><td class="r">36%</td></tr>
+      <tr><td><span class="fac c-sch">Chap qanot</span></td><td>8,6 × 19,1</td><td class="r">3</td><td class="r">~164</td><td class="r">~492</td><td class="r">9%</td></tr>
+    </tbody>
+    <tfoot><tr><td>Jami · 3 korpus</td><td>hudud eni 56,8</td><td class="r">4 / 3</td><td class="r">~1 509</td><td class="r">~5 240</td><td class="r">100%</td></tr></tfoot>
+  </table>
+
+  <h3>O‘quv makonlari <span class="muted" style="font-weight:500">(interyer konsepsiyasi)</span><span class="src">[4]</span></h3>
+  <div class="thumbs sm" style="margin-bottom:5mm">
+    <div class="thumb"><div class="im"><img src="../assets/opt/school-room-kimyo.jpg" alt=""></div><div class="t"><b>Kimyo laboratoriyasi</b>Laboratoriya stollari, reaktiv javonlari</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/school-room-biologiya.jpg" alt=""></div><div class="t"><b>Biologiya xonasi</b>Mikroskoplar, anatomik modellar</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/school-room-pharmatech.jpg" alt=""></div><div class="t"><b>Pharma Technology</b>Kompyuterlashgan ish o‘rinlari</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/school-room-kutubxona.jpg" alt=""></div><div class="t"><b>Kutubxona</b>Kitob javonlari, guruh stollari</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/school-room-konferensiya.jpg" alt=""></div><div class="t"><b>Konferensiya zali</b>Amfiteatr tartibidagi o‘rindiqlar</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/school-room-it.jpg" alt=""></div><div class="t"><b>IT xonasi</b>Kompyuter ish o‘rinlari</div></div>
+  </div>
+
+  <div class="note">
+    <h3>E’tibor uchun — maktab</h3>
+    <ul>
+      <li>Korpuslar o‘lchami va maydoni bosh reja chizmasidan masshtab bo‘yicha o‘lchangan, aniqlik <b>±2%</b>. Umumiy maydon = qurilish izi × qavatlar; yerto‘la, texnik qavat va devor qalinligi hisobga olinmagan.<span class="src">[2]</span></li>
+      <li>Kirish soyaboni bino maydoniga kiritilmagan. Asosiy korpus va o‘ng qanot orasida ~1 m oraliq.<span class="src">[2]</span></li>
+      <li>Ixtisoslashuv, laboratoriyalar soni va o‘qituvchi/o‘quvchi nisbati — taqdimot (konsepsiya) ma’lumotlari, loyiha hujjatlari bilan tasdiqlanishi kerak.<span class="src">[4]</span></li>
+    </ul>
+  </div>
+  <footer class="pf"><span>Ijtimoiy obyektlar · ma’lumotnoma</span><span><b>5</b> / 10</span></footer>
+</section>
+
+<!-- =============================== 6 · KINDERGARTEN 1/2 =============================== -->
+<section class="page" id="bogcha" style="--c: var(--kin)">
+  <header class="ph"><a href="#mundarija">Bio Pharma Residence · Ijtimoiy obyektlar</a><span class="sec"><i></i>Bog‘cha · 1/2</span></header>
+  <div class="shead"><div><div class="kicker">04 · Bog‘cha</div><h2>Bog‘cha (MTM) — <em>360 bola uchun.</em></h2></div><span class="num">04</span></div>
+  <div class="ph-img" style="height:90mm; margin-bottom:5mm"><img src="../assets/opt/kindgarden.jpg" alt="Bog‘cha binosi"><span class="cap">Bog‘cha — vizualizatsiya</span></div>
+
+  <div class="tiles" style="margin-bottom:5mm">
+    <div class="tile"><span class="label">O‘rinlar</span><div class="v">360</div><div class="d">bola</div></div>
+    <div class="tile"><span class="label">Umumiy maydon</span><div class="v">~1 522<small>m²</small></div><div class="d">2 bino + o‘tish joyi</div></div>
+    <div class="tile"><span class="label">Bolaga</span><div class="v">~4,2<small>m²</small></div><div class="d">umumiy maydon ÷ 360</div></div>
+    <div class="tile"><span class="label">Qurilish izi</span><div class="v">~761<small>m²</small></div><div class="d">binolar izi yig‘indisi</div></div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <h3>Bog‘cha pasporti</h3>
+      <table class="pass">
+        <tr><th>Bosh rejadagi belgisi</th><td>6-obyekt (MTM)<span class="src">[1]</span></td></tr>
+        <tr><th>O‘rinlar</th><td>360<span class="src">[1]</span></td></tr>
+        <tr><th>Qavatlar</th><td>2<span class="src">[2]</span></td></tr>
+        <tr><th>Binolar</th><td>asosiy bino, yuqori bino va ularni bog‘lovchi yopiq o‘tish joyi<span class="src">[2]</span></td></tr>
+        <tr><th>Qurilish izi</th><td>~761 m²<span class="src">[2]</span></td></tr>
+        <tr><th>Umumiy qavatlar maydoni</th><td>~1 522 m²<span class="src">[2]</span></td></tr>
+        <tr><th>Soyabonli ayvonlar</th><td>4 ta, har biri ~5,7 × 6,6 m, jami ~150 m²<span class="src">[2]</span></td></tr>
+        <tr><th>O‘yin zonasi</th><td>2 ta o‘yin maydonchasi, 2 ta qumdon<span class="src">[1]</span></td></tr>
+        <tr><th>Joylashuv</th><td>maktabning shimolida, yagona ta’lim hududida<span class="src">[1]</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="ph-img" style="height:58mm; margin-bottom:4mm"><img src="../assets/opt/render-extra-11.jpg" alt="Bog‘cha hovlisi"><span class="cap">Bog‘cha hovlisi va o‘yin maydonchalari — vizualizatsiya</span></div>
+      <h3>Tarbiya konsepsiyasi <span class="muted" style="font-weight:500">(taqdimotdan)</span><span class="src">[4]</span></h3>
+      <div class="chips"><span>Reggio Emilia yondashuvi</span><span>Ijodiy va motorik rivojlanish</span><span>Professional pedagoglar</span><span>Tibbiyot xodimi</span><span>Yopiq, nazorat ostidagi hudud</span></div>
+    </div>
+  </div>
+  <footer class="pf"><span>Ijtimoiy obyektlar · ma’lumotnoma</span><span><b>6</b> / 10</span></footer>
+</section>
+
+<!-- =============================== 7 · KINDERGARTEN 2/2 =============================== -->
+<section class="page" style="--c: var(--kin); display:flex; flex-direction:column">
+  <header class="ph"><a href="#mundarija">Bio Pharma Residence · Ijtimoiy obyektlar</a><span class="sec"><i></i>Bog‘cha · 2/2</span></header>
+  <div class="grid2" style="grid-template-columns: 100mm 1fr; margin-bottom:5mm">
+    <div class="plan auto"><span class="label">Bog‘cha hududi · masshtabda</span><svg preserveAspectRatio="xMidYMid meet" viewBox="-16 -74.6 59.6 99.2" role="img" aria-label="Bog‘cha hududi sxemasi: ikki bino, o‘tish joyi, ayvonlar va o‘yin zonasi">
+          <rect x="-9" y="-73" width="51" height="90" rx="1.4" fill="#E0D6C2" stroke="#B5A88C" stroke-width=".22" stroke-dasharray=".9 .6"/>
+          <g fill="#EDE6D8" pointer-events="none"><rect x="10.5" y="-70" width="3" height="70"/><rect x="13.5" y="-37.1" width="20" height="2.1"/><rect x="-7" y="-28" width="17.5" height="2.1"/></g>
+          <g fill="#A3B99B">
+            <circle cx="-6" cy="-68" r="1.4"/><circle cx="-6.2" cy="-61" r="1.2"/><circle cx="-6" cy="-54" r="1.4"/><circle cx="-6.2" cy="-47" r="1.2"/><circle cx="-6" cy="-40" r="1.4"/><circle cx="-6.2" cy="-33" r="1.2"/>
+            <circle cx="38.5" cy="-68" r="1.3"/><circle cx="38.7" cy="-60" r="1.2"/><circle cx="38.5" cy="-52" r="1.4"/><circle cx="38.7" cy="-26" r="1.2"/><circle cx="38.5" cy="-18" r="1.4"/><circle cx="38.7" cy="-10" r="1.2"/>
+            <circle cx="3" cy="-60" r="1.6"/><circle cx="6" cy="-52" r="1.3"/><circle cx="2.5" cy="-44" r="1.5"/><circle cx="31" cy="-62" r="1.5"/><circle cx="35" cy="-56" r="1.2"/>
+          </g>
+          <g>
+            <g fill="#F3EEE4" stroke="#B08A4E" stroke-width=".28">
+              <rect x="13.8" y="-69.6" width="5.7" height="6.6"/><rect x="21" y="-69.6" width="5.7" height="6.6"/><rect x="0.3" y="-24.3" width="5.7" height="6.6"/><rect x="-0.5" y="-12.9" width="5.7" height="6.6"/>
+            </g>
+            <g stroke="#B08A4E" stroke-width=".22">
+              <path d="M13.8 -69.6 L19.5 -63 M19.5 -69.6 L13.8 -63"/><path d="M21 -69.6 L26.7 -63 M26.7 -69.6 L21 -63"/><path d="M0.3 -24.3 L6 -17.7 M6 -24.3 L0.3 -17.7"/><path d="M-0.5 -12.9 L5.2 -6.3 M5.2 -12.9 L-0.5 -6.3"/>
+            </g>
+          </g>
+          <g>
+            <rect x="22.3" y="-50" width="10" height="12.6" rx=".6" fill="#97B98C"/>
+            <rect x="22.3" y="-34.9" width="10" height="12.9" rx=".6" fill="#97B98C"/>
+            <g fill="none" stroke="#F3EEE4" stroke-width=".3"><circle cx="25.3" cy="-46.6" r="1.6"/><rect x="27.6" y="-44.6" width="3" height="4.6"/><path d="M23.6 -40 h4"/><circle cx="29" cy="-31" r="1.8"/><rect x="23.6" y="-30" width="3" height="5"/><path d="M27.6 -25 h3.4"/></g>
+            <rect x="16.8" y="-61.5" width="6.4" height="8.9" rx="1" fill="#E7D3A2"/>
+            <rect x="15.1" y="-33" width="5" height="11.2" rx="1" fill="#E7D3A2"/>
+            <ellipse cx="18.5" cy="-43.5" rx="2.6" ry="3.9" fill="#9CC9D6"/>
+          </g>
+          <rect x="16.4" y="-18" width="15.1" height="11.8" fill="#D69A4E"/>
+          <rect x="24" y="-6.2" width="2.8" height="6.2" fill="#D69A4E"/>
+          <rect x="0" y="0" width="39.4" height="14.4" fill="#C48A3C"/>
+          <g pointer-events="none">
+            <text x="21.5" y="6.6" text-anchor="middle" class="svg-lbl" font-size="2.8" fill="#FFFDF8">Asosiy bino</text>
+            <text x="21.5" y="10.4" text-anchor="middle" class="svg-sub" font-size="2" fill="#FFF6E6">2 qavat · ~1 136 m²</text>
+            <text x="24.6" y="-12.2" text-anchor="middle" class="svg-lbl" font-size="2.05" fill="#FFFDF8">Yuqori bino</text>
+            <text x="24.6" y="-9" text-anchor="middle" class="svg-sub" font-size="1.7" fill="#FFF6E6">~356 m²</text>
+            <g transform="translate(3.6 4)"><circle r="2.4" fill="#13201A"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">1</text></g>
+            <g transform="translate(13.6 -12.1)"><circle r="2.4" fill="#13201A"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">2</text></g>
+            <g transform="translate(30 -3.1)"><circle r="2.4" fill="#13201A"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">3</text></g>
+            <g transform="translate(30 -66.3)"><circle r="2.4" fill="#84652F"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">4</text></g>
+            <g transform="translate(35.4 -36.2)"><circle r="2.4" fill="#84652F"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">5</text></g>
+            <g stroke="#8A7A57" stroke-width=".14" fill="none">
+              <line x1="0" y1="20" x2="39.4" y2="20"/><line x1="0" y1="15.2" x2="0" y2="20.8"/><line x1="39.4" y1="15.2" x2="39.4" y2="20.8"/><path d="M-.6 20.6 L.6 19.4 M38.8 20.6 L40 19.4"/>
+              <line x1="-13" y1="-18" x2="-13" y2="14.4"/><line x1="-13.8" y1="-18" x2="-9.5" y2="-18"/><line x1="-13.8" y1="-6.2" x2="-9.5" y2="-6.2"/><line x1="-13.8" y1="0" x2="-9.5" y2="0"/><line x1="-13.8" y1="14.4" x2="-9.5" y2="14.4"/>
+              <path d="M-13.6 -17.4 L-12.4 -18.6 M-13.6 -5.6 L-12.4 -6.8 M-13.6 .6 L-12.4 -.6 M-13.6 15 L-12.4 13.8"/>
+            </g>
+            <g class="svg-dim" font-size="2" text-anchor="middle">
+              <text x="19.7" y="19.1">39,4</text><text transform="translate(-13.8 -12.1) rotate(-90)">11,8</text><text transform="translate(-13.8 -3.1) rotate(-90)">6,2</text><text transform="translate(-13.8 7.2) rotate(-90)">14,4</text>
+            </g>
+            <g transform="translate(29.4 23)">
+              <rect x="0" y="0" width="5" height=".7" fill="#13201A"/><rect x="5" y="0" width="5" height=".7" fill="none" stroke="#13201A" stroke-width=".12"/>
+              <text x="0" y="-.8" class="svg-dim" font-size="1.25" text-anchor="middle">0</text><text x="10" y="-.8" class="svg-dim" font-size="1.25" text-anchor="middle">10 m</text>
+            </g>
+          </g>
+        </svg>
+      <div class="pins"><span><b>1</b>Asosiy bino</span><span><b>2</b>Yuqori bino</span><span><b>3</b>Yopiq o‘tish joyi</span><span><b class="br">4</b>Soyabonli ayvonlar</span><span><b class="br">5</b>O‘yin zonasi, qumdonlar</span></div>
+    </div>
+    <div>
+      <h3>Binolar <span class="muted" style="font-weight:500">· m, m²</span></h3>
+      <table class="dt tight sm" style="margin-bottom:5mm">
+        <thead><tr><th>Bino</th><th>O‘lcham</th><th class="r">Qavat</th><th class="r">Izi</th><th class="r">Maydon</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Asosiy</td><td>39,4 × 14,4</td><td class="r">2</td><td class="r">~568</td><td class="r">~1 136</td></tr>
+          <tr><td>2 · Yuqori</td><td>15,1 × 11,8</td><td class="r">2</td><td class="r">~178</td><td class="r">~356</td></tr>
+          <tr><td>3 · O‘tish joyi</td><td>2,8 × 5,2</td><td class="r">2</td><td class="r">~15</td><td class="r">~30</td></tr>
+        </tbody>
+        <tfoot><tr><td>Jami</td><td></td><td class="r"></td><td class="r">~761</td><td class="r">~1 522</td></tr></tfoot>
+      </table>
+      <div class="chart" style="margin-bottom:5mm">
+        <h3>Umumiy maydon binolar bo‘yicha</h3><div class="sub">Ulush, %</div>
+        <div class="stack tone"><i style="--w:74.6%; --c: var(--kin)" title="Asosiy bino 74,6%"></i><i style="--w:23.4%; --c: var(--kin)" title="Yuqori bino 23,4%"></i><i style="--w:2%; --c: var(--kin)" title="O‘tish joyi 2%"></i></div>
+        <div class="sleg"><span style="--c:var(--kin)"><i></i>Asosiy · <b>75%</b></span><span class="t2" style="--c:var(--kin)"><i></i>Yuqori · <b>23%</b></span><span class="t3" style="--c:var(--kin)"><i></i>O‘tish joyi · <b>2%</b></span></div>
+      </div>
+      <div class="chart" style="margin-bottom:5mm">
+        <h3>Bir bolaga umumiy maydon</h3><div class="sub">Maktab bilan solishtirish, m²</div>
+        <div class="hb c-sch" title="Maktab: ~8,2 m² o‘quvchiga"><span class="n">Maktab</span><span class="tr"><i class="bar" style="--w:68%"></i><span class="val">~8,2<small>m²</small></span></span></div>
+        <div class="hb c-kin" title="Bog‘cha: ~4,2 m² bolaga"><span class="n">Bog‘cha</span><span class="tr"><i class="bar" style="--w:35.1%"></i><span class="val">~4,2<small>m²</small></span></span></div>
+      </div>
+      <h3>Hudud tarkibi</h3>
+      <div class="elems" style="grid-template-columns: 1fr 1fr">
+        <div class="elem"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12M3 21h18M9 21v-6h6v6"/></svg><div><div class="v">2</div><div class="t">bino, 2 qavatli</div></div></div>
+        <div class="elem"><svg viewBox="0 0 24 24"><path d="M3 9h18M6 9v12M18 9v12M12 3L3 9h18z"/></svg><div><div class="v">4</div><div class="t">ayvon · ~150 m²</div></div></div>
+        <div class="elem"><svg viewBox="0 0 24 24"><path d="M4 21V8M20 21V8M4 8h16M8 8v6h8V8M10 14l-2 7M14 14l2 7"/></svg><div><div class="v">2</div><div class="t">o‘yin maydonchasi</div></div></div>
+        <div class="elem"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="18" height="8" rx="2"/><path d="M7 12c1-3 3-4 5-4s4 1 5 4"/></svg><div><div class="v">2</div><div class="t">qumdon</div></div></div>
+        <div class="elem"><svg viewBox="0 0 24 24"><path d="M3 12h18M7 8h10v8H7z"/></svg><div><div class="v">1</div><div class="t">yopiq o‘tish joyi</div></div></div>
+        <div class="elem"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><div class="v">360</div><div class="t">bola o‘rni</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note warn" style="margin-top:auto; margin-bottom:6mm">
+    <h3>E’tibor uchun — bog‘cha</h3>
+    <ul>
+      <li><b>Maydon o‘rinlar soniga nisbatan kichik:</b> 360 o‘ringa ~1 522 m², ya’ni bir bolaga ~4,2 m² (maktabda ~8,2 m²). Maktabgacha ta’lim muassasalari me’yorlari bilan solishtirish va o‘rinlar soni yoki bino maydonini qayta ko‘rib chiqish tavsiya etiladi.<span class="src">[2]</span></li>
+      <li>Bosh reja jadvalida MTM uchun <b>3 qavat</b> yozilgan, chizmada esa bog‘cha <b>2 qavatli</b> — jadvalni tuzatish kerak.<span class="src">[1] [2]</span></li>
+      <li>4 ta ayvon (~150 m²) umumiy maydonga kiritilmagan. Ko‘rsatkichlar chizmadan ±2% aniqlikda o‘lchangan; chizmadagi 15 m va 12,47 m o‘qlar orasini bildiradi, binolarning haqiqiy chuqurligi 14,4 m va 11,8 m.<span class="src">[2]</span></li>
+    </ul>
+  </div>
+  <footer class="pf"><span>Ijtimoiy obyektlar · ma’lumotnoma</span><span><b>7</b> / 10</span></footer>
+</section>
+
+<!-- =============================== 8 · DORM 1/2 =============================== -->
+<section class="page" id="yotoqxona" style="--c: var(--dor)">
+  <header class="ph"><a href="#mundarija">Bio Pharma Residence · Ijtimoiy obyektlar</a><span class="sec"><i></i>Yotoqxona · 1/2</span></header>
+  <div class="shead"><div><div class="kicker">05 · Talabalar yotoqxonasi</div><h2>Yotoqxona — <em>1 550+ o‘rin.</em></h2></div><span class="num">05</span></div>
+  <div class="ph-img" style="height:80mm; margin-bottom:5mm"><img src="../assets/opt/dorm-reception.jpg" alt="Yotoqxona resepshni"><span class="cap">Yotoqxona resepshni — vizualizatsiya</span></div>
+
+  <div class="tiles" style="margin-bottom:5mm">
+    <div class="tile"><span class="label">O‘rinlar</span><div class="v">1 550<small>+</small></div><div class="d">talaba</div></div>
+    <div class="tile"><span class="label">Umumiy maydon</span><div class="v">10 470<small>m²</small></div><div class="d">654,4 m² × 16 qavat</div></div>
+    <div class="tile"><span class="label">O‘ringa (yalpi)</span><div class="v">~6,8<small>m²</small></div><div class="d">10 470 ÷ 1 550</div></div>
+    <div class="tile"><span class="label">Xona formatlari</span><div class="v">3</div><div class="d">26,9 – 34,5 m²</div></div>
+  </div>
+
+  <div class="grid2" style="grid-template-columns: 1fr 70mm">
+    <div>
+      <h3>Yotoqxona pasporti</h3>
+      <table class="pass">
+        <tr><th>Blok tipi</th><td>Tip 4 — yotoqxona, yevro-ikki xonali<span class="src">[3]</span></td></tr>
+        <tr><th>Qavatlar</th><td>16<span class="src">[3]</span></td></tr>
+        <tr><th>Bir qavat maydoni</th><td>654,4 m²<span class="src">[3]</span></td></tr>
+        <tr><th>Umumiy maydon</th><td>10 470 m² (654,4 × 16)<span class="src">[3]</span></td></tr>
+        <tr><th>Sig‘im</th><td>1 550+ o‘rin<span class="src">[4]</span></td></tr>
+        <tr><th>Xona formatlari</th><td>studio 26,9 m²; 1 xonali ~28 m²; kengaytirilgan 34,5 m²<span class="src">[4]</span></td></tr>
+        <tr><th>1-qavat</th><td>katta umumiy oshxona<span class="src">[4]</span></td></tr>
+        <tr><th>Umumiy zonalar</th><td>resepshn 24/7, kutubxona, koworking, uchrashuv xonasi, tadbirlar oshxonasi, hordiq zonasi (8+)<span class="src">[4]</span></td></tr>
+        <tr><th>Xizmatlar</th><td>Wi-Fi, issiq suv, 24/7 xavfsizlik<span class="src">[4]</span></td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Qavatlar bo‘yicha</h3>
+      <div class="tower">
+        <div class="fl">
+          <i>1-qavat · oshxona<span>654,4</span></i><i>2<span>654,4</span></i><i>3<span>654,4</span></i><i>4<span>654,4</span></i><i>5<span>654,4</span></i><i>6<span>654,4</span></i><i>7<span>654,4</span></i><i>8<span>654,4</span></i><i>9<span>654,4</span></i><i>10<span>654,4</span></i><i>11<span>654,4</span></i><i>12<span>654,4</span></i><i>13<span>654,4</span></i><i>14<span>654,4</span></i><i>15<span>654,4</span></i><i>16<span>654,4</span></i>
+        </div>
+      </div>
+      <div class="tower" style="display:block; margin-top:3mm"><div class="calc">16 qavat × 654,4 m²<span class="big">= 10 470 m²</span>umumiy maydon</div></div>
+    </div>
+  </div>
+  <footer class="pf"><span>Ijtimoiy obyektlar · ma’lumotnoma</span><span><b>8</b> / 10</span></footer>
+</section>
+
+<!-- =============================== 9 · DORM 2/2 =============================== -->
+<section class="page" style="--c: var(--dor)">
+  <header class="ph"><a href="#mundarija">Bio Pharma Residence · Ijtimoiy obyektlar</a><span class="sec"><i></i>Yotoqxona · 2/2</span></header>
+
+  <h3>Xona formatlari<span class="src">[4]</span></h3>
+  <table class="rf" style="margin-bottom:4.5mm">
+    <thead><tr><th>Format</th><th>Kishi</th><th style="width:52mm">Xona maydoni, m²</th><th style="width:52mm">Kishi boshiga, m² (hisoblangan)</th></tr></thead>
+    <tbody>
+      <tr><td class="nm"><b>Studio</b><span>ikki qavatli karavot, 2 ish stoli, 2 shkaf</span></td><td><div class="ppl"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg></div></td><td><div class="mb"><i style="--w:28mm"></i><b>26,9</b></div></td><td><div class="mb alt"><i style="--w:36mm"></i><b>~13,5</b></div></td></tr>
+      <tr><td class="nm"><b>1 xonali</b><span>4 karavot, kengaytirilgan ish maydoni</span></td><td><div class="ppl"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg></div></td><td><div class="mb"><i style="--w:29.2mm"></i><b>~28</b></div></td><td><div class="mb alt"><i style="--w:18.7mm"></i><b>~7,0</b></div></td></tr>
+      <tr><td class="nm"><b>1 xonali · kengaytirilgan</b><span>katta oyna, guruh bo‘lib yashash uchun</span></td><td><div class="ppl"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg></div><span class="muted" style="font-size:7pt">6 kishigacha</span></td><td><div class="mb"><i style="--w:36mm"></i><b>34,5</b></div></td><td><div class="mb alt"><i style="--w:15.4mm"></i><b>~5,8</b></div></td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2" style="grid-template-columns: 1fr 1fr; margin-bottom:5mm">
+    <div>
+      <h3>Studio xona jihozlari<span class="src">[4]</span></h3>
+      <div class="eq" style="grid-template-columns: 1fr 1fr">
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Ikki qavatli karavot</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>2 ta ish stoli</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>2 ta shkaf</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Konditsioner</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Mini muzlatgich</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Oshxonacha</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Sanuzel va dush</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Rakovina va oyna</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Sochiq isitgichi</span>
+        <span><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Balkon</span>
+      </div>
+    </div>
+    <div class="ph-img" style="height:60mm"><img src="../assets/opt/dorm-studio.jpg" alt="Studio xona" style="object-position:72% 50%"><span class="cap">Studio xona, 26,9 m² — vizualizatsiya</span></div>
+  </div>
+
+  <h3>Umumiy foydalanish zonalari<span class="src">[4]</span></h3>
+  <div class="thumbs" style="margin-bottom:5mm">
+    <div class="thumb"><div class="im"><img src="../assets/opt/dorm-kitchen-daily.jpg" alt="" style="object-position:70% 50%"></div><div class="t"><b>Umumiy oshxona</b>1-qavat, barcha yashovchilar uchun</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/dorm-kitchen-premium.jpg" alt=""></div><div class="t"><b>Tadbirlar oshxonasi</b>Alohida zona, mehmonlar uchun</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/dorm-library.jpg" alt=""></div><div class="t"><b>Kutubxona</b>Sokin o‘qish zonasi</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/dorm-coworking.jpg" alt="" style="object-position:72% 50%"></div><div class="t"><b>Koworking</b>Ochiq ish stollari</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/dorm-meeting.jpg" alt=""></div><div class="t"><b>Uchrashuv xonasi</b>Guruh muhokamalari uchun</div></div>
+    <div class="thumb"><div class="im"><img src="../assets/opt/dorm-reception.jpg" alt=""></div><div class="t"><b>Resepshn</b>24/7 xizmat</div></div>
+  </div>
+
+  <div class="note warn">
+    <h3>E’tibor uchun — yotoqxona</h3>
+    <ul>
+      <li>Maydonlar hisobida Tip 4 (yotoqxona) uchun <b>balkon maydoni ko‘rsatilmagan</b>. Balkonlar jami 43 695 m², Tip 1–3 yig‘indisi esa 43 358 m² — <b>337 m²</b> farq (~21 m² qavatiga) shu blokka tegishli bo‘lishi mumkin; aniqlashtirish kerak.<span class="src">[3]</span></li>
+      <li>Yotoqxona blokining bosh rejadagi joylashuvi (kvartal / blok raqami) hujjatlarda ko‘rsatilmagan.</li>
+      <li>Sig‘im (1 550+), xona formatlari, jihozlar va umumiy zonalar — taqdimot (konsepsiya) ma’lumotlari; 10 470 m² ÷ 1 550 ≈ 6,8 m² — yalpi maydon (koridor va umumiy zonalar bilan).<span class="src">[4]</span></li>
+    </ul>
+  </div>
+  <footer class="pf"><span>Ijtimoiy obyektlar · ma’lumotnoma</span><span><b>9</b> / 10</span></footer>
+</section>
+
+<!-- =============================== 10 · ISSUES & SOURCES =============================== -->
+<section class="page" id="masalalar" style="padding-top:20mm">
+  <header class="ph"><a href="#mundarija">Bio Pharma Residence · Ijtimoiy obyektlar</a><span class="sec">Masalalar va manbalar</span></header>
+  <div class="shead"><div><div class="kicker">06 · Xulosa</div><h2>E’tibor talab qiladigan <em>masalalar.</em></h2></div><span class="num">06</span></div>
+
+  <table class="iss" style="margin-bottom:5mm">
+    <thead><tr><th></th><th>Masala</th><th>Obyekt</th><th>Tavsiya</th><th>Daraja</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Bog‘cha maydoni o‘rinlar soniga nisbatan kichik: bir bolaga ~4,2 m² (maktabda ~8,2 m²).</td><td class="obj"><span class="fac c-kin">Bog‘cha</span></td><td>Me’yorlar bilan solishtirish; o‘rinlar soni yoki bino maydonini qayta ko‘rib chiqish.</td><td><span class="p hi">Yuqori</span></td></tr>
+      <tr><td>2</td><td>Bosh reja jadvalida MTM 3 qavat, chizmada 2 qavat.</td><td class="obj"><span class="fac c-kin">Bog‘cha</span></td><td>Bosh reja jadvalini chizmaga moslab tuzatish.</td><td><span class="p md">O‘rta</span></td></tr>
+      <tr><td>3</td><td>Tip 4 balkon maydoni hisobda yo‘q; balkonlar jamida 337 m² farq.</td><td class="obj"><span class="fac c-dor">Yotoqxona</span></td><td>Maydonlar hisobini Tip 4 balkonlari bilan to‘ldirish.</td><td><span class="p md">O‘rta</span></td></tr>
+      <tr><td>4</td><td>Maktab va bog‘cha maydonlari chizmadan ±2% aniqlikda o‘lchangan.</td><td class="obj"><span class="fac c-sch">Maktab</span>, <span class="fac c-kin">bog‘cha</span></td><td>Aniq raqamlar uchun DWG fayldagi poligon maydonlarini olish.</td><td><span class="p lo">Past</span></td></tr>
+      <tr><td>5</td><td>Yotoqxona blokining bosh rejadagi joylashuvi ko‘rsatilmagan.</td><td class="obj"><span class="fac c-dor">Yotoqxona</span></td><td>Blok raqami va kvartalini hujjatlarda belgilash.</td><td><span class="p lo">Past</span></td></tr>
+      <tr><td>6</td><td>Sig‘im (yotoqxona), xona formatlari, metodika, laboratoriyalar soni — taqdimot ma’lumotlari.</td><td class="obj">Barchasi</td><td>Loyiha hujjatlari bilan tasdiqlash.</td><td><span class="p lo">Past</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Ma’lumotlar holati <span class="muted" style="font-weight:500">— har bir ko‘rsatkich manbasi va ishonchliligi</span></h3>
+  <table class="dt mx tight" style="margin-bottom:2.5mm">
+    <thead><tr><th>Ko‘rsatkich</th><th><span class="fac c-sch">Maktab</span></th><th><span class="fac c-kin">Bog‘cha</span></th><th><span class="fac c-dor">Yotoqxona</span></th></tr></thead>
+    <tbody>
+      <tr><td>O‘rinlar soni</td><td><span class="st ok">Hujjatda</span><small>bosh reja jadvali [1]</small></td><td><span class="st ok">Hujjatda</span><small>bosh reja jadvali [1]</small></td><td><span class="st cn">Konsepsiya</span><small>taqdimot [4]</small></td></tr>
+      <tr><td>Qavatlar</td><td><span class="st ms">O‘lchangan</span><small>chizma [2]</small></td><td><span class="st no">Ziddiyat</span><small>jadvalda 3, chizmada 2 [1] [2]</small></td><td><span class="st ok">Hujjatda</span><small>maydonlar hisobi [3]</small></td></tr>
+      <tr><td>Umumiy maydon</td><td><span class="st ms">O‘lchangan</span><small>±2% [2]</small></td><td><span class="st ms">O‘lchangan</span><small>±2% [2]</small></td><td><span class="st ok">Hujjatda</span><small>654,4 × 16 [3]</small></td></tr>
+      <tr><td>Bosh rejadagi joylashuv</td><td><span class="st ok">Hujjatda</span><small>5-obyekt [1]</small></td><td><span class="st ok">Hujjatda</span><small>6-obyekt [1]</small></td><td><span class="st no">Ko‘rsatilmagan</span><small>blok raqami yo‘q</small></td></tr>
+      <tr><td>Balkonlar maydoni</td><td class="muted">—</td><td class="muted">—</td><td><span class="st no">Hisobda yo‘q</span><small>337 m² farq [3]</small></td></tr>
+      <tr><td>Ichki tarkib va konsepsiya</td><td><span class="st cn">Konsepsiya</span><small>xonalar, ixtisoslashuv [4]</small></td><td><span class="st cn">Konsepsiya</span><small>metodika, hudud [4]</small></td><td><span class="st cn">Konsepsiya</span><small>xona formatlari, zonalar [4]</small></td></tr>
+    </tbody>
+  </table>
+  <div class="sleg" style="margin-bottom:5mm"><span><span class="st ok">Hujjatda</span> loyiha hujjatida yozilgan</span><span><span class="st ms">O‘lchangan</span> chizmadan o‘lchangan</span><span><span class="st cn">Konsepsiya</span> taqdimotdan</span><span><span class="st no">Aniqlashtirish</span> ziddiyat yoki ma’lumot yo‘q</span></div>
+
+  <div class="grid2">
+    <div>
+      <h3>Manbalar</h3>
+      <ul class="srcs">
+        <li><b>[1]</b><span>Farma Residence bosh rejasi — AutoCAD, A1 format, 13,98 ga; kaydnoma jadvali (maktab 640 o‘rin, MTM 360 o‘rin).</span></li>
+        <li><b>[2]</b><span>“Farma Residence — maktab va bog‘cha maydoni hisobi”, 4 oktyabr 2026 (bosh reja chizmasidan o‘lchov).</span></li>
+        <li><b>[3]</b><span>Bloklar va balkonlar maydoni hisobi (Tip 1–4, 16 qavat).</span></li>
+        <li><b>[4]</b><span>Bio Pharma Residence taqdimoti — konsepsiya va vizualizatsiyalar; interaktiv versiyasi saytning “Ta’lim” va “Yotoqxona” bo‘limlarida.</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Hisoblash usuli</h3>
+      <div class="note">
+        <ul>
+          <li>Umumiy maydon = qurilish izi × qavatlar (yerto‘la, texnik qavat va devor qalinligisiz); bir o‘ringa maydon = umumiy maydon ÷ o‘rinlar.</li>
+          <li>“~” belgisi — chizmadan o‘lchangan taxminiy qiymat (±2%).</li>
+          <li>Rasmlar — vizualizatsiya; yakuniy loyiha yechimidan farq qilishi mumkin.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="pf"><span>Ijtimoiy obyektlar · ma’lumotnoma</span><span><b>10</b> / 10</span></footer>
+</section>
+
+</body>
+</html>
