@@ -27,7 +27,7 @@
     <img class="on-light" src="assets/opt/logo_dark.png" alt="" aria-hidden="true">
   </a>
   <div class="tools">
-    <div class="counter" aria-live="polite"><span class="cur">01</span> <span class="tot">/ 36</span></div>
+    <div class="counter" aria-live="polite"><span class="cur">01</span> <span class="tot">/ 35</span></div>
     <button class="btn-ghost" type="button" id="menuBtn" aria-controls="menu" aria-expanded="false"><span class="bars"></span><span class="txt">Mundarija</span></button>
   </div>
 </header>
@@ -524,18 +524,16 @@
     <div class="edu-grid grow">
       <div class="edu-text">
         <div class="kicker rv">Ta’lim kvartali · maktab va bog‘cha</div>
-        <h2 class="h1 rv" style="--d:1">Bilim — <em>uyingiz yonida.</em></h2>
-        <p class="body rv" style="--d:2">Majmuaning g‘arbiy qismida maktab va bog‘cha yagona, o‘ralgan ta’lim hududiga birlashtirilgan. Farzandingiz bog‘chadan maktab bitiruvigacha o‘z mahallasida, yaqinlari ko‘z o‘ngida ulg‘ayadi.</p>
-        <table class="tbl cmp rv" style="--d:3">
-          <thead><tr><th>Ko‘rsatkich</th><th>Maktab <small>· 5</small></th><th>Bog‘cha <small>· 6</small></th></tr></thead>
-          <tbody>
-            <tr><td>O‘rinlar</td><td>640</td><td>360</td></tr>
-            <tr><td>Qavatlar</td><td>4 / 3</td><td>2</td></tr>
-            <tr><td>Korpuslar</td><td>3</td><td>2 + o‘tish joyi</td></tr>
-            <tr><td>Qurilish izi</td><td>~1 510 m²</td><td>~760 m²</td></tr>
-            <tr><td>Umumiy maydon</td><td>~5 240 m²</td><td>~1 520 m²</td></tr>
-          </tbody>
-        </table>
+        <h2 class="h2 rv" style="--d:1">Bilim — <em>uyingiz yonida.</em></h2>
+        <p class="body rv" style="--d:2">Maktab va bog‘cha majmuaning g‘arbiy qismida, yagona ta’lim hududida joylashgan. Bosh rejada: <b>5</b> — maktab, <b>6</b> — bog‘cha.</p>
+        <div class="cmp rv" style="--d:3" role="table" aria-label="Maktab va bog‘cha taqqoslash">
+          <div class="cmp-row cmp-head" role="row"><span role="columnheader"></span><span role="columnheader" class="sch">Maktab</span><span role="columnheader" class="kin">Bog‘cha</span></div>
+          <div class="cmp-row" role="row"><span class="cmp-l" role="rowheader">O‘rinlar</span><span class="cb sch" role="cell"><i style="--w:100%"></i><b>640</b></span><span class="cb kin" role="cell"><i style="--w:56.25%"></i><b>360</b></span></div>
+          <div class="cmp-row" role="row"><span class="cmp-l" role="rowheader">Umumiy maydon</span><span class="cb sch" role="cell"><i style="--w:100%"></i><b>~5 240 m²</b></span><span class="cb kin" role="cell"><i style="--w:29%"></i><b>~1 520 m²</b></span></div>
+          <div class="cmp-row" role="row"><span class="cmp-l" role="rowheader">Qurilish izi</span><span class="cb sch" role="cell"><i style="--w:100%"></i><b>~1 510 m²</b></span><span class="cb kin" role="cell"><i style="--w:50.3%"></i><b>~760 m²</b></span></div>
+          <div class="cmp-row" role="row"><span class="cmp-l" role="rowheader">Qavatlar</span><span class="ct" role="cell">4 / 3</span><span class="ct" role="cell">2</span></div>
+          <div class="cmp-row" role="row"><span class="cmp-l" role="rowheader">Binolar</span><span class="ct" role="cell">3 korpus</span><span class="ct" role="cell">2 bino + o‘tish joyi</span></div>
+        </div>
         <div class="edu-total rv" style="--d:4"><span class="num" data-count>1 000</span><span>ta’lim o‘rni · <b>~6 760 m²</b> umumiy maydon · <b>~2 270 m²</b> qurilish izi</span></div>
       </div>
       <div class="edu-visual rv" style="--d:2">
@@ -556,97 +554,165 @@
 <section class="slide t-dark s-school full on-image" data-title="Pharma School" data-chapter="Ta’lim">
   <div class="bg kb"><img src="assets/opt/pharma-school.jpg" alt="Pharma School binosi" loading="lazy"></div>
   <div class="veil"></div>
-  <blockquote class="hero-quote glass rv" style="--d:4">“Tibbiyot — fanlarning eng asilidir.”<cite>Abu Ali ibn Sino · 980–1037</cite></blockquote>
+  <aside class="hero-card glass rv" style="--d:4">
+    <span class="label">Ixtisoslashuv</span>
+    <div class="spec"><span>Kimyo</span><span>Biologiya</span><span>Tibbiyot</span><span>IT</span></div>
+    <p>Ixtisoslashgan laboratoriyalar · <b>12+</b> laboratoriya va amaliyot xonasi</p>
+  </aside>
   <div class="frame end">
     <div class="hero-block">
-      <div class="kicker rv">Pharma School · 640 o‘rinli maktab</div>
-      <h2 class="h1 rv" style="--d:1">Ibn Sino merosi —<br><em>zamonaviy STEM ta’limida.</em></h2>
-      <p class="lead rv" style="--d:2">Maktab kimyo, biologiya, farmatsevtika texnologiyalari va axborot texnologiyalari yo‘nalishlariga ixtisoslashgan. Sinfxonadan laboratoriyagacha — bir necha qadam.</p>
+      <div class="kicker rv">Pharma School · bosh rejada 5</div>
+      <h2 class="h1 rv" style="--d:1">Pharma School — <em>640 o‘rinli maktab.</em></h2>
+      <p class="lead rv" style="--d:2">4 qavatli asosiy korpus va ikkita 3 qavatli qanot. Kimyo, biologiya, tibbiyot va IT yo‘nalishlariga ixtisoslashgan laboratoriyalar bilan jihozlanadi.</p>
     </div>
     <div class="hero-facts rv" style="--d:3">
       <div><span class="num" data-count>640</span><span>o‘quvchi o‘rni</span></div>
-      <div><span class="num">4<i>/ 3 qavat</i></span><span>asosiy korpus va ikki qanot</span></div>
+      <div><span class="num">3<i>korpus</i></span><span>4 qavatli asosiy korpus va 2 ta 3 qavatli qanot</span></div>
       <div><span class="num" data-count><small class="pre">~</small>5 240<i>m²</i></span><span>umumiy qavatlar maydoni</span></div>
       <div><span class="num" data-count><small class="pre">~</small>8,2<i>m²</i></span><span>har bir o‘quvchiga</span></div>
     </div>
   </div>
 </section>
 
-<!-- 17 · School architecture -->
-<section class="slide t-paper s-schoolplan" data-title="Maktab arxitekturasi" data-chapter="Ta’lim">
+<!-- 17 · School — interactive plan -->
+<section class="slide t-paper s-schoolplan" data-title="Maktab sxemasi" data-chapter="Ta’lim">
   <div class="frame">
-    <div class="plan2 grow">
-      <div class="plan-text">
-        <div class="kicker rv">Maktab · hajmiy-rejaviy yechim</div>
-        <h2 class="h2 rv" style="--d:1">Uch korpus — <em>markazida sport maydoni.</em></h2>
-        <p class="body rv" style="--d:2">Maktab U shaklida joylashgan: 4 qavatli asosiy korpus va ikkita 3 qavatli qanot shamoldan himoyalangan ichki hovlini o‘rab oladi. Hovlida o‘quvchilar uchun alohida sport maydonchasi, asosiy kirish — soyabon ostida.</p>
-        <table class="tbl rv" style="--d:3">
-          <thead><tr><th>Korpus</th><th>O‘lcham, m</th><th class="r">Qavat</th><th class="r">Qurilish izi</th><th class="r">Umumiy maydon</th></tr></thead>
-          <tbody>
-            <tr><td><span class="sw b4"></span>Asosiy korpus</td><td>39,4 × 18,1</td><td class="r">4</td><td class="r">~713 m²</td><td class="r">~2 852 m²</td></tr>
-            <tr><td><span class="sw b3"></span>O‘ng qanot</td><td>16,4 × 38,5</td><td class="r">3</td><td class="r">~632 m²</td><td class="r">~1 896 m²</td></tr>
-            <tr><td><span class="sw b3"></span>Chap qanot</td><td>8,6 × 19,1</td><td class="r">3</td><td class="r">~164 m²</td><td class="r">~492 m²</td></tr>
-          </tbody>
-          <tfoot><tr><td>Jami</td><td>56,8 m eni</td><td class="r"></td><td class="r">~1 510 m²</td><td class="r">~5 240 m²</td></tr></tfoot>
-        </table>
-        <p class="note rv" style="--d:4">Ko‘rsatkichlar bosh reja chizmasidan masshtab bo‘yicha olingan, aniqlik ±2%.</p>
-      </div>
+    <div class="iplan grow" data-iplan>
       <figure class="plan-svg rv" style="--d:2" aria-label="Maktab sxemasi, masshtabda">
         <span class="label ps-tag">Sxema · masshtabda · metrlarda</span>
-        <svg viewBox="-17 -11 86 69" role="img" aria-label="Maktab bosh reja sxemasi: asosiy korpus, ikki qanot va sport maydoni">
+        <svg viewBox="-17 -11 86 69" role="img" aria-label="Maktab sxemasi: asosiy korpus, ikki qanot va sport maydoni">
           <defs>
             <pattern id="hatchS" width="1.1" height="1.1" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.1" stroke="#B08A4E" stroke-width=".28"/></pattern>
           </defs>
           <rect x="-7" y="-4" width="68" height="50" rx="1.4" fill="#E0D6C2" stroke="#B5A88C" stroke-width=".2" stroke-dasharray=".9 .6"/>
-          <g fill="#A3B99B">
+          <g fill="#A3B99B" class="ip-txt">
             <circle cx="-4.5" cy="1" r="1.3"/><circle cx="-4.6" cy="6" r="1.1"/><circle cx="-4.4" cy="11" r="1.3"/><circle cx="-4.6" cy="16" r="1.1"/><circle cx="-4.4" cy="22" r="1.3"/><circle cx="-4.6" cy="28" r="1.1"/><circle cx="-4.4" cy="34" r="1.3"/><circle cx="-4.5" cy="40" r="1.2"/>
-            <circle cx="42" cy="43.6" r="1.2"/><circle cx="46" cy="43.4" r="1.1"/><circle cx="50" cy="43.6" r="1.3"/><circle cx="54" cy="43.4" r="1.1"/><circle cx="58" cy="43.6" r="1.2"/>
             <circle cx="0" cy="43.5" r="1.1"/><circle cx="4" cy="43.4" r="1.2"/>
+            <circle cx="42" cy="43.6" r="1.2"/><circle cx="46" cy="43.4" r="1.1"/><circle cx="50" cy="43.6" r="1.3"/><circle cx="54" cy="43.4" r="1.1"/><circle cx="58" cy="43.6" r="1.2"/>
           </g>
-          <rect x="11" y="1.6" width="26.4" height="15" rx=".4" fill="#97B98C"/>
-          <g fill="none" stroke="#F3EEE4" stroke-width=".22">
-            <rect x="12" y="2.6" width="24.4" height="13"/>
-            <line x1="24.2" y1="2.6" x2="24.2" y2="15.6"/>
-            <circle cx="24.2" cy="9.1" r="2.4"/>
-            <rect x="12" y="6.1" width="3" height="6"/>
-            <rect x="33.4" y="6.1" width="3" height="6"/>
+          <g class="ip-el" data-k="field" style="--i:3">
+            <rect x="11" y="1.6" width="26.4" height="15" rx=".4" fill="#97B98C"/>
+            <g fill="none" stroke="#F3EEE4" stroke-width=".22">
+              <rect x="12" y="2.6" width="24.4" height="13"/><line x1="24.2" y1="2.6" x2="24.2" y2="15.6"/><circle cx="24.2" cy="9.1" r="2.4"/><rect x="12" y="6.1" width="3" height="6"/><rect x="33.4" y="6.1" width="3" height="6"/>
+            </g>
           </g>
-          <text x="24.2" y="19.1" text-anchor="middle" class="svg-sub" font-size="1.45" fill="#3E4D44">Sport maydoni</text>
-          <rect x="0" y="0" width="8.6" height="19.1" fill="#6F8F72"/>
-          <rect x="40.4" y="0" width="16.4" height="38.5" fill="#6F8F72"/>
-          <rect x="0" y="20.4" width="39.4" height="18.1" fill="#1F3A2B"/>
-          <rect x="9" y="38.5" width="21.5" height="2.9" fill="url(#hatchS)" stroke="#B08A4E" stroke-width=".2"/>
-          <text x="19.7" y="28.4" text-anchor="middle" class="svg-lbl" font-size="2.3" fill="#F3EEE4">Asosiy korpus</text>
-          <text x="19.7" y="31.8" text-anchor="middle" class="svg-sub" font-size="1.55" fill="#D7BB87">4 qavat · ~2 852 m²</text>
-          <text x="48.6" y="17.4" text-anchor="middle" class="svg-lbl" font-size="2.1" fill="#F3EEE4">O‘ng qanot</text>
-          <text x="48.6" y="20.5" text-anchor="middle" class="svg-sub" font-size="1.5" fill="#F3EEE4">3 qavat</text>
-          <text x="48.6" y="22.9" text-anchor="middle" class="svg-sub" font-size="1.5" fill="#F3EEE4">~1 896 m²</text>
-          <text transform="translate(3.7 9.55) rotate(-90)" text-anchor="middle" class="svg-lbl" font-size="1.6" fill="#F3EEE4">Chap qanot</text>
-          <text transform="translate(5.9 9.55) rotate(-90)" text-anchor="middle" class="svg-sub" font-size="1.3" fill="#F3EEE4">3 qavat</text>
-          <path d="M19.75 45 V42.3" stroke="#84652F" stroke-width=".3"/>
-          <path d="M18.9 43.2 L19.75 41.9 L20.6 43.2" fill="none" stroke="#84652F" stroke-width=".3"/>
-          <text x="21.3" y="44.5" class="svg-sub" font-size="1.35" fill="#84652F">Asosiy kirish · soyabon</text>
-          <g stroke="#8A7A57" stroke-width=".13" fill="none">
-            <line x1="0" y1="50" x2="39.4" y2="50"/><line x1="40.4" y1="50" x2="56.8" y2="50"/><line x1="0" y1="54" x2="56.8" y2="54"/>
-            <line x1="0" y1="46.5" x2="0" y2="54.8"/><line x1="39.4" y1="46.5" x2="39.4" y2="50.8"/><line x1="40.4" y1="46.5" x2="40.4" y2="50.8"/><line x1="56.8" y1="46.5" x2="56.8" y2="54.8"/>
-            <path d="M-.6 50.6 L.6 49.4 M38.8 50.6 L40 49.4 M39.8 50.6 L41 49.4 M56.2 50.6 L57.4 49.4 M-.6 54.6 L.6 53.4 M56.2 54.6 L57.4 53.4"/>
-            <line x1="-11" y1="0" x2="-11" y2="19.1"/><line x1="-11" y1="20.4" x2="-11" y2="38.5"/>
-            <line x1="-11.8" y1="0" x2="-7.5" y2="0"/><line x1="-11.8" y1="19.1" x2="-7.5" y2="19.1"/><line x1="-11.8" y1="20.4" x2="-7.5" y2="20.4"/><line x1="-11.8" y1="38.5" x2="-7.5" y2="38.5"/>
-            <path d="M-11.6 .6 L-10.4 -.6 M-11.6 19.7 L-10.4 18.5 M-11.6 21 L-10.4 19.8 M-11.6 39.1 L-10.4 37.9"/>
-            <line x1="64.5" y1="0" x2="64.5" y2="38.5"/><line x1="61.5" y1="0" x2="65.3" y2="0"/><line x1="61.5" y1="38.5" x2="65.3" y2="38.5"/>
-            <path d="M63.9 .6 L65.1 -.6 M63.9 39.1 L65.1 37.9"/>
+          <rect class="ip-el" data-k="left" style="--i:1" x="0" y="0" width="8.6" height="19.1" fill="#6F8F72"/>
+          <rect class="ip-el" data-k="right" style="--i:2" x="40.4" y="0" width="16.4" height="38.5" fill="#6F8F72"/>
+          <rect class="ip-el" data-k="main" style="--i:0" x="0" y="20.4" width="39.4" height="18.1" fill="#1F3A2B"/>
+          <rect x="9" y="38.5" width="21.5" height="2.9" fill="url(#hatchS)" stroke="#B08A4E" stroke-width=".2" class="ip-txt"/>
+          <g class="ip-txt" pointer-events="none">
+            <text x="24.2" y="19.1" text-anchor="middle" class="svg-sub" font-size="1.45" fill="#3E4D44">Sport maydoni</text>
+            <text x="19.7" y="28.4" text-anchor="middle" class="svg-lbl" font-size="2.3" fill="#F3EEE4">Asosiy korpus</text>
+            <text x="19.7" y="31.8" text-anchor="middle" class="svg-sub" font-size="1.55" fill="#D7BB87">4 qavat · ~2 852 m²</text>
+            <text x="48.6" y="17.4" text-anchor="middle" class="svg-lbl" font-size="2.1" fill="#F3EEE4">O‘ng qanot</text>
+            <text x="48.6" y="20.5" text-anchor="middle" class="svg-sub" font-size="1.5" fill="#F3EEE4">3 qavat</text>
+            <text x="48.6" y="22.9" text-anchor="middle" class="svg-sub" font-size="1.5" fill="#F3EEE4">~1 896 m²</text>
+            <text transform="translate(3.7 9.55) rotate(-90)" text-anchor="middle" class="svg-lbl" font-size="1.6" fill="#F3EEE4">Chap qanot</text>
+            <text transform="translate(5.9 9.55) rotate(-90)" text-anchor="middle" class="svg-sub" font-size="1.3" fill="#F3EEE4">3 qavat</text>
+            <path d="M19.75 45 V42.3" stroke="#84652F" stroke-width=".3"/>
+            <path d="M18.9 43.2 L19.75 41.9 L20.6 43.2" fill="none" stroke="#84652F" stroke-width=".3"/>
+            <text x="21.3" y="44.5" class="svg-sub" font-size="1.35" fill="#84652F">Asosiy kirish · soyabon</text>
           </g>
-          <g class="svg-dim" font-size="1.5" text-anchor="middle">
-            <text x="19.7" y="49.4">39,4</text><text x="48.6" y="49.4">16,4</text><text x="28.4" y="53.4">56,8 m — maktab hududi eni</text>
-            <text transform="translate(-11.7 9.55) rotate(-90)">19,1</text><text transform="translate(-11.7 29.45) rotate(-90)">18,1</text>
-            <text transform="translate(63.8 19.25) rotate(-90)">38,5</text>
-          </g>
-          <g transform="translate(46.8 -7.5)">
-            <rect x="0" y="0" width="5" height=".7" fill="#13201A"/><rect x="5" y="0" width="5" height=".7" fill="none" stroke="#13201A" stroke-width=".12"/>
-            <text x="0" y="-.8" class="svg-dim" font-size="1.2" text-anchor="middle">0</text><text x="5" y="-.8" class="svg-dim" font-size="1.2" text-anchor="middle">5</text><text x="10" y="-.8" class="svg-dim" font-size="1.2" text-anchor="middle">10 m</text>
+          <g class="ip-txt" pointer-events="none">
+            <g stroke="#8A7A57" stroke-width=".13" fill="none">
+              <line x1="0" y1="50" x2="39.4" y2="50"/><line x1="40.4" y1="50" x2="56.8" y2="50"/><line x1="0" y1="54" x2="56.8" y2="54"/>
+              <line x1="0" y1="46.5" x2="0" y2="54.8"/><line x1="39.4" y1="46.5" x2="39.4" y2="50.8"/><line x1="40.4" y1="46.5" x2="40.4" y2="50.8"/><line x1="56.8" y1="46.5" x2="56.8" y2="54.8"/>
+              <path d="M-.6 50.6 L.6 49.4 M38.8 50.6 L40 49.4 M39.8 50.6 L41 49.4 M56.2 50.6 L57.4 49.4 M-.6 54.6 L.6 53.4 M56.2 54.6 L57.4 53.4"/>
+              <line x1="-11" y1="0" x2="-11" y2="19.1"/><line x1="-11" y1="20.4" x2="-11" y2="38.5"/>
+              <line x1="-11.8" y1="0" x2="-7.5" y2="0"/><line x1="-11.8" y1="19.1" x2="-7.5" y2="19.1"/><line x1="-11.8" y1="20.4" x2="-7.5" y2="20.4"/><line x1="-11.8" y1="38.5" x2="-7.5" y2="38.5"/>
+              <path d="M-11.6 .6 L-10.4 -.6 M-11.6 19.7 L-10.4 18.5 M-11.6 21 L-10.4 19.8 M-11.6 39.1 L-10.4 37.9"/>
+              <line x1="64.5" y1="0" x2="64.5" y2="38.5"/><line x1="61.5" y1="0" x2="65.3" y2="0"/><line x1="61.5" y1="38.5" x2="65.3" y2="38.5"/>
+              <path d="M63.9 .6 L65.1 -.6 M63.9 39.1 L65.1 37.9"/>
+            </g>
+            <g class="svg-dim" font-size="1.5" text-anchor="middle">
+              <text x="19.7" y="49.4">39,4</text><text x="48.6" y="49.4">16,4</text><text x="28.4" y="53.4">56,8 m — maktab hududi eni</text>
+              <text transform="translate(-11.7 9.55) rotate(-90)">19,1</text><text transform="translate(-11.7 29.45) rotate(-90)">18,1</text>
+              <text transform="translate(63.8 19.25) rotate(-90)">38,5</text>
+            </g>
+            <g transform="translate(46.8 -7.5)">
+              <rect x="0" y="0" width="5" height=".7" fill="#13201A"/><rect x="5" y="0" width="5" height=".7" fill="none" stroke="#13201A" stroke-width=".12"/>
+              <text x="0" y="-.8" class="svg-dim" font-size="1.2" text-anchor="middle">0</text><text x="5" y="-.8" class="svg-dim" font-size="1.2" text-anchor="middle">5</text><text x="10" y="-.8" class="svg-dim" font-size="1.2" text-anchor="middle">10 m</text>
+            </g>
           </g>
         </svg>
       </figure>
+      <div class="ip-panel">
+        <div class="kicker rv">Maktab · interaktiv sxema</div>
+        <h2 class="h2 rv" style="--d:1">Uch korpus — <em>markazida sport maydoni.</em></h2>
+        <div class="seg ip-tabs rv" style="--d:2" role="tablist" aria-label="Maktab korpuslari">
+          <button type="button" role="tab" data-k="all" class="on">Umumiy</button>
+          <button type="button" role="tab" data-k="main">Asosiy korpus</button>
+          <button type="button" role="tab" data-k="right">O‘ng qanot</button>
+          <button type="button" role="tab" data-k="left">Chap qanot</button>
+          <button type="button" role="tab" data-k="field">Sport maydoni</button>
+        </div>
+        <div class="ip-cards rv" style="--d:3">
+          <article class="ip-card on" data-k="all">
+            <div class="ip-top"><div><span class="label">Butun maktab</span><h3 class="h3">3 korpus · <em>640 o‘rin</em></h3></div><span class="floors" aria-label="4 qavat"><i></i><i></i><i></i><i></i><small>4 / 3 qavat</small></span></div>
+            <dl class="ip-stats">
+              <div><dt>Qurilish izi</dt><dd>~1 510 m²</dd></div>
+              <div><dt>Umumiy maydon</dt><dd>~5 240 m²</dd></div>
+              <div><dt>Har bir o‘quvchiga</dt><dd>~8,2 m²</dd></div>
+              <div><dt>Maktab hududi eni</dt><dd>56,8 m</dd></div>
+            </dl>
+            <div class="ip-share">
+              <span class="label">Umumiy maydon korpuslar bo‘yicha</span>
+              <div class="ip-sbar"><i class="c1" style="--w:54.4%"></i><i class="c2" style="--w:36.2%"></i><i class="c3" style="--w:9.4%"></i></div>
+              <div class="ip-sleg"><button type="button" class="ip-jump" data-k="main"><i class="c1"></i>Asosiy · 54%</button><button type="button" class="ip-jump" data-k="right"><i class="c2"></i>O‘ng qanot · 36%</button><button type="button" class="ip-jump" data-k="left"><i class="c3"></i>Chap qanot · 9%</button></div>
+            </div>
+          </article>
+          <article class="ip-card" data-k="main">
+            <div class="ip-top"><div><span class="label">Korpus 1</span><h3 class="h3">Asosiy <em>korpus</em></h3></div><span class="floors"><i></i><i></i><i></i><i></i><small>4 qavat</small></span></div>
+            <dl class="ip-stats">
+              <div><dt>O‘lcham</dt><dd>39,4 × 18,1 m</dd></div>
+              <div><dt>Qavatlar</dt><dd>4</dd></div>
+              <div><dt>Qurilish izi</dt><dd>~713 m²</dd></div>
+              <div><dt>Umumiy maydon</dt><dd>~2 852 m²</dd></div>
+            </dl>
+            <div class="ip-one"><span class="label">Maktab umumiy maydonidagi ulushi</span><div class="ip-pbar"><i style="--w:54.4%"></i></div><b>54%</b></div>
+            <p class="ip-note">Asosiy kirish oldida ~62 m² soyabon (maydonga kiritilmagan).</p>
+          </article>
+          <article class="ip-card" data-k="right">
+            <div class="ip-top"><div><span class="label">Korpus 2</span><h3 class="h3">O‘ng <em>qanot</em></h3></div><span class="floors"><i></i><i></i><i></i><small>3 qavat</small></span></div>
+            <dl class="ip-stats">
+              <div><dt>O‘lcham</dt><dd>16,4 × 38,5 m</dd></div>
+              <div><dt>Qavatlar</dt><dd>3</dd></div>
+              <div><dt>Qurilish izi</dt><dd>~632 m²</dd></div>
+              <div><dt>Umumiy maydon</dt><dd>~1 896 m²</dd></div>
+            </dl>
+            <div class="ip-one"><span class="label">Maktab umumiy maydonidagi ulushi</span><div class="ip-pbar"><i style="--w:36.2%"></i></div><b>36%</b></div>
+            <p class="ip-note">Asosiy korpusdan ~1 m oraliq bilan joylashgan.</p>
+          </article>
+          <article class="ip-card" data-k="left">
+            <div class="ip-top"><div><span class="label">Korpus 3</span><h3 class="h3">Chap <em>qanot</em></h3></div><span class="floors"><i></i><i></i><i></i><small>3 qavat</small></span></div>
+            <dl class="ip-stats">
+              <div><dt>O‘lcham</dt><dd>8,6 × 19,1 m</dd></div>
+              <div><dt>Qavatlar</dt><dd>3</dd></div>
+              <div><dt>Qurilish izi</dt><dd>~164 m²</dd></div>
+              <div><dt>Umumiy maydon</dt><dd>~492 m²</dd></div>
+            </dl>
+            <div class="ip-one"><span class="label">Maktab umumiy maydonidagi ulushi</span><div class="ip-pbar"><i style="--w:9.4%"></i></div><b>9%</b></div>
+            <p class="ip-note">Sport maydoni yonida, asosiy korpusga tutashgan.</p>
+          </article>
+          <article class="ip-card" data-k="field">
+            <div class="ip-top"><div><span class="label">Ichki hovli</span><h3 class="h3">Sport <em>maydoni</em></h3></div></div>
+            <p class="ip-desc">Uch korpus orasidagi ichki hovlida: asosiy korpus va ikki qanot maydonni uch tomondan o‘rab turadi.</p>
+            <dl class="ip-stats">
+              <div><dt>Joylashuvi</dt><dd>Ichki hovli</dd></div>
+              <div><dt>O‘rab turgan korpuslar</dt><dd>3</dd></div>
+            </dl>
+          </article>
+        </div>
+        <table class="tbl ip-print">
+          <thead><tr><th>Korpus</th><th>O‘lcham, m</th><th class="r">Qavat</th><th class="r">Qurilish izi</th><th class="r">Umumiy maydon</th></tr></thead>
+          <tbody>
+            <tr><td>Asosiy korpus</td><td>39,4 × 18,1</td><td class="r">4</td><td class="r">~713 m²</td><td class="r">~2 852 m²</td></tr>
+            <tr><td>O‘ng qanot</td><td>16,4 × 38,5</td><td class="r">3</td><td class="r">~632 m²</td><td class="r">~1 896 m²</td></tr>
+            <tr><td>Chap qanot</td><td>8,6 × 19,1</td><td class="r">3</td><td class="r">~164 m²</td><td class="r">~492 m²</td></tr>
+          </tbody>
+        </table>
+        <p class="note rv" style="--d:4"><span class="ip-hint">Sxemadagi korpusni tanlang yoki ustiga olib boring. </span>Ko‘rsatkichlar bosh reja chizmasidan masshtab bo‘yicha olingan, aniqlik ±2%.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -659,187 +725,207 @@
         <div class="kicker rv">Pharma School · o‘quv makonlari</div>
         <h2 class="h2 rv" style="--d:1">Har bir fan uchun — <em>o‘z makoni.</em></h2>
       </div>
-      <p class="aside body rv" style="--d:2">Ixtisoslashgan xonalar o‘quvchini nazariyadan amaliyotga olib o‘tadi: tajriba, kuzatuv va loyiha ishlari maktab binosining o‘zida.</p>
-    </div>
-    <div class="rooms grow">
-      <article class="room rv" style="--d:2"><figure class="media lb" data-lb-src="assets/opt/school-room-kimyo.jpg" data-lb-cap="Kimyo laboratoriyasi"><img src="assets/opt/school-room-kimyo.jpg" alt="Kimyo laboratoriyasi" loading="lazy"></figure><div class="info"><span class="idx">01</span><h4>Kimyo laboratoriyasi</h4><p>Laboratoriya stollari, lavabolar va reaktivlarni alohida saqlash — haqiqiy tajribalar uchun.</p></div></article>
-      <article class="room rv" style="--d:3"><figure class="media lb" data-lb-src="assets/opt/school-room-biologiya.jpg" data-lb-cap="Biologiya xonasi"><img src="assets/opt/school-room-biologiya.jpg" alt="Biologiya xonasi" loading="lazy"></figure><div class="info"><span class="idx">02</span><h4>Biologiya xonasi</h4><p>Mikroskoplar, anatomik modellar va interaktiv ekran — inson tanasini jonli o‘rganish.</p></div></article>
-      <article class="room rv" style="--d:4"><figure class="media lb" data-lb-src="assets/opt/school-room-pharmatech.jpg" data-lb-cap="Pharma Technology xonasi"><img src="assets/opt/school-room-pharmatech.jpg" alt="Pharma Technology xonasi" loading="lazy"></figure><div class="info"><span class="idx">03</span><h4>Pharma Technology</h4><p>Farmatsevtika texnologiyalari bo‘yicha raqamli mashg‘ulotlar va modellashtirish.</p></div></article>
-      <article class="room rv" style="--d:5"><figure class="media lb" data-lb-src="assets/opt/school-room-kutubxona.jpg" data-lb-cap="Kutubxona"><img src="assets/opt/school-room-kutubxona.jpg" alt="Kutubxona" loading="lazy"></figure><div class="info"><span class="idx">04</span><h4>Kutubxona</h4><p>Kitob fondi, guruh stollari va yumshoq o‘qish zonasi.</p></div></article>
-      <article class="room rv" style="--d:6"><figure class="media lb" data-lb-src="assets/opt/school-room-konferensiya.jpg" data-lb-cap="Konferensiya zali"><img src="assets/opt/school-room-konferensiya.jpg" alt="Konferensiya zali" loading="lazy"></figure><div class="info"><span class="idx">05</span><h4>Konferensiya zali</h4><p>Ilmiy taqdimotlar, olimpiadalar va ota-onalar yig‘ilishlari uchun.</p></div></article>
-      <article class="room rv" style="--d:7"><figure class="media lb" data-lb-src="assets/opt/school-room-it.jpg" data-lb-cap="IT xonasi"><img src="assets/opt/school-room-it.jpg" alt="IT xonasi" loading="lazy"></figure><div class="info"><span class="idx">06</span><h4>IT xonasi</h4><p>Dasturlash va raqamli savodxonlik uchun zamonaviy kompyuter sinfi.</p></div></article>
-    </div>
-  </div>
-</section>
-
-<!-- 19 · School program -->
-<section class="slide t-paper s-program" data-title="O‘quv yo‘nalishlari" data-chapter="Ta’lim">
-  <div class="frame">
-    <div class="prog grow">
-      <figure class="media lb rv" data-lb-src="assets/opt/school-lab.jpg" data-lb-cap="Pharma School — amaliy mashg‘ulot laboratoriyada">
-        <img src="assets/opt/school-lab.jpg" alt="Laboratoriyadagi amaliy dars" loading="lazy">
-        <figcaption class="cap"><span class="label">Amaliy dars</span><span class="t">Nazariya laboratoriyada mustahkamlanadi</span></figcaption>
-      </figure>
-      <div class="prog-text">
-        <div class="kicker rv">O‘quv yo‘nalishlari</div>
-        <h2 class="h2 rv" style="--d:1">Ilm — <em>tajriba orqali.</em></h2>
-        <p class="body rv" style="--d:2">Tibbiyot, farmatsevtika va texnologiyalarga qiziqqan bolalar uchun maktab. Darslar zamonaviy laboratoriyalarda, kichik guruhlarda va amaliy loyihalar asosida o‘tadi.</p>
-        <ol class="numbered rv" style="--d:3">
-          <li><div><h4>Kimyo va farmatsevtika</h4><p>Moddalar, reaksiyalar va dori vositalari asoslari — laboratoriya tajribalarida.</p></div></li>
-          <li><div><h4>Biologiya va tibbiyot asoslari</h4><p>Inson anatomiyasi, mikroskopiya va sog‘lom turmush tarzi.</p></div></li>
-          <li><div><h4>Axborot texnologiyalari</h4><p>Dasturlash, ma’lumotlar bilan ishlash va raqamli savodxonlik.</p></div></li>
-          <li><div><h4>Ilmiy loyihalar</h4><p>Tadqiqot ishlari, olimpiadalarga tayyorgarlik va taqdimotlar.</p></div></li>
-        </ol>
-        <div class="mini-stats rv" style="--d:4">
-          <div><span class="num">12<i>+</i></span><p>laboratoriya va amaliyot xonasi</p></div>
-          <div><span class="num">1:20</span><p>o‘qituvchi va o‘quvchi nisbati</p></div>
-          <div><span class="num">STEM</span><p>ilmiy-ta’limiy yo‘nalish</p></div>
+      <div class="aside rv" style="--d:2">
+        <div class="stat-chips"><span><b>12+</b> laboratoriya va amaliyot xonasi</span><span><b>1:20</b> o‘qituvchi va o‘quvchi</span></div>
+        <div class="seg rfilter" data-filter-group="roomsGrid" role="group" aria-label="Xonalarni saralash">
+          <button type="button" class="on" data-f="all">Barchasi · 6</button>
+          <button type="button" data-f="lab">Laboratoriyalar · 4</button>
+          <button type="button" data-f="common">Umumiy makonlar · 2</button>
         </div>
       </div>
     </div>
+    <div class="rooms grow" id="roomsGrid" data-filter="all">
+      <article class="room rv" style="--d:2" data-cat="lab"><figure class="media lb" data-lb-src="assets/opt/school-room-kimyo.jpg" data-lb-cap="Kimyo laboratoriyasi"><img src="assets/opt/school-room-kimyo.jpg" alt="Kimyo laboratoriyasi" loading="lazy"><span class="rtag">Laboratoriya</span></figure><div class="info"><span class="idx">01</span><h4>Kimyo laboratoriyasi</h4><p>Laboratoriya stollari, lavabolar, reaktivlar uchun javonlar.</p></div></article>
+      <article class="room rv" style="--d:3" data-cat="lab"><figure class="media lb" data-lb-src="assets/opt/school-room-biologiya.jpg" data-lb-cap="Biologiya xonasi"><img src="assets/opt/school-room-biologiya.jpg" alt="Biologiya xonasi" loading="lazy"><span class="rtag">Laboratoriya</span></figure><div class="info"><span class="idx">02</span><h4>Biologiya xonasi</h4><p>Mikroskoplar, anatomik modellar, interaktiv ekran.</p></div></article>
+      <article class="room rv" style="--d:4" data-cat="lab"><figure class="media lb" data-lb-src="assets/opt/school-room-pharmatech.jpg" data-lb-cap="Pharma Technology xonasi"><img src="assets/opt/school-room-pharmatech.jpg" alt="Pharma Technology xonasi" loading="lazy"><span class="rtag">Laboratoriya</span></figure><div class="info"><span class="idx">03</span><h4>Pharma Technology</h4><p>Kompyuterlashgan ish o‘rinlari va interaktiv ekran.</p></div></article>
+      <article class="room rv" style="--d:5" data-cat="common"><figure class="media lb" data-lb-src="assets/opt/school-room-kutubxona.jpg" data-lb-cap="Kutubxona"><img src="assets/opt/school-room-kutubxona.jpg" alt="Kutubxona" loading="lazy"><span class="rtag">Umumiy makon</span></figure><div class="info"><span class="idx">04</span><h4>Kutubxona</h4><p>Kitob javonlari, guruh stollari, yumshoq o‘qish zonasi.</p></div></article>
+      <article class="room rv" style="--d:6" data-cat="common"><figure class="media lb" data-lb-src="assets/opt/school-room-konferensiya.jpg" data-lb-cap="Konferensiya zali"><img src="assets/opt/school-room-konferensiya.jpg" alt="Konferensiya zali" loading="lazy"><span class="rtag">Umumiy makon</span></figure><div class="info"><span class="idx">05</span><h4>Konferensiya zali</h4><p>Amfiteatr tartibidagi o‘rindiqlar va sahna.</p></div></article>
+      <article class="room rv" style="--d:7" data-cat="lab"><figure class="media lb" data-lb-src="assets/opt/school-room-it.jpg" data-lb-cap="IT xonasi"><img src="assets/opt/school-room-it.jpg" alt="IT xonasi" loading="lazy"><span class="rtag">Laboratoriya</span></figure><div class="info"><span class="idx">06</span><h4>IT xonasi</h4><p>Kompyuter ish o‘rinlari bilan jihozlangan sinf.</p></div></article>
+    </div>
   </div>
 </section>
 
-<!-- 20 · Kindergarten hero -->
+<!-- 19 · Kindergarten hero -->
 <section class="slide t-dark s-kinder full on-image" data-title="Bog‘cha" data-chapter="Ta’lim">
   <div class="bg kb"><img src="assets/opt/kindgarden.jpg" alt="Bog‘cha binosi va o‘yin maydonchalari" loading="lazy"></div>
   <div class="veil"></div>
   <div class="frame end">
     <div class="hero-block">
-      <div class="kicker rv">Bog‘cha · maktabgacha ta’lim muassasasi</div>
-      <h2 class="h1 rv" style="--d:1">Kichkintoylar uchun — <em>alohida olam.</em></h2>
-      <p class="lead rv" style="--d:2">360 o‘rinli bog‘cha: yorug‘ guruh xonalari, yopiq va nazorat ostidagi hudud, yoshga mos o‘yin maydonchalari. Ota-onalar uchun — uydan bir necha daqiqalik yo‘l.</p>
+      <div class="kicker rv">Bog‘cha (MTM) · bosh rejada 6</div>
+      <h2 class="h1 rv" style="--d:1">Bog‘cha — <em>360 bola uchun.</em></h2>
+      <p class="lead rv" style="--d:2">Ikkita 2 qavatli bino yopiq o‘tish joyi bilan bog‘langan. Hudud ichida soyabonli ayvonlar, o‘yin maydonchalari va qumdonlar joylashgan.</p>
     </div>
     <div class="hero-facts rv" style="--d:3">
       <div><span class="num" data-count>360</span><span>bola o‘rni</span></div>
       <div><span class="num">2<i>qavat</i></span><span>ikki bino va yopiq o‘tish joyi</span></div>
       <div><span class="num" data-count><small class="pre">~</small>1 520<i>m²</i></span><span>umumiy qavatlar maydoni</span></div>
-      <div><span class="num">4</span><span>soyabonli ayvon — sayr uchun</span></div>
+      <div><span class="num">4</span><span>soyabonli ayvon · ~150 m²</span></div>
     </div>
   </div>
 </section>
 
-<!-- 21 · Kindergarten plan -->
-<section class="slide t-paper s-kinderplan" data-title="Bog‘cha arxitekturasi" data-chapter="Ta’lim">
+<!-- 20 · Kindergarten — interactive plan -->
+<section class="slide t-paper s-kinderplan" data-title="Bog‘cha sxemasi" data-chapter="Ta’lim">
   <div class="frame">
-    <div class="plan2 rev grow">
+    <div class="iplan tall grow" data-iplan>
       <figure class="plan-svg rv" style="--d:2" aria-label="Bog‘cha sxemasi, masshtabda">
         <span class="label ps-tag">Sxema · masshtabda · metrlarda</span>
-        <svg viewBox="-18 -76 64 101" role="img" aria-label="Bog‘cha hududi sxemasi: ikki bino, o‘tish joyi, ayvonlar va o‘yin maydonchalari">
+        <svg viewBox="-18 -76 64 101" role="img" aria-label="Bog‘cha hududi sxemasi: ikki bino, o‘tish joyi, ayvonlar va o‘yin zonasi">
           <rect x="-9" y="-73" width="51" height="90" rx="1.4" fill="#E0D6C2" stroke="#B5A88C" stroke-width=".22" stroke-dasharray=".9 .6"/>
-          <g fill="#EDE6D8">
-            <rect x="10.5" y="-70" width="3" height="70"/>
-            <rect x="13.5" y="-37.1" width="20" height="2.1"/>
-            <rect x="-7" y="-28" width="17.5" height="2.1"/>
-          </g>
-          <g fill="#A3B99B">
+          <g fill="#EDE6D8" pointer-events="none"><rect x="10.5" y="-70" width="3" height="70"/><rect x="13.5" y="-37.1" width="20" height="2.1"/><rect x="-7" y="-28" width="17.5" height="2.1"/></g>
+          <g fill="#A3B99B" class="ip-txt">
             <circle cx="-6" cy="-68" r="1.4"/><circle cx="-6.2" cy="-61" r="1.2"/><circle cx="-6" cy="-54" r="1.4"/><circle cx="-6.2" cy="-47" r="1.2"/><circle cx="-6" cy="-40" r="1.4"/><circle cx="-6.2" cy="-33" r="1.2"/>
             <circle cx="38.5" cy="-68" r="1.3"/><circle cx="38.7" cy="-60" r="1.2"/><circle cx="38.5" cy="-52" r="1.4"/><circle cx="38.7" cy="-26" r="1.2"/><circle cx="38.5" cy="-18" r="1.4"/><circle cx="38.7" cy="-10" r="1.2"/>
             <circle cx="3" cy="-60" r="1.6"/><circle cx="6" cy="-52" r="1.3"/><circle cx="2.5" cy="-44" r="1.5"/><circle cx="31" cy="-62" r="1.5"/><circle cx="35" cy="-56" r="1.2"/>
           </g>
-          <g fill="#F3EEE4" stroke="#B08A4E" stroke-width=".28">
-            <rect x="13.8" y="-69.6" width="5.7" height="6.6"/><rect x="21" y="-69.6" width="5.7" height="6.6"/>
-            <rect x="0.3" y="-24.3" width="5.7" height="6.6"/><rect x="-0.5" y="-12.9" width="5.7" height="6.6"/>
+          <g class="ip-el" data-k="ayvon" style="--i:3">
+            <g fill="#F3EEE4" stroke="#B08A4E" stroke-width=".28">
+              <rect x="13.8" y="-69.6" width="5.7" height="6.6"/><rect x="21" y="-69.6" width="5.7" height="6.6"/><rect x="0.3" y="-24.3" width="5.7" height="6.6"/><rect x="-0.5" y="-12.9" width="5.7" height="6.6"/>
+            </g>
+            <g stroke="#B08A4E" stroke-width=".22">
+              <path d="M13.8 -69.6 L19.5 -63 M19.5 -69.6 L13.8 -63"/><path d="M21 -69.6 L26.7 -63 M26.7 -69.6 L21 -63"/><path d="M0.3 -24.3 L6 -17.7 M6 -24.3 L0.3 -17.7"/><path d="M-0.5 -12.9 L5.2 -6.3 M5.2 -12.9 L-0.5 -6.3"/>
+            </g>
           </g>
-          <g stroke="#B08A4E" stroke-width=".22">
-            <path d="M13.8 -69.6 L19.5 -63 M19.5 -69.6 L13.8 -63"/><path d="M21 -69.6 L26.7 -63 M26.7 -69.6 L21 -63"/>
-            <path d="M0.3 -24.3 L6 -17.7 M6 -24.3 L0.3 -17.7"/><path d="M-0.5 -12.9 L5.2 -6.3 M5.2 -12.9 L-0.5 -6.3"/>
+          <g class="ip-el" data-k="play" style="--i:4">
+            <rect x="22.3" y="-50" width="10" height="12.6" rx=".6" fill="#97B98C"/>
+            <rect x="22.3" y="-34.9" width="10" height="12.9" rx=".6" fill="#97B98C"/>
+            <g fill="none" stroke="#F3EEE4" stroke-width=".3"><circle cx="25.3" cy="-46.6" r="1.6"/><rect x="27.6" y="-44.6" width="3" height="4.6"/><path d="M23.6 -40 h4"/><circle cx="29" cy="-31" r="1.8"/><rect x="23.6" y="-30" width="3" height="5"/><path d="M27.6 -25 h3.4"/></g>
+            <rect x="16.8" y="-61.5" width="6.4" height="8.9" rx="1" fill="#E7D3A2"/>
+            <rect x="15.1" y="-33" width="5" height="11.2" rx="1" fill="#E7D3A2"/>
+            <ellipse cx="18.5" cy="-43.5" rx="2.6" ry="3.9" fill="#9CC9D6"/>
           </g>
-          <rect x="22.3" y="-50" width="10" height="12.6" rx=".6" fill="#97B98C"/>
-          <rect x="22.3" y="-34.9" width="10" height="12.9" rx=".6" fill="#97B98C"/>
-          <g fill="none" stroke="#F3EEE4" stroke-width=".3">
-            <circle cx="25.3" cy="-46.6" r="1.6"/><rect x="27.6" y="-44.6" width="3" height="4.6"/><path d="M23.6 -40 h4"/>
-            <circle cx="29" cy="-31" r="1.8"/><rect x="23.6" y="-30" width="3" height="5"/><path d="M27.6 -25 h3.4"/>
-          </g>
-          <rect x="16.8" y="-61.5" width="6.4" height="8.9" rx="1" fill="#E7D3A2"/>
-          <rect x="15.1" y="-33" width="5" height="11.2" rx="1" fill="#E7D3A2"/>
-          <ellipse cx="18.5" cy="-43.5" rx="2.6" ry="3.9" fill="#9CC9D6"/>
-          <rect x="16.4" y="-18" width="15.1" height="11.8" fill="#D69A4E"/>
-          <rect x="24" y="-6.2" width="2.8" height="6.2" fill="#D69A4E"/>
-          <rect x="0" y="0" width="39.4" height="14.4" fill="#C48A3C"/>
-          <text x="21.5" y="6.6" text-anchor="middle" class="svg-lbl" font-size="2.8" fill="#FFFDF8">Asosiy bino</text>
-          <text x="21.5" y="10.4" text-anchor="middle" class="svg-sub" font-size="2" fill="#FFF6E6">2 qavat · ~1 136 m²</text>
-          <text x="24.6" y="-12.2" text-anchor="middle" class="svg-lbl" font-size="2.05" fill="#FFFDF8">Yuqori bino</text>
-          <text x="24.6" y="-9" text-anchor="middle" class="svg-sub" font-size="1.7" fill="#FFF6E6">~356 m²</text>
-          <g class="pins">
+          <rect class="ip-el" data-k="upper" style="--i:1" x="16.4" y="-18" width="15.1" height="11.8" fill="#D69A4E"/>
+          <rect class="ip-el" data-k="link" style="--i:2" x="24" y="-6.2" width="2.8" height="6.2" fill="#D69A4E"/>
+          <rect class="ip-el" data-k="main" style="--i:0" x="0" y="0" width="39.4" height="14.4" fill="#C48A3C"/>
+          <g class="ip-txt" pointer-events="none">
+            <text x="21.5" y="6.6" text-anchor="middle" class="svg-lbl" font-size="2.8" fill="#FFFDF8">Asosiy bino</text>
+            <text x="21.5" y="10.4" text-anchor="middle" class="svg-sub" font-size="2" fill="#FFF6E6">2 qavat · ~1 136 m²</text>
+            <text x="24.6" y="-12.2" text-anchor="middle" class="svg-lbl" font-size="2.05" fill="#FFFDF8">Yuqori bino</text>
+            <text x="24.6" y="-9" text-anchor="middle" class="svg-sub" font-size="1.7" fill="#FFF6E6">~356 m²</text>
             <g transform="translate(3.6 4)"><circle r="2.4" fill="#13201A"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">1</text></g>
             <g transform="translate(13.6 -12.1)"><circle r="2.4" fill="#13201A"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">2</text></g>
             <g transform="translate(30 -3.1)"><circle r="2.4" fill="#13201A"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">3</text></g>
             <g transform="translate(30 -66.3)"><circle r="2.4" fill="#84652F"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">4</text></g>
             <g transform="translate(35.4 -36.2)"><circle r="2.4" fill="#84652F"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">5</text></g>
-            <g transform="translate(26.2 -57)"><circle r="2.4" fill="#84652F"/><text y=".85" text-anchor="middle" class="svg-lbl" font-size="2.4" fill="#F3EEE4">6</text></g>
-          </g>
-          <g stroke="#8A7A57" stroke-width=".14" fill="none">
-            <line x1="0" y1="20" x2="39.4" y2="20"/><line x1="0" y1="15.2" x2="0" y2="20.8"/><line x1="39.4" y1="15.2" x2="39.4" y2="20.8"/>
-            <path d="M-.6 20.6 L.6 19.4 M38.8 20.6 L40 19.4"/>
-            <line x1="-13" y1="-18" x2="-13" y2="14.4"/>
-            <line x1="-13.8" y1="-18" x2="-9.5" y2="-18"/><line x1="-13.8" y1="-6.2" x2="-9.5" y2="-6.2"/><line x1="-13.8" y1="0" x2="-9.5" y2="0"/><line x1="-13.8" y1="14.4" x2="-9.5" y2="14.4"/>
-            <path d="M-13.6 -17.4 L-12.4 -18.6 M-13.6 -5.6 L-12.4 -6.8 M-13.6 .6 L-12.4 -.6 M-13.6 15 L-12.4 13.8"/>
-          </g>
-          <g class="svg-dim" font-size="2" text-anchor="middle">
-            <text x="19.7" y="19.1">39,4</text>
-            <text transform="translate(-13.8 -12.1) rotate(-90)">11,8</text>
-            <text transform="translate(-13.8 -3.1) rotate(-90)">6,2</text>
-            <text transform="translate(-13.8 7.2) rotate(-90)">14,4</text>
-          </g>
-          <g transform="translate(29.4 23)">
-            <rect x="0" y="0" width="5" height=".7" fill="#13201A"/><rect x="5" y="0" width="5" height=".7" fill="none" stroke="#13201A" stroke-width=".12"/>
-            <text x="0" y="-.8" class="svg-dim" font-size="1.25" text-anchor="middle">0</text><text x="10" y="-.8" class="svg-dim" font-size="1.25" text-anchor="middle">10 m</text>
+            <g stroke="#8A7A57" stroke-width=".14" fill="none">
+              <line x1="0" y1="20" x2="39.4" y2="20"/><line x1="0" y1="15.2" x2="0" y2="20.8"/><line x1="39.4" y1="15.2" x2="39.4" y2="20.8"/><path d="M-.6 20.6 L.6 19.4 M38.8 20.6 L40 19.4"/>
+              <line x1="-13" y1="-18" x2="-13" y2="14.4"/><line x1="-13.8" y1="-18" x2="-9.5" y2="-18"/><line x1="-13.8" y1="-6.2" x2="-9.5" y2="-6.2"/><line x1="-13.8" y1="0" x2="-9.5" y2="0"/><line x1="-13.8" y1="14.4" x2="-9.5" y2="14.4"/>
+              <path d="M-13.6 -17.4 L-12.4 -18.6 M-13.6 -5.6 L-12.4 -6.8 M-13.6 .6 L-12.4 -.6 M-13.6 15 L-12.4 13.8"/>
+            </g>
+            <g class="svg-dim" font-size="2" text-anchor="middle">
+              <text x="19.7" y="19.1">39,4</text><text transform="translate(-13.8 -12.1) rotate(-90)">11,8</text><text transform="translate(-13.8 -3.1) rotate(-90)">6,2</text><text transform="translate(-13.8 7.2) rotate(-90)">14,4</text>
+            </g>
+            <g transform="translate(29.4 23)">
+              <rect x="0" y="0" width="5" height=".7" fill="#13201A"/><rect x="5" y="0" width="5" height=".7" fill="none" stroke="#13201A" stroke-width=".12"/>
+              <text x="0" y="-.8" class="svg-dim" font-size="1.25" text-anchor="middle">0</text><text x="10" y="-.8" class="svg-dim" font-size="1.25" text-anchor="middle">10 m</text>
+            </g>
           </g>
         </svg>
       </figure>
-      <div class="plan-text">
-        <div class="kicker rv">Bog‘cha · hajmiy-rejaviy yechim</div>
+      <div class="ip-panel">
+        <div class="kicker rv">Bog‘cha · interaktiv sxema</div>
         <h2 class="h2 rv" style="--d:1">Ikki bino — <em>bitta xavfsiz hovli.</em></h2>
-        <p class="body rv" style="--d:2">Bog‘cha ikkita 2 qavatli binodan iborat; ular yopiq o‘tish joyi bilan bog‘langan — bolalar ob-havodan qat’i nazar binolar orasida bemalol harakatlanadi. Hudud ichida o‘yin maydonchalari, qumdonlar va soyabonli ayvonlar joylashgan.</p>
-        <table class="tbl rv" style="--d:3">
-          <thead><tr><th>Bino</th><th>O‘lcham, m</th><th class="r">Qavat</th><th class="r">Qurilish izi</th><th class="r">Umumiy maydon</th></tr></thead>
-          <tbody>
-            <tr><td><span class="pin" style="display:inline-grid;width:calc(26*var(--px));height:calc(26*var(--px));font-size:calc(13*var(--px));margin-right:calc(10*var(--px));background:#13201A;vertical-align:middle">1</span>Asosiy bino</td><td>39,4 × 14,4</td><td class="r">2</td><td class="r">~568 m²</td><td class="r">~1 136 m²</td></tr>
-            <tr><td><span class="pin" style="display:inline-grid;width:calc(26*var(--px));height:calc(26*var(--px));font-size:calc(13*var(--px));margin-right:calc(10*var(--px));background:#13201A;vertical-align:middle">2</span>Yuqori bino</td><td>15,1 × 11,8</td><td class="r">2</td><td class="r">~178 m²</td><td class="r">~356 m²</td></tr>
-            <tr><td><span class="pin" style="display:inline-grid;width:calc(26*var(--px));height:calc(26*var(--px));font-size:calc(13*var(--px));margin-right:calc(10*var(--px));background:#13201A;vertical-align:middle">3</span>O‘tish joyi</td><td>2,8 × 5,2</td><td class="r">2</td><td class="r">~15 m²</td><td class="r">~30 m²</td></tr>
-          </tbody>
-          <tfoot><tr><td>Jami</td><td></td><td class="r"></td><td class="r">~761 m²</td><td class="r">~1 522 m²</td></tr></tfoot>
-        </table>
-        <div class="gp-keys rv" style="--d:4">
-          <div><span class="pin" style="background:#84652F">4</span>4 ta soyabonli ayvon — har biri ~5,7 × 6,6 m, jami ~150 m²</div>
-          <div><span class="pin" style="background:#84652F">5</span>Yoshga mos o‘yin maydonchalari</div>
-          <div><span class="pin" style="background:#84652F">6</span>Qumdonlar va sayr yo‘laklari</div>
+        <div class="seg ip-tabs rv" style="--d:2" role="tablist" aria-label="Bog‘cha hududi elementlari">
+          <button type="button" role="tab" data-k="all" class="on">Umumiy</button>
+          <button type="button" role="tab" data-k="main"><span class="n">1</span>Asosiy bino</button>
+          <button type="button" role="tab" data-k="upper"><span class="n">2</span>Yuqori bino</button>
+          <button type="button" role="tab" data-k="link"><span class="n">3</span>O‘tish joyi</button>
+          <button type="button" role="tab" data-k="ayvon"><span class="n">4</span>Ayvonlar</button>
+          <button type="button" role="tab" data-k="play"><span class="n">5</span>O‘yin zonasi</button>
         </div>
+        <div class="ip-cards rv" style="--d:3">
+          <article class="ip-card on" data-k="all">
+            <div class="ip-top"><div><span class="label">Butun bog‘cha</span><h3 class="h3">2 bino · <em>360 o‘rin</em></h3></div><span class="floors"><i></i><i></i><small>2 qavat</small></span></div>
+            <dl class="ip-stats">
+              <div><dt>Qurilish izi</dt><dd>~761 m²</dd></div>
+              <div><dt>Umumiy maydon</dt><dd>~1 522 m²</dd></div>
+              <div><dt>Ayvonlar</dt><dd>4 · ~150 m²</dd></div>
+              <div><dt>O‘yin maydonchalari</dt><dd>2</dd></div>
+            </dl>
+            <div class="ip-share">
+              <span class="label">Umumiy maydon binolar bo‘yicha</span>
+              <div class="ip-sbar"><i class="k1" style="--w:74.6%"></i><i class="k2" style="--w:23.4%"></i><i class="k3" style="--w:2%"></i></div>
+              <div class="ip-sleg"><button type="button" class="ip-jump" data-k="main"><i class="k1"></i>Asosiy · 75%</button><button type="button" class="ip-jump" data-k="upper"><i class="k2"></i>Yuqori · 23%</button><button type="button" class="ip-jump" data-k="link"><i class="k3"></i>O‘tish joyi · 2%</button></div>
+            </div>
+          </article>
+          <article class="ip-card" data-k="main">
+            <div class="ip-top"><div><span class="label">Bino 1</span><h3 class="h3">Asosiy <em>bino</em></h3></div><span class="floors"><i></i><i></i><small>2 qavat</small></span></div>
+            <dl class="ip-stats">
+              <div><dt>O‘lcham</dt><dd>39,4 × 14,4 m</dd></div>
+              <div><dt>Qavatlar</dt><dd>2</dd></div>
+              <div><dt>Qurilish izi</dt><dd>~568 m²</dd></div>
+              <div><dt>Umumiy maydon</dt><dd>~1 136 m²</dd></div>
+            </dl>
+            <div class="ip-one"><span class="label">Bog‘cha umumiy maydonidagi ulushi</span><div class="ip-pbar"><i style="--w:74.6%"></i></div><b>75%</b></div>
+          </article>
+          <article class="ip-card" data-k="upper">
+            <div class="ip-top"><div><span class="label">Bino 2</span><h3 class="h3">Yuqori <em>bino</em></h3></div><span class="floors"><i></i><i></i><small>2 qavat</small></span></div>
+            <dl class="ip-stats">
+              <div><dt>O‘lcham</dt><dd>15,1 × 11,8 m</dd></div>
+              <div><dt>Qavatlar</dt><dd>2</dd></div>
+              <div><dt>Qurilish izi</dt><dd>~178 m²</dd></div>
+              <div><dt>Umumiy maydon</dt><dd>~356 m²</dd></div>
+            </dl>
+            <div class="ip-one"><span class="label">Bog‘cha umumiy maydonidagi ulushi</span><div class="ip-pbar"><i style="--w:23.4%"></i></div><b>23%</b></div>
+          </article>
+          <article class="ip-card" data-k="link">
+            <div class="ip-top"><div><span class="label">Bog‘lovchi</span><h3 class="h3">Yopiq <em>o‘tish joyi</em></h3></div><span class="floors"><i></i><i></i><small>2 qavat</small></span></div>
+            <dl class="ip-stats">
+              <div><dt>O‘lcham</dt><dd>2,8 × 5,2 m</dd></div>
+              <div><dt>Qavatlar</dt><dd>2</dd></div>
+              <div><dt>Qurilish izi</dt><dd>~15 m²</dd></div>
+              <div><dt>Umumiy maydon</dt><dd>~30 m²</dd></div>
+            </dl>
+            <p class="ip-note">Ikki binoni yopiq holda bog‘laydi — binolar orasida tashqariga chiqmasdan o‘tiladi.</p>
+          </article>
+          <article class="ip-card" data-k="ayvon">
+            <div class="ip-top"><div><span class="label">Hudud</span><h3 class="h3">Soyabonli <em>ayvonlar</em></h3></div></div>
+            <dl class="ip-stats">
+              <div><dt>Soni</dt><dd>4</dd></div>
+              <div><dt>Har birining o‘lchami</dt><dd>~5,7 × 6,6 m</dd></div>
+              <div><dt>Jami maydon</dt><dd>~150 m²</dd></div>
+              <div><dt>Bino maydoniga</dt><dd>kiritilmagan</dd></div>
+            </dl>
+            <p class="ip-note">Hudud ichida, sayr yo‘laklari bo‘ylab joylashgan.</p>
+          </article>
+          <article class="ip-card" data-k="play">
+            <div class="ip-top"><div><span class="label">Hudud</span><h3 class="h3">O‘yin <em>zonasi</em></h3></div></div>
+            <dl class="ip-stats">
+              <div><dt>O‘yin maydonchalari</dt><dd>2</dd></div>
+              <div><dt>Qumdonlar</dt><dd>2</dd></div>
+            </dl>
+            <p class="ip-note">Bog‘cha hududi ichida; binolar bilan piyoda yo‘laklar orqali bog‘langan.</p>
+          </article>
+        </div>
+        <table class="tbl ip-print">
+          <thead><tr><th>Element</th><th>O‘lcham, m</th><th class="r">Qavat</th><th class="r">Qurilish izi</th><th class="r">Umumiy maydon</th></tr></thead>
+          <tbody>
+            <tr><td>1 · Asosiy bino</td><td>39,4 × 14,4</td><td class="r">2</td><td class="r">~568 m²</td><td class="r">~1 136 m²</td></tr>
+            <tr><td>2 · Yuqori bino</td><td>15,1 × 11,8</td><td class="r">2</td><td class="r">~178 m²</td><td class="r">~356 m²</td></tr>
+            <tr><td>3 · O‘tish joyi</td><td>2,8 × 5,2</td><td class="r">2</td><td class="r">~15 m²</td><td class="r">~30 m²</td></tr>
+            <tr><td>4 · Ayvonlar (4 ta)</td><td>~5,7 × 6,6</td><td class="r">—</td><td class="r">~150 m²</td><td class="r">—</td></tr>
+          </tbody>
+        </table>
+        <p class="note rv" style="--d:4"><span class="ip-hint">Sxemadagi elementni tanlang yoki ustiga olib boring. </span>Ko‘rsatkichlar bosh reja chizmasidan masshtab bo‘yicha olingan, aniqlik ±2%.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 22 · Kindergarten life -->
-<section class="slide t-forest s-kinderlife" data-title="Bog‘chada bir kun" data-chapter="Ta’lim">
+<!-- 21 · Kindergarten — environment -->
+<section class="slide t-forest s-kinderenv" data-title="Tarbiya muhiti" data-chapter="Ta’lim">
   <div class="frame">
-    <div class="life grow">
-      <div class="life-left">
-        <div>
-          <div class="kicker rv">Rivojlanish muhiti</div>
-          <h2 class="h2 rv" style="--d:1">O‘yin orqali — <em>kashfiyot.</em></h2>
+    <div class="env grow">
+      <figure class="media lb rv" data-lb-src="assets/opt/render-extra-11.jpg" data-lb-cap="Bog‘cha binosi va o‘yin maydonchalari"><img src="assets/opt/render-extra-11.jpg" alt="Bog‘cha hovlisi" loading="lazy"></figure>
+      <div class="env-text">
+        <div class="kicker rv">Bog‘cha · tarbiya muhiti</div>
+        <h2 class="h2 rv" style="--d:1">O‘yin orqali — <em>kashfiyot.</em></h2>
+        <div class="env-cards rv" style="--d:2">
+          <article class="envc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.5 7.5 9.9 4.3-1.4 7.5-5.3 7.5-9.9v-6z"/><path d="m8.8 12 2.2 2.2 4.4-4.4"/></svg><h4>Xavfsizlik</h4><p>Yopiq va nazorat ostidagi hudud, tabiiy yorug‘lik va yashil o‘yin maydoni.</p></article>
+          <article class="envc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v4a2 2 0 1 0 0 4v4h-4a2 2 0 1 0-4 0H3V9h4a2 2 0 1 0 0-4V3z"/></svg><h4>Metodika</h4><p>Reggio Emilia yondashuvi: ijodiy va motorik rivojlanish dasturlari.</p></article>
+          <article class="envc"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="7.5" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20v-1a5.5 5.5 0 0 1 11 0v1M14 20v-.6a4 4 0 0 1 7.5-1.9"/></svg><h4>Jamoa</h4><p>360 bola uchun professional pedagoglar va tibbiyot xodimi.</p></article>
+          <article class="envc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-6M7 15h10l-5-11z"/><path d="M4.5 21h15"/></svg><h4>Hudud</h4><p>4 ta soyabonli ayvon, 2 ta o‘yin maydonchasi va 2 ta qumdon.</p></article>
         </div>
-        <figure class="media lb rv" style="--d:2" data-lb-src="assets/opt/render-extra-11.jpg" data-lb-cap="Bog‘cha — o‘yin maydonchalari va yashil hovli"><img src="assets/opt/render-extra-11.jpg" alt="Bog‘cha hovlisi" loading="lazy"></figure>
-        <div class="pillars4 rv" style="--d:3">
-          <div><h4>Xavfsizlik</h4><p>Yopiq, nazorat ostidagi hudud va video kuzatuv.</p></div>
-          <div><h4>Metodika</h4><p>Reggio Emilia yondashuvi: ijodiy va motorik rivojlanish.</p></div>
-          <div><h4>Sog‘liq</h4><p>Professional pedagoglar va tibbiyot xodimi.</p></div>
-          <div><h4>Tabiat</h4><p>Yashil hovli, qumdonlar va soyabonli ayvonlar.</p></div>
-        </div>
-      </div>
-      <div class="day rv" style="--d:3">
-        <h3 class="h2">Bolaning <em>bir kuni.</em></h3>
-        <p class="note">Namunaviy kun tartibi — yakuniy dastur muassasa tomonidan belgilanadi.</p>
-        <ol class="timeline">
-          <li><time>08:00</time><div><h4>Kutib olish</h4><p>Ertalabki qabul va gimnastika</p></div></li>
-          <li><time>09:00</time><div><h4>Mashg‘ulotlar</h4><p>Nutq, matematika va ijodiy o‘yinlar</p></div></li>
-          <li><time>11:00</time><div><h4>Sayr</h4><p>Ochiq havoda — ayvon va o‘yin maydonchalarida</p></div></li>
-          <li><time>12:30</time><div><h4>Tushlik</h4><p>Muvozanatli, yoshga mos ovqatlanish</p></div></li>
-          <li><time>13:00</time><div><h4>Dam olish</h4><p>Kunduzgi uyqu, sokin guruh xonalarida</p></div></li>
-          <li><time>15:30</time><div><h4>To‘garaklar</h4><p>Musiqa, rasm, raqs va harakatli o‘yinlar</p></div></li>
-          <li><time>18:00</time><div><h4>Uyga</h4><p>Ota-onalar bilan uchrashuv</p></div></li>
-        </ol>
       </div>
     </div>
   </div>
@@ -847,16 +933,16 @@
 
 <!-- ============================ V. YOTOQXONA ============================ -->
 
-<!-- 23 · Dormitory hero -->
+<!-- 22 · Dormitory hero -->
 <section class="slide t-dark s-dorm full on-image" data-title="Yotoqxona" data-chapter="Yotoqxona">
   <div class="bg kb"><img src="assets/opt/dorm-reception.jpg" alt="Yotoqxona resepshni" loading="lazy"></div>
   <div class="veil"></div>
   <div class="frame">
     <div class="dorm-grid">
       <div class="dorm-text">
-        <div class="kicker rv">Yotoqxona · universitet formati</div>
-        <h2 class="h1 rv" style="--d:1">Talabalar uchun — <em>ikkinchi uy.</em></h2>
-        <p class="body rv" style="--d:2">1 550 dan ortiq o‘rinli zamonaviy yotoqxona alohida 16 qavatli blokda joylashgan: resepshn, koworking, kutubxona, oshxonalar va dam olish zonalari — barchasi bir tom ostida.</p>
+        <div class="kicker rv">Yotoqxona · alohida 16 qavatli blok</div>
+        <h2 class="h1 rv" style="--d:1">Yotoqxona — <em>1 550+ o‘rin.</em></h2>
+        <p class="body rv" style="--d:2">Yotoqxona uchun bitta 16 qavatli blok (Tip 4) ajratilgan. Ichida resepshn, koworking, kutubxona, uchrashuv xonasi, ikki turdagi oshxona va dam olish zonalari bor.</p>
         <div class="six rv" style="--d:3">
           <div><span class="num">1 550<i>+</i></span><p>o‘rin sig‘imi</p></div>
           <div><span class="num">24/7</span><p>resepshn va xavfsizlik</p></div>
@@ -868,7 +954,9 @@
       </div>
       <aside class="passport glass rv" style="--d:4">
         <span class="label">Blok pasporti · Tip 4</span>
-        <div class="stack" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="stack-wrap">
+          <div class="stack" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
         <dl>
           <div><dt>Qavatlar</dt><dd>16</dd></div>
           <div><dt>Qavat maydoni</dt><dd>654,4 m²</dd></div>
@@ -876,73 +964,87 @@
           <div><dt>Sig‘im</dt><dd>1 550+ o‘rin</dd></div>
           <div><dt>Xona formatlari</dt><dd>26,9–34,5 m²</dd></div>
         </dl>
-        <div class="key"><span><i style="background:var(--brass-2)"></i>1-qavat · resepshn va oshxona</span><span><i style="background:rgba(126,156,128,.75)"></i>yashash va umumiy zonalar</span></div>
+        <div class="stack-cap" aria-live="polite">16 qavat × 654,4 m² = 10 470 m²</div>
       </aside>
     </div>
   </div>
 </section>
 
-<!-- 24 · Dormitory rooms -->
+<!-- 23 · Dormitory rooms -->
 <section class="slide t-paper s-dormrooms" data-title="Yotoqxona xonalari" data-chapter="Yotoqxona">
   <div class="frame">
     <div class="head">
       <div>
-        <div class="kicker rv">Yashash xonalari · 16 qavatli blok</div>
-        <h2 class="h2 rv" style="--d:1">Ixcham, yorug‘ va <em>puxta o‘ylangan.</em></h2>
+        <div class="kicker rv">Yashash xonalari · 3 format</div>
+        <h2 class="h2 rv" style="--d:1">Studiodan <em>6 kishilik xonagacha.</em></h2>
       </div>
-      <p class="aside body rv" style="--d:2">Har bir xonada shaxsiy sanuzel, ish joyi va yopiq shkaf bor. Formatlar — studio va 1 xonali, 26,9 m² dan 34,5 m² gacha.</p>
+      <p class="aside body rv" style="--d:2">Har bir xonada shaxsiy sanuzel, ish joyi va yopiq shkaf. Xona maydoni 26,9 m² dan 34,5 m² gacha.<span class="ip-hint"> Formatni tanlang.</span></p>
     </div>
     <div class="drooms grow">
       <div class="drooms-media rv" style="--d:2">
-        <figure class="media lb" data-lb-src="assets/opt/dorm-studio.jpg" data-lb-cap="Studio xona · 26,9 m² · 2 kishilik"><img src="assets/opt/dorm-studio.jpg" alt="Studio xona" loading="lazy" style="object-position: 72% 50%"><figcaption class="cap"><span class="label">Studio · 26,9 m²</span><span class="t">Ikki kishilik ixcham format</span></figcaption></figure>
-        <figure class="media lb" data-lb-src="assets/opt/dorm-bathroom.jpg" data-lb-cap="Shaxsiy sanuzel va dush xonasi"><img src="assets/opt/dorm-bathroom.jpg" alt="Sanuzel va dush" loading="lazy" style="object-position: 78% 50%"><figcaption class="cap"><span class="label">Sanuzel</span><span class="t">Dush, oyna va isitgich</span></figcaption></figure>
+        <figure class="media lb" data-lb-src="assets/opt/dorm-studio.jpg" data-lb-cap="Studio xona · 26,9 m² · 2 kishilik"><img src="assets/opt/dorm-studio.jpg" alt="Studio xona" loading="lazy" style="object-position: 72% 50%"><figcaption class="cap"><span class="label">Studio · 26,9 m²</span><span class="t">Ikki kishilik format</span></figcaption></figure>
+        <figure class="media lb" data-lb-src="assets/opt/dorm-bathroom.jpg" data-lb-cap="Studio xona sanuzeli: dush, rakovina, oyna, sochiq isitgichi"><img src="assets/opt/dorm-bathroom.jpg" alt="Sanuzel va dush" loading="lazy" style="object-position: 78% 50%"><figcaption class="cap"><span class="label">Sanuzel</span><span class="t">Dush, oyna va isitgich</span></figcaption></figure>
       </div>
-      <div class="tiers rv" style="--d:3">
-        <div class="tier"><div class="cap">2<small>kishilik</small></div><div><h4>Studio</h4><p>Ikki qavatli karavot, ikkita ish stoli va ikkita shkaf</p></div><div class="area">26,9<small>m²</small></div></div>
-        <div class="tier"><div class="cap">4<small>kishilik</small></div><div><h4>1 xonali</h4><p>To‘rt karavot, kengaytirilgan ish maydoni va ikki shkaf</p></div><div class="area">~28<small>m²</small></div></div>
-        <div class="tier"><div class="cap">6<small>kishigacha</small></div><div><h4>1 xonali · kengaytirilgan</h4><p>Katta oyna, keng maydon, guruh bo‘lib yashashga moslashgan</p></div><div class="area">34,5<small>m²</small></div></div>
-        <div class="inroom">
-          <span class="chip">Konditsioner</span><span class="chip">Mini muzlatgich</span><span class="chip">Oshxonacha</span><span class="chip">Dush va sanuzel</span><span class="chip">Sochiq isitgichi</span><span class="chip">Balkon</span>
-        </div>
+      <div class="fmt rv" style="--d:3" data-acc>
+        <article class="fmt-item on">
+          <button type="button" class="fmt-head" aria-expanded="true"><span class="cap">2<small>kishilik</small></span><span class="nm"><h4>Studio</h4><p>Ixcham format</p></span><span class="area">26,9<small>m²</small></span><span class="chev" aria-hidden="true"></span></button>
+          <div class="fmt-body"><div>
+            <div class="people" aria-label="2 kishi"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg></div>
+            <p>Ikki qavatli karavot, 2 ta ish stoli va 2 ta shkaf.</p>
+            <div class="inroom"><span class="chip">Konditsioner</span><span class="chip">Mini muzlatgich</span><span class="chip">Oshxonacha</span><span class="chip">Sanuzel va dush</span><span class="chip">Sochiq isitgichi</span><span class="chip">Balkon</span></div>
+          </div></div>
+        </article>
+        <article class="fmt-item">
+          <button type="button" class="fmt-head" aria-expanded="false"><span class="cap">4<small>kishilik</small></span><span class="nm"><h4>1 xonali</h4><p>Standart format</p></span><span class="area">~28<small>m²</small></span><span class="chev" aria-hidden="true"></span></button>
+          <div class="fmt-body"><div>
+            <div class="people" aria-label="4 kishi"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg></div>
+            <p>To‘rt karavot, kengaytirilgan ish maydoni va ikki shkaf.</p>
+          </div></div>
+        </article>
+        <article class="fmt-item">
+          <button type="button" class="fmt-head" aria-expanded="false"><span class="cap">6<small>kishigacha</small></span><span class="nm"><h4>1 xonali · kengaytirilgan</h4><p>Guruh bo‘lib yashash uchun</p></span><span class="area">34,5<small>m²</small></span><span class="chev" aria-hidden="true"></span></button>
+          <div class="fmt-body"><div>
+            <div class="people" aria-label="6 kishigacha"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.6"/><path d="M4.5 21v-1.5a7.5 7.5 0 0 1 15 0V21"/></svg></div>
+            <p>Katta oyna va keng maydon — guruh bo‘lib yashashga moslashgan.</p>
+          </div></div>
+        </article>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 25 · Dormitory kitchens -->
+<!-- 24 · Dormitory kitchens -->
 <section class="slide t-dark s-dormkitchens" data-title="Yotoqxona oshxonalari" data-chapter="Yotoqxona">
   <div class="frame">
     <div class="head">
       <div>
         <div class="kicker rv">Oshxonalar · ikki format</div>
-        <h2 class="h2 rv" style="--d:1">Kundalik hayot va <em>bayramlar uchun.</em></h2>
+        <h2 class="h2 rv" style="--d:1">Kundalik va <em>tadbirlar uchun.</em></h2>
       </div>
-      <p class="aside body rv" style="--d:2">1-qavatdagi katta umumiy oshxona — har kungi foydalanish uchun; alohida kichik oshxona esa tadbirlar va mehmonlarni kutib olish uchun mo‘ljallangan.</p>
+      <p class="aside body rv" style="--d:2">Yotoqxonada ikki turdagi oshxona bor: 1-qavatdagi katta umumiy oshxona va tadbirlar uchun alohida kichik oshxona.</p>
     </div>
     <div class="kitchens grow">
       <article class="kcard rv" style="--d:2">
         <figure class="media lb" data-lb-src="assets/opt/dorm-kitchen-daily.jpg" data-lb-cap="Umumiy oshxona — 1-qavat"><img src="assets/opt/dorm-kitchen-daily.jpg" alt="Umumiy oshxona" loading="lazy" style="object-position: 70% 50%"></figure>
         <div class="kinfo">
-          <span class="badge">1-qavat · katta maydon</span>
           <h3 class="h4">Umumiy oshxona — <em>har kuni.</em></h3>
-          <p>Yotoqxonaning 1-qavatidagi keng oshxona barcha yashovchilar uchun: ovqat tayyorlash, tushlik va kechki suhbatlar.</p>
-          <div class="kfacts"><div><span class="num">24/7</span><span>ochiq</span></div><div><span class="num">1</span><span>qavat</span></div></div>
+          <p>Bitta keng oshxona barcha yashovchilar uchun umumiy — har qavatda alohida emas.</p>
+          <div class="ktags"><span>1-qavat</span><span>Katta maydon</span><span>Barcha yashovchilar uchun</span></div>
         </div>
       </article>
       <article class="kcard rv" style="--d:3">
         <figure class="media lb" data-lb-src="assets/opt/dorm-kitchen-premium.jpg" data-lb-cap="Tadbirlar oshxonasi — mehmonlar uchun"><img src="assets/opt/dorm-kitchen-premium.jpg" alt="Tadbirlar oshxonasi" loading="lazy"></figure>
         <div class="kinfo">
-          <span class="badge">Tadbirlar · mehmonlar</span>
-          <h3 class="h4">Tadbirlar oshxonasi — <em>maxsus kunlar uchun.</em></h3>
-          <p>Bayramlar, uchrashuvlar va mehmonlarni kutib olish uchun alohida, shinam zona.</p>
-          <div class="kfacts"><div><span class="num">2</span><span>format</span></div><div><span class="num">8<i>+</i></span><span>umumiy zona</span></div></div>
+          <h3 class="h4">Kichik oshxona — <em>tadbirlar uchun.</em></h3>
+          <p>Maxsus kunlar, tadbirlar va mehmonlarni kutib olish uchun alohida, ixcham zona.</p>
+          <div class="ktags"><span>Alohida zona</span><span>Ixcham format</span><span>Tadbir va mehmonlar</span></div>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- 26 · Dormitory common areas -->
+<!-- 25 · Dormitory common areas -->
 <section class="slide t-paper s-dormcommon" data-title="Umumiy zonalar" data-chapter="Yotoqxona">
   <div class="frame">
     <div class="head">
@@ -950,21 +1052,21 @@
         <div class="kicker rv">Umumiy foydalanish zonalari</div>
         <h2 class="h2 rv" style="--d:1">Yashash, o‘qish, <em>ilhomlanish.</em></h2>
       </div>
-      <p class="aside body rv" style="--d:2">Zamonaviy resepshn, kutubxona, koworking va uchrashuv xonalari — o‘qish va dam olish uchun kerak bo‘lgan hamma narsa bir binoda.</p>
+      <p class="aside body rv" style="--d:2">Resepshn, kutubxona, koworking va uchrashuv xonasi — yotoqxona binosining o‘zida.</p>
     </div>
     <div class="grid5 grow">
-      <figure class="media lb rv" style="--d:2" data-lb-src="assets/opt/dorm-library.jpg" data-lb-cap="Kutubxona — sokinlik va bilim zonasi"><img src="assets/opt/dorm-library.jpg" alt="Kutubxona" loading="lazy"><figcaption class="cap"><span class="label">01 · Kutubxona</span><span class="t">Sokinlik va bilim zonasi</span></figcaption></figure>
-      <figure class="media lb rv" style="--d:3" data-lb-src="assets/opt/dorm-reception.jpg" data-lb-cap="Resepshn — 24/7 xizmat"><img src="assets/opt/dorm-reception.jpg" alt="Resepshn" loading="lazy"><figcaption class="cap"><span class="label">02 · Resepshn</span><span class="t">24/7 xizmat ko‘rsatish</span></figcaption></figure>
-      <figure class="media lb rv" style="--d:4" data-lb-src="assets/opt/dorm-coworking.jpg" data-lb-cap="Koworking — ochiq ish stollari"><img src="assets/opt/dorm-coworking.jpg" alt="Koworking" loading="lazy" style="object-position: 72% 50%"><figcaption class="cap"><span class="label">03 · Koworking</span><span class="t">Ochiq ish stollari</span></figcaption></figure>
-      <figure class="media lb rv" style="--d:5" data-lb-src="assets/opt/dorm-meeting.jpg" data-lb-cap="Uchrashuv xonasi — guruh muhokamalari uchun"><img src="assets/opt/dorm-meeting.jpg" alt="Uchrashuv xonasi" loading="lazy"><figcaption class="cap"><span class="label">04 · Uchrashuv xonasi</span><span class="t">Guruh muhokamalari uchun</span></figcaption></figure>
-      <figure class="media lb rv" style="--d:6" data-lb-src="assets/opt/dorm-kitchen-premium.jpg" data-lb-cap="Hordiq zonasi va oshxona"><img src="assets/opt/dorm-kitchen-premium.jpg" alt="Hordiq zonasi" loading="lazy"><figcaption class="cap"><span class="label">05 · Hordiq zonasi</span><span class="t">Dam olish va muloqot</span></figcaption></figure>
+      <figure class="media lb rv" style="--d:2" data-lb-src="assets/opt/dorm-library.jpg" data-lb-cap="Kutubxona"><img src="assets/opt/dorm-library.jpg" alt="Kutubxona" loading="lazy"><figcaption class="cap"><span class="label">01 · Kutubxona</span><span class="t">Sokin o‘qish zonasi</span></figcaption></figure>
+      <figure class="media lb rv" style="--d:3" data-lb-src="assets/opt/dorm-reception.jpg" data-lb-cap="Resepshn — 24/7"><img src="assets/opt/dorm-reception.jpg" alt="Resepshn" loading="lazy"><figcaption class="cap"><span class="label">02 · Resepshn</span><span class="t">24/7 xizmat</span></figcaption></figure>
+      <figure class="media lb rv" style="--d:4" data-lb-src="assets/opt/dorm-coworking.jpg" data-lb-cap="Koworking"><img src="assets/opt/dorm-coworking.jpg" alt="Koworking" loading="lazy" style="object-position: 72% 50%"><figcaption class="cap"><span class="label">03 · Koworking</span><span class="t">Ochiq ish stollari</span></figcaption></figure>
+      <figure class="media lb rv" style="--d:5" data-lb-src="assets/opt/dorm-meeting.jpg" data-lb-cap="Uchrashuv xonasi"><img src="assets/opt/dorm-meeting.jpg" alt="Uchrashuv xonasi" loading="lazy"><figcaption class="cap"><span class="label">04 · Uchrashuv xonasi</span><span class="t">Guruh muhokamalari uchun</span></figcaption></figure>
+      <figure class="media lb rv" style="--d:6" data-lb-src="assets/opt/dorm-kitchen-premium.jpg" data-lb-cap="Tadbirlar oshxonasi va hordiq zonasi"><img src="assets/opt/dorm-kitchen-premium.jpg" alt="Hordiq zonasi" loading="lazy"><figcaption class="cap"><span class="label">05 · Hordiq zonasi</span><span class="t">Tadbirlar oshxonasi yonida</span></figcaption></figure>
     </div>
   </div>
 </section>
 
 <!-- ============================ VI. INFRATUZILMA ============================ -->
 
-<!-- 27 · Internal infrastructure -->
+<!-- 26 · Internal infrastructure -->
 <section class="slide t-dark s-infra" data-title="Ichki infratuzilma" data-chapter="Infratuzilma">
   <div class="frame">
     <div class="head">
@@ -1009,7 +1111,7 @@
   </div>
 </section>
 
-<!-- 28 · 5 km radius -->
+<!-- 27 · 5 km radius -->
 <section class="slide t-paper s-radius" data-title="5 km radius" data-chapter="Infratuzilma">
   <div class="frame">
     <div class="head">
@@ -1071,7 +1173,7 @@
 
 <!-- ============================ VII. XONADONLAR ============================ -->
 
-<!-- 29 · Apartment mix -->
+<!-- 28 · Apartment mix -->
 <section class="slide t-dark s-mix" id="mix" data-title="Xonadon turlari" data-chapter="Xonadonlar">
   <div class="frame">
     <div class="mix grow">
@@ -1104,7 +1206,7 @@
   </div>
 </section>
 
-<!-- 30 · Studio plans -->
+<!-- 29 · Studio plans -->
 <section class="slide t-paper s-plans" data-title="Studio rejalari" data-chapter="Xonadonlar">
   <div class="frame">
     <div class="head">
@@ -1122,7 +1224,7 @@
   </div>
 </section>
 
-<!-- 31 · 1-2 room plans -->
+<!-- 30 · 1-2 room plans -->
 <section class="slide t-paper s-plans" data-title="1–2 xonali rejalar" data-chapter="Xonadonlar">
   <div class="frame">
     <div class="head">
@@ -1140,7 +1242,7 @@
   </div>
 </section>
 
-<!-- 32 · 3 room plan -->
+<!-- 31 · 3 room plan -->
 <section class="slide t-paper s-plans" data-title="3 xonali reja" data-chapter="Xonadonlar">
   <div class="frame">
     <div class="head">
@@ -1159,7 +1261,7 @@
 
 <!-- ============================ VIII. BOSQICHLAR ============================ -->
 
-<!-- 33 · Masterplan blocks -->
+<!-- 32 · Masterplan blocks -->
 <section class="slide t-dark s-blocks" data-title="Bloklar va bosqichlar" data-chapter="Bosqichlar">
   <div class="frame">
     <div class="head">
@@ -1181,7 +1283,7 @@
   </div>
 </section>
 
-<!-- 34 · Phasing -->
+<!-- 33 · Phasing -->
 <section class="slide t-forest s-phasing" data-title="Qurilish bosqichlari" data-chapter="Bosqichlar">
   <div class="frame">
     <div class="head">
@@ -1211,7 +1313,7 @@
   </div>
 </section>
 
-<!-- 35 · Sustainability -->
+<!-- 34 · Sustainability -->
 <section class="slide t-paper s-sustain" data-title="Barqarorlik" data-chapter="Bosqichlar">
   <div class="frame">
     <div class="sustain grow">
@@ -1231,7 +1333,7 @@
   </div>
 </section>
 
-<!-- 36 · Closing -->
+<!-- 35 · Closing -->
 <section class="slide t-dark s-close full on-image" data-title="Yakun" data-chapter="Yakun">
   <div class="bg kb"><img src="assets/opt/render-extra-9.jpg" alt="" loading="lazy"></div>
   <div class="veil"></div>

@@ -169,6 +169,7 @@
   document.addEventListener('keydown', (e) => {
     if (lightbox.classList.contains('open')) return;
     if (e.target.closest && e.target.closest('input, textarea, select')) return;
+    if ((e.key === ' ' || e.key === 'Enter') && e.target.closest && e.target.closest('button, [role="button"], [role="tab"]')) return;
     if (e.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); return; }
     if (e.key === 'm' || e.key === 'M') { menu.classList.contains('open') ? closeMenu() : openMenu(); return; }
     if (menu.classList.contains('open')) return;
@@ -216,6 +217,80 @@
     });
     document.addEventListener('click', () => focus(null));
   })();
+
+  /* ---------- Interactive plans (school, kindergarten) ---------- */
+  document.querySelectorAll('[data-iplan]').forEach((wrap) => {
+    const els = Array.from(wrap.querySelectorAll('.ip-el[data-k]'));
+    const tabs = Array.from(wrap.querySelectorAll('.ip-tabs [data-k]'));
+    const cards = Array.from(wrap.querySelectorAll('.ip-card[data-k]'));
+    const svg = wrap.querySelector('svg');
+    let pinned = 'all';
+    const show = (k) => {
+      if (!cards.some((c) => c.dataset.k === k)) k = 'all';
+      tabs.forEach((t) => { const on = t.dataset.k === k; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); });
+      cards.forEach((c) => c.classList.toggle('on', c.dataset.k === k));
+      els.forEach((e) => {
+        e.classList.toggle('hot', e.dataset.k === k);
+        e.classList.toggle('dim', k !== 'all' && e.dataset.k !== k);
+      });
+    };
+    const pin = (k) => { pinned = k; show(k); };
+    els.forEach((e) => {
+      e.setAttribute('tabindex', '0');
+      e.setAttribute('role', 'button');
+      e.addEventListener('mouseenter', () => show(e.dataset.k));
+      e.addEventListener('focus', () => show(e.dataset.k));
+      e.addEventListener('click', () => pin(e.dataset.k));
+      e.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); pin(e.dataset.k); } });
+    });
+    if (svg) svg.addEventListener('mouseleave', () => show(pinned));
+    tabs.forEach((t) => t.addEventListener('click', () => pin(t.dataset.k)));
+    wrap.querySelectorAll('.ip-jump[data-k]').forEach((b) => b.addEventListener('click', () => pin(b.dataset.k)));
+    show('all');
+  });
+
+  /* ---------- Learning spaces filter ---------- */
+  document.querySelectorAll('[data-filter-group]').forEach((group) => {
+    const grid = document.getElementById(group.dataset.filterGroup);
+    const buttons = Array.from(group.querySelectorAll('button[data-f]'));
+    buttons.forEach((b) => b.addEventListener('click', () => {
+      buttons.forEach((x) => x.classList.toggle('on', x === b));
+      if (grid) grid.dataset.filter = b.dataset.f;
+    }));
+  });
+
+  /* ---------- Dormitory room formats (accordion) ---------- */
+  document.querySelectorAll('[data-acc]').forEach((acc) => {
+    const items = Array.from(acc.querySelectorAll('.fmt-item'));
+    items.forEach((item) => {
+      item.querySelector('.fmt-head').addEventListener('click', () => {
+        items.forEach((x) => {
+          const on = x === item;
+          x.classList.toggle('on', on);
+          x.querySelector('.fmt-head').setAttribute('aria-expanded', on);
+        });
+      });
+    });
+  });
+
+  /* ---------- Dormitory floor stack ---------- */
+  document.querySelectorAll('.passport').forEach((card) => {
+    const floors = Array.from(card.querySelectorAll('.stack i'));
+    const cap = card.querySelector('.stack-cap');
+    if (!floors.length || !cap) return;
+    const def = cap.textContent;
+    floors.forEach((f, i) => {
+      f.style.setProperty('--i', i);
+      f.addEventListener('mouseenter', () => {
+        floors.forEach((x) => x.classList.toggle('hot', x === f));
+        cap.textContent = i === 0 ? '1-qavat · umumiy oshxona · 654,4 m²' : `${i + 1}-qavat · 654,4 m²`;
+      });
+    });
+    card.querySelector('.stack').addEventListener('mouseleave', () => {
+      floors.forEach((x) => x.classList.remove('hot'));
+      cap.textContent = def;
+    });
+  });
 
   /* ---------- Lightbox ---------- */
   const lightbox = document.getElementById('lightbox');

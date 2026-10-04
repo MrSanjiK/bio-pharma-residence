@@ -1,12 +1,12 @@
 # Bio Pharma Residence — taqdimot sayti
 
-Imarat Development loyihasi uchun 36 slayddan iborat taqdimot sayti va undan olingan chop etishga tayyor PDF fayllar.
+Imarat Development loyihasi uchun 35 slayddan iborat taqdimot sayti va undan olingan chop etishga tayyor PDF fayllar.
 
 ## Tuzilma
 
 | Fayl | Vazifasi |
 | --- | --- |
-| `index.html` | Barcha slaydlar (36 ta, 8 bo‘lim) |
+| `index.html` | Barcha slaydlar (35 ta, 8 bo‘lim) |
 | `css/site.css` | Dizayn tizimi: 1920×1080 kanvas, ekran, telefon va chop etish rejimlari |
 | `js/site.js` | Navigatsiya, mundarija (`M`), raqamlar animatsiyasi, lightbox, diagramma |
 | `assets/opt/` | Sayt va PDF uchun optimallashtirilgan rasmlar (asl nusxalar `assets/` da) |
