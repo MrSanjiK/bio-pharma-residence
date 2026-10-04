@@ -7,6 +7,7 @@
     "pdf": "node tools/export-pdf.cjs all",
     "pdf:a4": "node tools/export-pdf.cjs a4",
     "pdf:169": "node tools/export-pdf.cjs 169",
+    "pdf:report": "node tools/export-pdf.cjs report",
     "images": "python3 tools/optimize-images.py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

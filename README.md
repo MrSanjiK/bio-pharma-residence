@@ -13,6 +13,8 @@ Imarat Development loyihasi uchun 35 slayddan iborat taqdimot sayti va undan oli
 | `assets/fonts/` | Fraunces va Manrope shriftlari (lokal, oflayn va chop etish uchun) |
 | `Bio_Pharma_Residence_A4.pdf` | A4 albom formatida, chop etish uchun |
 | `Bio_Pharma_Residence_16x9.pdf` | 16:9 formatda, ekran va proyektor uchun |
+| `reports/ijtimoiy-obyektlar.html` | Bog‘cha, maktab va talabalar yotoqxonasi bo‘yicha alohida ma’lumotnoma (A4, 10 bet) |
+| `Ijtimoiy_obyektlar_malumotnoma.pdf` | Ma’lumotnomaning PDF nusxasi: bosiladigan mundarija, bo‘limlar orasidagi havolalar, xatcho‘plar |
 
 ## PDF’ni qayta yaratish
 
@@ -20,6 +22,7 @@ Imarat Development loyihasi uchun 35 slayddan iborat taqdimot sayti va undan oli
 npm run pdf        # ikkala format
 npm run pdf:a4     # faqat A4
 npm run pdf:169    # faqat 16:9
+npm run pdf:report # ijtimoiy obyektlar ma’lumotnomasi (A4 kitob formatida)
 ```
 
 Skript (`tools/export-pdf.cjs`) Playwright yoki Puppeteer orqali Chromium’da `index.html?pdf` sahifasini ochadi: har bir slayd bitta sahifaga to‘liq, animatsiyalarsiz chiqadi. Saytni brauzerda `Ctrl+P` bilan chop etish ham xuddi shu A4 tartibini beradi.
